@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="buttons.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="dialogue.js"></script>
+	<script src="exit.js"></script>
+</head>
+<body>
+
+<img class="background" src="img/LivingRoom.png">
+
+<img class="character character-left" src="img/Alex.png">
+<img class="character character-right" src="img/Jade.png">
+
+<div class="text">
+	<!-- text gets injected here -->
+	<svg class="corner" viewBox="0 0 65 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M35 3.5L65 6.5V62L0 0L35 3.5Z" fill="white"/>
+	</svg>
+</div>
+
+<button id="home-button" class="button-primary" onclick="reset()">HOME</button>
+<div id="continue-text" class="button-primary">Click or press space to continue.</div>
+<button id="quit-button" class="button-primary" onclick="exit()">Exit</button>
+
+</body>
+</html>
