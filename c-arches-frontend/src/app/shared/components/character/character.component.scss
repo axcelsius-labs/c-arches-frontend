@@ -1,0 +1,19 @@
+.character {
+    position: fixed;
+    width: 40vw;
+    height: 60vh;
+    top: 30vh;
+    object-fit: contain;
+    min-width: 20vh;
+ }
+ 
+ .character-left {
+    left: 0vw;
+    object-position: 100% 100%;
+ }
+ 
+ .character-right {
+    right: 0vw;
+    object-position: 0% 100%;
+ }
+ 

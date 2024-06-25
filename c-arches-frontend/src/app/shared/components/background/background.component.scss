@@ -1,0 +1,10 @@
+.background {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover entire viewport width */
+    height: 100%; /* Cover entire viewport height */
+    object-fit: cover; /* Maintain aspect ratio and cover entire container */
+    object-position: 50% 100%;
+ }

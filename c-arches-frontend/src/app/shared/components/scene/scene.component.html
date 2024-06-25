@@ -1,0 +1,26 @@
+<div (click)="handleClickOrSpace()">
+  <app-background [backgroundImage]="backgroundImage"></app-background>
+  <div class="components-above-background">
+    <img class="character character-left" [src]="leftCharacterImage">
+    <div class="right-character-container">
+      <img class="character character-right" [src]="rightCharacterImage">
+      
+     <svg class="corner" viewBox="0 0 65 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M35 3.5L65 6.5V62L0 0L35 3.5Z" fill="white"/>
+    </svg>
+    </div>
+    
+    <dialogue [currentLineIndex$]="currentLineIndex$" [dialogueLines]="dialogueLines"></dialogue>
+    <div class="bottom-nav">
+      
+      <button class="primary-button" id="home-button" (click)="goToHomeScreen()">
+        <a routerLink="/">HOME</a>
+      </button>
+      <div id="continue-text">
+        Click or press space to continue.
+      </div>
+      <button class="primary-button" id="quit-button" (click)="startOver($event)">Start Over</button>
+    </div>
+    
+  </div>
+</div>
