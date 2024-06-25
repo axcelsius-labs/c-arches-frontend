@@ -1,2 +1,2 @@
 echo "Building!"
-ng build --base-href ./c-arches-frontend/ --output-path ./docs
+ng build --base-href ../c-arches-frontend/ --output-path ../docs
