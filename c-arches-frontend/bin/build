@@ -1,2 +1,3 @@
 echo "Building!"
-ng build --base-href https://axcelsius-labs.github.io/c-arches-frontend/docs/browser --output-path ../docs
+ng build --base-href ./ --output-path ../docs
+mv -v ../docs/browser/* ../docs/
