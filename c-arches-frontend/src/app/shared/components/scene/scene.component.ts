@@ -1,6 +1,7 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { DialogueLine } from "../dialogue/dialogue-line.inferface";
 
 @Component({
   selector: 'app-scene',
@@ -10,7 +11,7 @@ import { BehaviorSubject } from 'rxjs';
 export class SceneComponent {
   @Input() leftCharacterImage: string = "";
   @Input() rightCharacterImage: string = "";
-  @Input() dialogueLines: string[] = [];
+  @Input() dialogueLines: DialogueLine[] = [];
   @Input() backgroundImage: string = "assets/images/LivingRoom.png";
   constructor(private router: Router
   ) { }
@@ -18,8 +19,8 @@ export class SceneComponent {
 
   // ngOnInit(): void {
   //   this.currentLineIndex$.next(0);
-    
   // }
+  
   handleClickOrSpace(event?: Event): void {
     // Check if event is triggered by space bar key
     // Increment current line index on click or space bar press
