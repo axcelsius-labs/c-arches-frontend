@@ -21,7 +21,6 @@
     .right-character-container {
         position: relative; /* Relative positioning for absolute positioning of bubbles */
         display: inline-block; /* Inline-block to fit the image size */
-        
     }
     .bottom-nav {
         display: flex;
@@ -35,7 +34,7 @@
             width: 30vw;
 	        height: 10vh;
             cursor: pointer;
-            font-size: calc(1.5vw + 0.5rem); /* Example calculation */
+            font-size: calc(1.5vw + 0.5rem);
         }
         #home-button {
             background: green;

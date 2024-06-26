@@ -1,5 +1,9 @@
 <div (click)="handleClickOrSpace()">
+  
+  <app-header></app-header>
+  
   <app-background [backgroundImage]="backgroundImage"></app-background>
+  
   <div class="components-above-background">
     <img class="character character-left" [src]="leftCharacterImage">
     <div class="right-character-container">
@@ -11,8 +15,8 @@
     </div>
     
     <dialogue [currentLineIndex$]="currentLineIndex$" [dialogueLines]="dialogueLines"></dialogue>
+    
     <div class="bottom-nav">
-      
       <button class="primary-button" id="home-button" (click)="goToHomeScreen()">
         <a routerLink="/">HOME</a>
       </button>
