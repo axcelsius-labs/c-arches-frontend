@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
   }
 
   navigateToChapter(chapterNumber: number): void {
-    // Example navigation to chapters based on button click
     switch (chapterNumber) {
       case 1:
         this.router.navigate(['/chapter1']);
@@ -33,5 +32,4 @@ export class HomeComponent implements OnInit {
   exit(): void {
     // Implement exit logic, e.g., close window or navigate to home
   }
-
 }

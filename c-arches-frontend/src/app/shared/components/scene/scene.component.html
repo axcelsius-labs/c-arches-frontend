@@ -15,16 +15,8 @@
     </div>
     
     <dialogue [currentLineIndex$]="currentLineIndex$" [dialogueLines]="dialogueLines"></dialogue>
-    
-    <div class="bottom-nav">
-      <button class="primary-button" id="home-button" (click)="goToHomeScreen()">
-        <a routerLink="/">HOME</a>
-      </button>
-      <div id="continue-text">
-        Click or press space to continue.
-      </div>
-      <button class="primary-button" id="quit-button" (click)="startOver($event)">Start Over</button>
-    </div>
-    
+
+    <app-footer></app-footer>
+
   </div>
 </div>

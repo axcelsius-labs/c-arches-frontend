@@ -13,8 +13,7 @@ export class SceneComponent {
   @Input() rightCharacterImage: string = "";
   @Input() dialogueLines: DialogueLine[] = [];
   @Input() backgroundImage: string = "assets/images/LivingRoom.png";
-  constructor(private router: Router
-  ) { }
+  constructor(private router: Router) { }
   currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   // ngOnInit(): void {
@@ -28,10 +27,6 @@ export class SceneComponent {
       var currentIndex = this.currentLineIndex$.value;
       this.currentLineIndex$.next(currentIndex += 1);
     }
-  }
-
-  goToHomeScreen() {
-    this.router.navigate(['/']); 
   }
 
   startOver(event: Event): void {

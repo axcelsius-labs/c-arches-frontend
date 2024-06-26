@@ -9,7 +9,6 @@ export const routes: Routes = [
   { path: 'chapter1', component: Chapter1Component },
   { path: 'chapter2', component: Chapter2Component },
   { path: 'resources', component: ResourcesComponent },
-    // Add more routes as needed
 ];
 
 export class HomeRoutingModule { }
