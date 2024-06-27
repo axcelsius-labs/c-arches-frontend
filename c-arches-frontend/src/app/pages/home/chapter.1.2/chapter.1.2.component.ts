@@ -38,7 +38,7 @@ export class Chapter12Component {
   ngOnInit() { }
 
   onFinish(){
-    this.router.navigate(['/chapters/2/0']);
+    this.router.navigate(['/chapters/1/3']);
   }
   
 }
