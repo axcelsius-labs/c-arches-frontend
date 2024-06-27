@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { IntroComponent } from "./intro/intro.component";
 import { ResourcesComponent } from './resources/resources.component';
 import { Chapter10Component} from "./chapter.1.0/chapter.1.0.component";
 import { Chapter11Component } from "./chapter.1.1/chapter.1.1.component";
@@ -11,6 +12,7 @@ import { Chapter22Component } from "./chapter.2.2/chapter.2.2.component";
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'intro', component: IntroComponent },
   { path: 'chapters/1/0', component: Chapter10Component },
   { path: 'chapters/1/1', component: Chapter11Component },
   { path: 'chapters/1/2', component: Chapter12Component },

@@ -10,8 +10,8 @@ import {Router} from "@angular/router";
 export class Chapter22Component {
 
   backgroundImage = 'assets/images/PatientRoom.png';
-  leftCharacterImage = 'assets/images/Alex.png';
-  rightCharacterImage = 'assets/images/Jade.png';
+  leftCharacterImage = 'assets/images/Jade-Idle.png';
+  rightCharacterImage = 'assets/images/Doctor-Idle.png';
 
   dialogueLines: DialogueLine[] = [
     { speaker: 0, message: "That all sounds good. I think the shot sounds like a good fit for me. When can we get started?", params: []},

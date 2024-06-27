@@ -10,8 +10,8 @@ import {Router} from "@angular/router";
 export class Chapter12Component {
 
   backgroundImage = 'assets/images/LivingRoom.png';
-  leftCharacterImage = 'assets/images/Alex.png';
-  rightCharacterImage = 'assets/images/Jade.png';
+  leftCharacterImage = 'assets/images/Jade-Idle.png';
+  rightCharacterImage = 'assets/images/Alex.png';
 
   dialogueLines : DialogueLine[] = [
     { speaker: 0, message: "Whatever it is, I just know I feel anxious and trapped.", params: []},

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
+import { IntroComponent } from "./intro/intro.component";
 import { Chapter10Component} from "./chapter.1.0/chapter.1.0.component";
 import { Chapter11Component } from "./chapter.1.1/chapter.1.1.component";
 import { Chapter12Component } from "./chapter.1.2/chapter.1.2.component";
@@ -16,6 +17,7 @@ import { routes } from './home.routes';
 @NgModule({
   declarations: [
     HomeComponent,
+    IntroComponent,
     Chapter10Component,
     Chapter11Component,
     Chapter12Component,
@@ -32,6 +34,7 @@ import { routes } from './home.routes';
   ],
   exports: [
     HomeComponent,
+    IntroComponent,
     Chapter10Component,
     Chapter11Component,
     Chapter12Component,

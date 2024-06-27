@@ -10,8 +10,8 @@ import { DialogueLine } from "../../../shared/components/dialogue/dialogue-line.
 export class Chapter10Component {
   
   backgroundImage = 'assets/images/LivingRoom.png';
-  leftCharacterImage = 'assets/images/Alex.png';
-  rightCharacterImage = 'assets/images/Jade.png';
+  leftCharacterImage = 'assets/images/Jade-Idle.png';
+  rightCharacterImage = 'assets/images/Alex.png';
 
   dialogueLines : DialogueLine[] = [
     { speaker: 0, message: "Hey, Jade! You look kinda stressed...you okay?", params: []},
