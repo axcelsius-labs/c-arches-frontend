@@ -13,6 +13,7 @@ import { Chapter13Component} from "./chapter.1.3/chapter.1.3.component";
 import { Chapter20Component } from "./chapter.2.0/chapter.2.0.component";
 import { Chapter21Component } from "./chapter.2.1/chapter.2.1.component";
 import { Chapter22Component } from "./chapter.2.2/chapter.2.2.component";
+import { Chapter30Component } from "./chapter.3.0/chapter.3.0.component";
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,6 +26,7 @@ export const routes: Routes = [
   { path: 'chapters/2/0', component: Chapter20Component, canActivate: [AuthGuardService] },
   { path: 'chapters/2/1', component: Chapter21Component, canActivate: [AuthGuardService] },
   { path: 'chapters/2/2', component: Chapter22Component, canActivate: [AuthGuardService] },
+  { path: 'chapters/3/0', component: Chapter30Component, canActivate: [AuthGuardService] },
   { path: 'resources', component: ResourcesComponent, canActivate: [AuthGuardService] },
 ];
 

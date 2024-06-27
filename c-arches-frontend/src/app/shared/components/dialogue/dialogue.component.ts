@@ -14,7 +14,7 @@ export class DialogueComponent implements OnInit, OnDestroy {
 
   speakerIsOnLeft = false;
   workingVersion = ""
-  animationTimer: any; // Variable to hold the timer ID
+  animationTimer: any;
 
   ngOnInit(): void {
     this.currentLineIndex$.subscribe(number => {
@@ -30,19 +30,19 @@ export class DialogueComponent implements OnInit, OnDestroy {
   }
 
   animateText(text: string): void {
-    this.workingVersion = ''; // Clear the working version
-    let index = 0; // Initialize index to track current character
+    this.workingVersion = '';
+    let index = 0;
     this.animationTimer = setInterval(() => {
       if (index < text.length) {
-        this.workingVersion += text[index]; // Append the next character
+        this.workingVersion += text[index];
         index++;
       } else {
-        this.clearAnimationTimer(); // Stop the animation when text is fully displayed
+        this.clearAnimationTimer();
       }
-    }, 15); // Interval of 15 milliseconds
+    }, 15);
   }
 
   clearAnimationTimer(): void {
-    clearInterval(this.animationTimer); // Clear the interval timer
+    clearInterval(this.animationTimer);
   }
 }

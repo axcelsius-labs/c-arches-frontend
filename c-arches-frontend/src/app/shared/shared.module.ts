@@ -25,6 +25,7 @@ import { AuthGuardService } from "./services/auth-guard.service";
   exports: [
     MonologueComponent,
     SceneComponent,
+    BackgroundComponent,
     HeaderComponent,
     FooterComponent,
     CardComponent
