@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from './home.component';
 import { IntroComponent } from "./intro/intro.component";
 import { Chapter10Component} from "./chapter.1.0/chapter.1.0.component";
@@ -10,12 +11,14 @@ import { Chapter20Component } from "./chapter.2.0/chapter.2.0.component";
 import { Chapter21Component } from "./chapter.2.1/chapter.2.1.component";
 import { Chapter22Component } from "./chapter.2.2/chapter.2.2.component";
 import { ResourcesComponent } from './resources/resources.component';
-import { SharedModule } from '../../shared/shared.module'; // Adjust the path as needed
+import { SharedModule } from '../../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routes } from './home.routes';
 
 @NgModule({
   declarations: [
+    LoginComponent,
     HomeComponent,
     IntroComponent,
     Chapter10Component,
@@ -29,10 +32,12 @@ import { routes } from './home.routes';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule,
     RouterModule.forChild(routes)
   ],
   exports: [
+    LoginComponent,
     HomeComponent,
     IntroComponent,
     Chapter10Component,

@@ -8,6 +8,7 @@ import { BackgroundComponent } from './components/background/background.componen
 import { DialogueComponent } from './components/dialogue/dialogue.component';
 import { SceneComponent } from './components/scene/scene.component';
 import { MonologueComponent } from "./components/monologue/monologue.component";
+import { AuthGuardService } from "./services/auth-guard.service";
 
 @NgModule({
   declarations: [
