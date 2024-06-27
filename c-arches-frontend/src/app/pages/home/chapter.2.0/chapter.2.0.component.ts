@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { DialogueLine } from "../../../shared/components/dialogue/dialogue-line.inferface";
+import { Component } from '@angular/core';
+import {DialogueLine} from "../../../shared/components/dialogue/dialogue-line.inferface";
+import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-chapter2',
-  templateUrl: './chapter2.component.html',
-  styleUrls: ['./chapter2.component.scss']
+  selector: 'app-chapter.2.0',
+  templateUrl: './chapter.2.0.component.html',
+  styleUrl: './chapter.2.0.component.scss'
 })
-export class Chapter2Component implements OnInit {
+export class Chapter20Component {
+
   backgroundImage = 'assets/images/PatientRoom.png';
   leftCharacterImage = 'assets/images/Alex.png';
   rightCharacterImage = 'assets/images/Jade.png';
 
-  dialogueText: DialogueLine[] = [
+  dialogueLines: DialogueLine[] = [
     { speaker: 0, message: "Hi Jade, I'm Dr. Green! What brings you in today?"},
     { speaker: 1, message: "My friend recommended I come see you...We were talking about reproductive coercion..."},
     { speaker: 1, message: "...some of it hit close to home."},
@@ -26,10 +28,13 @@ export class Chapter2Component implements OnInit {
     { speaker: 0, message: "Okay! Well the morning-after pill is available over-the-counter at most pharmacies."},
     { speaker: 0, message: "If you want to be discreet, you could trash the packaging and keep the pill in a plain container."}
   ];
-  
-  constructor() { }
 
-  ngOnInit() {
+  constructor(private router: Router) { }
+
+  ngOnInit() { }
+
+  onFinish(){
+    this.router.navigate(['/chapters/2/1']);
   }
-
+  
 }

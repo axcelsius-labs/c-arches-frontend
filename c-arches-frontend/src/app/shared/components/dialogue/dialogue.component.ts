@@ -39,7 +39,7 @@ export class DialogueComponent implements OnInit, OnDestroy {
       } else {
         this.clearAnimationTimer(); // Stop the animation when text is fully displayed
       }
-    }, 30); // Interval of 30 milliseconds
+    }, 15); // Interval of 15 milliseconds
   }
 
   clearAnimationTimer(): void {
