@@ -1,8 +1,10 @@
 {
   "routes": [
     "/",
-    "/chapter1",
-    "/chapter2",
+    "/chapters/1/0",
+    "/chapters/1/1",
+    "/chapters/1/2",
+    "/chapters/2/0",
     "/resources"
   ]
 }

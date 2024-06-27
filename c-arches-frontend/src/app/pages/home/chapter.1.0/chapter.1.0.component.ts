@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DialogueLine } from "../../../shared/components/dialogue/dialogue-line.inferface";
 
 @Component({
-  selector: 'app-chapter1',
-  templateUrl: './chapter1.component.html',
-  styleUrls: ['./chapter1.component.scss']
+  selector: 'app-chapter.1.0',
+  templateUrl: './chapter.1.0.component.html',
+  styleUrl: './chapter.1.0.component.scss'
 })
-export class Chapter1Component implements OnInit {
+export class Chapter10Component {
+  
   backgroundImage = 'assets/images/LivingRoom.png';
   leftCharacterImage = 'assets/images/Alex.png';
   rightCharacterImage = 'assets/images/Jade.png';
-  
-  dialogueText: DialogueLine[] = [
+
+  dialogueLines : DialogueLine[] = [
     { speaker: 0, message: "Hey, Jade! You look kinda stressed...you okay?"},
     { speaker: 1, message: "Hey, Sam."},
     { speaker: 0, message: "I don't know...Charlie and I are fighting again."},
@@ -31,8 +33,11 @@ export class Chapter1Component implements OnInit {
     { speaker: 0, message: "...and now he says he won't use one."},
   ];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  onFinish(){
+    this.router.navigate(['/chapters/1/1']);
   }
 }

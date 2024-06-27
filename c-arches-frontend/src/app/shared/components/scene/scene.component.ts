@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { DialogueLine } from "../dialogue/dialogue-line.inferface";
@@ -9,30 +9,26 @@ import { DialogueLine } from "../dialogue/dialogue-line.inferface";
   styleUrls: ['./scene.component.scss']
 })
 export class SceneComponent {
+  
   @Input() leftCharacterImage: string = "";
   @Input() rightCharacterImage: string = "";
   @Input() dialogueLines: DialogueLine[] = [];
   @Input() backgroundImage: string = "assets/images/LivingRoom.png";
-  constructor(private router: Router) { }
-  currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  // ngOnInit(): void {
-  //   this.currentLineIndex$.next(0);
-  // }
+  @Output() onFinish = new EventEmitter();
+  
+  constructor(private router: Router) { }
+  
+  currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   
   handleClickOrSpace(event?: Event): void {
     // Check if event is triggered by space bar key
     // Increment current line index on click or space bar press
     if (this.currentLineIndex$.value < this.dialogueLines.length - 1) {
-      var currentIndex = this.currentLineIndex$.value;
+      let currentIndex = this.currentLineIndex$.value;
       this.currentLineIndex$.next(currentIndex += 1);
     }
-  }
-
-  startOver(event: Event): void {
-    this.currentLineIndex$.next(0);
-    event.stopPropagation();
-    (event.target as HTMLButtonElement).blur();
+    else this.onFinish.emit();
   }
 
   @HostListener('document:keypress', ['$event'])
