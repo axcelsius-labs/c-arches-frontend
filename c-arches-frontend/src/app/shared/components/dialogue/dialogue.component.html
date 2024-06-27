@@ -1,5 +1,6 @@
 <div 
-  class="text" 
+  class="text"
   [ngClass]="speakerIsOnLeft === true ? 'left' : 'right'">
+  <div class="triangle " [ngClass]="speakerIsOnLeft === true ? 'triangle-left' : 'triangle-right'"></div>
   {{ workingVersion }}
 </div>
