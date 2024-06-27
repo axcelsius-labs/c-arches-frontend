@@ -17,46 +17,14 @@
     margin-bottom: 20px;
 }
   
-  .chapter-button {
-    padding: 20px 40px;
-    font-size: 1.5rem;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .bottom-space {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .chapter-3 {
-    flex: 1; /* Take remaining space */
-    margin-right: 20px;
-  }
-  
-  .resources, .exit-button {
-    width: calc(50% - 10px); /* 50% width with margin between */
-  }
-  
-  .circle-button {
-    width: 100%;
-    padding: 20px;
-    font-size: 1.2rem;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .exit-button {
-    margin-top: auto; /* Push to bottom */
-  }
+.chapter-button {
+  padding: 20px 40px;
+  font-size: 1.5rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+}
   

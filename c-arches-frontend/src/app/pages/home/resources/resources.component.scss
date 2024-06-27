@@ -1,0 +1,24 @@
+.resource-row {
+  position: relative;
+  top: 11vh;
+  width: 96vw;
+  max-width: 100vh;
+  padding-bottom: 11vh;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch;
+  column-gap: 2vw;
+  row-gap: 2vh;
+  flex-flow: row wrap;
+}
+
+.resource-column {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  max-width: 47%;
+  gap: 2vh;
+  flex: 1 1 auto;
+  flex-flow: column wrap;
+}
