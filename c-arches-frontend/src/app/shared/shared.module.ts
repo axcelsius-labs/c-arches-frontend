@@ -7,6 +7,7 @@ import { CardComponent } from "./components/card/card.component";
 import { BackgroundComponent } from './components/background/background.component';
 import { DialogueComponent } from './components/dialogue/dialogue.component';
 import { SceneComponent } from './components/scene/scene.component';
+import { MonologueComponent } from "./components/monologue/monologue.component";
 
 @NgModule({
   declarations: [
@@ -16,10 +17,12 @@ import { SceneComponent } from './components/scene/scene.component';
     CardComponent,
     BackgroundComponent,
     DialogueComponent,
-    SceneComponent
+    SceneComponent,
+    MonologueComponent,
   ],
   imports: [CommonModule],
   exports: [
+    MonologueComponent,
     SceneComponent,
     HeaderComponent,
     FooterComponent,

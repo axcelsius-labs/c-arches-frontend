@@ -6,7 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./background.component.scss']
 })
 export class BackgroundComponent implements OnInit {
+  
   @Input() backgroundImage: string = "assets/images/LivingRoom.png";
+  @Input() blackOut: boolean = false;
+
   constructor() { }
 
   ngOnInit() {

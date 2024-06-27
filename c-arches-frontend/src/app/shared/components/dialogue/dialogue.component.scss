@@ -1,5 +1,6 @@
 .text {
     position: fixed;
+    z-index: 100;
     top: 10vh;
     left: 50%;
     transform: translate(-50%, 0);

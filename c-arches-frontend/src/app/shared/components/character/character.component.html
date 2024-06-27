@@ -1,1 +1,8 @@
-<img [ngClass]="['character', position === 'left' ? 'character-left' : 'character-right']" [src]="src">
+<img 
+    [ngClass]="['character', 
+        position === 'big'
+            ? 'character-big' 
+            : position === 'left' 
+                ? 'character-left' 
+                : 'character-right']" 
+    [src]="src">

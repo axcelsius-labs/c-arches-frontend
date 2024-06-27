@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CharacterComponent implements OnInit {
   @Input() src!: string;
-  @Input() position!: 'left' | 'right';
+  @Input() position!: 'left' | 'right' | 'big';
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,26 @@
+.monologue-character {
+  z-index: 100;
+  position: fixed;
+  top: 15vh;
+  left: 0vw;
+  width: 40vw;
+  height: 120vh;
+  object-fit: contain;
+  min-width: 20vh;
+  object-position: 100% 100%;
+}
+
+.additional-content{
+  z-index: 101;
+  position: fixed;
+  top: 25vh;
+  left: 40vw;
+  width: 35vw;
+  height: 60vh;
+  background: #00000088;
+  border: 5px solid #FFFFFF33;
+  border-radius: 8px;
+  padding: 2vw;
+  color: #FFFFFFEE;
+  font-size: 1.5rem;
+}
