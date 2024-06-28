@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  backgroundImage = 'assets/images/Park.png';
 
   constructor(private router: Router) { }
 

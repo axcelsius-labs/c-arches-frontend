@@ -27,6 +27,8 @@ export class Chapter20Component {
     { speaker: 0, message: "Yeah, but I've never used it...and I don't want my partner to know...", params: []},
     { speaker: 1, message: "Okay! Well the morning-after pill is available over-the-counter at most pharmacies.", params: []},
     { speaker: 1, message: "If you want to be discreet, you could trash the packaging and keep the pill in a plain container.", params: []},
+    { speaker: 1, message: "Options like the shot, the implant, or the IUD can provide reliable protection.", params: []},
+    { speaker: 1, message: "They're discreet and can help you feel more confident about your reproductive health.", params: []},
   ];
 
   constructor(private router: Router) { }

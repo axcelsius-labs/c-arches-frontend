@@ -22,8 +22,6 @@ export class SceneComponent {
   currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   
   handleClickOrSpace(event?: Event): void {
-    // Check if event is triggered by space bar key
-    // Increment current line index on click or space bar press
     if (this.currentLineIndex$.value < this.dialogueLines.length - 1) {
       let currentIndex = this.currentLineIndex$.value;
       this.currentLineIndex$.next(currentIndex += 1);

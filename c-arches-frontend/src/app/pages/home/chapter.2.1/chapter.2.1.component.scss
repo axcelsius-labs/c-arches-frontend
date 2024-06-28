@@ -1,0 +1,25 @@
+.options-container {
+  z-index: 101;
+  position: fixed;
+  top: 30vh;
+  bottom: 15vh;
+  left: 42vw;
+  right: 30vw;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1vw;
+  grid-row-gap: 1vw;
+}
+
+.option-box {
+  z-index: 101;
+  background: white;
+  border: 5px solid gray;
+  padding: 1vw;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+}
