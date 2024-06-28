@@ -15,7 +15,9 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.password === "1234") {
-      localStorage.setItem("token", "yeet");
+      if (typeof window !== 'undefined') {
+        localStorage.setItem("token", "yeet");
+      }
       this.router.navigate(['/intro']);
     }
     else this.error = true;

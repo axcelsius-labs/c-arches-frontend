@@ -2,6 +2,7 @@ import { Component, HostListener, EventEmitter, Input, Output } from '@angular/c
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { DialogueLine } from "../dialogue/dialogue-line.inferface";
+import { Chapter } from '../../models/chapter.interface';
 
 @Component({
   selector: 'app-scene',
@@ -10,11 +11,7 @@ import { DialogueLine } from "../dialogue/dialogue-line.inferface";
 })
 export class SceneComponent {
   
-  @Input() leftCharacterImage: string = "";
-  @Input() rightCharacterImage: string = "";
-  @Input() dialogueLines: DialogueLine[] = [];
-  @Input() backgroundImage: string = "assets/images/LivingRoom.png";
-
+  @Input() chapter!: Chapter;
   @Output() onFinish = new EventEmitter();
   
   constructor(private router: Router) { }
@@ -22,7 +19,7 @@ export class SceneComponent {
   currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   
   handleClickOrSpace(event?: Event): void {
-    if (this.currentLineIndex$.value < this.dialogueLines.length - 1) {
+    if (this.currentLineIndex$.value < this.chapter.dialogueLines!.length - 1) {
       let currentIndex = this.currentLineIndex$.value;
       this.currentLineIndex$.next(currentIndex += 1);
     }

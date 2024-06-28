@@ -15,7 +15,7 @@ export class FooterComponent {
   }
   
   exit() {
-    document.location.href = 'https://weather.com/';
+    this.router.navigate(['']);
   }
   
 }

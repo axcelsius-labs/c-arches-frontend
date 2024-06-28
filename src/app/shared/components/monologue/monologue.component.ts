@@ -2,6 +2,7 @@ import {Component, EventEmitter, HostListener, Input, Output} from '@angular/cor
 import {DialogueLine} from "../dialogue/dialogue-line.inferface";
 import {Router} from "@angular/router";
 import {BehaviorSubject} from "rxjs";
+import { Chapter } from '../../models/chapter.interface';
 
 @Component({
   selector: 'app-monologue',
@@ -10,9 +11,7 @@ import {BehaviorSubject} from "rxjs";
 })
 export class MonologueComponent {
 
-  @Input() characterImage: string = "";
-  @Input() backgroundImage: string = "assets/images/LivingRoom.png";
-  @Input() dialogueLines: DialogueLine[] = [];
+  @Input() chapter!: Chapter; 
   @Input() additionalContent: string[] = [];
 
   @Output() onFinish = new EventEmitter();
@@ -22,10 +21,10 @@ export class MonologueComponent {
   currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   handleClickOrSpace(event?: Event): void {
-    if (this.currentLineIndex$.value < this.dialogueLines.length - 1) {
+    if (this.currentLineIndex$.value < this.chapter.dialogueLines!.length - 1) {
       let currentIndex = this.currentLineIndex$.value;
       this.currentLineIndex$.next(currentIndex += 1);
-      this.additionalContent = this.dialogueLines[this.currentLineIndex$.value].params;
+      this.additionalContent = this.chapter.dialogueLines![this.currentLineIndex$.value].params;
     }
     else this.onFinish.emit();
   }

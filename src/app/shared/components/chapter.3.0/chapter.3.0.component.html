@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<app-background [backgroundImage]="backgroundImage" [blackOut]="false"></app-background>
+<app-background [backgroundImage]="chapter.backgroundImage" [blackOut]="false"></app-background>
 
 <div class="info-block-container">
     <div class="info-block">
@@ -15,10 +15,10 @@
             <button class="info-block-button previous-button" (click)="previous()" *ngIf="currentIndex > 0">
                 Previous
             </button>
-            <button class="info-block-button next-button" (click)="next()" *ngIf="currentIndex < data.length - 1">
+            <button class="info-block-button next-button" (click)="next()" *ngIf="currentIndex < chapter.data">
                 Next
             </button>
-            <button class="info-block-button next-button" (click)="finish()" *ngIf="currentIndex === data.length - 1">
+            <button class="info-block-button next-button" (click)="finish()" *ngIf="currentIndex === chapter.data.length - 1">
                 Finish!
             </button>
         </div>

@@ -8,7 +8,8 @@ import { BackgroundComponent } from './components/background/background.componen
 import { DialogueComponent } from './components/dialogue/dialogue.component';
 import { SceneComponent } from './components/scene/scene.component';
 import { MonologueComponent } from "./components/monologue/monologue.component";
-import { AuthGuardService } from "./services/auth-guard.service";
+import { Chapter21Component } from './components/chapter.2.1/chapter.2.1.component';
+import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,8 @@ import { AuthGuardService } from "./services/auth-guard.service";
     DialogueComponent,
     SceneComponent,
     MonologueComponent,
+    Chapter21Component,
+    Chapter30Component
   ],
   imports: [CommonModule],
   exports: [
@@ -28,7 +31,9 @@ import { AuthGuardService } from "./services/auth-guard.service";
     BackgroundComponent,
     HeaderComponent,
     FooterComponent,
-    CardComponent
+    CardComponent,
+    Chapter21Component,
+    Chapter30Component
   ]
 })
 export class SharedModule { }
