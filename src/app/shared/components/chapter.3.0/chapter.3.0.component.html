@@ -15,7 +15,7 @@
             <button class="info-block-button previous-button" (click)="previous()" *ngIf="currentIndex > 0">
                 Previous
             </button>
-            <button class="info-block-button next-button" (click)="next()" *ngIf="currentIndex < chapter.data">
+            <button class="info-block-button next-button" (click)="next()" *ngIf="currentIndex < chapter.data.length">
                 Next
             </button>
             <button class="info-block-button next-button" (click)="finish()" *ngIf="currentIndex === chapter.data.length - 1">
