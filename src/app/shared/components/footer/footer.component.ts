@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+
+  @Input() showText: Boolean = false;
 
   constructor(private router: Router) { }
 

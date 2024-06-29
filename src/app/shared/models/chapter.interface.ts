@@ -8,7 +8,7 @@ export interface Chapter {
     dialogueLines?: DialogueLine[];
     data?: any;
     chapterType: string;
-    nextChapterId: string;
+    nextPage: string;
 }
 
 export interface Chapters {

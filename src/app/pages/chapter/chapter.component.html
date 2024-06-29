@@ -1,6 +1,8 @@
+<app-header></app-header>
 <div *ngIf="chapterContent.chapterType as type">
   <app-monologue *ngIf="type === 'monologue'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-monologue>
   <app-scene *ngIf="type === 'default'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-scene>
   <app-chapter-2-1 *ngIf="type === 'chapter2.1'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-chapter-2-1>
   <app-chapter-3-0 *ngIf="type === 'chapter3.0'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-chapter-3-0>
 </div>
+<app-footer [showText]="true"></app-footer>

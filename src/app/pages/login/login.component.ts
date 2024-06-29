@@ -18,7 +18,7 @@ export class LoginComponent {
       if (typeof window !== 'undefined') {
         localStorage.setItem("token", "yeet");
       }
-      this.router.navigate(['/intro']);
+      this.router.navigate(['/chapter/intro']);
     }
     else this.error = true;
   }

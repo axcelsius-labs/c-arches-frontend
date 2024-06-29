@@ -22,12 +22,12 @@ export class ChapterComponent implements OnInit {
   }
 
   goToNextChapter(): void {
-    const nextChapterId = this.chapterContent.nextChapterId;
-    if (nextChapterId === '') {
+    const nextPage = this.chapterContent.nextPage;
+    if (nextPage === '') {
       this.router.navigate([''])
     }
     else {
-      this.router.navigate(['/chapter', nextChapterId])
+      this.router.navigate(['/chapter', nextPage])
     }
   }
   onFinish(){

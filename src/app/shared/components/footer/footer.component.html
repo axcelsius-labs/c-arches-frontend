@@ -2,7 +2,7 @@
     <button class="primary-button" id="resources-button" (click)="goToResources()">
         RESOURCES
     </button>
-    <div id="continue-text">
+    <div *ngIf="showText" id="continue-text">
         Click or press space to continue.
     </div>
     <button class="primary-button" id="quit-button" (click)="exit()">

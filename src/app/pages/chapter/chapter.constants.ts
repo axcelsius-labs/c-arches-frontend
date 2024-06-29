@@ -1,6 +1,18 @@
 import { Chapters } from "../../shared/models/chapter.interface";
 
 export const chapters: Chapters = {
+    "intro": {
+        backgroundImage: 'assets/images/Park.png',
+        characterImage: 'assets/images/Alex.png',
+        dialogueLines: [
+            { speaker: 0, message: "Hey! I'm Sam!", params: []},
+            { speaker: 0, message: "Before we begin, note that this quick exit button in the bottom right will take you to the Weather Channel homepage.", params: []},
+            { speaker: 0, message: "Use it if you ever need to escape, and use the link in your email to return here.", params: []},
+            { speaker: 0, message: "Also, consider using a safe device and clearing your browser history if you think a partner may be monitoring you.", params: []}
+        ],
+        nextPage: '1.0',
+        chapterType: "monologue"
+    },
     "1.0": {
         backgroundImage: 'assets/images/LivingRoom.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
@@ -24,7 +36,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "I think he was poking holes in the condoms before...", params: []},
             { speaker: 0, message: "...and now he says he won't use one.", params: []},
         ],
-        nextChapterId: '1.1',
+        nextPage: '1.1',
         chapterType: 'default'
     },
     "1.1": {
@@ -50,7 +62,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Understanding these risks is essential for taking care of yourself and making decisions that are right for you.", params: []},
             { speaker: 0, message: "It’s important that you feel safe and in control of your own body and decisions.", params: []},
         ],
-        nextChapterId: '1.2',
+        nextPage: '1.2',
         chapterType: 'monologue'
     },
     "1.2": {
@@ -76,7 +88,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Thanks, Sam.", params: []},
             { speaker: 1, message: "Anytime, Jade.", params: []},
         ],
-        nextChapterId: '1.3',
+        nextPage: '1.3',
         chapterType: 'default'
     },
     "1.3": {
@@ -89,7 +101,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Try saying something like, \"Hey, I've been there. I found some helpful resources that could make things easier. Let's figure this out together.\"", params: []},
             { speaker: 0, message: "Remember, supporting each other isn't just kind--it boosts your own well-being, too. When we lend a hand, we all grow stronger together.", params: []},
         ],
-        nextChapterId: '2.0',
+        nextPage: '2.0',
         chapterType: 'monologue'
     },
     "2.0": {
@@ -113,7 +125,7 @@ export const chapters: Chapters = {
             { speaker: 1, message: "Options like the shot, the implant, or the IUD can provide reliable protection.", params: []},
             { speaker: 1, message: "They're discreet and can help you feel more confident about your reproductive health.", params: []},
         ],
-        nextChapterId: '2.1',
+        nextPage: '2.1',
         chapterType: 'default'
     },
     "2.1": {
@@ -192,7 +204,7 @@ export const chapters: Chapters = {
                 ],
             }
         ],
-        nextChapterId: '2.2',
+        nextPage: '2.2',
         chapterType: 'chapter2.1'
     },
     "2.2": {
@@ -208,7 +220,7 @@ export const chapters: Chapters = {
             { speaker: 1, message: "Check them out if you need additional support!", params: []},
             { speaker: 0, message: "Got it! Thanks!", params: []},
         ],
-        nextChapterId: '3.0',
+        nextPage: '3.0',
         chapterType: 'default'
     },
     "3.0": {
@@ -260,7 +272,7 @@ export const chapters: Chapters = {
                 ]
             }
         ],
-        nextChapterId: '',
+        nextPage: '',
         chapterType: 'chapter3.0'
     },
 }

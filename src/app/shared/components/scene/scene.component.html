@@ -1,6 +1,5 @@
 <div (click)="handleClickOrSpace()">
   
-  <app-header></app-header>
   
   <app-background [backgroundImage]="chapter.backgroundImage" [blackOut]="false"></app-background>
   
@@ -13,8 +12,6 @@
     </div>
     
     <dialogue [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
-
-    <app-footer></app-footer>
 
   </div>
 </div>

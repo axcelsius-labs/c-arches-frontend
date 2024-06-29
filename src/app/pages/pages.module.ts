@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routes } from './pages.routes';
 import { ChapterComponent } from './chapter/chapter.component';
-import { IntroComponent } from './intro/intro.component';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 
@@ -16,7 +15,6 @@ import { HomeComponent } from './home/home.component';
     HomeComponent, 
     ResourcesComponent,
     ChapterComponent,
-    IntroComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +27,6 @@ import { HomeComponent } from './home/home.component';
     HomeComponent, 
     ResourcesComponent,
     ChapterComponent,
-    IntroComponent
   ]
 })
 export class PagesModule { }
