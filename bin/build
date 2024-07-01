@@ -2,3 +2,4 @@ echo "Building!"
 ng build --base-href ./ --output-path ./docs
 mv -v ./docs/browser/* ./docs/
 rm -r ./docs/browser
+cp ./docs/index.html ./docs/404.html
