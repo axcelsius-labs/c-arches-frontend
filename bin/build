@@ -1,5 +1,5 @@
 echo "Building!"
-ng build --base-href ./ --output-path ./docs
+ng build --base-href ./c-arches-frontend --output-path ./docs
 mv -v ./docs/browser/* ./docs/
 rm -r ./docs/browser
 cp ./docs/index.html ./docs/404.html
