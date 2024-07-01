@@ -1,5 +1,8 @@
 <div class="card">
-    <h1>{{ title }}</h1>
-    <h3>{{ subtitle }}</h3>
-    <p>{{ description }}</p>
+    <h1><a href="{{ resource.url }}">{{ resource.name }}</a></h1>
+    <h3>{{ resource.description }}</h3>
+    <div *ngFor="let contact of resource.contacts">
+        <p><b>{{ contact.key }}:</b> {{ contact.value }}</p>
+    </div>
+    <p>{{ resource.hours }}</p>
 </div>
