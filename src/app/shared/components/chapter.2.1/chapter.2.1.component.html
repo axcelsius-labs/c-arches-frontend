@@ -6,14 +6,19 @@
         <h2>{{ item.name }}</h2>
         <h3>{{ item.price }}</h3>
         <h3>{{ item.effectiveness }}</h3>
+        <h3>{{ item.duration_short }}</h3>
     </div>
 </div>
 
 <div class="options-container" *ngIf="currentIndex !== -1">
     <div class="option-box">
         <h2>{{ chapter.data[currentIndex].name }}</h2>
-        <h3>{{ chapter.data[currentIndex].price }}</h3>
-        <h3>{{ chapter.data[currentIndex].effectiveness }}</h3>
+        <h4><i>{{ chapter.data[currentIndex].description }}</i></h4>
+        <h4>{{ chapter.data[currentIndex].price }}</h4>
+        <h4>{{ chapter.data[currentIndex].effectiveness }}</h4>
+        <h4>{{ chapter.data[currentIndex].duration_long }}</h4>
+        <p><b>Periods:</b> {{ chapter.data[currentIndex].periods }}</p>
+        <p><b>Privacy:</b> {{ chapter.data[currentIndex].privacy }}</p>
         <div class="button-row">
             <button class="info-block-button previous-button" (click)="back()">
                 Back

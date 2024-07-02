@@ -137,8 +137,13 @@ export const chapters: Chapters = {
         data: [
             {
                 name: "The Shot",
+                description: "Injection in your arm or buttocks every 3 months",
                 price: "$0-$150",
                 effectiveness: "96% Effective",
+                duration_short: "3 months",
+                duration_long: "Get every 3 months",
+                periods: "Changes in your period are common, e.g. bleeding more days, spotting, or not getting period at all.",
+                privacy: "No at home supplies, so easy to keep private but requires regular access to clinic.",
                 lines: [
                     {
                         speaker: 0,
@@ -159,8 +164,13 @@ export const chapters: Chapters = {
             },
             {
                 name: "IUD",
+                description: "Tiny device put in your uterus, low-maintenance once inserted.",
                 price: "$0-$1300",
                 effectiveness: "99% Effective",
+                duration_short: "3-12 years",
+                duration_long: "Lasts 3-12 years",
+                periods: "Hormonal: Irregular bleeding for first few months, but likely to have shorter, lighter periods over time. Non-hormonal/copper: Period may be longer and heavier.",
+                privacy: "Easy to keep private, strings can be cut short.",
                 lines: [
                     {
                         speaker: 0,
@@ -170,9 +180,14 @@ export const chapters: Chapters = {
                 ],
             },
             {
-                name: "The Implant",
+                name: "The Implant (Nexplanon)",
+                description: "Small & discreet device inserted under the skin.",
                 price: "$0-$2200",
                 effectiveness: "99% Effective",
+                duration_short: "5 years",
+                duration_long: "Lasts up to 5 years",
+                periods: "???",
+                privacy: "Mostly invisible once your skin heals. Can sometimes be seen or felt if someone touches your arm. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.",
                 lines: [
                     {
                         speaker: 0,
@@ -182,9 +197,14 @@ export const chapters: Chapters = {
                 ],
             },
             {
-                name: "Sterilization",
+                name: "Sterilization (Tubal Ligation)",
+                description: "Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.",
                 price: "???",
                 effectiveness: "???",
+                duration_short: "Permanent",
+                duration_long: "Permanent. Recovery times vary and may require follow-up appointments.",
+                periods: "???",
+                privacy: "Private after recovery. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.",
                 lines: [
                     {
                         speaker: 0,

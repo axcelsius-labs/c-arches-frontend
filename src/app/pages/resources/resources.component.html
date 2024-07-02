@@ -1,21 +1,8 @@
 <app-header></app-header>
 
-
-
 <div class="resource-row">
     <div class="resource-column">
-        <app-card *ngFor="let resource of leftColumn" 
-                  [title]="resource.name"
-                  [subtitle]="resource.subtitle"
-                  [description]="resource.description">
-        </app-card>
-    </div>
-    <div class="resource-column">
-        <app-card *ngFor="let resource of rightColumn"
-                  [title]="resource.name"
-                  [subtitle]="resource.subtitle"
-                  [description]="resource.description">
-        </app-card>
+        <app-card *ngFor="let resource of resources" [resource]="resource"></app-card>
     </div>
 </div>
 
