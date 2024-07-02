@@ -1,33 +1,37 @@
-<app-monologue
-    [chapter]="chapter">
-</app-monologue>
-<div class="options-container options-grid" *ngIf="currentIndex === -1">
-    <div class="option-box" *ngFor="let item of chapter.data; let i = index" (click)="select(i)">
-        <h2>{{ item.name }}</h2>
-        <h3>{{ item.price }}</h3>
-        <h3>{{ item.effectiveness }}</h3>
-        <h3>{{ item.duration_short }}</h3>
-    </div>
-</div>
-
-<div class="options-container" *ngIf="currentIndex !== -1">
-    <div class="option-box">
-        <h2>{{ chapter.data[currentIndex].name }}</h2>
-        <h4><i>{{ chapter.data[currentIndex].description }}</i></h4>
-        <h4>{{ chapter.data[currentIndex].price }}</h4>
-        <h4>{{ chapter.data[currentIndex].effectiveness }}</h4>
-        <h4>{{ chapter.data[currentIndex].duration_long }}</h4>
-        <p><b>Periods:</b> {{ chapter.data[currentIndex].periods }}</p>
-        <p><b>Privacy:</b> {{ chapter.data[currentIndex].privacy }}</p>
-        <div class="button-row">
-            <button class="info-block-button previous-button" (click)="back()">
-                Back
-            </button>
-            <button class="info-block-button next-button" (click)="continue()">
-                Continue
-            </button>
+<div class="chapter-2-1-container">
+    <dialogue class="dialogue-container" [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
+    <div class="character-wrapper">
+        <img class="character-container" [src]="chapter.characterImage">
+        <div class="grid-container" *ngIf="currentIndex === -1">
+            <div class="grid-item" *ngFor="let item of chapter.data; let i = index" (click)="select(i)">
+                <div class="content title">{{ item.name }}</div>
+                <div class="content">{{ item.price }}</div>
+                <div class="content">{{ item.effectiveness }}</div>
+                <div class="content">{{ item.duration_short }}</div>
+            </div>
         </div>
+        
+        <div *ngIf="currentIndex !== -1">
+            <div class="option-box">
+                <h2>{{ chapter.data[currentIndex].name }}</h2>
+                <h4><i>{{ chapter.data[currentIndex].description }}</i></h4>
+                <h4>{{ chapter.data[currentIndex].price }}</h4>
+                <h4>{{ chapter.data[currentIndex].effectiveness }}</h4>
+                <h4>{{ chapter.data[currentIndex].duration_long }}</h4>
+                <p><b>Periods:</b> {{ chapter.data[currentIndex].periods }}</p>
+                <p><b>Privacy:</b> {{ chapter.data[currentIndex].privacy }}</p>
+                <div class="button-row">
+                    <button class="info-block-button previous-button" (click)="back()">
+                        Back
+                    </button>
+                    <button class="info-block-button next-button" (click)="continue()">
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </div>
 </div>
-
-

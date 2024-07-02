@@ -1,25 +1,86 @@
-.options-container {
-  z-index: 101;
-  position: fixed;
-  top: 25vh;
-  bottom: 15vh;
-  left: 42vw;
-  right: 30vw;
-}
+.chapter-2-1-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
 
-.options-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1vw;
-  grid-row-gap: 1vw;
-}
+  justify-content: center;
+  flex-grow: 1;
+  .dialogue-container {
+    width: 100%;
+    max-width: 65vh;
+  }
+  .character-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 
-.option-box {
-  z-index: 101;
-  background: white;
-  border: 5px solid gray;
-  padding: .5vw;
-  text-align: center;
-  border-radius: 8px;
-  cursor: pointer;
+    .character-container {
+      flex-shrink: 0;
+      max-width: 40vw;
+      max-height: 120vh;
+      object-fit: contain;
+      min-width: 20vh;
+      object-position: 100% 100%;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      box-sizing: border-box;
+      height: fit-content;
+    }
+    
+    .grid-item {
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      text-align: center;
+      .content {
+        font-weight: bold;
+        padding: 8px;
+        font-size: .75em;
+      }
+      .title {
+        font-size: 1em;
+      }
+    }
+
+    .option-box {
+      background: white;
+      border: 5px solid gray;
+      padding: .5vw;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      max-width: 45vw;
+    }
+
+    @media (max-width: 580px) {
+      .grid-item {
+        .content {
+          font-size: .5em;
+          padding: 5px;
+        }
+        .title {
+          font-size: .75em;
+        }
+      }
+      .option-box {
+        h2 {
+          font-size: 20px;
+        }
+
+        h4 {
+          font-size: 12px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
 }

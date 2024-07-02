@@ -1,7 +1,10 @@
 .info-block-container {
-  max-width: 90vh;
+  display: flex;
   margin: auto;
-  padding: 15vh 0;
+  align-items: center;
+  flex-direction: column;
+  max-width: 90vw;
+  padding: 20px;
 }
 
 .info-block {
@@ -17,19 +20,15 @@
 }
 
 .button-row {
-  width: 50%;
-  margin: auto;
-  margin-top: 5vh;
+  gap: 15px;
   display: flex;
-  align-content: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .info-block-button {
-  position: relative;
   height: 5vh;
-  width: 35%;
-  font-size: 1.4rem;
+  width: 25vw;
+  max-width: 100px;
   background-color: #92aa79;
   border-radius: 8px;
   color: white;

@@ -15,7 +15,7 @@ export class MonologueComponent {
   @Input() additionalContent: string[] = [];
   @Output() onFinish = new EventEmitter();
   
-  constructor(private router: Router) { }
+  constructor() { }
   
   currentIndex = -1;
   currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
@@ -35,20 +35,6 @@ export class MonologueComponent {
       this.handleClickOrSpace();
       event.stopPropagation();
     }
-  }
-
-  select(index:number) {
-    this.currentIndex = index;
-    this.chapter.dialogueLines = this.chapter.data[this.currentIndex].lines;
-  }
-
-  back(){
-      this.currentIndex = -1;
-      this.chapter.dialogueLines = this.chapter.dialogueLines;
-  }
-
-  continue(){
-      this.onFinish.emit();
   }
   
 }
