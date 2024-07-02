@@ -1,26 +1,52 @@
-.monologue-character {
-  z-index: 100;
-  position: fixed;
-  top: 15vh;
-  left: 0vw;
-  width: 40vw;
-  height: 120vh;
-  object-fit: contain;
-  min-width: 20vh;
-  object-position: 100% 100%;
-}
+.monologue-container {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+  max-width: 65vh;
 
-.additional-content{
-  z-index: 101;
-  position: fixed;
-  top: 25vh;
-  left: 40vw;
-  width: 35vw;
-  height: 60vh;
-  background: #00000088;
-  border: 5px solid #FFFFFF33;
-  border-radius: 8px;
-  padding: 2vw;
-  color: #FFFFFFEE;
-  font-size: 1.5rem;
+  justify-content: flex-start;
+  flex-grow: 1;
+  .dialogue-container {
+    width: 100%;
+  }
+  .character-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+    .character-container {
+      flex-shrink: 0;
+      max-width: 40vw;
+      max-height: 120vh;
+      object-fit: contain;
+      min-width: 20vh;
+      object-position: 100% 100%;
+    }
+  }
+
+  .additional-content{
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    z-index: 1;
+    background: #00000088;
+    border: 5px solid #FFFFFF33;
+    border-radius: 8px;
+    padding: 2vw;
+    color: #FFFFFFEE;
+  }
 }
+// /* Media query for smaller screens */
+// @media (max-width: 768px) {
+//   .character-image-container {
+//     top: 10vh; /* Adjust as needed */
+//     height: calc(100vh - 10vh - 8vh); /* Subtract header and footer height */
+//   }
+  
+//   .character-image {
+//     width: 60vw; /* Adjust width to be larger on smaller screens */
+//     height: auto; /* Maintain aspect ratio */
+//     max-height: 120vh; /* Ensure it doesn't get taller than 120vh */
+//   }
+//}

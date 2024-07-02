@@ -9,6 +9,7 @@ export class BackgroundComponent implements OnInit {
   
   @Input() backgroundImage: string = "assets/images/LivingRoom.png";
   @Input() blackOut: boolean = false;
+  @Input() allowOverflow: boolean = false;
 
   constructor() { }
 

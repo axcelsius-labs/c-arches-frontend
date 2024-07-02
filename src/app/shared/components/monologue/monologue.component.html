@@ -1,19 +1,11 @@
-<div (click)="handleClickOrSpace()">
-
-    <app-background [backgroundImage]="chapter.backgroundImage" [blackOut]="true"></app-background>
-    
-    <div class="components-above-background">
-
-        <img class="monologue-character" [src]="chapter.characterImage">
-
-        <dialogue [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
-        
+<div class="monologue-container" (click)="handleClickOrSpace()">
+    <dialogue class="dialogue-container" [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
+    <div class="character-wrapper">
+        <img class="character-container" [src]="chapter.characterImage">
         <div class="additional-content" *ngIf="additionalContent.length > 0">
             <div *ngFor="let content of additionalContent">
                 {{ content }}
             </div>
         </div>
-        
     </div>
-
 </div>

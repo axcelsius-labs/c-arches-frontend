@@ -1,7 +1,6 @@
-import { Component, HostListener, EventEmitter, Input, Output } from '@angular/core';
+import { Component, HostListener, EventEmitter, Input, Output, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { DialogueLine } from "../dialogue/dialogue-line.inferface";
 import { Chapter } from '../../models/chapter.interface';
 
 @Component({
@@ -17,7 +16,7 @@ export class SceneComponent {
   constructor(private router: Router) { }
   
   currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  
+
   handleClickOrSpace(event?: Event): void {
     if (this.currentLineIndex$.value < this.chapter.dialogueLines!.length - 1) {
       let currentIndex = this.currentLineIndex$.value;

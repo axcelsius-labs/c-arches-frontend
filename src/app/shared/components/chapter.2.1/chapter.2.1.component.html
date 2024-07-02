@@ -1,21 +1,5 @@
-<app-monologue *ngIf="currentIndex == -1"
+<app-monologue
     [chapter]="chapter">
-</app-monologue>
-
-<app-monologue *ngIf="currentIndex == 0"
-[chapter]="chapter">
-</app-monologue>
-
-<app-monologue *ngIf="currentIndex == 1"
-               [chapter]="chapter">
-</app-monologue>
-
-<app-monologue *ngIf="currentIndex == 2"
-[chapter]="chapter">
-</app-monologue>
-
-<app-monologue *ngIf="currentIndex == 3"
-[chapter]="chapter">
 </app-monologue>
 <div class="options-container options-grid" *ngIf="currentIndex === -1">
     <div class="option-box" *ngFor="let item of chapter.data; let i = index" (click)="select(i)">

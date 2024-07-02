@@ -1,17 +1,7 @@
-<div (click)="handleClickOrSpace()">
-  
-  
-  <app-background [backgroundImage]="chapter.backgroundImage" [blackOut]="false"></app-background>
-  
-  <div class="components-above-background">
-    
-    <img class="character character-left" [src]="chapter.leftCharacterImage">
-    
-    <div class="right-character-container">
-      <img class="character character-right" [src]="chapter.rightCharacterImage">
-    </div>
-    
-    <dialogue [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
-
+<div class="scene-container" (click)="handleClickOrSpace()">
+  <dialogue class="dialogue-container" [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
+  <div class="character-container">
+    <img class="character left" [src]="chapter.leftCharacterImage">
+    <img class="character right" [src]="chapter.rightCharacterImage"> 
   </div>
 </div>

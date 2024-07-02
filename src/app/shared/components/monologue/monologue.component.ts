@@ -13,11 +13,11 @@ export class MonologueComponent {
 
   @Input() chapter!: Chapter; 
   @Input() additionalContent: string[] = [];
-
   @Output() onFinish = new EventEmitter();
-
+  
   constructor(private router: Router) { }
-
+  
+  currentIndex = -1;
   currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   handleClickOrSpace(event?: Event): void {
@@ -35,6 +35,20 @@ export class MonologueComponent {
       this.handleClickOrSpace();
       event.stopPropagation();
     }
+  }
+
+  select(index:number) {
+    this.currentIndex = index;
+    this.chapter.dialogueLines = this.chapter.data[this.currentIndex].lines;
+  }
+
+  back(){
+      this.currentIndex = -1;
+      this.chapter.dialogueLines = this.chapter.dialogueLines;
+  }
+
+  continue(){
+      this.onFinish.emit();
   }
   
 }

@@ -1,20 +1,12 @@
-.home-container {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 60vh;
-    top: 10vh;
-    left: 25vw;
-    right: 25vw;
-}
-  
-.top-buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20px;
+.buttons-container {
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between buttons */
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Optional padding around the container */
+  margin: auto;
 }
   
 .chapter-button {
