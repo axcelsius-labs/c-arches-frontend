@@ -23,7 +23,7 @@ export class Chapter21Component {
         this.chapter.dialogueLines = this.chapter.data[this.currentIndex].lines;
     }
     
-    back(){
+    back() {
         this.currentIndex = -1;
         this.chapter.dialogueLines = this.chapter.dialogueLines;
     }

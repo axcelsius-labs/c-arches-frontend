@@ -4,20 +4,45 @@
   flex-wrap: wrap;
   gap: 20px; /* Space between buttons */
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   padding: 20px; /* Optional padding around the container */
   margin: auto;
 }
   
 .chapter-button {
-  padding: 50px 50px;
+  padding: 40px 40px;
   font-size: 1.5rem;
   background-color: #2771a3;
-  box-shadow: 0px 0px 40px #00000066;
+  box-shadow: 0px 0px 25px #00000044;
   color: white;
-  border: none;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
+  border: 5px solid #FFFFFF66;
 }
+.chapter-button:hover {
+  border: 5px solid #FFFFFFDD;
+}
+.chapter-button:focus {
+  border: 5px solid #FFFFFFDD;
+}
+.chapter-button:active {
+  border: 5px solid #FFFFFFFF;
+}
+
+.chapter-button-small {
+  width: 300px;
+}
+
+.chapter-button-big {
+  width: 620px;
+}
+
+.chapter-button-title {
+  margin-bottom: 8px;
+  color: #FFFFFFCC;
+  font-size: 2rem;
+}
+
+
   
