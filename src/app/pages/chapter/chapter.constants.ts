@@ -180,7 +180,7 @@ export const chapters: Chapters = {
                 ],
             },
             {
-                name: "The Implant",
+                name: "The Implant (Nexplanon)",
                 description: "Small & discreet device inserted under the skin.",
                 price: "$0-$2200",
                 effectiveness: "99% Effective",
@@ -197,7 +197,7 @@ export const chapters: Chapters = {
                 ],
             },
             {
-                name: "Sterilization",
+                name: "Sterilization (Tubal Ligation)",
                 description: "Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.",
                 price: "???",
                 effectiveness: "???",
