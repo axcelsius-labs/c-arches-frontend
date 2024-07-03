@@ -7,7 +7,7 @@ import { BackgroundComponent } from './components/background/background.componen
 import { DialogueComponent } from './components/dialogue/dialogue.component';
 import { SceneComponent } from './components/scene/scene.component';
 import { MonologueComponent } from "./components/monologue/monologue.component";
-import { Chapter21Component } from './components/chapter.2.1/chapter.2.1.component';
+import { MonologueGridComponent } from './components/monologue.grid/monologue.grid.component';
 import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.component';
 
 @NgModule({
@@ -19,7 +19,7 @@ import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.compone
     DialogueComponent,
     SceneComponent,
     MonologueComponent,
-    Chapter21Component,
+    MonologueGridComponent,
     Chapter30Component
   ],
   imports: [CommonModule],
@@ -30,7 +30,7 @@ import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.compone
     HeaderComponent,
     FooterComponent,
     CardComponent,
-    Chapter21Component,
+    MonologueGridComponent,
     Chapter30Component
   ]
 })

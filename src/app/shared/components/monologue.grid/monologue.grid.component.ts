@@ -4,11 +4,11 @@ import { BehaviorSubject } from 'rxjs';
 import { Dialogue, DialogueLine } from '../../models/dialogue.interface';
 
 @Component({
-  selector: 'app-chapter-2-1',
-  templateUrl: './chapter.2.1.component.html',
-  styleUrl: './chapter.2.1.component.scss'
+  selector: 'app-monologue-grid',
+  templateUrl: './monologue.grid.component.html',
+  styleUrl: './monologue.grid.component.scss'
 })
-export class Chapter21Component implements OnInit {
+export class MonologueGridComponent implements OnInit {
 
     @Input() chapter!: Chapter; 
     @Output() onFinish = new EventEmitter();
@@ -66,9 +66,9 @@ export class Chapter21Component implements OnInit {
     
     @HostListener('document:keypress', ['$event'])
     handleKeyboardEvent(event: KeyboardEvent) { 
-    if (event.code === "Space") {
-    this.handleClickOrSpace();
-    event.stopPropagation();
-    }
+        if (event.code === "Space") {
+            this.handleClickOrSpace();
+            event.stopPropagation();
+        }
     }
 }
