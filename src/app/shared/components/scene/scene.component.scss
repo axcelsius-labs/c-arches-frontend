@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 85vw;
     max-width: 65vh;
     .character-container {
         display: flex;
@@ -15,13 +14,6 @@
             object-fit: contain;
             object-position: 100% 100%;
             max-height: 60vh;
-
-            &.left {
-                margin-left: 20px;
-            }
-            &.right {
-                margin-right: 20px;
-            }
         }
     }
     .dialogue-container {

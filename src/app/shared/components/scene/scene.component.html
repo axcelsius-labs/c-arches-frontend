@@ -1,5 +1,5 @@
 <div class="scene-container" (click)="handleClickOrSpace()">
-  <dialogue class="dialogue-container" [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
+  <dialogue class="dialogue-container" [dialogue$]="dialogue$!"></dialogue>
   <div class="character-container">
     <img class="character left" [src]="chapter.leftCharacterImage">
     <img class="character right" [src]="chapter.rightCharacterImage"> 

@@ -1,8 +1,7 @@
 import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
-import {DialogueLine} from "../dialogue/dialogue-line.inferface";
-import {Router} from "@angular/router";
 import {BehaviorSubject} from "rxjs";
 import { Chapter } from '../../models/chapter.interface';
+import { Dialogue } from '../../models/dialogue.interface';
 
 @Component({
   selector: 'app-monologue',
@@ -16,15 +15,19 @@ export class MonologueComponent {
   @Output() onFinish = new EventEmitter();
   
   constructor() { }
-  
+  dialogue$: BehaviorSubject<Dialogue> = new BehaviorSubject<Dialogue>({});
+    
   currentIndex = -1;
-  currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   handleClickOrSpace(event?: Event): void {
-    if (this.currentLineIndex$.value < this.chapter.dialogueLines!.length - 1) {
-      let currentIndex = this.currentLineIndex$.value;
-      this.currentLineIndex$.next(currentIndex += 1);
-      this.additionalContent = this.chapter.dialogueLines![this.currentLineIndex$.value].params;
+    if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
+      this.dialogue$.next(
+        {
+            lineIndex: this.dialogue$.value.lineIndex! + 1,
+            lines: this.dialogue$.value.lines!
+        }
+        ); 
+        this.additionalContent = this.chapter.dialogueLines![this.dialogue$.value.lineIndex!].params; 
     }
     else this.onFinish.emit();
   }

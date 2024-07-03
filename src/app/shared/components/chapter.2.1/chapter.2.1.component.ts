@@ -1,6 +1,7 @@
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Chapter } from '../../models/chapter.interface';
 import { BehaviorSubject } from 'rxjs';
+import { Dialogue, DialogueLine } from '../../models/dialogue.interface';
 
 @Component({
   selector: 'app-chapter-2-1',
@@ -11,24 +12,59 @@ export class Chapter21Component {
 
     @Input() chapter!: Chapter; 
     @Output() onFinish = new EventEmitter();
-    currentIndex = -1;
-    currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-
+    currentBoxIndex = -1;
+    dialogue$: BehaviorSubject<Dialogue> = new BehaviorSubject<Dialogue>({});
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() { 
+        this.dialogue$.next(
+        {
+            lineIndex: 0,
+            lines: this.chapter.dialogueLines!
+        }
+    );
+    }
 
     select(index:number) {
-        this.currentIndex = index;
-        // this.chapter.dialogueLines = this.chapter.data[this.currentIndex].lines;
+        this.currentBoxIndex = index;
+        this.dialogue$.next(
+            {
+                lineIndex: 0,
+                lines: this.chapter.data[this.currentBoxIndex].lines
+            }
+        );
     }
     
     back() {
-        this.currentIndex = -1;
-        // this.chapter.dialogueLines = this.chapter.dialogueLines;
+        this.currentBoxIndex = -1;
+        this.dialogue$.next(
+            {
+                lineIndex: 0,
+                lines: this.chapter.dialogueLines!
+            }
+        );      
     }
     
     continue(){
         this.onFinish.emit();
     }
+
+    handleClickOrSpace(event?: Event): void {
+        if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
+          this.dialogue$.next(
+            {
+                lineIndex: this.dialogue$.value.lineIndex! + 1,
+                lines: this.dialogue$.value.lines!
+            }
+            );  
+        }
+      }
+    
+      @HostListener('document:keypress', ['$event'])
+      handleKeyboardEvent(event: KeyboardEvent) { 
+        if (event.code === "Space") {
+         this.handleClickOrSpace();
+         event.stopPropagation();
+        }
+      }
 }

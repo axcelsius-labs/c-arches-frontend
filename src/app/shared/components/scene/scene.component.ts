@@ -2,6 +2,7 @@ import { Component, HostListener, EventEmitter, Input, Output, OnInit } from '@a
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Chapter } from '../../models/chapter.interface';
+import { Dialogue } from '../../models/dialogue.interface';
 
 @Component({
   selector: 'app-scene',
@@ -14,13 +15,16 @@ export class SceneComponent {
   @Output() onFinish = new EventEmitter();
   
   constructor(private router: Router) { }
-  
-  currentLineIndex$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  dialogue$: BehaviorSubject<Dialogue> = new BehaviorSubject<Dialogue>({});
 
   handleClickOrSpace(event?: Event): void {
-    if (this.currentLineIndex$.value < this.chapter.dialogueLines!.length - 1) {
-      let currentIndex = this.currentLineIndex$.value;
-      this.currentLineIndex$.next(currentIndex += 1);
+    if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
+      this.dialogue$.next(
+        {
+            lineIndex: this.dialogue$.value.lineIndex! + 1,
+            lines: this.dialogue$.value.lines!
+        }
+        );  
     }
     else this.onFinish.emit();
   }

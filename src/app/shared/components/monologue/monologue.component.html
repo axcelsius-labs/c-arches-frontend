@@ -1,5 +1,5 @@
 <div class="monologue-container" (click)="handleClickOrSpace()">
-    <dialogue class="dialogue-container" [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
+    <dialogue class="dialogue-container" [dialogue$]="dialogue$!"></dialogue>
     <img class="character-container" [src]="chapter.characterImage">
 </div>
 <div class="additional-content" *ngIf="additionalContent.length > 0">

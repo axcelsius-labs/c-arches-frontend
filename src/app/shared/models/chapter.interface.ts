@@ -1,4 +1,4 @@
-import { DialogueLine } from "../components/dialogue/dialogue-line.inferface";
+import { DialogueLine } from "./dialogue.interface";
 
 export interface Chapter {
     backgroundImage: string;
