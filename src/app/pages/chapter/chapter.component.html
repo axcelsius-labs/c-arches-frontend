@@ -1,7 +1,7 @@
 
 <app-background 
 [backgroundImage]="chapterContent.backgroundImage" 
-[blackOut]="chapterContent.chapterType === 'monologue'"
+[blackOut]="chapterContent.chapterType === 'monologue' || chapterContent.chapterType === 'chapter2.1'"
 [allowOverflow]="chapterContent.chapterType === 'chapter3.0'">
   <div *ngIf="chapterContent.chapterType as type">
     <app-monologue *ngIf="type === 'monologue'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-monologue>
