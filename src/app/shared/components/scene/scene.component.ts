@@ -9,7 +9,7 @@ import { Dialogue } from '../../models/dialogue.interface';
   templateUrl: './scene.component.html',
   styleUrls: ['./scene.component.scss']
 })
-export class SceneComponent {
+export class SceneComponent implements OnInit {
   
   @Input() chapter!: Chapter;
   @Output() onFinish = new EventEmitter();
@@ -17,6 +17,14 @@ export class SceneComponent {
   constructor(private router: Router) { }
   dialogue$: BehaviorSubject<Dialogue> = new BehaviorSubject<Dialogue>({});
 
+  ngOnInit(): void {
+    this.dialogue$.next(
+      {
+          lineIndex: 0,
+          lines: this.chapter.dialogueLines!
+      }
+      );
+  }
   handleClickOrSpace(event?: Event): void {
     if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
       this.dialogue$.next(

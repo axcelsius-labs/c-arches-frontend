@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { Chapter } from '../../models/chapter.interface';
 import { BehaviorSubject } from 'rxjs';
 import { Dialogue, DialogueLine } from '../../models/dialogue.interface';
@@ -8,7 +8,7 @@ import { Dialogue, DialogueLine } from '../../models/dialogue.interface';
   templateUrl: './chapter.2.1.component.html',
   styleUrl: './chapter.2.1.component.scss'
 })
-export class Chapter21Component {
+export class Chapter21Component implements OnInit {
 
     @Input() chapter!: Chapter; 
     @Output() onFinish = new EventEmitter();
@@ -22,7 +22,7 @@ export class Chapter21Component {
             lineIndex: 0,
             lines: this.chapter.dialogueLines!
         }
-    );
+        );
     }
 
     select(index:number) {

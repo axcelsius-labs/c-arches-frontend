@@ -10,12 +10,21 @@
   width: 100vw;
   
   .resource-container {
+    width: 100%;
+    display: flex;
+    overflow-y: auto;
+    
+  }
+  .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
-    overflow-y: auto;
+    width: 100vh;
+    margin: auto;
   }
+  
+  
 
   h1 {
     font-size: calc(2vw + 2vh + 10px);

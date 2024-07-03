@@ -1,4 +1,4 @@
-import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import { Chapter } from '../../models/chapter.interface';
 import { Dialogue } from '../../models/dialogue.interface';
@@ -8,7 +8,7 @@ import { Dialogue } from '../../models/dialogue.interface';
   templateUrl: './monologue.component.html',
   styleUrl: './monologue.component.scss'
 })
-export class MonologueComponent {
+export class MonologueComponent implements OnInit {
 
   @Input() chapter!: Chapter; 
   @Input() additionalContent: string[] = [];
@@ -19,6 +19,14 @@ export class MonologueComponent {
     
   currentIndex = -1;
 
+  ngOnInit() { 
+    this.dialogue$.next(
+    {
+        lineIndex: 0,
+        lines: this.chapter.dialogueLines!
+    }
+    );
+}
   handleClickOrSpace(event?: Event): void {
     if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
       this.dialogue$.next(

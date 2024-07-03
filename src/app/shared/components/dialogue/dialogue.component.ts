@@ -22,8 +22,6 @@ export class DialogueComponent implements OnInit, OnDestroy {
       this.clearAnimationTimer();
       this.speakerIsOnLeft = value.lines![value.lineIndex!].speaker === 0;
       this.animateText(value.lines![value.lineIndex!].message);
-      this.visibleLetters = "";
-      this.invisibleLetters = "";
     })
   }
 
