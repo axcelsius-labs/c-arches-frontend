@@ -1,22 +1,21 @@
 <app-background [backgroundImage]="backgroundImage" [blackOut]="false">
-
-<div class="buttons-container">
-  <button class="chapter-button chapter-button-small" routerLink="/chapter/1.0">
-    <div class="chapter-button-title">Chapter 1</div>
-    <i>Reproductive<br> Coercion</i>
-  </button>
-
-  <button class="chapter-button chapter-button-small" routerLink="/chapter/2.0">
-    <div class="chapter-button-title">Chapter 2</div>
-    <i>Taking action and<br> getting protection</i>
-  </button>
-</div>
-
-<div class="buttons-container">
-  <button class="chapter-button chapter-button-big" routerLink="/chapter/3.0">
-    <div class="chapter-button-title">Sam's Talking Points</div>
-    <i>Questions for yourself, your partner, and your provider.</i>
-  </button>
-</div>
-
+  <div class="home-container">
+    <div class="button-container">
+      <div class="top-buttons">
+          <button class="chapter-button" routerLink="/chapter/1.0">
+            <div class="chapter-button-title">Chapter 1</div>
+            <i>Reproductive<br> Coercion</i>
+          </button>
+          <button class="chapter-button" routerLink="/chapter/2.0">
+            <div class="chapter-button-title">Chapter 2</div>
+            <i>Taking action and<br> getting protection</i>
+          </button>
+      </div>
+      <button class="chapter-button bottom-button" routerLink="/chapter/3.0">
+        <div class="chapter-button-title">Sam's Talking Points</div>
+        <i>Questions for yourself, your partner, and your provider.</i>
+      </button>
+    </div>
+  </div>
+  
 </app-background>

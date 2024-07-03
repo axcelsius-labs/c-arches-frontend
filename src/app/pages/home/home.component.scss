@@ -1,16 +1,28 @@
-.buttons-container {
+.home-container {
   display: flex;
-  align-self: center;
-  flex-wrap: wrap;
-  gap: 20px; /* Space between buttons */
+  width: 100vw;
+  align-items: center;
   justify-content: center;
-  align-items: stretch;
-  padding: 20px; /* Optional padding around the container */
-  margin: auto;
 }
-  
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 600px; /* Optional max-width for better design */
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+.top-buttons {
+  display: flex;
+  gap: 10px; /* Adjust gap as needed */
+}
+
 .chapter-button {
-  padding: 40px 40px;
+  flex: 1;
+  padding: 30px 30px;
   font-size: 1.5rem;
   background-color: #2771a3;
   box-shadow: 0px 0px 25px #00000044;
@@ -20,6 +32,21 @@
   outline: none;
   border: 5px solid #FFFFFF66;
 }
+
+.bottom-button {
+  margin-top: 10px; /* Space between top buttons and bottom button */
+}
+
+@media (max-width: 480px) {
+  .top-buttons {
+      flex-direction: column;
+  }
+
+  .bottom-button {
+      margin-top: 0; /* Remove margin when buttons are stacked */
+  }
+}
+  
 .chapter-button:hover {
   border: 5px solid #FFFFFFDD;
 }
@@ -28,14 +55,6 @@
 }
 .chapter-button:active {
   border: 5px solid #FFFFFFFF;
-}
-
-.chapter-button-small {
-  width: 300px;
-}
-
-.chapter-button-big {
-  width: 620px;
 }
 
 .chapter-button-title {
