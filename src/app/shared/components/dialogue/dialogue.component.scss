@@ -1,20 +1,27 @@
 .dialogue-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    //display: flex;
     word-spacing: 0.2em;
     background: #fff;
     padding: 1em;
     border-radius: .5em;
     line-height: 1.2em;
-    height: 10vh;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 30px;
     margin-left: 20px;
     margin-right: 20px;
-    position: relative;
+    //height: 10vh;
     max-width: 65vh;
 }
+
+.visible {
+    color: #000000FF;
+}
+
+.invisible {
+    color: #00000044;
+}
+
 .left {
     outline: 5px solid red;
 }
@@ -30,7 +37,6 @@
     z-index: 99;
     bottom: 0;
     border-bottom: 50px solid transparent;
-
 }
 
 .triangle-left {
