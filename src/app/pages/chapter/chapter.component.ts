@@ -30,8 +30,4 @@ export class ChapterComponent implements OnInit {
       this.router.navigate(['/chapter', nextPage])
     }
   }
-  onFinish(){
-    this.router.navigate(['/chapters/1/2']);
-  }
-  
 }
