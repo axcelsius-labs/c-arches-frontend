@@ -23,19 +23,22 @@ export class MonologueComponent implements OnInit {
     this.dialogue$.next(
     {
         lineIndex: 0,
+        isAnimating: true,
         lines: this.chapter.dialogueLines!
     }
     );
 }
   handleClickOrSpace(event?: Event): void {
-    if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
-      this.dialogue$.next(
-        {
-            lineIndex: this.dialogue$.value.lineIndex! + 1,
-            lines: this.dialogue$.value.lines!
-        }
-        ); 
-        this.additionalContent = this.chapter.dialogueLines![this.dialogue$.value.lineIndex!].params; 
+    if (this.dialogue$.value.isAnimating){
+      this.dialogue$.value.isAnimating = false;
+    }
+    else if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
+      this.dialogue$.next({
+        lineIndex: this.dialogue$.value.lineIndex! + 1,
+        isAnimating: true,
+        lines: this.dialogue$.value.lines!
+      }); 
+      this.additionalContent = this.chapter.dialogueLines![this.dialogue$.value.lineIndex!].params; 
     }
     else this.onFinish.emit();
   }

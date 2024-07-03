@@ -1,6 +1,7 @@
 import { Component, Input, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { BehaviorSubject, } from 'rxjs';
 import { Dialogue, DialogueLine } from '../../models/dialogue.interface';
+import {Chapter} from "../../models/chapter.interface";
 
 @Component({
   selector: 'dialogue',
@@ -30,16 +31,20 @@ export class DialogueComponent implements OnInit, OnDestroy {
   }
 
   animateText(text: string): void {
+    this.dialogue$.getValue().isAnimating = true;
     this.visibleLetters = '';
     this.invisibleLetters = text;
     this.animationTimer = setInterval(() => {
-      if (this.invisibleLetters.length > 0) {
+      if (this.dialogue$.getValue().isAnimating && this.invisibleLetters.length > 0) {
         this.visibleLetters += this.invisibleLetters[0];
         this.invisibleLetters = this.invisibleLetters.substring(1);
       } else {
+        this.dialogue$.getValue().isAnimating = false;
+        this.visibleLetters = text;
+        this.invisibleLetters = '';
         this.clearAnimationTimer();
       }
-    }, 10);
+    }, 15);
   }
 
   clearAnimationTimer(): void {

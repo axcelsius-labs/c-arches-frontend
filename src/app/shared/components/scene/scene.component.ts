@@ -21,18 +21,23 @@ export class SceneComponent implements OnInit {
     this.dialogue$.next(
       {
           lineIndex: 0,
+          isAnimating: true,
           lines: this.chapter.dialogueLines!
-      }
-      );
+      });
   }
+  
   handleClickOrSpace(event?: Event): void {
-    if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
+    if (this.dialogue$.value.isAnimating){
+      this.dialogue$.value.isAnimating = false;
+    }
+    else if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
       this.dialogue$.next(
         {
             lineIndex: this.dialogue$.value.lineIndex! + 1,
+            isAnimating: true,
             lines: this.dialogue$.value.lines!
         }
-        );  
+      );  
     }
     else this.onFinish.emit();
   }

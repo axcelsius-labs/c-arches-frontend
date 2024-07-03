@@ -20,6 +20,7 @@ export class Chapter21Component implements OnInit {
         this.dialogue$.next(
         {
             lineIndex: 0,
+            isAnimating: true,
             lines: this.chapter.dialogueLines!
         }
         );
@@ -30,6 +31,7 @@ export class Chapter21Component implements OnInit {
         this.dialogue$.next(
             {
                 lineIndex: 0,
+                isAnimating: true,
                 lines: this.chapter.data[this.currentBoxIndex].lines
             }
         );
@@ -50,21 +52,23 @@ export class Chapter21Component implements OnInit {
     }
 
     handleClickOrSpace(event?: Event): void {
-        if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
-          this.dialogue$.next(
-            {
+        if (this.dialogue$.value.isAnimating){
+            this.dialogue$.value.isAnimating = false;
+        }
+        else if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
+            this.dialogue$.next({
                 lineIndex: this.dialogue$.value.lineIndex! + 1,
+                isAnimating: true,
                 lines: this.dialogue$.value.lines!
-            }
-            );  
+            });  
         }
-      }
+    }
     
-      @HostListener('document:keypress', ['$event'])
-      handleKeyboardEvent(event: KeyboardEvent) { 
-        if (event.code === "Space") {
-         this.handleClickOrSpace();
-         event.stopPropagation();
-        }
-      }
+    @HostListener('document:keypress', ['$event'])
+    handleKeyboardEvent(event: KeyboardEvent) { 
+    if (event.code === "Space") {
+    this.handleClickOrSpace();
+    event.stopPropagation();
+    }
+    }
 }
