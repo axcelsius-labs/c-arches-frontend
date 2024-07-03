@@ -1,13 +1,13 @@
 
 <app-background 
 [backgroundImage]="chapterContent.backgroundImage" 
-[blackOut]="chapterContent.chapterType === 'monologue' || chapterContent.chapterType === 'chapter2.1'"
+[blackOut]="chapterContent.chapterType === 'monologue' || chapterContent.chapterType === 'monologue.grid'"
 [allowOverflow]="chapterContent.chapterType === 'chapter3.0'"
 [showFooterText]="chapterContent.chapterType !== 'chapter3.0'">
   <div *ngIf="chapterContent.chapterType as type">
     <app-monologue *ngIf="type === 'monologue'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-monologue>
     <app-scene *ngIf="type === 'default'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-scene>
-    <app-chapter-2-1 *ngIf="type === 'chapter2.1'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-chapter-2-1>
+    <app-monologue-grid *ngIf="type === 'monologue.grid'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-monologue-grid>
     <app-chapter-3-0 *ngIf="type === 'chapter3.0'" [chapter]="chapterContent" (onFinish)="goToNextChapter()"></app-chapter-3-0>
   </div>
 </app-background>

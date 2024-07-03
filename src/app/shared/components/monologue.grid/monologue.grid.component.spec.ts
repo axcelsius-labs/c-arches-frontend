@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Chapter21Component } from './chapter.2.1.component';
+import { MonologueGridComponent } from './monologueGridComponent';
 
 describe('Chapter21Component', () => {
-  let component: Chapter21Component;
-  let fixture: ComponentFixture<Chapter21Component>;
+  let component: MonologueGridComponent;
+  let fixture: ComponentFixture<MonologueGridComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Chapter21Component]
+      imports: [MonologueGridComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Chapter21Component);
+    fixture = TestBed.createComponent(MonologueGridComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
