@@ -16,3 +16,18 @@ body {
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+.info-block-button-row {
+    gap: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-block-button {
+    height: 5vh;
+    width: 25vw;
+    max-width: 100px;
+    background-color: #92aa79;
+    border-radius: 8px;
+    color: white;
+}
