@@ -1,5 +1,3 @@
-
-
 .content-container {
   height: 100vh;
   z-index: 1;
@@ -15,6 +13,7 @@
     overflow-y: auto;
     
   }
+  
   .resource-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -23,8 +22,6 @@
     width: 100vh;
     margin: auto;
   }
-  
-  
 
   h1 {
     font-size: calc(2vw + 2vh + 10px);

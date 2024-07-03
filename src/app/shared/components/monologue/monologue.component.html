@@ -1,6 +1,6 @@
 <div class="monologue-container" (click)="handleClickOrSpace()">
     <dialogue class="dialogue-container" [dialogue$]="dialogue$!"></dialogue>
-    <img class="character-container" [src]="chapter.characterImage">
+    <img class="character-container no-interaction" [src]="chapter.characterImage">
 </div>
 <div class="additional-content" *ngIf="additionalContent.length > 0">
     <div *ngFor="let content of additionalContent">
