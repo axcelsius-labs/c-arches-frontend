@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CharacterComponent } from './components/character/character.component';
 import { HeaderComponent } from "./components/header/header.component";
 import { FooterComponent} from "./components/footer/footer.component";
 import { CardComponent } from "./components/card/card.component";
@@ -13,7 +12,6 @@ import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.compone
 
 @NgModule({
   declarations: [
-    CharacterComponent, 
     HeaderComponent,
     FooterComponent,
     CardComponent,

@@ -20,12 +20,12 @@ export class Chapter21Component {
 
     select(index:number) {
         this.currentIndex = index;
-        this.chapter.dialogueLines = this.chapter.data[this.currentIndex].lines;
+        // this.chapter.dialogueLines = this.chapter.data[this.currentIndex].lines;
     }
     
     back(){
         this.currentIndex = -1;
-        this.chapter.dialogueLines = this.chapter.dialogueLines;
+        // this.chapter.dialogueLines = this.chapter.dialogueLines;
     }
     
     continue(){

@@ -1,5 +1,5 @@
 <div class="chapter-2-1-container">
-    <dialogue class="dialogue-container" [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!"></dialogue>
+    <dialogue class="dialogue-container" [currentLineIndex$]="currentLineIndex$" [dialogueLines]="chapter.dialogueLines!" *ngIf="currentIndex == -1"></dialogue>
     <div class="character-wrapper">
         <img class="character-container" [src]="chapter.characterImage">
         <div class="grid-container" *ngIf="currentIndex === -1">

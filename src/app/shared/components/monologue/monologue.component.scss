@@ -1,39 +1,48 @@
 .monologue-container {
   display: flex;
-  margin: auto;
-  align-items: center;
   flex-direction: column;
-
-  justify-content: flex-start;
+  align-items: start;
+  justify-content: start;
+  margin: auto;
   flex-grow: 1;
-  .dialogue-container {
-    width: 100%;
-    max-width: 65vh;
-  }
-  .character-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  max-width: 65vh;
+}
 
-    .character-container {
-      flex-shrink: 0;
-      max-width: 40vw;
-      max-height: 120vh;
-      object-fit: contain;
-      min-width: 20vh;
-      object-position: 100% 100%;
-    }
-  }
+.dialogue-container {
+  width: 100%;
+  margin-bottom: 20px; /* Add some space between the dialog and the character-wrapper */
+}
 
-  .additional-content{
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    z-index: 1;
-    background: #00000088;
-    border: 5px solid #FFFFFF33;
-    border-radius: 8px;
-    padding: 2vw;
-    color: #FFFFFFEE;
+.character-container {
+  flex-shrink: 0;
+  max-width: 40vw;
+  max-height: 120vh;
+  object-fit: contain;
+  min-width: 20vh;
+  margin-right: 20px; /* Add some space between the image and the additional content */
+}
+
+.additional-content {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 45%;
+  right: 20px;
+  left: 50%;
+  height: fit-content;
+  max-width: calc(60vw - 40px);
+  background: rgba(0, 0, 0, 0.5333333333);
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 2vw;
+  color: rgba(255, 255, 255, 0.9333333333);
+  z-index: 1;
+  /* padding: 10px; */
+  font-size: 1.5vw;
+}
+
+@media (max-width: 580px) {
+  .additional-content {
+    font-size: 3vw;
   }
 }

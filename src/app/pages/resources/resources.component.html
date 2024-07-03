@@ -1,9 +1,9 @@
-<app-header></app-header>
-
-<div class="resource-row">
-    <div class="resource-column">
+<div class="content-container">
+    <app-header></app-header>
+    <div class="resource-container">
         <app-card *ngFor="let resource of resources" [resource]="resource"></app-card>
     </div>
+    <app-footer [showText]="false"></app-footer>
 </div>
 
-<app-footer [showText]="false"></app-footer>
+
