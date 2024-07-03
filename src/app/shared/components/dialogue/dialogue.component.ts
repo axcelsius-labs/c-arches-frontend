@@ -44,7 +44,7 @@ export class DialogueComponent implements OnInit, OnDestroy {
         this.invisibleLetters = '';
         this.clearAnimationTimer();
       }
-    }, 15);
+    }, 25);
   }
 
   clearAnimationTimer(): void {
