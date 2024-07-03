@@ -26,7 +26,7 @@ export const chapters: Chapters = {
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
-            { speaker: 1, message: "Hey, Jade! You look kinda stressed...you okay?", params: []},
+            { speaker: 1, message: "Hey, Jade! You look stressed...you okay?", params: []},
             { speaker: 0, message: "Hi, Sam.", params: []},
             { speaker: 0, message: "I don't know...my partner and I are fighting again.", params: []},
             { speaker: 1, message: "Wanna talk about it?", params: []},
