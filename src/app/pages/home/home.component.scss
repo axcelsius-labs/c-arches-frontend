@@ -33,17 +33,10 @@
   border: 5px solid #FFFFFF66;
 }
 
-.bottom-button {
-  margin-top: 10px; /* Space between top buttons and bottom button */
-}
 
 @media (max-width: 480px) {
   .top-buttons {
       flex-direction: column;
-  }
-
-  .bottom-button {
-      margin-top: 0; /* Remove margin when buttons are stacked */
   }
 }
   
