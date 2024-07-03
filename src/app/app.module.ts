@@ -11,7 +11,7 @@ import { routes } from './app.routes'; // Import your routes
   imports: [
     BrowserModule,
     RouterModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   providers: [],
   bootstrap: [],
