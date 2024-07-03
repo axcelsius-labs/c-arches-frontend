@@ -13,14 +13,16 @@ export class DialogueComponent implements OnInit, OnDestroy {
   constructor() { }
 
   speakerIsOnLeft = false;
-  workingVersion = ""
+  visibleLetters = "";
+  invisibleLetters = "";
   animationTimer: any;
 
   ngOnInit(): void {
     this.currentLineIndex$.subscribe(number => {
       this.clearAnimationTimer();
       this.speakerIsOnLeft = this.dialogueLines[number].speaker === 0;
-      this.workingVersion = ""
+      this.visibleLetters = "";
+      this.invisibleLetters = "";
       this.animateText(this.dialogueLines[number].message);
     })
   }
@@ -30,16 +32,16 @@ export class DialogueComponent implements OnInit, OnDestroy {
   }
 
   animateText(text: string): void {
-    this.workingVersion = '';
-    let index = 0;
+    this.visibleLetters = '';
+    this.invisibleLetters = text;
     this.animationTimer = setInterval(() => {
-      if (index < text.length) {
-        this.workingVersion += text[index];
-        index++;
+      if (this.invisibleLetters.length > 0) {
+        this.visibleLetters += this.invisibleLetters[0];
+        this.invisibleLetters = this.invisibleLetters.substring(1);
       } else {
         this.clearAnimationTimer();
       }
-    }, 15);
+    }, 10);
   }
 
   clearAnimationTimer(): void {
