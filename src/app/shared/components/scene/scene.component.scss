@@ -2,9 +2,11 @@
     display: flex;
     margin: auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
     max-width: 65vh;
+    height: 80vh;
+
     .character-container {
         display: flex;
         justify-content: space-between;

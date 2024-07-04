@@ -3,9 +3,9 @@
   margin: auto;
   align-items: center;
   flex-direction: column;
-  margin: 20px;
   justify-content: center;
   flex-grow: 1;
+
   .dialogue-container {
     width: 100%;
     max-width: 65vh;
@@ -56,7 +56,7 @@
       text-align: center;
       border-radius: 8px;
       cursor: pointer;
-      max-width: 45vw;
+      max-width: 65vh;
     }
     @media (max-width: 990px) {
       .option-box {
