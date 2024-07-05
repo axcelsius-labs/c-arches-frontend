@@ -1,11 +1,13 @@
-<div class="bottom-nav">
-    <button class="primary-button" id="resources-button" (click)="goToResources()">
-        RESOURCES
-    </button>
-    <div *ngIf="showText" id="continue-text">
+<div class="bottom-nav" *ngIf="showText">
+    <div class="icon-label-container previous" (click)="goToResources()">
+        <mat-icon class="icon">chevron_left</mat-icon>
+        <span class="icon-label">Previous</span>
+    </div>
+    <div class="continue-text">
         Click or press space to continue.
     </div>
-    <button class="primary-button" id="quit-button" (click)="exit()">
-        EXIT
-    </button>
+    <div class="icon-label-container next" (click)="goToResources()">
+        <span class="icon-label">Chapter</span>
+        <mat-icon class="icon">chevron_right</mat-icon>
+    </div>
 </div>

@@ -9,6 +9,7 @@ import { SceneComponent } from './components/scene/scene.component';
 import { MonologueComponent } from "./components/monologue/monologue.component";
 import { MonologueGridComponent } from './components/monologue.grid/monologue.grid.component';
 import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.compone
     MonologueGridComponent,
     Chapter30Component
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   exports: [
     MonologueComponent,
     SceneComponent,
@@ -31,7 +32,7 @@ import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.compone
     FooterComponent,
     CardComponent,
     MonologueGridComponent,
-    Chapter30Component
+    Chapter30Component,
   ]
 })
 export class SharedModule { }

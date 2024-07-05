@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   @Input() title: string = "C-ARCHES";
   @Input() showBackButton: Boolean = false;
   @Input() showProgressBar: Boolean = false;
+  @Input() chapterTitle: string = "Chapter 1"
   
   constructor(private router: Router) { }
 
@@ -18,5 +19,13 @@ export class HeaderComponent implements OnInit {
 
   goToHomeScreen() {
     this.router.navigate(['/']);
+  }
+
+  goToResources() {
+    this.router.navigate(['/resources']);
+  }
+  
+  exit() {
+    this.router.navigate(['weather.com']);
   }
 }
