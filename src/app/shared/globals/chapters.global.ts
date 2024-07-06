@@ -11,6 +11,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Also, consider using a safe device and clearing your browser history if you think a partner may be monitoring you.", params: []}
         ],
         nextPage: '1.0',
+        previousPage: null,
         chapterType: "monologue",
     },
     "1.T": {
@@ -19,6 +20,7 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [],
         nextPage: '1.0',
+        previousPage: "intro",
         chapterType: 'title',
     },
     "1.0": {
@@ -46,6 +48,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Right! I'm pretty sure PJ threw away my prescription refill, too.", params: []},
         ],
         nextPage: '1.1',
+        previousPage: "1.T",
         chapterType: 'default',
     },
     "1.1": {
@@ -69,6 +72,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Knowing these risks can help you take care of yourself and make informed decisions.", params: []},
         ],
         nextPage: '1.2',
+        previousPage: "1.0",
         chapterType: 'monologue',
     },
     "1.2": {
@@ -98,6 +102,7 @@ export const chapters: Chapters = {
             { speaker: 1, message: "Anytime, Jade.", params: []},
         ],
         nextPage: '1.3',
+        previousPage: "1.1",
         chapterType: 'default'
     },
     "1.3": {
@@ -110,6 +115,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Helping others is good for you, too!", params: []},
         ],
         nextPage: '2.0',
+        previousPage: "1.2",
         chapterType: 'monologue'
     },
     "2.0": {
@@ -136,6 +142,7 @@ export const chapters: Chapters = {
             { speaker: 1, message: "They're discreet and can help you feel more confident about your reproductive health.", params: []},
         ],
         nextPage: '2.1',
+        previousPage: "1.3",
         chapterType: 'default'
     },
     "2.1": {
@@ -235,6 +242,7 @@ export const chapters: Chapters = {
             }
         ],
         nextPage: '2.2',
+        previousPage: "2.0",
         chapterType: 'monologue.grid'
     },
     "2.2": {
@@ -251,6 +259,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Got it! Thanks!", params: []},
         ],
         nextPage: '3.0',
+        previousPage: "2.1",
         chapterType: 'default'
     },
     "3.0": {
@@ -302,7 +311,8 @@ export const chapters: Chapters = {
                 ]
             }
         ],
-        nextPage: '',
+        nextPage: null,
+        previousPage: "2.2",
         chapterType: 'chapter3.0'
     },
 }

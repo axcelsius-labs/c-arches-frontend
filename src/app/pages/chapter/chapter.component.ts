@@ -14,6 +14,7 @@ export class ChapterComponent implements OnInit {
   chapterContent!: Chapter;
   chapterId!: string;
   allowOverflow: boolean = false;
+
   constructor(private route: ActivatedRoute, private router: Router,
     private chapterService: ChapterService
   ) { }
@@ -27,13 +28,8 @@ export class ChapterComponent implements OnInit {
     });
   }
 
-  goToNextChapter(): void {
-    const nextPage = this.chapterContent.nextPage;
-    if (nextPage === '') {
-      this.router.navigate([''])
-    }
-    else {
-      this.router.navigate(['/chapter', nextPage])
-    }
+  goToNextSection(): void {
+    this.chapterService.goToNextSection();
   }
+  
 }

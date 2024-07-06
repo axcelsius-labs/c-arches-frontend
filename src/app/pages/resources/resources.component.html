@@ -1,11 +1,10 @@
 <div class="content-container">
     <app-header></app-header>
-   <div class="resource-container">
-    <div class="resource-grid">
-        <app-card *ngFor="let resource of resources" [resource]="resource"></app-card>
+    <div class="resource-container">
+        <div class="resource-grid">
+            <app-card *ngFor="let resource of resources" [resource]="resource"></app-card>
+        </div>
     </div>
-   </div>
-    <app-footer></app-footer>
 </div>
 
 

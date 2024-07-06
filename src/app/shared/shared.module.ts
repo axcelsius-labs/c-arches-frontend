@@ -10,6 +10,7 @@ import { MonologueComponent } from "./components/monologue/monologue.component";
 import { MonologueGridComponent } from './components/monologue.grid/monologue.grid.component';
 import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { MatIconModule } from '@angular/material/icon';
     MonologueGridComponent,
     Chapter30Component
   ],
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, MatProgressBarModule],
   exports: [
     MonologueComponent,
     SceneComponent,

@@ -1,21 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { ChapterService } from '../../services/chapter.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss'
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  @Output() showNextDialogLine = new EventEmitter();
+  @Output() showPreviousDialogLine = new EventEmitter();
+  constructor(private router: Router, private chapterService: ChapterService) { }
+  percentComplete$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  disablePreviousButton: boolean = false;
+  ngOnInit(): void {
+    this.chapterService.chapterProgress$.subscribe(progress => {
+      this.percentComplete$.next(this.chapterService.getPercentageComplete());
+    })
+  }
 
-  goToResources() {
-    this.router.navigate(['/resources']);
+  nextDialogLine(): void {
+    if (this.chapterService.endOfSectionCheck()) {
+      this.chapterService.goToNextSection();
+    }
+    else {
+      this.chapterService.nextDialogLineIndex();
+    }
+    
   }
-  
-  exit() {
-    this.router.navigate(['']);
+  previousDialogLine(): void {
+    this.previousDialogLine();
+    this.disablePreviousButton = this.chapterService.disablePreviousButton();
   }
-  
 }
