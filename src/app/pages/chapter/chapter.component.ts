@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Chapter } from '../../shared/models/chapter.interface';
 import { chapters } from './chapter.constants';
+import { ChapterService } from '../../shared/services/chapter.service';
 
 @Component({
   selector: 'app-chapter',
@@ -12,12 +13,17 @@ export class ChapterComponent implements OnInit {
 
   chapterContent!: Chapter;
   chapterId!: string;
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  allowOverflow: boolean = false;
+  constructor(private route: ActivatedRoute, private router: Router,
+    private chapterService: ChapterService
+  ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.chapterId = params.get('id')!;
-      this.chapterContent = chapters[this.chapterId];
+      this.chapterService.updateCurrentChapter(params.get('id')!);
+      this.chapterContent = this.chapterService.getCurrentChapter();
+      this.allowOverflow = this.chapterContent.chapterType === 'chapter3.0';
     });
   }
 

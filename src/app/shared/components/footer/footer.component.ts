@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Chapter } from '../../models/chapter.interface';
 
 @Component({
   selector: 'app-footer',
@@ -9,9 +8,6 @@ import { Chapter } from '../../models/chapter.interface';
 })
 export class FooterComponent {
 
-  @Input() showText: Boolean = false;
-  @Input() previousChapter!: Chapter;
-  @Input() nextChapter!: Chapter;
   constructor(private router: Router) { }
 
   goToResources() {

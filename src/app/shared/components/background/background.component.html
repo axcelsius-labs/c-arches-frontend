@@ -2,10 +2,6 @@
     <img [src]="backgroundImage" alt="Background Image" class="background-image">
     <div class="background-overlay" *ngIf="blackOut"></div>
     <div class="content-container">
-        <app-header></app-header>
-        <div [ngClass]="{'allowOverflow': allowOverflow, 'hideOverflow': !allowOverflow}">
-            <ng-content></ng-content>
-        </div>
-        <app-footer [showText]="showFooterText"></app-footer>
+        <ng-content></ng-content>
     </div>
 </div>

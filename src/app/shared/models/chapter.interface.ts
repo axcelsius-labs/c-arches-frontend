@@ -11,6 +11,10 @@ export interface Chapter {
     nextPage: string;
 }
 
+export interface ChapterProgress {
+    [key: string]: boolean;
+}
+
 export interface Chapters {
     [key: string]: Chapter;
 }
