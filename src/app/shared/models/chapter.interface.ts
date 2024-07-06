@@ -9,7 +9,8 @@ export interface Chapter {
     data?: any;
     chapterType: string;
     nextPage: string | null;
-    previousPage?: string | null;
+    previousPage: string | null;
+    chapterTitle: string;
 }
 
 export interface ChapterProgress {

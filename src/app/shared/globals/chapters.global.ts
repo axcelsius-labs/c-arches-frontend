@@ -13,6 +13,7 @@ export const chapters: Chapters = {
         nextPage: '1.0',
         previousPage: null,
         chapterType: "monologue",
+        chapterTitle: "Intro",
     },
     "1.T": {
         backgroundImage: 'assets/images/LivingRoom.png',
@@ -22,6 +23,7 @@ export const chapters: Chapters = {
         nextPage: '1.0',
         previousPage: "intro",
         chapterType: 'title',
+        chapterTitle: "Chapter 1",
     },
     "1.0": {
         backgroundImage: 'assets/images/LivingRoom.png',
@@ -50,6 +52,7 @@ export const chapters: Chapters = {
         nextPage: '1.1',
         previousPage: "1.T",
         chapterType: 'default',
+        chapterTitle: "Chapter 1",
     },
     "1.1": {
         backgroundImage:'assets/images/LivingRoom.png',
@@ -74,6 +77,7 @@ export const chapters: Chapters = {
         nextPage: '1.2',
         previousPage: "1.0",
         chapterType: 'monologue',
+        chapterTitle: "Chapter 1",
     },
     "1.2": {
         backgroundImage: 'assets/images/LivingRoom.png',
@@ -103,7 +107,8 @@ export const chapters: Chapters = {
         ],
         nextPage: '1.3',
         previousPage: "1.1",
-        chapterType: 'default'
+        chapterType: 'default',
+        chapterTitle: "Chapter 1",
     },
     "1.3": {
         backgroundImage: 'assets/images/LivingRoom.png',
@@ -116,7 +121,8 @@ export const chapters: Chapters = {
         ],
         nextPage: '2.0',
         previousPage: "1.2",
-        chapterType: 'monologue'
+        chapterType: 'monologue',
+        chapterTitle: "Chapter 1",
     },
     "2.0": {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -133,19 +139,83 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Yeah...I'm noticing some things in my relationship. I want to take control of my health.", params: []},
             { speaker: 0, message: "I'm not ready to be pregnant.", params: []},
             { speaker: 1, message: "Absolutely, Jade. It's great that you're taking charge of your health. I'm here for you!", params: []},
-            { speaker: 1, message: "We can discuss all of your options.", params: []},
-            { speaker: 1, message: "Have you heard of the morning-after pill, like Plan B?", params: []},
-            { speaker: 0, message: "Yeah, but I've never used it. I don't want my partner to know about any of this..", params: []},
-            { speaker: 1, message: "Okay! Well the morning-after pill is available over-the-counter at most pharmacies.", params: []},
-            { speaker: 1, message: "If you want to be discreet, you could trash the packaging and keep the pill in a plain container.", params: []},
-            { speaker: 1, message: "Options like the shot, the implant, or the IUD can provide reliable protection.", params: []},
-            { speaker: 1, message: "They're discreet and can help you feel more confident about your reproductive health.", params: []},
         ],
         nextPage: '2.1',
         previousPage: "1.3",
-        chapterType: 'default'
+        chapterType: 'default',
+        chapterTitle: "Chapter 2",
     },
-    "2.1": {
+    "2.1":  {
+        backgroundImage: 'assets/images/PatientRoom.png',
+        characterImage: 'assets/images/Doctor-Idle.png',
+        dialogueLines: [
+            { speaker: 0, message: "Here are some options for emergency contraception.", params: []},
+        ],
+        data: [
+            {
+            name: "IUD",
+                description: "Tiny device put in your uterus, low-maintenance once inserted.",
+                price: "$0-$1300",
+                effectiveness: "99% Effective",
+                duration_short: "3-12 years",
+                duration_long: "Lasts 3-12 years",
+                periods: "Hormonal: Irregular bleeding for first few months, but likely to have shorter, lighter periods over time. Non-hormonal/copper: Period may be longer and heavier.",
+                privacy: "Easy to keep private, strings can be cut short.",
+                lines: [
+                    {
+                        speaker: 0,
+                        message: "Your partner might be able to feel the strings, but we can trim them to ensure they are undetectable and cannot be removed by your partner.",
+                        params: []
+                    },
+                ],
+            },
+            {
+                name: "Ella",
+                description: "A single pill taken as soon as possible after unprotected sex, ideally within 5 days.",
+                price: "$0-$50",
+                effectiveness: "85-98% Effective",
+                duration_short: "Take immediately",
+                duration_long: "Take immediately, works once.",
+                periods: "???.",
+                privacy: "???",
+                lines: [],
+            },
+            {
+                name: "Plan B One Step (or generic)",
+                description: "A single pill taken as soon as possible after unprotected sex, ideally within 3 days.",
+                price: "$0-50",
+                effectiveness: "75–89% Effective",
+                duration_short: "Take immediately",
+                duration_long: "Take immediately, works once.",
+                periods: "???",
+                privacy: "???",
+                lines: [],
+            },
+        ],
+        nextPage: '2.2',
+        previousPage: "2.0",
+        chapterType: 'monologue.grid',
+        chapterTitle: "Chapter 2",
+    },
+    "2.2": {
+        backgroundImage: 'assets/images/PatientRoom.png',
+        leftCharacterImage: 'assets/images/Jade-Idle.png',
+        rightCharacterImage: 'assets/images/Doctor-Idle.png',
+        dialogueLines: [
+            { speaker: 0, message: "Okay! The morning after pill looks good and I want an extra pill for future emergencies.", params: []},
+            { speaker: 0, message: "...but I don't want my partner to know about it...", params: []},
+            { speaker: 1, message: "Some patients trash the packaging and keep the pill in a plain container, like an empty pill bottle.", params: []},
+            { speaker: 0, message: "Oh. I can do that!", params: []},
+            { speaker: 1, message: "Great! Now let's discuss a long term solution for your birth control.", params: []},
+            { speaker: 0, message: "The shot, implant, and IUD can all provide reliable protection, and are very discreet.", params: []},
+            { speaker: 0, message: "When selecting a private method, consider how it might be discovered, such as through monitoring your period.", params: []},
+        ],
+        nextPage: '2.3',
+        previousPage: "2.1",
+        chapterType: 'default',
+        chapterTitle: "Chapter 2",
+    },
+    "2.3": {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
@@ -241,11 +311,12 @@ export const chapters: Chapters = {
                 ],
             }
         ],
-        nextPage: '2.2',
-        previousPage: "2.0",
-        chapterType: 'monologue.grid'
+        nextPage: '2.4',
+        previousPage: "2.2",
+        chapterType: 'monologue.grid',
+        chapterTitle: "Chapter 2",
     },
-    "2.2": {
+    "2.4": {
         backgroundImage: 'assets/images/PatientRoom.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Doctor-Idle.png',
@@ -259,8 +330,9 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Got it! Thanks!", params: []},
         ],
         nextPage: '3.0',
-        previousPage: "2.1",
-        chapterType: 'default'
+        previousPage: "2.3",
+        chapterType: 'default',
+        chapterTitle: "Chapter 2"
     },
     "3.0": {
         backgroundImage: 'assets/images/Park.png',
@@ -313,6 +385,7 @@ export const chapters: Chapters = {
         ],
         nextPage: null,
         previousPage: "2.2",
-        chapterType: 'chapter3.0'
+        chapterType: 'chapter3.0',
+        chapterTitle: "Chapter 3",
     },
 }

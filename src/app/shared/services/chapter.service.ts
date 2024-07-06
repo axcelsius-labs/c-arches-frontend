@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Chapter, ChapterProgress, Chapters } from '../models/chapter.interface';
 import { chapters } from '../globals/chapters.global';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { DialogueService } from './dialogue.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChapterService {
 
-    constructor(private router: Router) { }
+    constructor(private router: Router, private dialogueService: DialogueService) { }
 
-    currentChapterSectionKey: string = "intro";
+    currentChapterSectionKey: string = "";
     chapterProgress$: BehaviorSubject<ChapterProgress> = new BehaviorSubject<ChapterProgress>({});
     allChapters: Chapters = chapters;
-    currentDialogLineIndex = 0;
+    
 
     getCurrentChapter(): Chapter {
         return this.allChapters[this.currentChapterSectionKey];
@@ -26,32 +27,6 @@ export class ChapterService {
         const currentChapterProgress = this.chapterProgress$.value;
         currentChapterProgress[this.currentChapterSectionKey] = true;
         this.chapterProgress$.next(currentChapterProgress);
-    }
-
-    previousDialogLineIndex(): void {
-        this.currentDialogLineIndex -= 1;
-    }
-
-    nextDialogLineIndex(): void {
-        this.currentDialogLineIndex += 1;
-    }
-
-    resetDialogLineIndex(): void {
-        this.currentDialogLineIndex = 0;
-    }
-
-    endOfSectionCheck(): boolean {
-        if (this.currentDialogLineIndex === this.allChapters[this.currentChapterSectionKey].dialogueLines?.length! - 1) {
-            return true;
-        }
-        return false;
-    }
-
-    beginningOfSectionCheck(): boolean {
-        if (this.currentDialogLineIndex === 0) {
-            return true;
-        }
-        return false;
     }
 
     getPercentageComplete(): number {
@@ -79,9 +54,9 @@ export class ChapterService {
     }
 
     disablePreviousButton(): boolean {
-        if (!this.allChapters[this.currentChapterSectionKey].previousPage && this.currentDialogLineIndex === 0) {
+        if (!this.allChapters[this.currentChapterSectionKey].previousPage && this.dialogueService.dialogue$.value.lineIndex === 0) {
             return true;
         }
         return false;
-    }
+      }
 }

@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ChapterService } from '../../services/chapter.service';
 import { BehaviorSubject } from 'rxjs';
+import { DialogueService } from '../../services/dialogue.service';
 
 @Component({
   selector: 'app-footer',
@@ -12,9 +13,9 @@ export class FooterComponent implements OnInit {
 
   @Output() showNextDialogLine = new EventEmitter();
   @Output() showPreviousDialogLine = new EventEmitter();
-  constructor(private router: Router, private chapterService: ChapterService) { }
+  constructor(private chapterService: ChapterService, private dialogueService: DialogueService) { }
   percentComplete$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  disablePreviousButton: boolean = false;
+  hidePreviousButton: boolean = true;
   ngOnInit(): void {
     this.chapterService.chapterProgress$.subscribe(progress => {
       this.percentComplete$.next(this.chapterService.getPercentageComplete());
@@ -22,16 +23,24 @@ export class FooterComponent implements OnInit {
   }
 
   nextDialogLine(): void {
-    if (this.chapterService.endOfSectionCheck()) {
+    this.hidePreviousButton = false;
+    if (this.dialogueService.endOfSectionCheck()) {
       this.chapterService.goToNextSection();
     }
     else {
-      this.chapterService.nextDialogLineIndex();
+      this.dialogueService.nextDialogLineIndex();
     }
     
   }
   previousDialogLine(): void {
-    this.previousDialogLine();
-    this.disablePreviousButton = this.chapterService.disablePreviousButton();
+    if (this.dialogueService.beginningOfSectionCheck()) {
+      this.chapterService.goToPreviousSection();
+    }
+    else {
+      this.dialogueService.previousDialogLineIndex();
+      this.hidePreviousButton = this.chapterService.disablePreviousButton();
+    }
+    
+    
   }
 }
