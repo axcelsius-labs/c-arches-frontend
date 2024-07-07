@@ -11,7 +11,9 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Also, consider using a safe device and clearing your browser history if you think a partner may be monitoring you.", params: []}
         ],
         nextPage: '1.0',
-        chapterType: "monologue"
+        previousPage: null,
+        chapterType: "monologue",
+        chapterTitle: "Intro",
     },
     "1.T": {
         backgroundImage: 'assets/images/LivingRoom.png',
@@ -19,7 +21,9 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [],
         nextPage: '1.0',
-        chapterType: 'title'
+        previousPage: "intro",
+        chapterType: 'title',
+        chapterTitle: "Chapter 1",
     },
     "1.0": {
         backgroundImage: 'assets/images/LivingRoom.png',
@@ -46,7 +50,9 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Right! I'm pretty sure PJ threw away my prescription refill, too.", params: []},
         ],
         nextPage: '1.1',
-        chapterType: 'default'
+        previousPage: "intro",
+        chapterType: 'default',
+        chapterTitle: "Chapter 1",
     },
     "1.1": {
         backgroundImage:'assets/images/LivingRoom.png',
@@ -69,7 +75,9 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Knowing these risks can help you take care of yourself and make informed decisions.", params: []},
         ],
         nextPage: '1.2',
-        chapterType: 'monologue'
+        previousPage: "1.0",
+        chapterType: 'monologue',
+        chapterTitle: "Chapter 1",
     },
     "1.2": {
         backgroundImage: 'assets/images/LivingRoom.png',
@@ -98,7 +106,9 @@ export const chapters: Chapters = {
             { speaker: 1, message: "Anytime, Jade.", params: []},
         ],
         nextPage: '1.3',
-        chapterType: 'default'
+        previousPage: "1.1",
+        chapterType: 'default',
+        chapterTitle: "Chapter 1",
     },
     "1.3": {
         backgroundImage: 'assets/images/LivingRoom.png',
@@ -110,7 +120,9 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Helping others is good for you, too!", params: []},
         ],
         nextPage: '2.0',
-        chapterType: 'monologue'
+        previousPage: "1.2",
+        chapterType: 'monologue',
+        chapterTitle: "Chapter 1",
     },
     "2.0": {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -129,9 +141,11 @@ export const chapters: Chapters = {
             { speaker: 1, message: "Absolutely, Jade. It's great that you're taking charge of your health. I'm here for you!", params: []},
         ],
         nextPage: '2.1',
-        chapterType: 'default'
+        previousPage: "1.3",
+        chapterType: 'default',
+        chapterTitle: "Chapter 2",
     },
-    "2.1": {
+    "2.1":  {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
@@ -139,7 +153,7 @@ export const chapters: Chapters = {
         ],
         data: [
             {
-                name: "IUD",
+            name: "IUD",
                 description: "Tiny device put in your uterus, low-maintenance once inserted.",
                 price: "$0-$1300",
                 effectiveness: "99% Effective",
@@ -179,7 +193,9 @@ export const chapters: Chapters = {
             },
         ],
         nextPage: '2.2',
-        chapterType: 'monologue.grid'
+        previousPage: "2.0",
+        chapterType: 'monologue.grid',
+        chapterTitle: "Chapter 2",
     },
     "2.2": {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -195,7 +211,9 @@ export const chapters: Chapters = {
             { speaker: 0, message: "When selecting a private method, consider how it might be discovered, such as through monitoring your period.", params: []},
         ],
         nextPage: '2.3',
-        chapterType: 'default'
+        previousPage: "2.1",
+        chapterType: 'default',
+        chapterTitle: "Chapter 2",
     },
     "2.3": {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -294,7 +312,9 @@ export const chapters: Chapters = {
             }
         ],
         nextPage: '2.4',
-        chapterType: 'monologue.grid'
+        previousPage: "2.2",
+        chapterType: 'monologue.grid',
+        chapterTitle: "Chapter 2",
     },
     "2.4": {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -310,7 +330,9 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Got it! Thanks!", params: []},
         ],
         nextPage: '3.0',
-        chapterType: 'default'
+        previousPage: "2.3",
+        chapterType: 'default',
+        chapterTitle: "Chapter 2"
     },
     "3.0": {
         backgroundImage: 'assets/images/Park.png',
@@ -361,7 +383,9 @@ export const chapters: Chapters = {
                 ]
             }
         ],
-        nextPage: '',
-        chapterType: 'chapter3.0'
+        nextPage: null,
+        previousPage: "2.2",
+        chapterType: 'chapter3.0',
+        chapterTitle: "Chapter 3",
     },
 }

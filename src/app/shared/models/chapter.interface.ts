@@ -8,7 +8,13 @@ export interface Chapter {
     dialogueLines?: DialogueLine[];
     data?: any;
     chapterType: string;
-    nextPage: string;
+    nextPage: string | null;
+    previousPage: string | null;
+    chapterTitle: string;
+}
+
+export interface ChapterProgress {
+    [key: string]: boolean;
 }
 
 export interface Chapters {

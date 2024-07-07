@@ -1,7 +1,5 @@
-import { Component, Input, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { BehaviorSubject, } from 'rxjs';
-import { Dialogue, DialogueLine } from '../../models/dialogue.interface';
-import {Chapter} from "../../models/chapter.interface";
+import { Component, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { DialogueService } from '../../services/dialogue.service';
 
 @Component({
   selector: 'dialogue',
@@ -9,9 +7,7 @@ import {Chapter} from "../../models/chapter.interface";
   styleUrls: ['./dialogue.component.scss']
 })
 export class DialogueComponent implements OnInit, OnDestroy {
-  @Input() dialogue$: BehaviorSubject<Dialogue> = new BehaviorSubject<Dialogue>({});
-
-  constructor() { }
+  constructor(private dialogueService: DialogueService) { }
 
   speakerIsOnLeft = false;
   visibleLetters = "";
@@ -19,10 +15,12 @@ export class DialogueComponent implements OnInit, OnDestroy {
   animationTimer: any;
 
   ngOnInit(): void {
-    this.dialogue$.subscribe(value => {
-      this.clearAnimationTimer();
-      this.speakerIsOnLeft = value.lines![value.lineIndex!].speaker === 0;
-      this.animateText(value.lines![value.lineIndex!].message);
+    this.dialogueService.dialogue$.subscribe(value => {
+      if (value.lines?.length !== 0 && value.lines) {
+        this.clearAnimationTimer();
+        this.speakerIsOnLeft = value.lines![value.lineIndex!].speaker === 0;
+        this.animateText(value.lines![value.lineIndex!].message);
+      }
     })
   }
 
@@ -31,22 +29,21 @@ export class DialogueComponent implements OnInit, OnDestroy {
   }
 
   animateText(text: string): void {
-    this.dialogue$.getValue().isAnimating = true;
+    this.dialogueService.dialogue$.value.isAnimating = true;
     this.visibleLetters = '';
     this.invisibleLetters = text;
     this.animationTimer = setInterval(() => {
-      if (this.dialogue$.getValue().isAnimating && this.invisibleLetters.length > 0) {
+      if (this.dialogueService.dialogue$.value.isAnimating && this.invisibleLetters.length > 0) {
         this.visibleLetters += this.invisibleLetters[0];
         this.invisibleLetters = this.invisibleLetters.substring(1);
       } else {
-        this.dialogue$.getValue().isAnimating = false;
+        this.dialogueService.dialogue$.value.isAnimating = false;
         this.visibleLetters = text;
         this.invisibleLetters = '';
         this.clearAnimationTimer();
       }
     }, 25);
   }
-
   clearAnimationTimer(): void {
     clearInterval(this.animationTimer);
   }

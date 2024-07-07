@@ -8,7 +8,7 @@ import { ResourcesComponent } from './resources/resources.component';
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent, canActivate: [AuthGuardService] },
-  { path: 'chapter/:id', component: ChapterComponent, canActivate: [AuthGuardService]  },
+  { path: 'chapter/:id', component: ChapterComponent, canActivate: [AuthGuardService]  }, //update this line
   { path: 'resources', component: ResourcesComponent, canActivate: [AuthGuardService] },
 ];
 

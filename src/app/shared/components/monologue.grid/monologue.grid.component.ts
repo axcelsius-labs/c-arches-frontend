@@ -1,7 +1,6 @@
 import { Component, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { Chapter } from '../../models/chapter.interface';
-import { BehaviorSubject } from 'rxjs';
-import { Dialogue, DialogueLine } from '../../models/dialogue.interface';
+import { DialogueService } from '../../services/dialogue.service';
 
 @Component({
   selector: 'app-monologue-grid',
@@ -12,39 +11,21 @@ export class MonologueGridComponent implements OnInit {
 
     @Input() chapter!: Chapter; 
     @Output() onFinish = new EventEmitter();
+    
+    constructor(private dialogueService: DialogueService) { }
+    
     currentBoxIndex = -1;
-    dialogue$: BehaviorSubject<Dialogue> = new BehaviorSubject<Dialogue>({});
-    constructor() { }
-
-    ngOnInit() { 
-        this.dialogue$.next(
-        {
-            lineIndex: 0,
-            isAnimating: true,
-            lines: this.chapter.dialogueLines!
-        }
-        );
-    }
+    showDialog = true;
+    ngOnInit() { }
 
     select(index:number) {
         this.currentBoxIndex = index;
-        this.dialogue$.next(
-            {
-                lineIndex: 0,
-                isAnimating: true,
-                lines: this.chapter.data[this.currentBoxIndex].lines
-            }
-        );
+        this.dialogueService.updateDialogLines(this.chapter.data[this.currentBoxIndex].lines, 0)
     }
     
     back() {
         this.currentBoxIndex = -1;
-        this.dialogue$.next(
-            {
-                lineIndex: 0,
-                lines: this.chapter.dialogueLines!
-            }
-        );      
+        this.dialogueService.updateDialogLines(this.chapter.dialogueLines!, 0)   
     }
     
     continue(){
@@ -52,15 +33,11 @@ export class MonologueGridComponent implements OnInit {
     }
 
     handleClickOrSpace(event?: Event): void {
-        if (this.dialogue$.value.isAnimating){
-            this.dialogue$.value.isAnimating = false;
+        if (this.dialogueService.dialogue$.value.isAnimating){
+            this.dialogueService.dialogue$.value.isAnimating = false;
         }
-        else if (this.dialogue$.value.lineIndex! < this.dialogue$.value.lines!.length - 1) {
-            this.dialogue$.next({
-                lineIndex: this.dialogue$.value.lineIndex! + 1,
-                isAnimating: true,
-                lines: this.dialogue$.value.lines!
-            });  
+        else if (this.dialogueService.dialogue$.value.lineIndex! < this.dialogueService.dialogue$.value.lines!.length - 1) {
+            this.dialogueService.nextDialogLineIndex();
         }
     }
     
