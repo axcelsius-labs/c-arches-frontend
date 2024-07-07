@@ -39,4 +39,7 @@
     .previous {
         justify-content: start;
     }
+    .disabled {
+        pointer-events: none;
+    }
 }

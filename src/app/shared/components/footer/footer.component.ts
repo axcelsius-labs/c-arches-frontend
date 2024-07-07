@@ -15,7 +15,6 @@ export class FooterComponent implements OnInit {
   @Output() showPreviousDialogLine = new EventEmitter();
   constructor(private chapterService: ChapterService, private dialogueService: DialogueService) { }
   percentComplete$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  hidePreviousButton: boolean = true;
   ngOnInit(): void {
     this.chapterService.chapterProgress$.subscribe(progress => {
       this.percentComplete$.next(this.chapterService.getPercentageComplete());
@@ -23,7 +22,6 @@ export class FooterComponent implements OnInit {
   }
 
   nextDialogLine(): void {
-    this.hidePreviousButton = false;
     if (this.dialogueService.endOfSectionCheck()) {
       this.chapterService.goToNextSection();
     }
@@ -38,9 +36,10 @@ export class FooterComponent implements OnInit {
     }
     else {
       this.dialogueService.previousDialogLineIndex();
-      this.hidePreviousButton = this.chapterService.disablePreviousButton();
     }
-    
-    
+  }
+
+  disablePreviousButton(): boolean {
+    return this.chapterService.disablePreviousButton();
   }
 }

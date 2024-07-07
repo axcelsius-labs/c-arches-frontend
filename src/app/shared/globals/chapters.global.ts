@@ -50,7 +50,7 @@ export const chapters: Chapters = {
             { speaker: 0, message: "Right! I'm pretty sure PJ threw away my prescription refill, too.", params: []},
         ],
         nextPage: '1.1',
-        previousPage: "1.T",
+        previousPage: "intro",
         chapterType: 'default',
         chapterTitle: "Chapter 1",
     },
