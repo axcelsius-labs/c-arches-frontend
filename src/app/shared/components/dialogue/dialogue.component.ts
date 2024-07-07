@@ -16,7 +16,7 @@ export class DialogueComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.dialogueService.dialogue$.subscribe(value => {
-      if (value.lines?.length !== 0) {
+      if (value.lines?.length !== 0 && value.lines) {
         this.clearAnimationTimer();
         this.speakerIsOnLeft = value.lines![value.lineIndex!].speaker === 0;
         this.animateText(value.lines![value.lineIndex!].message);

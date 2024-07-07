@@ -33,10 +33,10 @@ export class DialogueService {
     );
   }
 
-  updateDialogLines(dialogLines: DialogueLine[]): void {
+  updateDialogLines(dialogLines: DialogueLine[], index: number): void {
     this.dialogue$.next(
       {
-          lineIndex: 0,
+          lineIndex: index,
           isAnimating: true,
           lines: dialogLines
       });

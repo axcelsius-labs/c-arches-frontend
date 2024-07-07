@@ -20,12 +20,12 @@ export class MonologueGridComponent implements OnInit {
 
     select(index:number) {
         this.currentBoxIndex = index;
-        this.dialogueService.updateDialogLines(this.chapter.data[this.currentBoxIndex].lines)
+        this.dialogueService.updateDialogLines(this.chapter.data[this.currentBoxIndex].lines, 0)
     }
     
     back() {
         this.currentBoxIndex = -1;
-        this.dialogueService.updateDialogLines(this.chapter.dialogueLines!)   
+        this.dialogueService.updateDialogLines(this.chapter.dialogueLines!, 0)   
     }
     
     continue(){

@@ -4,7 +4,7 @@
 [blackOut]="chapterContent.chapterType === 'monologue' || chapterContent.chapterType === 'monologue.grid'">
   <app-header [chapterTitle]="chapterContent.chapterTitle"></app-header>  
   <div [ngClass]="{'allowOverflow': allowOverflow, 'hideOverflow': !allowOverflow}" *ngIf="chapterContent.chapterType as type">
-    <app-monologue *ngIf="type === 'monologue'" [chapter]="chapterContent" (onClickOrSpace)="goToNextDialogLine()"></app-monologue>
+    <app-monologue *ngIf="type === 'monologue'" [chapter]="chapterContent" [additionalContent]="additionalContent" (onClickOrSpace)="goToNextDialogLine()"></app-monologue>
     <app-scene *ngIf="type === 'default'" [chapter]="chapterContent" (onClickOrSpace)="goToNextDialogLine()"></app-scene>
     <app-monologue-grid *ngIf="type === 'monologue.grid'" [chapter]="chapterContent" (onFinish)="goToNextSection()"></app-monologue-grid>
     <app-chapter-3-0 *ngIf="type === 'chapter3.0'" [chapter]="chapterContent" (onFinish)="goToNextSection()"></app-chapter-3-0>

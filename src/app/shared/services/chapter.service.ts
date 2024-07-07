@@ -42,14 +42,15 @@ export class ChapterService {
           this.router.navigate([''])
         }
         else {
-          this.router.navigate(['/chapter', nextPage])
+          this.router.navigate(['/chapter', nextPage]) //update this line
         }
     }
 
     goToPreviousSection(): void {
         const previousPage = this.allChapters[this.currentChapterSectionKey].previousPage;
         if (previousPage !== null) {
-            this.router.navigate(['/chapter', previousPage])
+            const lastDialogIndex = this.allChapters[previousPage].dialogueLines?.length! - 1;
+            this.router.navigate(['/chapter', previousPage]) //update this line
         }
     }
 

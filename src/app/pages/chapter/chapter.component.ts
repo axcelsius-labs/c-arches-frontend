@@ -13,6 +13,7 @@ export class ChapterComponent implements OnInit {
 
   chapterContent!: Chapter;
   chapterId!: string;
+  startingDialogLineIndex!: number;
   allowOverflow: boolean = false;
   additionalContent: string[] = [];
   constructor(private route: ActivatedRoute, private router: Router,
@@ -23,10 +24,11 @@ export class ChapterComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.chapterId = params.get('id')!;
+      this.startingDialogLineIndex = 0; //update this line
       this.chapterService.updateCurrentChapter(params.get('id')!);
       this.chapterContent = this.chapterService.getCurrentChapter();
       this.allowOverflow = this.chapterContent.chapterType === 'chapter3.0';
-      this.dialogueService.updateDialogLines(this.chapterContent.dialogueLines!);
+      this.dialogueService.updateDialogLines(this.chapterContent.dialogueLines!, this.startingDialogLineIndex);
     });
   }
 
@@ -36,7 +38,9 @@ export class ChapterComponent implements OnInit {
     }
     else if (!this.dialogueService.endOfSectionCheck()) {
       this.dialogueService.nextDialogLineIndex()
-      this.additionalContent = this.chapterContent.dialogueLines![this.dialogueService.dialogue$.value.lineIndex!].params;
+      if (this.chapterContent.dialogueLines![this.dialogueService.dialogue$.value.lineIndex!].params.length > 0) {
+        this.additionalContent = this.chapterContent.dialogueLines![this.dialogueService.dialogue$.value.lineIndex!].params;
+      }
     }
     else this.goToNextSection();
   }

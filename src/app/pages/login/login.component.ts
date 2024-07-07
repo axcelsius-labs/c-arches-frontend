@@ -18,7 +18,7 @@ export class LoginComponent {
       if (typeof window !== 'undefined') {
         localStorage.setItem("password", "true");
       }
-      this.router.navigate(['/chapter/intro']);
+      this.router.navigate(['/chapter', 'intro']) //update this line
     }
     else this.error = true;
   }
