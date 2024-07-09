@@ -11,7 +11,6 @@ export class DialogueComponent implements OnInit {
   speakerIsOnLeft = false;
   visibleLetters = "";
   invisibleLetters = "";
-  animationTimer: any;
   
   constructor(private dialogueService: DialogueService) { }
 
