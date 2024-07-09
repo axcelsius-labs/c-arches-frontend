@@ -1,7 +1,2 @@
-<div class="background-container">
-    <img [src]="backgroundImage" alt="Background Image" class="background-image">
-    <div class="background-overlay" *ngIf="blackOut"></div>
-    <div class="content-container">
-        <ng-content></ng-content>
-    </div>
-</div>
+<img [src]="backgroundImage" alt="Background Image" class="background-image" />
+<div class="background-overlay" *ngIf="blackOut"></div>
