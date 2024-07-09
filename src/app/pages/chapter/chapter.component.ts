@@ -73,18 +73,18 @@ export class ChapterComponent implements OnInit {
   }
 
   goToNextDialogLine(): void {
-    if (this.dialogueService.dialogue$.value.isAnimating) {
-      this.dialogueService.dialogue$.value.isAnimating = false;
-    } else if (!this.dialogueService.endOfSectionCheck()) {
-      this.dialogueService.nextDialogLineIndex();
+    if (this.dialogueService.isAnimating$.value) {
+      this.dialogueService.isAnimating$.next(false);
+    } else if (!this.dialogueService.isAtSectionEnd()) {
+      this.dialogueService.playNextDialogueLine();
       if (
         this.sectionContent.dialogueLines![
-          this.dialogueService.dialogue$.value.lineIndex!
+          this.dialogueService.currentIndex
         ].params.length > 0
       ) {
         this.additionalContent =
           this.sectionContent.dialogueLines![
-            this.dialogueService.dialogue$.value.lineIndex!
+              this.dialogueService.currentIndex
           ].params;
       }
     } else this.updateNextSection();

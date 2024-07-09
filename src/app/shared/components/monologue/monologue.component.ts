@@ -7,6 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import { Chapter, Section } from '../../models/chapter.interface';
+import {DialogueService} from "../../services/dialogue.service";
 
 @Component({
   selector: 'app-monologue',
@@ -17,9 +18,14 @@ export class MonologueComponent implements OnInit {
   @Input() section!: Section;
   @Input() additionalContent: string[] = [];
   @Output() onClickOrSpace = new EventEmitter();
-  constructor() {}
 
-  ngOnInit() {}
+  constructor(private dialogueService: DialogueService) { }
+
+  ngOnInit() {
+    this.dialogueService.currentLine$.subscribe(value => {
+      this.additionalContent = value.params;
+    });
+  }
 
   handleClickOrSpace(event?: Event): void {
     this.onClickOrSpace.emit();

@@ -1,6 +1,5 @@
 export interface Dialogue {
     lineIndex?: number;
-    isAnimating?: boolean;
     lines?: DialogueLine[]
 }
 

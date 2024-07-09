@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Router } from '@angular/router';
 import { ChapterService } from '../../services/chapter.service';
 import { BehaviorSubject } from 'rxjs';
 import { DialogueService } from '../../services/dialogue.service';
@@ -27,17 +26,18 @@ export class FooterComponent implements OnInit {
   }
 
   nextDialogLine(): void {
-    if (this.dialogueService.endOfSectionCheck()) {
+    if (this.dialogueService.isAtSectionEnd()) {
       this.chapterService.updateNextSection();
     } else {
-      this.dialogueService.nextDialogLineIndex();
+      this.dialogueService.playNextDialogueLine();
     }
   }
+  
   previousDialogLine(): void {
-    if (this.dialogueService.beginningOfSectionCheck()) {
+    if (this.dialogueService.isAtSectionStart()) {
       this.chapterService.goToPreviousSection();
     } else {
-      this.dialogueService.previousDialogLineIndex();
+      this.dialogueService.playPreviousDialogueLine();
     }
   }
 

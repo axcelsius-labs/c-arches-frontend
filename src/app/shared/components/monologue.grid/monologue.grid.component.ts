@@ -18,7 +18,7 @@ export class MonologueGridComponent implements OnInit {
   @Input() section!: Section;
   @Output() onFinish = new EventEmitter();
 
-  constructor(private dialogueService: DialogueService) {}
+  constructor(private dialogue: DialogueService) {}
 
   currentBoxIndex = -1;
   showDialog = true;
@@ -26,7 +26,7 @@ export class MonologueGridComponent implements OnInit {
 
   select(index: number) {
     this.currentBoxIndex = index;
-    this.dialogueService.updateDialogLines(
+    this.dialogue.updateDialogLines(
       this.section.data[this.currentBoxIndex].lines,
       0,
     );
@@ -34,7 +34,7 @@ export class MonologueGridComponent implements OnInit {
 
   back() {
     this.currentBoxIndex = -1;
-    this.dialogueService.updateDialogLines(this.section.dialogueLines!, 0);
+    this.dialogue.updateDialogLines(this.section.dialogueLines!, 0);
   }
 
   continue() {
@@ -42,13 +42,10 @@ export class MonologueGridComponent implements OnInit {
   }
 
   handleClickOrSpace(event?: Event): void {
-    if (this.dialogueService.dialogue$.value.isAnimating) {
-      this.dialogueService.dialogue$.value.isAnimating = false;
-    } else if (
-      this.dialogueService.dialogue$.value.lineIndex! <
-      this.dialogueService.dialogue$.value.lines!.length - 1
-    ) {
-      this.dialogueService.nextDialogLineIndex();
+    if (this.dialogue.isAnimating$.value) {
+      this.dialogue.isAnimating$.next(false);
+    } else if (!this.dialogue.isAtSectionEnd()) {
+      this.dialogue.playNextDialogueLine();
     }
   }
 
