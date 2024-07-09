@@ -1,63 +1,137 @@
 import { Injectable } from '@angular/core';
-import { Chapter, ChapterProgress, Chapters } from '../models/chapter.interface';
+import {
+  Chapter,
+  ChapterProgress,
+  Chapters,
+} from '../models/chapter.interface';
 import { chapters } from '../globals/chapters.global';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { DialogueService } from './dialogue.service';
+import { ChapterSectionRouteConfig } from '../models/chapter-section-route-config';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ChapterService {
+  constructor(
+    private router: Router,
+    private dialogueService: DialogueService,
+  ) {}
 
-    constructor(private router: Router, private dialogueService: DialogueService) { }
+  chapterSectionRouteConfig: BehaviorSubject<ChapterSectionRouteConfig> =
+    new BehaviorSubject<ChapterSectionRouteConfig>({
+      chapterKey: 'index',
+      sectionIndex: 0,
+      dialogIndex: 0,
+    });
+  chapterProgress$: BehaviorSubject<ChapterProgress> =
+    new BehaviorSubject<ChapterProgress>({});
+  allChapters: Chapters = chapters;
+  percentComplete: number = 0;
 
-    currentChapterSectionKey: string = "";
-    chapterProgress$: BehaviorSubject<ChapterProgress> = new BehaviorSubject<ChapterProgress>({});
-    allChapters: Chapters = chapters;
-    
+  getCurrentChapter(): Chapter {
+    return this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!];
+  }
 
-    getCurrentChapter(): Chapter {
-        return this.allChapters[this.currentChapterSectionKey];
-    }
-    updateCurrentChapter(id: string): void {
-        this.currentChapterSectionKey = id;
-    }
-    updateChapterProgress(): void {
-        const currentChapterProgress = this.chapterProgress$.value;
-        currentChapterProgress[this.currentChapterSectionKey] = true;
-        this.chapterProgress$.next(currentChapterProgress);
-    }
+  updateChapterSectionAndDialog(
+    chapterKey: string,
+    sectionIndex: number,
+    dialogIndex: number,
+  ): void {
+    this.chapterSectionRouteConfig.next({
+      chapterKey: chapterKey,
+      sectionIndex: sectionIndex,
+      dialogIndex: dialogIndex,
+    });
+  }
 
-    getPercentageComplete(): number {
-        const keys = Object.keys(this.allChapters);
-        const index =  keys.indexOf(this.currentChapterSectionKey);
-        const numberOfChapters = keys.length;
-        return index / numberOfChapters * 100
-    }
-    goToNextSection(): void {
-        this.updateChapterProgress();
-        const nextPage = this.allChapters[this.currentChapterSectionKey].nextPage;
-        if (!nextPage) {
-          this.router.navigate([''])
-        }
-        else {
-          this.router.navigate(['/chapter', nextPage]) //update this line
-        }
-    }
-
-    goToPreviousSection(): void {
-        const previousPage = this.allChapters[this.currentChapterSectionKey].previousPage;
-        if (previousPage !== null) {
-            const lastDialogIndex = this.allChapters[previousPage].dialogueLines?.length! - 1;
-            this.router.navigate(['/chapter', previousPage]) //update this line
-        }
-    }
-
-    disablePreviousButton(): boolean {
-        if (!this.allChapters[this.currentChapterSectionKey].previousPage && this.dialogueService.dialogue$.value.lineIndex === 0) {
-            return true;
-        }
-        return false;
+  updateNextSection(): void {
+    //end of section reached
+    if (
+      this.chapterSectionRouteConfig.value.sectionIndex ==
+      this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+        .sections.length -
+        1
+    ) {
+      const nextChapter =
+        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+          .nextChapter;
+      if (!nextChapter) {
+        this.router.navigate(['']);
+      } else {
+        this.updateChapterSectionAndDialog(nextChapter, 0, 0);
       }
+    } else {
+      let currentSectionIndexValue =
+        this.chapterSectionRouteConfig.value.sectionIndex;
+      this.updateChapterSectionAndDialog(
+        this.chapterSectionRouteConfig.value.chapterKey!,
+        (currentSectionIndexValue += 1),
+        0,
+      );
+    }
+  }
+
+  goToChapter(): void {
+    if (this.chapterSectionRouteConfig.value.chapterKey!) {
+      this.router.navigate([
+        '/chapter',
+        this.chapterSectionRouteConfig.value.chapterKey!,
+      ]);
+    } else {
+    }
+  }
+
+  goToPreviousSection(): void {
+    //end of section reached
+    if (this.chapterSectionRouteConfig.value.sectionIndex === 0) {
+      const previousChapter =
+        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+          .previousChapter;
+      if (!previousChapter) {
+        this.router.navigate(['']);
+      } else {
+        const lastSection =
+          this.allChapters[previousChapter].sections.length - 1;
+        const lastDialogIndex =
+          this.allChapters[previousChapter].sections[lastSection].dialogueLines
+            ?.length! - 1;
+        this.updateChapterSectionAndDialog(
+          previousChapter,
+          lastSection,
+          lastDialogIndex,
+        );
+      }
+    } else {
+      const previousSection =
+        (this.chapterSectionRouteConfig.value.sectionIndex -= 1);
+      const lastDialogIndex =
+        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+          .sections[previousSection].dialogueLines?.length! - 1;
+      this.updateChapterSectionAndDialog(
+        this.chapterSectionRouteConfig.value.chapterKey!,
+        previousSection,
+        lastDialogIndex,
+      );
+    }
+  }
+
+  disablePreviousButton(): boolean {
+    if (
+      !this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+        .previousChapter &&
+      this.dialogueService.dialogue$.value.lineIndex === 0
+    ) {
+      return true;
+    }
+    return false;
+  }
+
+  // checkForEndOfChapter(): boolean {
+  //     if () {
+  //         return true;
+  //     }
+  //     return false;
+  // }
 }

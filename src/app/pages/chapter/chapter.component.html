@@ -1,14 +1,36 @@
-
-<app-background 
-[backgroundImage]="chapterContent.backgroundImage" 
-[blackOut]="chapterContent.chapterType === 'monologue' || chapterContent.chapterType === 'monologue.grid'">
-  <app-header [chapterTitle]="chapterContent.chapterTitle"></app-header>  
-  <div [ngClass]="{'allowOverflow': allowOverflow, 'hideOverflow': !allowOverflow}" *ngIf="chapterContent.chapterType as type">
-    <app-monologue *ngIf="type === 'monologue'" [chapter]="chapterContent" [additionalContent]="additionalContent" (onClickOrSpace)="goToNextDialogLine()"></app-monologue>
-    <app-scene *ngIf="type === 'default'" [chapter]="chapterContent" (onClickOrSpace)="goToNextDialogLine()"></app-scene>
-    <app-monologue-grid *ngIf="type === 'monologue.grid'" [chapter]="chapterContent" (onFinish)="goToNextSection()"></app-monologue-grid>
-    <app-chapter-3-0 *ngIf="type === 'chapter3.0'" [chapter]="chapterContent" (onFinish)="goToNextSection()"></app-chapter-3-0>
+<app-background
+  [backgroundImage]="sectionContent.backgroundImage"
+  [blackOut]="
+    sectionContent.sectionType === 'monologue' ||
+    sectionContent.sectionType === 'monologue.grid'
+  "
+>
+  <app-header [chapterTitle]="chapterContent.chapterTitle"></app-header>
+  <div
+    [ngClass]="{ allowOverflow: allowOverflow, hideOverflow: !allowOverflow }"
+    *ngIf="sectionContent.sectionType as type"
+  >
+    <app-monologue
+      *ngIf="type === 'monologue'"
+      [section]="sectionContent"
+      [additionalContent]="additionalContent"
+      (onClickOrSpace)="goToNextDialogLine()"
+    ></app-monologue>
+    <app-scene
+      *ngIf="type === 'scene'"
+      [section]="sectionContent"
+      (onClickOrSpace)="goToNextDialogLine()"
+    ></app-scene>
+    <app-monologue-grid
+      *ngIf="type === 'monologue.grid'"
+      [section]="sectionContent"
+      (onFinish)="updateNextSection()"
+    ></app-monologue-grid>
+    <app-chapter-3-0
+      *ngIf="type === 'chapter3.0'"
+      [section]="sectionContent"
+      (onFinish)="updateNextSection()"
+    ></app-chapter-3-0>
   </div>
   <app-footer></app-footer>
 </app-background>
-

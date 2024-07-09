@@ -11,6 +11,7 @@ import { MonologueGridComponent } from './components/monologue.grid/monologue.gr
 import { Chapter30Component } from './components/chapter.3.0/chapter.3.0.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MonologueGridComponent,
     Chapter30Component
   ],
-  imports: [CommonModule, MatIconModule, MatProgressBarModule],
+  imports: [CommonModule, MatIconModule, MatProgressBarModule, MatDialogModule],
   exports: [
     MonologueComponent,
     SceneComponent,
