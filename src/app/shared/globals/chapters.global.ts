@@ -3,6 +3,7 @@ import { Chapters } from '../../shared/models/chapter.interface';
 export const chapters: Chapters = {
   '0': {
     chapterTitle: 'Intro',
+    chapterDescription: null,
     previousChapter: null,
     nextChapter: '1',
     sections: [
@@ -36,6 +37,7 @@ export const chapters: Chapters = {
   },
   '1': {
     chapterTitle: 'The Cafe',
+    chapterDescription: 'Sam and Jade Discuss Reproductive Coersion',
     previousChapter: 'intro',
     nextChapter: '2',
     sections: [
@@ -280,6 +282,7 @@ export const chapters: Chapters = {
   },
   '2': {
     chapterTitle: 'The Clinic',
+    chapterDescription: 'Jade Visits The Clinic',
     previousChapter: '1',
     nextChapter: '3',
     sections: [
@@ -602,6 +605,7 @@ export const chapters: Chapters = {
   },
   '3': {
     chapterTitle: 'Chapter 3',
+    chapterDescription: null,
     previousChapter: '2',
     nextChapter: null,
     sections: [

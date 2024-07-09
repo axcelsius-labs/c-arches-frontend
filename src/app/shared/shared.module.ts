@@ -13,6 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MainContainerComponent } from './components/main-container/main-container.component';
+import { ChapterTitleOverlayComponent } from './components/chapter-title-overlay/chapter-title-overlay.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MainContainerComponent } from './components/main-container/main-contain
     MonologueGridComponent,
     Chapter30Component,
     MainContainerComponent,
+    ChapterTitleOverlayComponent,
   ],
   imports: [CommonModule, MatIconModule, MatProgressBarModule, MatDialogModule],
   exports: [
@@ -37,6 +39,7 @@ import { MainContainerComponent } from './components/main-container/main-contain
     MonologueGridComponent,
     Chapter30Component,
     MainContainerComponent,
+    ChapterTitleOverlayComponent,
   ],
 })
 export class SharedModule {}

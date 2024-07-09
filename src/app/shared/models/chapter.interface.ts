@@ -2,6 +2,7 @@ import { DialogueLine } from './dialogue.interface';
 
 export interface Chapter {
   chapterTitle: string;
+  chapterDescription: string | null;
   previousChapter: null | string;
   nextChapter: null | string;
   sections: Section[];
