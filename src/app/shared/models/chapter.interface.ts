@@ -1,22 +1,27 @@
-import { DialogueLine } from "./dialogue.interface";
+import { DialogueLine } from './dialogue.interface';
 
 export interface Chapter {
-    backgroundImage: string;
-    leftCharacterImage?: string;
-    rightCharacterImage?: string;
-    characterImage?: string;
-    dialogueLines?: DialogueLine[];
-    data?: any;
-    chapterType: string;
-    nextPage: string | null;
-    previousPage: string | null;
-    chapterTitle: string;
+  chapterTitle: string;
+  chapterDescription: string | null;
+  previousChapter: null | string;
+  nextChapter: null | string;
+  sections: Section[];
+}
+
+export interface Section {
+  backgroundImage: string;
+  leftCharacterImage?: string;
+  rightCharacterImage?: string;
+  characterImage?: string;
+  dialogueLines?: DialogueLine[];
+  data?: any;
+  sectionType: string;
 }
 
 export interface ChapterProgress {
-    [key: string]: boolean;
+  [key: string]: boolean;
 }
 
 export interface Chapters {
-    [key: string]: Chapter;
+  [key: string]: Chapter;
 }

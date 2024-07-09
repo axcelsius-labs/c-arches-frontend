@@ -1,13 +1,16 @@
 <div class="monologue-container" (click)="handleClickOrSpace()">
-    <dialogue class="dialogue-container"></dialogue>
-    <div class="character-wrapper">
-        <img class="character-container no-interaction" [src]="chapter.characterImage">
-        <div class="additional-content" *ngIf="additionalContent.length > 0">
-            <div *ngFor="let content of additionalContent">
-                {{ content }}
-            </div>
-        </div> 
-         <!-- Hidden div box when chapter.data.length is 0 -->
+  <dialogue class="dialogue-container"></dialogue>
+  <div class="character-wrapper">
+    <img
+      class="character-container no-interaction"
+      [src]="section.characterImage"
+    />
+    <div class="additional-content" *ngIf="additionalContent.length > 0">
+      <div *ngFor="let content of additionalContent">
+        {{ content }}
+      </div>
+    </div>
+    <!-- Hidden div box when chapter.data.length is 0 -->
     <div class="hidden-box" *ngIf="additionalContent.length === 0"></div>
-    </div>  
+  </div>
 </div>

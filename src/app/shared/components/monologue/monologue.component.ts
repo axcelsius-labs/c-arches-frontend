@@ -1,19 +1,25 @@
-import {Component, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
-import { Chapter } from '../../models/chapter.interface';
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnInit,
+  Output,
+} from '@angular/core';
+import { Chapter, Section } from '../../models/chapter.interface';
 
 @Component({
   selector: 'app-monologue',
   templateUrl: './monologue.component.html',
-  styleUrl: './monologue.component.scss'
+  styleUrl: './monologue.component.scss',
 })
 export class MonologueComponent implements OnInit {
-
-  @Input() chapter!: Chapter; 
+  @Input() section!: Section;
   @Input() additionalContent: string[] = [];
   @Output() onClickOrSpace = new EventEmitter();
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   handleClickOrSpace(event?: Event): void {
     this.onClickOrSpace.emit();
@@ -21,10 +27,9 @@ export class MonologueComponent implements OnInit {
 
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.code === "Space") {
+    if (event.code === 'Space') {
       this.handleClickOrSpace();
       event.stopPropagation();
     }
   }
-  
 }

@@ -1,38 +1,38 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Chapter } from '../../models/chapter.interface';
+import { Chapter, Section } from '../../models/chapter.interface';
 
 @Component({
   selector: 'app-chapter-3-0',
   templateUrl: './chapter.3.0.component.html',
-  styleUrl: './chapter.3.0.component.scss'
+  styleUrl: './chapter.3.0.component.scss',
 })
 export class Chapter30Component implements OnInit {
-    @Input() chapter!: Chapter; 
-    @Output() onFinish = new EventEmitter();
-  
-    currentIndex = 0;
-    current:any;
+  @Input() section!: Section;
+  @Output() onFinish = new EventEmitter();
 
-    constructor() { }
+  currentIndex = 0;
+  current: any;
 
-    ngOnInit(): void {
-        this.current = this.chapter.data[this.currentIndex];
-    }
-    next() {
-        if (this.currentIndex < this.chapter.data.length - 1){
-            this.currentIndex = this.currentIndex + 1;
-            this.current = this.chapter.data[this.currentIndex];
-        }
-    }
-    
-    previous() {
-        if (this.currentIndex > 0){
-            this.currentIndex = this.currentIndex - 1;
-            this.current = this.chapter.data[this.currentIndex];
-        }
-    }
+  constructor() {}
 
-    finish() {
-        this.onFinish.emit();
+  ngOnInit(): void {
+    this.current = this.section.data[this.currentIndex];
+  }
+  next() {
+    if (this.currentIndex < this.section.data.length - 1) {
+      this.currentIndex = this.currentIndex + 1;
+      this.current = this.section.data[this.currentIndex];
     }
+  }
+
+  previous() {
+    if (this.currentIndex > 0) {
+      this.currentIndex = this.currentIndex - 1;
+      this.current = this.section.data[this.currentIndex];
+    }
+  }
+
+  finish() {
+    this.onFinish.emit();
+  }
 }
