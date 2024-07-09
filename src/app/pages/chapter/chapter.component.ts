@@ -33,13 +33,12 @@ export class ChapterComponent implements OnInit {
       if (!this.isValidChapter(this.chapterId)) {
         this.router.navigate(['chapter/1']);
       } else {
-        // Handle chapterId as needed
+        this.chapterService.updateChapterSectionAndDialog(
+          params.get('id')!,
+          0,
+          0,
+        );
       }
-      this.chapterService.updateChapterSectionAndDialog(
-        params.get('id')!,
-        0,
-        0,
-      );
     });
 
     this.chapterService.chapterSectionRouteConfig.subscribe((chapterConfig) => {
