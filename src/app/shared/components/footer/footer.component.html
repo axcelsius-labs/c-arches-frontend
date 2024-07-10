@@ -1,14 +1,14 @@
 <div class="bottom-nav">
-    <div class="icon-label-container previous" [ngClass]="{'disabled': disablePreviousButton()}" (click)="previousDialogLine()">
-        <mat-icon class="icon">chevron_left</mat-icon>
-        <span class="icon-label">Back</span>
-    </div>
-    <mat-progress-bar mode="determinate" [value]="percentComplete$ | async"></mat-progress-bar>
-    <!-- <div class="continue-text">
-        Click or press space to continue.
-    </div> -->
-    <div class="icon-label-container next" (click)="nextDialogLine()">
-        <span class="icon-label">Next</span>
-        <mat-icon class="icon">chevron_right</mat-icon>
-    </div>
+  <div
+    class="icon-label-container previous"
+    [ngClass]="{ disabled: disablePreviousButton() }"
+    (click)="previousDialogLine()"
+  >
+    <mat-icon class="icon">chevron_left</mat-icon>
+    <span class="icon-label">Back</span>
+  </div>
+  <div class="icon-label-container next" (click)="nextDialogLine()">
+    <span class="icon-label">Next</span>
+    <mat-icon class="icon">chevron_right</mat-icon>
+  </div>
 </div>

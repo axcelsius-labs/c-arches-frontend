@@ -6,6 +6,7 @@ import { DialogueService } from '../../shared/services/dialogue.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ChapterTitleOverlayComponent } from '../../shared/components/chapter-title-overlay/chapter-title-overlay.component';
 import { Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-chapter',
@@ -28,35 +29,41 @@ export class ChapterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      this.chapterId = params.get('id')!;
-      if (!this.isValidChapter(this.chapterId)) {
-        this.router.navigate(['chapter/1']);
-      } else {
-        this.chapterService.updateChapterSectionAndDialog(
-          params.get('id')!,
-          0,
-          0,
-        );
-      }
-    });
-
+    this.route.paramMap
+      .pipe(filter((params) => params.has('id')))
+      .subscribe((params) => {
+        this.chapterId = params.get('id')!;
+        if (!this.chapterService.isValidChapter(this.chapterId)) {
+          this.router.navigate(['chapter/1']);
+        } else {
+          const sectionIndex = this.route.snapshot.queryParamMap.get(
+            'sectionIndex',
+          )
+            ? +this.route.snapshot.queryParamMap.get('sectionIndex')!
+            : 0;
+          const dialogueIndex = this.route.snapshot.queryParamMap.get(
+            'dialogueIndex',
+          )
+            ? +this.route.snapshot.queryParamMap.get('dialogueIndex')!
+            : 0;
+          this.chapterService.updateChapterSectionAndDialog({
+            chapterKey: params.get('id')!,
+            sectionIndex: sectionIndex,
+            dialogueIndex: dialogueIndex,
+          });
+        }
+      });
+    //subscribing to changes to the chapter key or section
     this.chapterService.chapterSectionRouteConfig.subscribe((chapterConfig) => {
       this.setChapterComponentVariables();
       if (
         chapterConfig.sectionIndex === 0 &&
-        chapterConfig.dialogIndex === 0 &&
+        chapterConfig.dialogueIndex === 0 &&
         this.chapterContent.chapterDescription
       ) {
         this.openChapterTitleOverlay(this.chapterService.getCurrentChapter());
       }
     });
-  }
-
-  isValidChapter(chapterId: string): boolean {
-    // Implement your logic to check if chapterId exists or is valid
-    // For simplicity, assuming chapter/1, chapter/2, chapter/3 exist
-    return ['intro', '1', '2', '3'].includes(chapterId);
   }
 
   setChapterComponentVariables() {
@@ -68,7 +75,7 @@ export class ChapterComponent implements OnInit {
     this.allowOverflow = this.sectionContent.sectionType === 'chapter3.0';
     this.dialogueService.updateDialogLines(
       this.sectionContent.dialogueLines!,
-      this.chapterService.chapterSectionRouteConfig.value.dialogIndex,
+      this.chapterService.chapterSectionRouteConfig.value.dialogueIndex,
     );
   }
 
@@ -87,11 +94,11 @@ export class ChapterComponent implements OnInit {
             this.dialogueService.dialogue$.value.lineIndex!
           ].params;
       }
-    } else this.updateNextSection();
+    } else this.finishedSection();
   }
 
-  updateNextSection(): void {
-    this.chapterService.updateNextSection();
+  finishedSection(): void {
+    this.chapterService.handleFinishedSection();
   }
 
   openChapterTitleOverlay(chapter: Chapter): void {

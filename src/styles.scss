@@ -14,7 +14,7 @@ $c-arches-frontend-theme: mat.define-theme(
     color: (
       theme-type: light,
       primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
+      tertiary: mat.$violet-palette,
     ),
     density: (
       scale: 0,
@@ -27,6 +27,9 @@ $c-arches-frontend-theme: mat.define-theme(
 // that you are using.
 :root {
   @include mat.all-component-themes($c-arches-frontend-theme);
+  --mdc-linear-progress-active-indicator-color: #e342f5;
+  --mdc-linear-progress-active-indicator-height: 10px;
+  --mdc-linear-progress-track-height: 10px;
 }
 
 // Comment out the line below if you want to use the pre-defined typography utility classes.

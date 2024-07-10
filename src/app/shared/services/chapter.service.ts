@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { DialogueService } from './dialogue.service';
 import { ChapterSectionRouteConfig } from '../models/chapter-section-route-config';
+import { ChapterProgressService } from './chapter-progress.service';
 
 @Injectable({
   providedIn: 'root',
@@ -17,70 +18,72 @@ export class ChapterService {
   constructor(
     private router: Router,
     private dialogueService: DialogueService,
+    private chapterProgressService: ChapterProgressService,
   ) {}
 
   chapterSectionRouteConfig: BehaviorSubject<ChapterSectionRouteConfig> =
     new BehaviorSubject<ChapterSectionRouteConfig>({
-      chapterKey: 'index',
+      chapterKey: '0',
       sectionIndex: 0,
-      dialogIndex: 0,
+      dialogueIndex: 0,
     });
-  chapterProgress$: BehaviorSubject<ChapterProgress> =
-    new BehaviorSubject<ChapterProgress>({});
   allChapters: Chapters = chapters;
   percentComplete: number = 0;
 
   getCurrentChapter(): Chapter {
     return this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!];
   }
-
   updateChapterSectionAndDialog(
-    chapterKey: string,
-    sectionIndex: number,
-    dialogIndex: number,
+    newRouteConfig: ChapterSectionRouteConfig,
   ): void {
     this.chapterSectionRouteConfig.next({
-      chapterKey: chapterKey,
-      sectionIndex: sectionIndex,
-      dialogIndex: dialogIndex,
+      chapterKey: newRouteConfig.chapterKey,
+      sectionIndex: newRouteConfig.sectionIndex,
+      dialogueIndex: newRouteConfig.dialogueIndex,
     });
   }
 
-  updateNextSection(): void {
-    //end of section reached
-    if (
-      this.chapterSectionRouteConfig.value.sectionIndex ==
-      this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-        .sections.length -
-        1
-    ) {
-      const nextChapter =
-        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-          .nextChapter;
-      if (!nextChapter) {
-        this.router.navigate(['']);
-      } else {
-        this.updateChapterSectionAndDialog(nextChapter, 0, 0);
-      }
+  getNextSection(): ChapterSectionRouteConfig {
+    const progress = this.chapterProgressService.getProgress();
+    //progress wasnt set already check takes you to the beginning
+    if (!progress) {
+      return { chapterKey: '0', sectionIndex: 0, dialogueIndex: 0 };
     } else {
-      let currentSectionIndexValue =
-        this.chapterSectionRouteConfig.value.sectionIndex;
-      this.updateChapterSectionAndDialog(
-        this.chapterSectionRouteConfig.value.chapterKey!,
-        (currentSectionIndexValue += 1),
-        0,
-      );
+      if (
+        progress.sectionIndex ===
+        this.allChapters[progress.chapterKey!].sections.length - 1
+      ) {
+        const nextChapter = this.allChapters[progress.chapterKey!].nextChapter;
+        //next chapter could be null
+        return { chapterKey: nextChapter, sectionIndex: 0, dialogueIndex: 0 };
+      } else {
+        return {
+          chapterKey: progress.chapterKey,
+          sectionIndex: (progress.sectionIndex += 1),
+          dialogueIndex: 0,
+        };
+      }
     }
   }
 
-  goToChapter(): void {
-    if (this.chapterSectionRouteConfig.value.chapterKey!) {
-      this.router.navigate([
-        '/chapter',
-        this.chapterSectionRouteConfig.value.chapterKey!,
-      ]);
+  goToNextSection(): void {
+    const nextSection = this.getNextSection();
+    if (!nextSection.chapterKey) {
+      this.router.navigate(['']);
     } else {
+      if (nextSection.sectionIndex === 0) {
+        this.router.navigate(['chapter', nextSection.chapterKey]);
+      } else {
+        this.updateChapterSectionAndDialog(nextSection);
+      }
     }
+  }
+
+  handleFinishedSection() {
+    this.chapterProgressService.setProgress(
+      this.chapterSectionRouteConfig.value,
+    );
+    this.goToNextSection();
   }
 
   goToPreviousSection(): void {
@@ -92,28 +95,29 @@ export class ChapterService {
       if (!previousChapter) {
         this.router.navigate(['']);
       } else {
-        const lastSection =
+        const lastSectionIndex =
           this.allChapters[previousChapter].sections.length - 1;
-        const lastDialogIndex =
-          this.allChapters[previousChapter].sections[lastSection].dialogueLines
-            ?.length! - 1;
-        this.updateChapterSectionAndDialog(
-          previousChapter,
-          lastSection,
-          lastDialogIndex,
-        );
+        const lastdialogueIndex =
+          this.allChapters[previousChapter].sections[lastSectionIndex]
+            .dialogueLines?.length! - 1;
+        this.router.navigate(['chapter', previousChapter], {
+          queryParams: {
+            sectionIndex: lastSectionIndex,
+            dialogueIndex: lastdialogueIndex,
+          },
+        });
       }
     } else {
       const previousSection =
         (this.chapterSectionRouteConfig.value.sectionIndex -= 1);
-      const lastDialogIndex =
+      const lastdialogueIndex =
         this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
           .sections[previousSection].dialogueLines?.length! - 1;
-      this.updateChapterSectionAndDialog(
-        this.chapterSectionRouteConfig.value.chapterKey!,
-        previousSection,
-        lastDialogIndex,
-      );
+      this.updateChapterSectionAndDialog({
+        chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
+        sectionIndex: previousSection,
+        dialogueIndex: lastdialogueIndex,
+      });
     }
   }
 
@@ -128,10 +132,20 @@ export class ChapterService {
     return false;
   }
 
-  // checkForEndOfChapter(): boolean {
-  //     if () {
-  //         return true;
-  //     }
-  //     return false;
-  // }
+  isValidChapter(chapterId: string): boolean {
+    // Implement your logic to check if chapterId exists or is valid
+    // For simplicity, assuming chapter/1, chapter/2, chapter/3 exist
+    return ['0', '1', '2', '3'].includes(chapterId);
+  }
+
+  chapterNumberOfSections(chapterKey: string): number {
+    return this.allChapters[chapterKey].sections.length;
+  }
+  checkIfEndOfSectionIsComplete(): boolean {
+    const progress = this.chapterProgressService.getProgress();
+    return (
+      this.chapterNumberOfSections(progress!.chapterKey!) - 1 ===
+      progress?.sectionIndex
+    );
+  }
 }

@@ -24,13 +24,16 @@
     <app-monologue-grid
       *ngIf="type === 'monologue.grid'"
       [section]="sectionContent"
-      (onFinish)="updateNextSection()"
+      (onFinish)="finishedSection()"
     ></app-monologue-grid>
     <app-chapter-3-0
       *ngIf="type === 'chapter3.0'"
       [section]="sectionContent"
-      (onFinish)="updateNextSection()"
+      (onFinish)="finishedSection()"
     ></app-chapter-3-0>
   </div>
-  <app-footer></app-footer>
+  <div>
+    <app-progress-bar></app-progress-bar>
+    <app-footer></app-footer>
+  </div>
 </app-main-container>
