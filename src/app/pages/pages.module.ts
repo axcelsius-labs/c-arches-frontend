@@ -8,12 +8,14 @@ import { routes } from './pages.routes';
 import { ChapterComponent } from './chapter/chapter.component';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
-import { SplashComponent } from './splash/splash.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { EndingComponent } from './ending/ending.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    SplashComponent,
+    WelcomeComponent,
+    EndingComponent,
     HomeComponent, 
     ResourcesComponent,
     ChapterComponent,
@@ -26,7 +28,8 @@ import { SplashComponent } from './splash/splash.component';
   ],
   exports: [
     LoginComponent,
-    SplashComponent,
+    WelcomeComponent,
+    EndingComponent,
     HomeComponent, 
     ResourcesComponent,
     ChapterComponent,
