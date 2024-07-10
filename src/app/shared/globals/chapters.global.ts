@@ -14,24 +14,129 @@ export const chapters: Chapters = {
           { speaker: 0, message: "Hey! I'm Sam!", params: [] },
           {
             speaker: 0,
-            message:
-              'Before we begin, note that this quick exit button in the bottom right will take you to the Weather Channel homepage.',
+            message: 'For your safety, this exit button will take you immediately to the Weather Channel homepage.',
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'Use it if you ever need to escape, and use the link in your email to return here.',
+            message: 'Click it if you ever need to quickly leave this site. Use the link in your email to return.',
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'Also, consider using a safe device and clearing your browser history if you think a partner may be monitoring you.',
+            message: 'Also, if you think someone may be monitoring your device, consider clearing this site from your browser history.',
             params: [],
           },
         ],
         sectionType: 'monologue',
+      },
+      {
+        backgroundImage: 'assets/images/Park.png',
+        leftCharacterImage: 'assets/images/Alex.png',
+        rightCharacterImage: '',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message: 'Okay! Let\'s begin.',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message: 'Healthy relationships thrive on mutual respect, trust, and open communication.',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message: 'Do any of these sound like your relationships?',
+            params: [],
+          },
+        ],
+        sectionType: 'scene',
+      },
+      {
+        backgroundImage: 'assets/images/Park.png',
+        leftCharacterImage: 'assets/images/Couple 1.png',
+        rightCharacterImage: '',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message: 'We make it easy to talk about pregnancy and birth control.',
+            params: [],
+          },
+        ],
+        sectionType: 'scene',
+      },
+      {
+        backgroundImage: 'assets/images/Park.png',
+        leftCharacterImage: 'assets/images/Couple 2.png',
+        rightCharacterImage: '',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message: 'We\'re on the same page about getting pregnant and how to handle pregnancy decisions.',
+            params: [],
+          },
+        ],
+        sectionType: 'scene',
+      },
+      {
+        backgroundImage: 'assets/images/Park.png',
+        leftCharacterImage: 'assets/images/Couple 3.png',
+        rightCharacterImage: '',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message: 'My partner supports my decisions about sex, pregnancy and birth control.',
+            params: [],
+          },
+        ],
+        sectionType: 'scene',
+      },
+      {
+        backgroundImage: 'assets/images/Park.png',
+        leftCharacterImage: 'assets/images/Couple 4.png',
+        rightCharacterImage: '',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message: 'I feel comfortable expressing my sexual desires AND saying no to sex.',
+            params: [],
+          },
+        ],
+        sectionType: 'scene',
+      },
+      {
+        backgroundImage: 'assets/images/Park.png',
+        leftCharacterImage: 'assets/images/Alex.png',
+        rightCharacterImage: '',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message: 'If these couples remind you of your relationships, great!',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message: 'If not, you\'re not the only one. Everyone needs support sometimes.',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message: 'I have a friend, Jade, who\'s going through a tough relationship right now.',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message: 'In this program, we\'ll support her as she takes back control of her body and health.',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message: 'Jade\'s waiting for us at a cafe down the block. Are you ready to meet her?',
+            params: [],
+          },
+        ],
+        sectionType: 'scene',
       },
     ],
   },
