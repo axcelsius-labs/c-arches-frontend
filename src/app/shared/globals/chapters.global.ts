@@ -38,7 +38,7 @@ export const chapters: Chapters = {
   '1': {
     chapterTitle: 'The Cafe',
     chapterDescription: 'Sam and Jade Discuss Reproductive Coersion',
-    previousChapter: 'intro',
+    previousChapter: '0',
     nextChapter: '2',
     sections: [
       {

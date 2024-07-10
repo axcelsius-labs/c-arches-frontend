@@ -1,9 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ChapterService } from '../../services/chapter.service';
-import { BehaviorSubject } from 'rxjs';
 import { DialogueService } from '../../services/dialogue.service';
-import { ProgressService } from '../../services/progress.service';
-
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -15,24 +12,18 @@ export class FooterComponent implements OnInit {
   constructor(
     private chapterService: ChapterService,
     private dialogueService: DialogueService,
-    private progressService: ProgressService,
   ) {}
-  percentComplete$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  ngOnInit(): void {
-    this.progressService.percentComplete$.subscribe((percentComplete) => {
-      this.percentComplete$.next(percentComplete);
-    });
-  }
+  ngOnInit(): void {}
 
   nextDialogLine(): void {
     if (this.dialogueService.isAtSectionEnd()) {
-      this.chapterService.updateNextSection();
+      this.chapterService.handleFinishedSection();
     } else {
       this.dialogueService.playNextDialogueLine();
     }
   }
-  
+
   previousDialogLine(): void {
     if (this.dialogueService.isAtSectionStart()) {
       this.chapterService.goToPreviousSection();

@@ -5,18 +5,18 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class ProgressService {
+export class ProgressBarService {
   constructor(private chapterService: ChapterService) {
     this.chapterService.chapterSectionRouteConfig.subscribe(
       ({ chapterKey, sectionIndex }) => {
-        this.updateProgress(chapterKey!, sectionIndex);
+        this.updateProgressBar(chapterKey!, sectionIndex);
       },
     );
   }
 
   percentComplete$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  private updateProgress(chapterKey: string, sectionIndex: number) {
+  private updateProgressBar(chapterKey: string, sectionIndex: number) {
     const totalSections = this.getTotalSections();
     const currentIndex = this.getCurrentSectionIndex(chapterKey, sectionIndex);
     const percentComplete = this.getPercentComplete(
