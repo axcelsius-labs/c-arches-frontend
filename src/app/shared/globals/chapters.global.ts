@@ -14,7 +14,7 @@ export const chapters: Chapters = {
           { speaker: 0, message: "Hey! I'm Sam!", params: [] },
           {
             speaker: 0,
-            message: 'For your safety, this exit button will take you immediately to the Weather Channel homepage.',
+            message: 'For your safety, the exit button in the top right will take you immediately to the Weather Channel homepage.',
             params: [],
           },
           {
@@ -455,7 +455,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: 'Here are some options for emergency contraception.',
+            message: 'Here are some options for emergency contraception. Select one to continue.',
             params: [],
           },
         ],
@@ -566,7 +566,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: 'Click to learn more about each method.',
+            message: 'Here are some options for private contraception. Select one to continue.',
             params: [],
           },
         ],
@@ -685,6 +685,35 @@ export const chapters: Chapters = {
           { speaker: 0, message: 'Got it! Thanks!', params: [] },
         ],
         sectionType: 'scene',
+      },
+      {
+        backgroundImage: 'assets/images/PatientRoom.png',
+        characterImage: 'assets/images/Doctor-Idle.png',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message: 'We\'re almost done! You can be brave like Jade. Take charge of your reproductive health today.',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message: 'Talk to your provider about how to stay safe and healthy now and in the future.',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message: 'Here are some things you can ask about:',
+            params: [
+              '⚫️  Emergency contraception and birth control you can keep private.',
+              '⚫️  Notifying your partner anonymously if you have an STI and are afraid of them finding out.',
+              '⚫️ Your options if you\'re pregnant and don\'t want to be.',
+              '⚫️ Your options if a partner won\'t use a condom.',
+              '⚫️ How to talk to your partner about birth control',
+              '⚫️ Using the clinic phone to call hotlines or other resources if your partner monitors your phone',
+            ],
+          },
+        ],
+        sectionType: 'monologue',
       },
     ],
   },
