@@ -30,7 +30,7 @@ export const routes: Routes = [
     component: ResourcesComponent,
     canActivate: [AuthGuardService],
   },
-  { path: '**', redirectTo: 'chapter/1' },
+  { path: '**', redirectTo: 'welcome' },
 ];
 
 export class PagesRoutingModule {}

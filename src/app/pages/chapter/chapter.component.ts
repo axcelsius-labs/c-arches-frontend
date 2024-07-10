@@ -38,7 +38,7 @@ export class ChapterComponent implements OnInit {
         .subscribe((params) => {
           this.chapterId = params.get('id')!;
           if (!this.chapterService.isValidChapter(this.chapterId)) {
-            this.router.navigate(['chapter/1']);
+            this.router.navigate(['welcome']);
           } else {
             const sectionIndex = this.route.snapshot.queryParamMap.get(
               'sectionIndex',
