@@ -42,7 +42,7 @@ export const chapters: Chapters = {
     nextChapter: '2',
     sections: [
       {
-        backgroundImage: 'assets/images/LivingRoom.png',
+        backgroundImage: 'assets/images/Cafe.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
@@ -124,7 +124,7 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/LivingRoom.png',
+        backgroundImage: 'assets/images/Cafe.png',
         characterImage: 'assets/images/Alex.png',
         dialogueLines: [
           {
@@ -176,7 +176,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
       },
       {
-        backgroundImage: 'assets/images/LivingRoom.png',
+        backgroundImage: 'assets/images/Cafe.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
@@ -249,7 +249,7 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/LivingRoom.png',
+        backgroundImage: 'assets/images/Cafe.png',
         characterImage: 'assets/images/Alex.png',
         dialogueLines: [
           {
