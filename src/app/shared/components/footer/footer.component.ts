@@ -17,17 +17,18 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {}
 
   nextDialogLine(): void {
-    if (this.dialogueService.endOfSectionCheck()) {
+    if (this.dialogueService.isAtSectionEnd()) {
       this.chapterService.handleFinishedSection();
     } else {
-      this.dialogueService.nextDialogLineIndex();
+      this.dialogueService.playNextDialogueLine();
     }
   }
+
   previousDialogLine(): void {
-    if (this.dialogueService.beginningOfSectionCheck()) {
+    if (this.dialogueService.isAtSectionStart()) {
       this.chapterService.goToPreviousSection();
     } else {
-      this.dialogueService.previousDialogLineIndex();
+      this.dialogueService.playPreviousDialogueLine();
     }
   }
 

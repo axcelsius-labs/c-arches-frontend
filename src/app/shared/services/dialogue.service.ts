@@ -1,62 +1,85 @@
 import { Injectable } from '@angular/core';
-import { ChapterService } from './chapter.service';
 import { BehaviorSubject } from 'rxjs';
-import { Dialogue, DialogueLine } from '../models/dialogue.interface';
-import { Chapter } from '../models/chapter.interface';
+import { DialogueLine } from '../models/dialogue.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DialogueService {
+  lines$: BehaviorSubject<DialogueLine[]> = new BehaviorSubject<DialogueLine[]>(
+    [],
+  );
+  currentLine$: BehaviorSubject<DialogueLine> =
+    new BehaviorSubject<DialogueLine>({} as DialogueLine);
+  isAnimating$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  speakerIsOnLeft$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false,
+  );
+  visibleLetters$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  invisibleLetters$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+
+  currentIndex: number = -1;
+  animationTimer: any;
+
   constructor() {}
-  dialogue$: BehaviorSubject<Dialogue> = new BehaviorSubject<Dialogue>({});
 
-  previousDialogLineIndex(): void {
-    this.dialogue$.next({
-      lineIndex: (this.dialogue$.value.lineIndex! -= 1),
-      isAnimating: true,
-      lines: this.dialogue$.value.lines,
-    });
+  playPreviousDialogueLine(): void {
+    this.playDialogue(this.currentIndex - 1);
+    this.isAnimating$.next(false);
   }
 
-  nextDialogLineIndex(): void {
-    this.dialogue$.next({
-      lineIndex: (this.dialogue$.value.lineIndex! += 1),
-      isAnimating: true,
-      lines: this.dialogue$.value.lines,
-    });
+  playNextDialogueLine(): void {
+    if (this.isAnimating$.value) {
+      this.isAnimating$.next(false);
+    } else this.playDialogue(this.currentIndex + 1);
   }
 
-  updateDialogLines(dialogueLines: DialogueLine[], index: number): void {
-    this.dialogue$.next({
-      lineIndex: index,
-      isAnimating: true,
-      lines: dialogueLines,
-    });
+  updateDialogLines(lines: DialogueLine[], index: number): void {
+    this.lines$.next(lines);
+    this.playDialogue(index);
   }
 
   resetDialogLineIndex(): void {
-    this.dialogue$.next({
-      lineIndex: 0,
-      isAnimating: false,
-      lines: this.dialogue$.value.lines,
-    });
+    this.playDialogue(0);
   }
 
-  endOfSectionCheck(): boolean {
-    if (
-      this.dialogue$.value.lineIndex ===
-      this.dialogue$.value.lines?.length! - 1
-    ) {
-      return true;
-    }
-    return false;
+  isAtSectionStart(): boolean {
+    return this.currentIndex === 0;
   }
 
-  beginningOfSectionCheck(): boolean {
-    if (this.dialogue$.value.lineIndex === 0) {
-      return true;
-    }
-    return false;
+  isAtSectionEnd(): boolean {
+    return this.currentIndex === this.lines$.value.length - 1;
+  }
+
+  playDialogue(index: number) {
+    if (index < 0 || this.lines$.value.length <= index) return;
+    this.currentIndex = index;
+    this.currentLine$.next(this.lines$.value[index]);
+    this.speakerIsOnLeft$.next(this.currentLine$.value.speaker === 0);
+    this.animateText(this.currentLine$.value.message);
+  }
+
+  animateText(text: string): void {
+    this.clearAnimationTimer();
+    this.isAnimating$.next(true);
+    this.visibleLetters$.next('');
+    this.invisibleLetters$.next(text);
+    this.animationTimer = setInterval(() => {
+      if (this.isAnimating$.value && this.invisibleLetters$.value.length > 0) {
+        this.visibleLetters$.next(
+          this.visibleLetters$.value + this.invisibleLetters$.value[0],
+        );
+        this.invisibleLetters$.next(this.invisibleLetters$.value.substring(1));
+      } else {
+        this.isAnimating$.next(false);
+        this.visibleLetters$.next(text);
+        this.invisibleLetters$.next('');
+        this.clearAnimationTimer();
+      }
+    }, 25);
+  }
+
+  clearAnimationTimer(): void {
+    clearInterval(this.animationTimer);
   }
 }

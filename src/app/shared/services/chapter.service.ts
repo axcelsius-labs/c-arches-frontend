@@ -117,11 +117,8 @@ export class ChapterService {
   }
 
   disablePreviousButton(): boolean {
-    if (
-      !this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-        .previousChapter &&
-      this.dialogueService.dialogue$.value.lineIndex === 0
-    ) {
+    if (!this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+        .previousChapter && this.dialogueService.isAtSectionStart()) {
       return true;
     }
     return false;
