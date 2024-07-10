@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  Chapter,
-  ChapterProgress,
-  Chapters,
-} from '../models/chapter.interface';
+import { Chapter, Chapters } from '../models/chapter.interface';
 import { chapters } from '../globals/chapters.global';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -28,7 +24,6 @@ export class ChapterService {
       dialogueIndex: 0,
     });
   allChapters: Chapters = chapters;
-  percentComplete: number = 0;
 
   getCurrentChapter(): Chapter {
     return this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!];
@@ -136,16 +131,5 @@ export class ChapterService {
     // Implement your logic to check if chapterId exists or is valid
     // For simplicity, assuming chapter/1, chapter/2, chapter/3 exist
     return ['0', '1', '2', '3'].includes(chapterId);
-  }
-
-  chapterNumberOfSections(chapterKey: string): number {
-    return this.allChapters[chapterKey].sections.length;
-  }
-  checkIfEndOfSectionIsComplete(): boolean {
-    const progress = this.chapterProgressService.getProgress();
-    return (
-      this.chapterNumberOfSections(progress!.chapterKey!) - 1 ===
-      progress?.sectionIndex
-    );
   }
 }

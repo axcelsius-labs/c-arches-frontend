@@ -18,10 +18,6 @@ export interface Section {
   sectionType: string;
 }
 
-export interface ChapterProgress {
-  [key: string]: boolean;
-}
-
 export interface Chapters {
   [key: string]: Chapter;
 }

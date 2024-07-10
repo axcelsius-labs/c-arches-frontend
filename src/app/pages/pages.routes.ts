@@ -4,19 +4,18 @@ import { ChapterComponent } from './chapter/chapter.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ResourcesComponent } from './resources/resources.component';
-import { ProgressGuardService } from '../shared/services/progress-guard.service';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AuthGuardService, ProgressGuardService],
+    canActivate: [AuthGuardService],
   },
   {
     path: 'chapter/:id',
     component: ChapterComponent,
-    canActivate: [AuthGuardService, ProgressGuardService],
+    canActivate: [AuthGuardService],
   }, //update this line
   {
     path: 'resources',
