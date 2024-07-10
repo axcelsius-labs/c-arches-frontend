@@ -6,10 +6,7 @@ import {
   Output,
   OnInit,
 } from '@angular/core';
-import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
-import { Chapter, Section } from '../../models/chapter.interface';
-import { Dialogue } from '../../models/dialogue.interface';
+import { Section } from '../../models/chapter.interface';
 
 @Component({
   selector: 'app-scene',
