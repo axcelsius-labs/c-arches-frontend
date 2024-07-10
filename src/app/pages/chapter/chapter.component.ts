@@ -101,9 +101,7 @@ export class ChapterComponent implements OnInit {
     } else if (!this.dialogueService.isAtSectionEnd()) {
       this.dialogueService.playNextDialogueLine();
       if (
-        this.sectionContent.dialogueLines![
-          this.dialogueService.currentIndex
-        ].params.length > 0
+        this.sectionContent.dialogueLines![this.dialogueService.currentIndex].params.length > 0
       ) {
         this.additionalContent =
           this.sectionContent.dialogueLines![

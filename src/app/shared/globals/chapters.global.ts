@@ -55,8 +55,8 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/Park.png',
-        leftCharacterImage: 'assets/images/Couple 1.png',
-        rightCharacterImage: '',
+        leftCharacterImage: 'assets/images/Alex.png',
+        rightCharacterImage: 'assets/images/Couple 1.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -474,35 +474,44 @@ export const chapters: Chapters = {
             lines: [
               {
                 speaker: 0,
-                message:
-                  'Your partner might be able to feel the strings, but we can trim them to ensure they are undetectable and cannot be removed by your partner.',
+                message: 'Your partner might be able to feel the strings, but we can trim them to ensure they are undetectable and cannot be removed by your partner.',
                 params: [],
               },
             ],
           },
           {
             name: 'Ella',
-            description:
-              'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
+            description: 'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
             price: '$0-$50',
             effectiveness: '85-98% Effective',
             duration_short: 'Take immediately',
             duration_long: 'Take immediately, works once.',
             periods: '???.',
             privacy: '???',
-            lines: [],
+            lines: [
+              {
+                speaker: 0,
+                message: 'Some patients trash the packaging and keep the pill in a plain container, like an empty pill bottle.',
+                params: [],
+              },
+            ],
           },
           {
             name: 'Plan B One Step (or generic)',
-            description:
-              'A single pill taken as soon as possible after unprotected sex, ideally within 3 days.',
+            description: 'A single pill taken as soon as possible after unprotected sex, ideally within 3 days.',
             price: '$0-50',
             effectiveness: '75–89% Effective',
             duration_short: 'Take immediately',
             duration_long: 'Take immediately, works once.',
             periods: '???',
             privacy: '???',
-            lines: [],
+            lines: [
+              {
+                speaker: 0,
+                message: 'Some patients trash the packaging and keep the pill in a plain container, like an empty pill bottle.',
+                params: [],
+              },
+            ],
           },
         ],
         sectionType: 'monologue.grid',
@@ -569,27 +578,12 @@ export const chapters: Chapters = {
             effectiveness: '96% Effective',
             duration_short: '3 months',
             duration_long: 'Get every 3 months',
-            periods:
-              'Changes in your period are common, e.g. bleeding more days, spotting, or not getting period at all.',
-            privacy:
-              'No at home supplies, so easy to keep private but requires regular access to clinic.',
+            periods: 'Changes in your period are common, e.g. bleeding more days, spotting, or not getting period at all.',
+            privacy: 'No at home supplies, so easy to keep private but requires regular access to clinic.',
             lines: [
               {
                 speaker: 0,
-                message:
-                  'The shot may change your period, so your partner could notice.',
-                params: [],
-              },
-              {
-                speaker: 0,
-                message:
-                  'It requires an injection at the clinic every few months.',
-                params: [],
-              },
-              {
-                speaker: 0,
-                message:
-                  'If your partner monitors your movements or controls your schedule, they interfere with your ability to attend these appointments.',
+                message: 'If your partner monitors your schedule, they may prevent you from attending shot appointments every three months.',
                 params: [],
               },
             ],
@@ -608,8 +602,7 @@ export const chapters: Chapters = {
             lines: [
               {
                 speaker: 0,
-                message:
-                  'Your partner might be able to feel the strings, but we can trim them to ensure they are undetectable and cannot be removed by your partner.',
+                message: 'Your partner might be able to feel the strings, but we can trim them to ensure they are undetectable and cannot be removed by your partner.',
                 params: [],
               },
             ],
@@ -627,8 +620,7 @@ export const chapters: Chapters = {
             lines: [
               {
                 speaker: 0,
-                message:
-                  'Some people may have initial bruising with the implant.',
+                message: 'Some people may have initial bruising with the implant.',
                 params: [],
               },
             ],
@@ -648,19 +640,7 @@ export const chapters: Chapters = {
             lines: [
               {
                 speaker: 0,
-                message: 'Sterilization is a permanent form of birth control.',
-                params: [],
-              },
-              {
-                speaker: 0,
-                message:
-                  "While it is high effective, it's meant to be a permanent decision.",
-                params: [],
-              },
-              {
-                speaker: 0,
-                message:
-                  "It's important to make an informed decision that aligns with your future plans and goals.",
+                message: "Sterilization is a permanent form of birth control. While highly effective, it's meant to be a permanent decision.",
                 params: [],
               },
             ],
