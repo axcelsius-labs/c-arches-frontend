@@ -1,13 +1,13 @@
 <div class="bottom-nav">
   <div
-    class="icon-label-container previous"
+    class="back-button"
     [ngClass]="{ disabled: disablePreviousButton() }"
     (click)="previousDialogLine()"
   >
     <mat-icon class="icon">chevron_left</mat-icon>
     <span class="icon-label">Back</span>
   </div>
-  <div class="icon-label-container next" (click)="nextDialogLine()">
+  <div *ngIf="showNextButton" class="next-button" (click)="nextDialogLine()">
     <span class="icon-label">Next</span>
     <mat-icon class="icon">chevron_right</mat-icon>
   </div>

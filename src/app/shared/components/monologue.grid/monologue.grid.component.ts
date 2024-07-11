@@ -1,13 +1,6 @@
-import {
-  Component,
-  EventEmitter,
-  HostListener,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
-import { Chapter, Section } from '../../models/chapter.interface';
-import { DialogueService } from '../../services/dialogue.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Section } from '../../models/chapter.interface';
+import { ChapterService } from '../../services/chapter.service';
 
 @Component({
   selector: 'app-monologue-grid',
@@ -16,44 +9,19 @@ import { DialogueService } from '../../services/dialogue.service';
 })
 export class MonologueGridComponent implements OnInit {
   @Input() section!: Section;
-  @Output() onFinish = new EventEmitter();
+  @Output() clickedOption = new EventEmitter();
 
-  constructor(private dialogue: DialogueService) {}
-
+  constructor(private chapterService: ChapterService) {}
+  gridOptions!: Section[];
   currentBoxIndex = -1;
   showDialog = true;
-  ngOnInit() {}
-
-  select(index: number) {
-    this.currentBoxIndex = index;
-    this.dialogue.updateDialogLines(
-      this.section.data[this.currentBoxIndex].lines,
-      0,
+  ngOnInit() {
+    this.gridOptions = this.chapterService.getGridOptions(
+      this.section.gridOptionIndexes!,
     );
   }
 
-  back() {
-    this.currentBoxIndex = -1;
-    this.dialogue.updateDialogLines(this.section.dialogueLines!, 0);
-  }
-
-  continue() {
-    this.onFinish.emit();
-  }
-
-  handleClickOrSpace(event?: Event): void {
-    if (this.dialogue.isAnimating$.value) {
-      this.dialogue.isAnimating$.next(false);
-    } else if (!this.dialogue.isAtSectionEnd()) {
-      this.dialogue.playNextDialogueLine();
-    }
-  }
-
-  @HostListener('document:keypress', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.code === 'Space') {
-      this.handleClickOrSpace();
-      event.stopPropagation();
-    }
+  select(index: number) {
+    this.clickedOption.emit(this.section.gridOptionIndexes![index]);
   }
 }
