@@ -1,7 +1,6 @@
 .bottom-nav {
-  background: #93bbf9;
+  background: #7ca3ea;
   color: white;
-  border-top: 3px solid #b6d3ff;
   box-shadow: 0px 0px 40px #00000066;
   align-items: center;
   display: flex;
@@ -13,24 +12,41 @@
   .next-button {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
-    border: none;
+    padding: 6px 12px;
     gap: 2px;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
+    background-color: #00000000;
+    border: 3px solid #00000000;
+    border-radius: 4px;
 
     .icon {
       transform: scale(1.5);
     }
 
     .icon-label {
-      font-size: calc(1.5vw + 0.5rem); /* Adjust the label size as needed */
+      font-size: calc(1.5vw + 0.5rem);
     }
   }
 
   .back-button {
     margin-right: auto; /* Ensure it stays on the left when the next button is hidden */
+  }
+
+  .back-button:hover,
+  .next-button:hover {
+    border: 3px solid #FFFFFF55;
+  }
+  
+  .back-button:focus,
+  .next-button:focus {
+    border: 3px solid #FFFFFFBB;
+  }
+
+  .back-button:active,
+  .next-button:active {
+    border: 3px solid #FFFFFFFF;
   }
 
   .disabled {
