@@ -9,7 +9,7 @@ export const chapters: Chapters = {
     sections: [
       {
         backgroundImage: 'assets/images/Park.png',
-        characterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           { speaker: 0, message: "Hey! I'm Sam!", params: [] },
           {
@@ -31,7 +31,7 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
+        sectionType: 'scene',
       },
       {
         backgroundImage: 'assets/images/Park.png',
@@ -243,7 +243,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/Cafe.png',
-        characterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -291,7 +291,7 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
+        sectionType: 'scene',
       },
       {
         backgroundImage: 'assets/images/Cafe.png',
@@ -368,7 +368,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/Cafe.png',
-        characterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -394,7 +394,7 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
+        sectionType: 'scene',
       },
     ],
   },
@@ -464,7 +464,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         sectionType: 'monologue.grid',
         gridOptionIndexes: [2, 3, 4],
         dialogueLines: [
@@ -478,10 +478,11 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'IUD',
         preview: 'assets/images/IUD.png',
-        description: 'Tiny device put in your uterus, low-maintenance once inserted.',
+        description:
+          'Tiny device put in your uterus, low-maintenance once inserted.',
         price: '$0-$1300',
         effectiveness: '99% Effective',
         duration_short: '3-12 years',
@@ -503,7 +504,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Ella',
         description:
           'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
@@ -527,7 +528,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Plan B One Step (or generic)',
         description:
           'A single pill taken as soon as possible after unprotected sex, ideally within 3 days.',
@@ -596,7 +597,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         gridOptionIndexes: [7, 8, 9, 10],
         dialogueLines: [
           {
@@ -610,7 +611,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'The Shot',
         preview: 'assets/images/Injection.png',
         description: 'Injection in your arm or buttocks every 3 months',
@@ -636,7 +637,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'IUD',
         preview: 'assets/images/IUD.png',
         description:
@@ -662,7 +663,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'The Implant (Nexplanon)',
         preview: 'assets/images/Implant.png',
         description: 'Small & discreet device inserted under the skin.',
@@ -686,16 +687,19 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Sterilization (Tubal Ligation)',
         preview: 'assets/images/Sterilization.png',
-        description: 'Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.',
+        description:
+          'Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.',
         price: '???',
         effectiveness: '???',
         duration_short: 'Permanent',
-        duration_long: 'Permanent. Recovery times vary and may require follow-up appointments.',
+        duration_long:
+          'Permanent. Recovery times vary and may require follow-up appointments.',
         periods: '???',
-        privacy: 'Private after recovery. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
+        privacy:
+          'Private after recovery. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
         dialogueLines: [
           {
             speaker: 0,
@@ -749,7 +753,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
-        characterImage: 'assets/images/Doctor-Idle.png',
+        leftCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -776,7 +780,7 @@ export const chapters: Chapters = {
             ],
           },
         ],
-        sectionType: 'monologue',
+        sectionType: 'scene',
       },
     ],
   },

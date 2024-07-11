@@ -10,15 +10,10 @@
   [showFooter]="true"
 >
   <ng-container *ngIf="sectionContent.sectionType as type">
-    <app-monologue
-      *ngIf="type === 'monologue'"
-      [section]="sectionContent"
-      [additionalContent]="additionalContent"
-      (onClickOrSpace)="goToNextDialogLine()"
-    ></app-monologue>
     <app-scene
       *ngIf="type === 'scene'"
       [section]="sectionContent"
+      [additionalContent]="additionalContent"
       (onClickOrSpace)="goToNextDialogLine()"
     ></app-scene>
     <app-monologue-grid
