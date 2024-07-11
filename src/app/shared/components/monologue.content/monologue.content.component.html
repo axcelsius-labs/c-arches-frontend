@@ -6,30 +6,32 @@
       <div class="option-box-title">
         {{ section.name }}
       </div>
-      <div class="option-box-main">
-        <div class="option-box-section">
-          <img class="option-box-preview" [src]="section.preview"/>
-        </div>
-        <div>
-          <h4><i>{{ section.description }}</i></h4>
-          <div class="option-box-main">
-            <div class="option-box-section">
-              {{ section.price }}
-            </div>
-            <div class="option-box-section">
-              {{ section.effectiveness }}
-            </div>
-            <div class="option-box-section">
-              {{ section.duration_long }}
-            </div>
+      <div class="option-box-body">
+        <div class="option-box-row">
+          <div class="option-box-preview-container">
+            <img class="option-box-preview" [src]="section.preview"/>
+          </div>
+          <div class="option-box-section">
+            <i>{{ section.description }}</i>
           </div>
         </div>
-      </div>
-      <div class="option-box-section">
-        <b>Periods:</b> {{ section.periods }}
-      </div>
-      <div class="option-box-section">
-        <b>Privacy:</b> {{ section.privacy }}
+        <div class="option-box-row">
+          <div class="option-box-section">
+            {{ section.price }}
+          </div>
+          <div class="option-box-section">
+            {{ section.effectiveness }}
+          </div>
+          <div class="option-box-section">
+            {{ section.duration_long }}
+          </div>
+        </div>
+        <div class="option-box-section">
+          <b>Periods:</b> {{ section.periods }}
+        </div>
+        <div class="option-box-section">
+          <b>Privacy:</b> {{ section.privacy }}
+        </div>
       </div>
     </div>
   </div>

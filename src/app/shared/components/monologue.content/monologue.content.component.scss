@@ -46,12 +46,26 @@
       font-weight: bold;
     }
 
-    .option-box-main {
+    .option-box-body {
+      display: flex;
+      margin: 0;
+      padding: 10px;
+      flex-direction: column;
+      align-items: stretch;
+      align-content: stretch;
+      justify-content: start;
+      gap: 10px;
+    }
+    
+    .option-box-row {
       display: flex;
       flex-direction: row;
-      align-items: start;
+      align-items: stretch;
+      align-content: stretch;
       justify-content: start;
-      flex-grow: 1;
+      flex-wrap: wrap;
+      gap: 10px;
+      row-gap: 10px;
       margin: auto;
     }
     
@@ -60,7 +74,15 @@
       border-radius: 4px;
       text-align: left;
       color: #5a2466;
-      margin: 10px 10px;
+      padding: 10px;
+      flex: 1 1 auto;
+    }
+    
+    .option-box-preview-container {
+      background: #f2b8ff;
+      border-radius: 4px;
+      text-align: left;
+      color: #5a2466;
       padding: 10px;
     }
     
