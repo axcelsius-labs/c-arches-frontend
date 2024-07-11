@@ -27,6 +27,7 @@ export interface Section {
   duration_long?: string;
   periods?: string;
   privacy?: string;
+  overlay?: boolean;
 }
 
 export interface Chapters {

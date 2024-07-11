@@ -1,21 +1,29 @@
-<app-header></app-header>
-
-<div class="login-body">
-    
+<app-main-container [showHeader]="false">
+  <div class="login-body">
     <h1>Welcome!</h1>
     <h3>Please input the password to continue.</h3>
 
     <form>
-        <div class="input">
-            <input type="text" class="password-input" name="password" [(ngModel)]="password">
-        </div>
-        <div class="input">
-            <input type="submit" class="password-submit" value="Submit" (click)="onSubmit()">
-        </div>
+      <div class="input">
+        <input
+          type="text"
+          class="password-input"
+          name="password"
+          [(ngModel)]="password"
+        />
+      </div>
+      <div class="input">
+        <input
+          type="submit"
+          class="password-submit"
+          value="Submit"
+          (click)="onSubmit()"
+        />
+      </div>
     </form>
 
     <h3>Existing participants, please access this page through your email.</h3>
-    
-</div>
+  </div>
 
-<app-copyright></app-copyright>
+  <app-copyright></app-copyright>
+</app-main-container>

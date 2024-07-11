@@ -1,36 +1,38 @@
 <div class="option-content" (click)="handleClickOrSpace()">
-  <dialogue class="dialogue-container"></dialogue>
-  <div class="character-wrapper">
-    <img class="character-container" [src]="section.characterImage" />
-    <div class="option-box">
-      <div class="option-box-title">
-        {{ section.name }}
-      </div>
-      <div class="option-box-body">
-        <div class="option-box-row">
-          <div class="option-box-preview-container">
-            <img class="option-box-preview" [src]="section.preview"/>
-          </div>
-          <div class="option-box-section">
-            <i>{{ section.description }}</i>
-          </div>
+  <div class="dialog-charactor-container">
+    <dialogue class="dialogue-container"></dialogue>
+    <div class="character-container">
+      <img class="character" [src]="section.characterImage" />
+      <div class="option-box">
+        <div class="option-box-title">
+          {{ section.name }}
         </div>
-        <div class="option-box-row">
-          <div class="option-box-section">
-            {{ section.price }}
+        <div class="option-box-body">
+          <div class="option-box-row">
+            <div class="option-box-preview-container">
+              <img class="option-box-preview" [src]="section.preview" />
+            </div>
+            <div class="option-box-section">
+              <i>{{ section.description }}</i>
+            </div>
+          </div>
+          <div class="option-box-row">
+            <div class="option-box-section">
+              {{ section.price }}
+            </div>
+            <div class="option-box-section">
+              {{ section.effectiveness }}
+            </div>
+            <div class="option-box-section">
+              {{ section.duration_long }}
+            </div>
           </div>
           <div class="option-box-section">
-            {{ section.effectiveness }}
+            <b>Periods:</b> {{ section.periods }}
           </div>
           <div class="option-box-section">
-            {{ section.duration_long }}
+            <b>Privacy:</b> {{ section.privacy }}
           </div>
-        </div>
-        <div class="option-box-section">
-          <b>Periods:</b> {{ section.periods }}
-        </div>
-        <div class="option-box-section">
-          <b>Privacy:</b> {{ section.privacy }}
         </div>
       </div>
     </div>
