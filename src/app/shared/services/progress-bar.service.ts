@@ -1,17 +1,31 @@
 import { Injectable } from '@angular/core';
 import { ChapterService } from './chapter.service';
 import { BehaviorSubject } from 'rxjs';
+import { DialogueService } from './dialogue.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProgressBarService {
-  constructor(private chapterService: ChapterService) {
+  constructor(
+    private chapterService: ChapterService,
+    private dialogueService: DialogueService,
+  ) {
     this.chapterService.chapterSectionRouteConfig.subscribe(
       ({ chapterKey, sectionIndex, dialogueIndex }) => {
         this.updateProgressBar(chapterKey!, sectionIndex, dialogueIndex);
       },
     );
+
+    this.dialogueService.currentLine$.subscribe(() => {
+      const { chapterKey, sectionIndex } =
+        this.chapterService.chapterSectionRouteConfig.value;
+      this.updateProgressBar(
+        chapterKey!,
+        sectionIndex,
+        this.dialogueService.currentIndex,
+      );
+    });
   }
 
   percentComplete$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
