@@ -1,10 +1,20 @@
 <div class="main-container">
+  <app-header
+    class="header"
+    *ngIf="showHeader"
+    [chapterTitle]="chapterTitle"
+  ></app-header>
   <app-background
     *ngIf="backgroundImage"
     [backgroundImage]="backgroundImage"
     [blackOut]="blackOut"
   ></app-background>
-  <div class="content-container">
+  <div class="content">
     <ng-content></ng-content>
   </div>
+  <app-footer
+    class="footer"
+    *ngIf="showFooter"
+    [showNextButton]="showNextButton"
+  ></app-footer>
 </div>

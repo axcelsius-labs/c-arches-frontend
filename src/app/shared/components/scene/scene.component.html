@@ -1,13 +1,15 @@
 <div class="scene-container" (click)="handleClickOrSpace()">
-  <dialogue class="dialogue-container"></dialogue>
-  <div class="character-container">
-    <img
-      class="character left no-interaction"
-      [src]="section.leftCharacterImage"
-    />
-    <img
-      class="character right no-interaction"
-      [src]="section.rightCharacterImage"
-    />
+  <div class="dialog-charactor-container">
+    <dialogue class="dialogue-container"></dialogue>
+    <div class="character-container">
+      <img
+        class="character left no-interaction"
+        [src]="section.leftCharacterImage"
+      />
+      <img
+        class="character right no-interaction"
+        [src]="section.rightCharacterImage"
+      />
+    </div>
   </div>
 </div>

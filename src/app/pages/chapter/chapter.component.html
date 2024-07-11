@@ -5,12 +5,11 @@
     sectionContent.sectionType === 'monologue.grid' ||
     sectionContent.sectionType === 'monologue.content'
   "
+  [chapterTitle]="chapterContent.chapterTitle"
+  [showNextButton]="sectionContent.sectionType !== 'monologue.grid'"
+  [showFooter]="true"
 >
-  <app-header [chapterTitle]="chapterContent.chapterTitle"></app-header>
-  <div
-    [ngClass]="{ allowOverflow: allowOverflow, hideOverflow: !allowOverflow }"
-    *ngIf="sectionContent.sectionType as type"
-  >
+  <ng-container *ngIf="sectionContent.sectionType as type">
     <app-monologue
       *ngIf="type === 'monologue'"
       [section]="sectionContent"
@@ -32,11 +31,5 @@
       [section]="sectionContent"
       (onClickOrSpace)="finishedSection()"
     ></app-monologue-content>
-  </div>
-  <div>
-    <app-progress-bar></app-progress-bar>
-    <app-footer
-      [showNextButton]="sectionContent.sectionType !== 'monologue.grid'"
-    ></app-footer>
-  </div>
+  </ng-container>
 </app-main-container>
