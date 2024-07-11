@@ -1,20 +1,28 @@
-<app-main-container chapterTitle="Welcome to C-Arches!">
-  <h1>Relationships affect your physical and emotional health.</h1>
+<app-main-container chapterTitle="Welcome">
+  <div class="welcome-container">
+    <div class="title-container">
+      <h1>Relationships affect your physical and emotional health.</h1>
+    </div>
+    <div class="character-wrapper">
+      <img class="character-container no-interaction" [src]="character" />
+      <div class="additional-content">
+        In your life, who decides...<br />
+        🔹If and how to have sex?<br />
+        🔹If and when to have kids?<br />
+        🔹How to prevent pregnancy?<br />
+        🔹How to handle an unplanned pregnancy?<br />
+        <br />
+        Your voice matters in these decisions.<br />
+        <br />
+        Learn how to support your friends and how healthcare providers can help
+        you stay happy and healthy.<br />
+        <br />
+        <i>This program takes around 5 minutes to complete.</i>
+        <br />
 
-  In your life, who decides...<br />
-  🔹If and how to have sex?<br />
-  🔹If and when to have kids?<br />
-  🔹How to prevent pregnancy?<br />
-  🔹How to handle an unplanned pregnancy?<br />
-  <br />
-  Your voice matters in these decisions.<br />
-  <br />
-  Learn how to support your friends and how healthcare providers can help you
-  stay happy and healthy.<br />
-  <br />
-  <i>This program takes around 5 minutes to complete.</i>
-  <br />
-
-  <button class="" routerLink="/chapter/0">Begin!</button>
+        <button class="begin-button" routerLink="/chapter/0">Begin!</button>
+      </div>
+    </div>
+  </div>
   <app-copyright></app-copyright>
 </app-main-container>

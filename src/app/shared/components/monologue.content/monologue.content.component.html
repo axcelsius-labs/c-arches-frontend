@@ -3,15 +3,34 @@
   <div class="character-wrapper">
     <img class="character-container" [src]="section.characterImage" />
     <div class="option-box">
-      <h2>{{ section.name }}</h2>
-      <h4>
-        <i>{{ section.description }}</i>
-      </h4>
-      <h4>{{ section.price }}</h4>
-      <h4>{{ section.effectiveness }}</h4>
-      <h4>{{ section.duration_long }}</h4>
-      <p><b>Periods:</b> {{ section.periods }}</p>
-      <p><b>Privacy:</b> {{ section.privacy }}</p>
+      <div class="option-box-title">
+        {{ section.name }}
+      </div>
+      <div class="option-box-main">
+        <div class="option-box-section">
+          <img class="option-box-preview" [src]="section.preview"/>
+        </div>
+        <div>
+          <h4><i>{{ section.description }}</i></h4>
+          <div class="option-box-main">
+            <div class="option-box-section">
+              {{ section.price }}
+            </div>
+            <div class="option-box-section">
+              {{ section.effectiveness }}
+            </div>
+            <div class="option-box-section">
+              {{ section.duration_long }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="option-box-section">
+        <b>Periods:</b> {{ section.periods }}
+      </div>
+      <div class="option-box-section">
+        <b>Privacy:</b> {{ section.privacy }}
+      </div>
     </div>
   </div>
 </div>

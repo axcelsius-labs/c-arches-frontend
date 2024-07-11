@@ -26,6 +26,7 @@
     object-position: 100% 100%;
     filter: drop-shadow(0 0 30px #000000BB);
   }
+  
   .additional-content {
     display: flex;
     flex-direction: column;
@@ -38,16 +39,8 @@
     z-index: 1;
     max-width: 65vh;
   }
+  
   .hidden-box {
     width: 65vh;
   }
-
 }
-
-
-
-// @media (max-width: 580px) {
-//   .additional-content {
-//     font-size: 3vw;
-//   }
-// }

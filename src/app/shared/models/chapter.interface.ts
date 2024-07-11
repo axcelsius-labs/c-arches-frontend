@@ -19,6 +19,7 @@ export interface Section {
   previousSectionIndex?: number;
   nextSectionIndex?: number;
   name?: string;
+  preview?: string;
   description?: string;
   price?: string;
   effectiveness?: string;

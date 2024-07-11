@@ -26,15 +26,49 @@
     }
 
     .option-box {
-      background: white;
-      border: 5px solid gray;
-      padding: 0.5vw;
+      background: #fae3ff;
+      border: 5px solid #d681e9;
       text-align: center;
       border-radius: 8px;
       cursor: pointer;
       max-width: 65vh;
       height: fit-content;
     }
+    
+    .option-box-title {
+      margin: 0;
+      padding: 10px;
+      background: #d681e9;
+      border: 0 solid #00000000;
+      color: white;
+      text-align: left;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .option-box-main {
+      display: flex;
+      flex-direction: row;
+      align-items: start;
+      justify-content: start;
+      flex-grow: 1;
+      margin: auto;
+    }
+    
+    .option-box-section {
+      background: #f2b8ff;
+      border-radius: 4px;
+      text-align: left;
+      color: #5a2466;
+      margin: 10px 10px;
+      padding: 10px;
+    }
+    
+    .option-box-preview {
+      width: 60px;
+      height: 60px;
+    }
+    
     @media (max-width: 990px) {
       .option-box {
         h2 {
@@ -44,7 +78,12 @@
         h4 {
           font-size: 10px;
         }
+        
         p {
+          font-size: 10px;
+        }
+        
+        .option-box-section {
           font-size: 10px;
         }
       }
@@ -59,7 +98,12 @@
         h4 {
           font-size: 12px;
         }
+        
         p {
+          font-size: 12px;
+        }
+
+        .option-box-section {
           font-size: 12px;
         }
       }

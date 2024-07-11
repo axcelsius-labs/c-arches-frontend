@@ -480,8 +480,8 @@ export const chapters: Chapters = {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         name: 'IUD',
-        description:
-          'Tiny device put in your uterus, low-maintenance once inserted.',
+        preview: 'assets/images/IUD.png',
+        description: 'Tiny device put in your uterus, low-maintenance once inserted.',
         price: '$0-$1300',
         effectiveness: '99% Effective',
         duration_short: '3-12 years',
@@ -612,6 +612,7 @@ export const chapters: Chapters = {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         name: 'The Shot',
+        preview: 'assets/images/Injection.png',
         description: 'Injection in your arm or buttocks every 3 months',
         price: '$0-$150',
         effectiveness: '96% Effective',
@@ -637,6 +638,7 @@ export const chapters: Chapters = {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         name: 'IUD',
+        preview: 'assets/images/IUD.png',
         description:
           'Tiny device put in your uterus, low-maintenance once inserted.',
         price: '$0-$1300',
@@ -662,6 +664,7 @@ export const chapters: Chapters = {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         name: 'The Implant (Nexplanon)',
+        preview: 'assets/images/Implant.png',
         description: 'Small & discreet device inserted under the skin.',
         price: '$0-$2200',
         effectiveness: '99% Effective',
@@ -685,16 +688,14 @@ export const chapters: Chapters = {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         name: 'Sterilization (Tubal Ligation)',
-        description:
-          'Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.',
+        preview: 'assets/images/Sterilization.png',
+        description: 'Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.',
         price: '???',
         effectiveness: '???',
         duration_short: 'Permanent',
-        duration_long:
-          'Permanent. Recovery times vary and may require follow-up appointments.',
+        duration_long: 'Permanent. Recovery times vary and may require follow-up appointments.',
         periods: '???',
-        privacy:
-          'Private after recovery. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
+        privacy: 'Private after recovery. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
         dialogueLines: [
           {
             speaker: 0,
