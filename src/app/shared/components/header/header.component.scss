@@ -1,56 +1,56 @@
-.header {
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 8vh;
+  background: #7ca3ea;
+  border-bottom: 3px solid #b6d3ff;
+  box-shadow: 0px 0px 40px #00000066;
+  .header-logo-text {
+    flex: 1;
+    text-align: left;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  .header-chapter-text {
+    flex: 1;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  .header-actions {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    height: 8vh;
-    background: #7ca3ea; 
-    border-bottom: 3px solid #b6d3ff;
-    box-shadow: 0px 0px 40px #00000066;
-    .header-logo-text {
-        flex: 1;
-        text-align: left;
-        cursor: pointer;
-        color: white;
-        font-weight: bold;
-        margin-left: 20px;
-    }
-    .header-chapter-text {
-        flex: 1;
-        color: white;
-        font-weight: bold;
-        text-align: center;
-    }
-    .header-actions {
-        display: flex;
-        flex: 1;
-        color: white;
-        font-weight: bold;
-        margin-right: 20px;
+    flex: 1;
+    color: white;
+    font-weight: bold;
+    margin-right: 20px;
 
-        .icons-container {
-            display: flex;
-            gap: 10px;
-            margin-left: auto; 
-            align-items: center;
-        }
-        .icon-label-container {
-            display: flex;
-            flex-direction: column;
-            width: fit-content;
-            align-items: center;
-            cursor: pointer;
-        
-            .icon {
-              font-size: 24px; /* Adjust the size as needed */
-            }
-        
-            .icon-label {
-              font-size: 10px; /* Adjust the label size as needed */
-            }  
-        }
-        .exit {
-            color: red;
-        }
+    .icons-container {
+      display: flex;
+      gap: 10px;
+      margin-left: auto;
+      align-items: center;
     }
+    .icon-label-container {
+      display: flex;
+      flex-direction: column;
+      width: fit-content;
+      align-items: center;
+      cursor: pointer;
+
+      .icon {
+        font-size: 24px; /* Adjust the size as needed */
+      }
+
+      .icon-label {
+        font-size: 10px; /* Adjust the label size as needed */
+      }
+    }
+    .exit {
+      color: red;
+    }
+  }
 }

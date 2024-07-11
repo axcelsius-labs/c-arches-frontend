@@ -1,17 +1,19 @@
 <div class="chapter-2-1-container">
-  <dialogue class="dialogue-container"></dialogue>
-  <div class="character-wrapper">
-    <img class="character-container" [src]="section.characterImage" />
-    <div class="grid-container" *ngIf="currentBoxIndex === -1">
-      <div
-        class="grid-item"
-        *ngFor="let item of gridOptions; let i = index"
-        (click)="select(i); $event.stopPropagation()"
-      >
-        <div class="content title">{{ item.name }}</div>
-        <div class="content">{{ item.price }}</div>
-        <div class="content">{{ item.effectiveness }}</div>
-        <div class="content">{{ item.duration_short }}</div>
+  <div class="dialog-charactor-container">
+    <dialogue class="dialogue-container"></dialogue>
+    <div class="character-container">
+      <img class="character" [src]="section.characterImage" />
+      <div class="grid-container" *ngIf="currentBoxIndex === -1">
+        <div
+          class="grid-item"
+          *ngFor="let item of gridOptions; let i = index"
+          (click)="select(i); $event.stopPropagation()"
+        >
+          <div class="content title">{{ item.name }}</div>
+          <div class="content">{{ item.price }}</div>
+          <div class="content">{{ item.effectiveness }}</div>
+          <div class="content">{{ item.duration_short }}</div>
+        </div>
       </div>
     </div>
   </div>

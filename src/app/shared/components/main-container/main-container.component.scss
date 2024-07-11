@@ -1,19 +1,18 @@
 .main-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
+  flex-direction: column;
   height: 100vh;
-  overflow: hidden;
-  position: relative;
 }
 
-.content-container {
-  height: 100vh;
-  z-index: 1;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100vw;
+.header {
+  flex: 0 0 auto; /* Header takes only as much space as it needs */
+}
+
+.content {
+  flex: 1 1 auto; /* Content takes the remaining space */
+  overflow: auto; /* Ensure content is scrollable if it overflows */
+}
+
+.footer {
+  flex: 0 0 auto; /* Footer takes only as much space as it needs */
 }
