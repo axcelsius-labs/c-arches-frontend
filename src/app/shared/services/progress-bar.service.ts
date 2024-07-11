@@ -1,51 +1,89 @@
 import { Injectable } from '@angular/core';
 import { ChapterService } from './chapter.service';
 import { BehaviorSubject } from 'rxjs';
+import { DialogueService } from './dialogue.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProgressBarService {
-  constructor(private chapterService: ChapterService) {
+  constructor(
+    private chapterService: ChapterService,
+    private dialogueService: DialogueService,
+  ) {
     this.chapterService.chapterSectionRouteConfig.subscribe(
-      ({ chapterKey, sectionIndex }) => {
-        this.updateProgressBar(chapterKey!, sectionIndex);
+      ({ chapterKey, sectionIndex, dialogueIndex }) => {
+        this.updateProgressBar(chapterKey!, sectionIndex, dialogueIndex);
       },
     );
+
+    this.dialogueService.currentLine$.subscribe(() => {
+      const { chapterKey, sectionIndex } =
+        this.chapterService.chapterSectionRouteConfig.value;
+      this.updateProgressBar(
+        chapterKey!,
+        sectionIndex,
+        this.dialogueService.currentIndex,
+      );
+    });
   }
 
   percentComplete$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  private updateProgressBar(chapterKey: string, sectionIndex: number) {
-    const totalSections = this.getTotalSections();
-    const currentIndex = this.getCurrentSectionIndex(chapterKey, sectionIndex);
+  private updateProgressBar(
+    chapterKey: string,
+    sectionIndex: number,
+    dialogueIndex: number,
+  ) {
+    const totalDialogues = this.getTotalDialogues();
+    const currentIndex = this.getCurrentDialogueIndex(
+      chapterKey,
+      sectionIndex,
+      dialogueIndex,
+    );
     const percentComplete = this.getPercentComplete(
       currentIndex,
-      totalSections,
+      totalDialogues,
     );
     this.percentComplete$.next(percentComplete);
   }
 
-  private getTotalSections(): number {
+  private getTotalDialogues(): number {
     return Object.values(this.chapterService.allChapters).reduce(
-      (total, chapter) => total + chapter.sections.length,
+      (total, chapter) =>
+        total +
+        chapter.sections.reduce(
+          (sectionTotal, section) =>
+            sectionTotal + section.dialogueLines!.length,
+          0,
+        ),
       0,
     );
   }
 
-  private getCurrentSectionIndex(
+  private getCurrentDialogueIndex(
     chapterKey: string,
     sectionIndex: number,
+    dialogueIndex: number,
   ): number {
     const chapterKeys = Object.keys(this.chapterService.allChapters);
     let index = 0;
 
     for (const key of chapterKeys) {
       if (key === chapterKey) {
-        index += sectionIndex;
+        for (let i = 0; i < sectionIndex; i++) {
+          index +=
+            this.chapterService.allChapters[key].sections[i].dialogueLines!
+              .length;
+        }
+        index += dialogueIndex;
         break;
       } else {
-        index += this.chapterService.allChapters[key].sections.length;
+        index += this.chapterService.allChapters[key].sections.reduce(
+          (sectionTotal, section) =>
+            sectionTotal + section.dialogueLines!.length,
+          0,
+        );
       }
     }
 
@@ -54,8 +92,8 @@ export class ProgressBarService {
 
   private getPercentComplete(
     currentIndex: number,
-    totalSections: number,
+    totalDialogues: number,
   ): number {
-    return (currentIndex / totalSections) * 100;
+    return (currentIndex / totalDialogues) * 100;
   }
 }

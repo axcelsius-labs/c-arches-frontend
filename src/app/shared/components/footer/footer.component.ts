@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ChapterService } from '../../services/chapter.service';
 import { DialogueService } from '../../services/dialogue.service';
 @Component({
@@ -7,6 +7,7 @@ import { DialogueService } from '../../services/dialogue.service';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit {
+  @Input() showNextButton: Boolean = true;
   @Output() showNextDialogLine = new EventEmitter();
   @Output() showPreviousDialogLine = new EventEmitter();
   constructor(

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Chapter, Chapters } from '../models/chapter.interface';
+import { Chapter, Chapters, Section } from '../models/chapter.interface';
 import { chapters } from '../globals/chapters.global';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -28,6 +28,13 @@ export class ChapterService {
   getCurrentChapter(): Chapter {
     return this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!];
   }
+
+  getCurrentSection(): Section {
+    return this.getCurrentChapter().sections[
+      this.chapterSectionRouteConfig.value.sectionIndex
+    ];
+  }
+
   updateChapterSectionAndDialog(
     newRouteConfig: ChapterSectionRouteConfig,
   ): void {
@@ -38,31 +45,43 @@ export class ChapterService {
     });
   }
 
-  getNextSection(): ChapterSectionRouteConfig {
-    const progress = this.chapterProgressService.getProgress();
-    //progress wasnt set already check takes you to the beginning
-    if (!progress) {
-      return { chapterKey: '0', sectionIndex: 0, dialogueIndex: 0 };
+  getNextSection(nextSectionIndex?: number): ChapterSectionRouteConfig {
+    const currentSection = this.getCurrentSection();
+
+    if (
+      this.chapterSectionRouteConfig.value.sectionIndex ===
+      this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+        .sections.length -
+        1
+    ) {
+      const nextChapter =
+        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+          .nextChapter;
+      //next chapter could be null
+      return { chapterKey: nextChapter, sectionIndex: 0, dialogueIndex: 0 };
+    } else if (nextSectionIndex) {
+      return {
+        chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
+        sectionIndex: nextSectionIndex,
+        dialogueIndex: 0,
+      };
+    } else if (currentSection.nextSectionIndex) {
+      return {
+        chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
+        sectionIndex: currentSection.nextSectionIndex,
+        dialogueIndex: 0,
+      };
     } else {
-      if (
-        progress.sectionIndex ===
-        this.allChapters[progress.chapterKey!].sections.length - 1
-      ) {
-        const nextChapter = this.allChapters[progress.chapterKey!].nextChapter;
-        //next chapter could be null
-        return { chapterKey: nextChapter, sectionIndex: 0, dialogueIndex: 0 };
-      } else {
-        return {
-          chapterKey: progress.chapterKey,
-          sectionIndex: (progress.sectionIndex += 1),
-          dialogueIndex: 0,
-        };
-      }
+      return {
+        chapterKey: this.chapterSectionRouteConfig.value.chapterKey,
+        sectionIndex: (this.chapterSectionRouteConfig.value.sectionIndex += 1),
+        dialogueIndex: 0,
+      };
     }
   }
 
-  goToNextSection(): void {
-    const nextSection = this.getNextSection();
+  goToNextSection(nextSectionIndex?: number): void {
+    const nextSection = this.getNextSection(nextSectionIndex);
     if (!nextSection.chapterKey) {
       this.router.navigate(['']);
     } else {
@@ -74,15 +93,17 @@ export class ChapterService {
     }
   }
 
-  handleFinishedSection() {
+  handleFinishedSection(nextSectionIndex?: number) {
     this.chapterProgressService.setProgress(
       this.chapterSectionRouteConfig.value,
     );
-    this.goToNextSection();
+    this.goToNextSection(nextSectionIndex);
   }
 
   goToPreviousSection(): void {
     //end of section reached
+    const currentSection = this.getCurrentSection();
+
     if (this.chapterSectionRouteConfig.value.sectionIndex === 0) {
       const previousChapter =
         this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
@@ -103,22 +124,37 @@ export class ChapterService {
         });
       }
     } else {
-      const previousSection =
-        (this.chapterSectionRouteConfig.value.sectionIndex -= 1);
-      const lastdialogueIndex =
-        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-          .sections[previousSection].dialogueLines?.length! - 1;
-      this.updateChapterSectionAndDialog({
-        chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
-        sectionIndex: previousSection,
-        dialogueIndex: lastdialogueIndex,
-      });
+      if (currentSection.previousSectionIndex) {
+        const lastdialogueIndex =
+          this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+            .sections[currentSection.previousSectionIndex].dialogueLines
+            ?.length! - 1;
+        this.updateChapterSectionAndDialog({
+          chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
+          sectionIndex: currentSection.previousSectionIndex,
+          dialogueIndex: lastdialogueIndex,
+        });
+      } else {
+        const previousSection =
+          (this.chapterSectionRouteConfig.value.sectionIndex -= 1);
+        const lastdialogueIndex =
+          this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+            .sections[previousSection].dialogueLines?.length! - 1;
+        this.updateChapterSectionAndDialog({
+          chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
+          sectionIndex: previousSection,
+          dialogueIndex: lastdialogueIndex,
+        });
+      }
     }
   }
 
   disablePreviousButton(): boolean {
-    if (!this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-        .previousChapter && this.dialogueService.isAtSectionStart()) {
+    if (
+      !this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+        .previousChapter &&
+      this.dialogueService.isAtSectionStart()
+    ) {
       return true;
     }
     return false;
@@ -128,5 +164,13 @@ export class ChapterService {
     // Implement your logic to check if chapterId exists or is valid
     // For simplicity, assuming chapter/1, chapter/2, chapter/3 exist
     return ['0', '1', '2', '3'].includes(chapterId);
+  }
+
+  getGridOptions(sectionIndexes: number[]): Section[] {
+    return sectionIndexes.map(
+      (index) =>
+        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+          .sections[index],
+    ) as Section[];
   }
 }

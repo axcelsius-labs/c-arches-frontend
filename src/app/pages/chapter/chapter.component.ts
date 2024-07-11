@@ -7,7 +7,6 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { ChapterTitleOverlayComponent } from '../../shared/components/chapter-title-overlay/chapter-title-overlay.component';
 import { Router } from '@angular/router';
 import { Subscription, distinctUntilChanged, filter } from 'rxjs';
-import { ChapterProgressService } from '../../shared/services/chapter-progress.service';
 
 @Component({
   selector: 'app-chapter',
@@ -101,18 +100,19 @@ export class ChapterComponent implements OnInit {
     } else if (!this.dialogueService.isAtSectionEnd()) {
       this.dialogueService.playNextDialogueLine();
       if (
-        this.sectionContent.dialogueLines![this.dialogueService.currentIndex].params.length > 0
+        this.sectionContent.dialogueLines![this.dialogueService.currentIndex]
+          .params.length > 0
       ) {
         this.additionalContent =
           this.sectionContent.dialogueLines![
-              this.dialogueService.currentIndex
+            this.dialogueService.currentIndex
           ].params;
       }
     } else this.finishedSection();
   }
 
-  finishedSection(): void {
-    this.chapterService.handleFinishedSection();
+  finishedSection(nextSectionIndex?: number): void {
+    this.chapterService.handleFinishedSection(nextSectionIndex);
   }
 
   openChapterTitleOverlay(chapter: Chapter): void {

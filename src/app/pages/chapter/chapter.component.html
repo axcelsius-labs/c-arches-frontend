@@ -1,8 +1,9 @@
 <app-main-container
-  [backgroundImage]="sectionContent.backgroundImage"
+  [backgroundImage]="sectionContent.backgroundImage!"
   [blackOut]="
     sectionContent.sectionType === 'monologue' ||
-    sectionContent.sectionType === 'monologue.grid'
+    sectionContent.sectionType === 'monologue.grid' ||
+    sectionContent.sectionType === 'monologue.content'
   "
 >
   <app-header [chapterTitle]="chapterContent.chapterTitle"></app-header>
@@ -24,16 +25,18 @@
     <app-monologue-grid
       *ngIf="type === 'monologue.grid'"
       [section]="sectionContent"
-      (onFinish)="finishedSection()"
+      (clickedOption)="finishedSection($event)"
     ></app-monologue-grid>
-    <app-chapter-3-0
-      *ngIf="type === 'chapter3.0'"
+    <app-monologue-content
+      *ngIf="type === 'monologue.content'"
       [section]="sectionContent"
-      (onFinish)="finishedSection()"
-    ></app-chapter-3-0>
+      (onClickOrSpace)="finishedSection()"
+    ></app-monologue-content>
   </div>
   <div>
     <app-progress-bar></app-progress-bar>
-    <app-footer></app-footer>
+    <app-footer
+      [showNextButton]="sectionContent.sectionType !== 'monologue.grid'"
+    ></app-footer>
   </div>
 </app-main-container>

@@ -9,13 +9,23 @@ export interface Chapter {
 }
 
 export interface Section {
-  backgroundImage: string;
+  backgroundImage?: string;
   leftCharacterImage?: string;
   rightCharacterImage?: string;
   characterImage?: string;
   dialogueLines?: DialogueLine[];
-  data?: any;
-  sectionType: string;
+  gridOptionIndexes?: number[];
+  sectionType?: string;
+  previousSectionIndex?: number;
+  nextSectionIndex?: number;
+  name?: string;
+  description?: string;
+  price?: string;
+  effectiveness?: string;
+  duration_short?: string;
+  duration_long?: string;
+  periods?: string;
+  privacy?: string;
 }
 
 export interface Chapters {
