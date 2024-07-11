@@ -5,11 +5,11 @@ export interface Chapter {
   chapterDescription: string | null;
   previousChapter: null | string;
   nextChapter: null | string;
+  backgroundImage?: string;
   sections: Section[];
 }
 
 export interface Section {
-  backgroundImage?: string;
   leftCharacterImage?: string;
   rightCharacterImage?: string;
   characterImage?: string;

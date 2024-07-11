@@ -6,9 +6,9 @@ export const chapters: Chapters = {
     chapterDescription: null,
     previousChapter: null,
     nextChapter: '/cafe',
+    backgroundImage: 'assets/images/Park.png',
     sections: [
       {
-        backgroundImage: 'assets/images/Park.png',
         overlay: true,
         leftCharacterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
@@ -35,7 +35,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Park.png',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: '',
         dialogueLines: [
@@ -59,7 +58,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Park.png',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: 'assets/images/Couple 1.png',
         dialogueLines: [
@@ -73,7 +71,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Park.png',
         leftCharacterImage: 'assets/images/Couple 2.png',
         rightCharacterImage: '',
         dialogueLines: [
@@ -87,7 +84,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Park.png',
         leftCharacterImage: 'assets/images/Couple 3.png',
         rightCharacterImage: '',
         dialogueLines: [
@@ -101,7 +97,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Park.png',
         leftCharacterImage: 'assets/images/Couple 4.png',
         rightCharacterImage: '',
         dialogueLines: [
@@ -115,7 +110,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Park.png',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: '',
         dialogueLines: [
@@ -159,9 +153,9 @@ export const chapters: Chapters = {
     chapterDescription: 'Sam and Jade Discuss Reproductive Coersion',
     previousChapter: '/intro',
     nextChapter: '/clinic',
+    backgroundImage: 'assets/images/Cafe.png',
     sections: [
       {
-        backgroundImage: 'assets/images/Cafe.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
@@ -243,7 +237,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Cafe.png',
         overlay: true,
         leftCharacterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
@@ -296,7 +289,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Cafe.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
@@ -369,7 +361,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/Cafe.png',
         leftCharacterImage: 'assets/images/Alex-Torso.png',
         overlay: true,
         dialogueLines: [
@@ -406,9 +397,9 @@ export const chapters: Chapters = {
     chapterDescription: 'Jade Visits The Clinic',
     previousChapter: '/cafe',
     nextChapter: '/ending',
+    backgroundImage: 'assets/images/PatientRoom.png',
     sections: [
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
@@ -466,7 +457,6 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         overlay: true,
         sectionType: 'monologue.grid',
@@ -481,7 +471,6 @@ export const chapters: Chapters = {
         ],
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'IUD',
@@ -508,7 +497,6 @@ export const chapters: Chapters = {
         nextSectionIndex: 5,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Ella',
@@ -534,7 +522,6 @@ export const chapters: Chapters = {
         nextSectionIndex: 5,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Plan B One Step (or generic)',
@@ -560,7 +547,6 @@ export const chapters: Chapters = {
         nextSectionIndex: 5,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
@@ -605,7 +591,6 @@ export const chapters: Chapters = {
         previousSectionIndex: 1,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         gridOptionIndexes: [7, 8, 9, 10],
@@ -620,7 +605,6 @@ export const chapters: Chapters = {
         sectionType: 'monologue.grid',
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'The Shot',
@@ -647,7 +631,6 @@ export const chapters: Chapters = {
         nextSectionIndex: 11,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'IUD',
@@ -674,7 +657,6 @@ export const chapters: Chapters = {
         nextSectionIndex: 11,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'The Implant (Nexplanon)',
@@ -700,7 +682,6 @@ export const chapters: Chapters = {
         nextSectionIndex: 11,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Sterilization (Tubal Ligation)',
@@ -727,7 +708,6 @@ export const chapters: Chapters = {
         nextSectionIndex: 11,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
@@ -766,7 +746,6 @@ export const chapters: Chapters = {
         previousSectionIndex: 6,
       },
       {
-        backgroundImage: 'assets/images/PatientRoom.png',
         leftCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
           {
@@ -803,9 +782,9 @@ export const chapters: Chapters = {
   //   chapterDescription: null,
   //   previousChapter: '2',
   //   nextChapter: null,
+  //       backgroundImage: 'assets/images/Park.png',
   //   sections: [
   //     {
-  //       backgroundImage: 'assets/images/Park.png',
   //       data: [
   //         {
   //           preview: 'Tips for:',
