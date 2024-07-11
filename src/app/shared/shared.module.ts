@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CopyrightComponent } from './components/copyright/copyright.component';
 import { CardComponent } from './components/card/card.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { DialogueComponent } from './components/dialogue/dialogue.component';
@@ -20,6 +21,7 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
   declarations: [
     HeaderComponent,
     FooterComponent,
+    CopyrightComponent,
     CardComponent,
     BackgroundComponent,
     DialogueComponent,
@@ -37,6 +39,7 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     SceneComponent,
     HeaderComponent,
     FooterComponent,
+    CopyrightComponent,
     CardComponent,
     MonologueGridComponent,
     Chapter30Component,
