@@ -24,7 +24,6 @@
   .header-actions {
     display: flex;
     flex: 1;
-    color: white;
     font-weight: bold;
     margin-right: 20px;
 
@@ -34,12 +33,16 @@
       margin-left: auto;
       align-items: center;
     }
+    
     .icon-label-container {
       display: flex;
       flex-direction: column;
       width: fit-content;
       align-items: center;
       cursor: pointer;
+      background-color: #00000000;
+      border: none;
+      color: white;
 
       .icon {
         font-size: 24px; /* Adjust the size as needed */

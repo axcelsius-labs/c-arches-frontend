@@ -3,15 +3,17 @@
   <div class="header-chapter-text">{{ chapterTitle }}</div>
   <div class="header-actions">
     <div class="icons-container">
-      <div class="icon-label-container" (click)="goToResources()">
+      
+      <button class="icon-label-container" (click)="goToResources()">
         <mat-icon class="icon">contacts</mat-icon>
         <span class="icon-label">Resources</span>
-      </div>
+      </button>
 
-      <div class="icon-label-container exit" (click)="exit()">
+      <button class="icon-label-container exit" (click)="exit()">
         <mat-icon class="icon">logout</mat-icon>
         <span class="icon-label">Exit</span>
-      </div>
+      </button>
+      
     </div>
   </div>
 </div>

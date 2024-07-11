@@ -24,6 +24,6 @@ export class HeaderComponent implements OnInit {
   }
   
   exit() {
-    this.router.navigate(['weather.com']);
+    window.location.href = 'https://weather.com/';
   }
 }
