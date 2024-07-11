@@ -402,7 +402,7 @@ export const chapters: Chapters = {
     chapterTitle: 'The Clinic',
     chapterDescription: 'Jade Visits The Clinic',
     previousChapter: '1',
-    nextChapter: '3',
+    nextChapter: null,
     sections: [
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -499,6 +499,7 @@ export const chapters: Chapters = {
         ],
         sectionType: 'monologue.content',
         previousSectionIndex: 1,
+        nextSectionIndex: 5,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -522,6 +523,7 @@ export const chapters: Chapters = {
         ],
         sectionType: 'monologue.content',
         previousSectionIndex: 1,
+        nextSectionIndex: 5,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -545,6 +547,7 @@ export const chapters: Chapters = {
         ],
         sectionType: 'monologue.content',
         previousSectionIndex: 1,
+        nextSectionIndex: 5,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -589,6 +592,7 @@ export const chapters: Chapters = {
           },
         ],
         sectionType: 'scene',
+        previousSectionIndex: 1,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -627,6 +631,7 @@ export const chapters: Chapters = {
         ],
         sectionType: 'monologue.content',
         previousSectionIndex: 6,
+        nextSectionIndex: 11,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -651,6 +656,7 @@ export const chapters: Chapters = {
         ],
         sectionType: 'monologue.content',
         previousSectionIndex: 6,
+        nextSectionIndex: 11,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -673,6 +679,7 @@ export const chapters: Chapters = {
         ],
         sectionType: 'monologue.content',
         previousSectionIndex: 6,
+        nextSectionIndex: 11,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -698,6 +705,7 @@ export const chapters: Chapters = {
         ],
         sectionType: 'monologue.content',
         previousSectionIndex: 6,
+        nextSectionIndex: 11,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
@@ -736,6 +744,7 @@ export const chapters: Chapters = {
           { speaker: 0, message: 'Got it! Thanks!', params: [] },
         ],
         sectionType: 'scene',
+        previousSectionIndex: 6,
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',

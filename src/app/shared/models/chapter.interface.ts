@@ -17,6 +17,7 @@ export interface Section {
   gridOptionIndexes?: number[];
   sectionType?: string;
   previousSectionIndex?: number;
+  nextSectionIndex?: number;
   name?: string;
   description?: string;
   price?: string;
