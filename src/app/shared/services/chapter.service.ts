@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Chapter, Chapters } from '../models/chapter.interface';
+import { Chapter, Chapters, Section } from '../models/chapter.interface';
 import { chapters } from '../globals/chapters.global';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -38,13 +38,19 @@ export class ChapterService {
     });
   }
 
-  getNextSection(): ChapterSectionRouteConfig {
+  getNextSection(sectionIndex?: number): ChapterSectionRouteConfig {
     const progress = this.chapterProgressService.getProgress();
     //progress wasnt set already check takes you to the beginning
     if (!progress) {
       return { chapterKey: '0', sectionIndex: 0, dialogueIndex: 0 };
     } else {
-      if (
+      if (sectionIndex) {
+        return {
+          chapterKey: progress.chapterKey,
+          sectionIndex: sectionIndex,
+          dialogueIndex: 0,
+        };
+      } else if (
         progress.sectionIndex ===
         this.allChapters[progress.chapterKey!].sections.length - 1
       ) {
@@ -61,8 +67,8 @@ export class ChapterService {
     }
   }
 
-  goToNextSection(): void {
-    const nextSection = this.getNextSection();
+  goToNextSection(sectionIndex?: number): void {
+    const nextSection = this.getNextSection(sectionIndex);
     if (!nextSection.chapterKey) {
       this.router.navigate(['']);
     } else {
@@ -74,11 +80,11 @@ export class ChapterService {
     }
   }
 
-  handleFinishedSection() {
+  handleFinishedSection(sectionIndex?: number) {
     this.chapterProgressService.setProgress(
       this.chapterSectionRouteConfig.value,
     );
-    this.goToNextSection();
+    this.goToNextSection(sectionIndex);
   }
 
   goToPreviousSection(): void {
@@ -117,8 +123,11 @@ export class ChapterService {
   }
 
   disablePreviousButton(): boolean {
-    if (!this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-        .previousChapter && this.dialogueService.isAtSectionStart()) {
+    if (
+      !this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+        .previousChapter &&
+      this.dialogueService.isAtSectionStart()
+    ) {
       return true;
     }
     return false;
@@ -128,5 +137,13 @@ export class ChapterService {
     // Implement your logic to check if chapterId exists or is valid
     // For simplicity, assuming chapter/1, chapter/2, chapter/3 exist
     return ['0', '1', '2', '3'].includes(chapterId);
+  }
+
+  getGridOptions(sectionIndexes: number[]): Section[] {
+    return sectionIndexes.map(
+      (index) =>
+        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+          .sections[index],
+    ) as Section[];
   }
 }

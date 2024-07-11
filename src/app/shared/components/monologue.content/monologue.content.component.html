@@ -1,0 +1,17 @@
+<div class="option-content">
+  <dialogue class="dialogue-container"></dialogue>
+  <div class="character-wrapper">
+    <img class="character-container" [src]="section.characterImage" />
+    <div class="option-box">
+      <h2>{{ section.name }}</h2>
+      <h4>
+        <i>{{ section.description }}</i>
+      </h4>
+      <h4>{{ section.price }}</h4>
+      <h4>{{ section.effectiveness }}</h4>
+      <h4>{{ section.duration_long }}</h4>
+      <p><b>Periods:</b> {{ section.periods }}</p>
+      <p><b>Privacy:</b> {{ section.privacy }}</p>
+    </div>
+  </div>
+</div>
