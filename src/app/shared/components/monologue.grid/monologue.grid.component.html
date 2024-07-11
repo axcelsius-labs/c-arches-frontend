@@ -4,7 +4,7 @@
     <div class="character-container">
       <img class="character no-interaction" [src]="section.characterImage" />
       <div class="grid-container" *ngIf="currentBoxIndex === -1">
-        <div
+        <button
           class="grid-item"
           *ngFor="let item of gridOptions; let i = index"
           (click)="select(i); $event.stopPropagation()"
@@ -13,7 +13,7 @@
           <div class="content">{{ item.price }}</div>
           <div class="content">{{ item.effectiveness }}</div>
           <div class="content">{{ item.duration_short }}</div>
-        </div>
+        </button>
       </div>
     </div>
   </div>

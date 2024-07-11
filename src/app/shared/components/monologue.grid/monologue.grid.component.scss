@@ -25,6 +25,7 @@
         max-height: 60vh;
         filter: drop-shadow(0 0 40px #00000077);
       }
+      
       .grid-container {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -40,6 +41,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         box-sizing: border-box;
         text-align: center;
+        cursor: pointer;
         .content {
           font-weight: bold;
           padding: 8px;

@@ -14,6 +14,7 @@ import { Subscription, distinctUntilChanged, filter } from 'rxjs';
   styleUrl: './chapter.component.scss',
 })
 export class ChapterComponent implements OnInit {
+  
   private subscription: Subscription = new Subscription();
   dialogRef: MatDialogRef<any> | null = null;
   sectionContent!: Section;
@@ -22,6 +23,7 @@ export class ChapterComponent implements OnInit {
   startingDialogLineIndex!: number;
   allowOverflow: boolean = false;
   additionalContent: string[] = [];
+  
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -32,10 +34,9 @@ export class ChapterComponent implements OnInit {
 
   ngOnInit(): void {
     this.subscription.add(
-      this.route.paramMap
-        .pipe(filter((params) => params.has('id')))
-        .subscribe((params) => {
-          this.chapterId = params.get('id')!;
+      this.route.paramMap.subscribe((params) => {
+          this.chapterId = this.router.url.split('?')[0] ;
+          console.log("HERE: " + this.chapterId);
           if (!this.chapterService.isValidChapter(this.chapterId)) {
             this.router.navigate(['welcome']);
           } else {
@@ -50,7 +51,7 @@ export class ChapterComponent implements OnInit {
               ? +this.route.snapshot.queryParamMap.get('dialogueIndex')!
               : 0;
             this.chapterService.updateChapterSectionAndDialog({
-              chapterKey: params.get('id')!,
+              chapterKey: this.chapterId!,
               sectionIndex: sectionIndex,
               dialogueIndex: dialogueIndex,
             });

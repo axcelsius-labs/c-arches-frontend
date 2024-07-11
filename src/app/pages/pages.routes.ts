@@ -16,7 +16,17 @@ export const routes: Routes = [
     canActivate: [AuthGuardService],
   },
   {
-    path: 'chapter/:id',
+    path: 'intro',
+    component: ChapterComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'cafe',
+    component: ChapterComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'clinic',
     component: ChapterComponent,
     canActivate: [AuthGuardService],
   },

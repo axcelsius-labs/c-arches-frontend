@@ -1,11 +1,11 @@
 import { Chapters } from '../../shared/models/chapter.interface';
 
 export const chapters: Chapters = {
-  '0': {
+  '/intro': {
     chapterTitle: 'Intro',
     chapterDescription: null,
     previousChapter: null,
-    nextChapter: '1',
+    nextChapter: '/cafe',
     sections: [
       {
         backgroundImage: 'assets/images/Park.png',
@@ -154,11 +154,11 @@ export const chapters: Chapters = {
       },
     ],
   },
-  '1': {
+  '/cafe': {
     chapterTitle: 'The Cafe',
     chapterDescription: 'Sam and Jade Discuss Reproductive Coersion',
-    previousChapter: '0',
-    nextChapter: '2',
+    previousChapter: '/intro',
+    nextChapter: '/clinic',
     sections: [
       {
         backgroundImage: 'assets/images/Cafe.png',
@@ -401,11 +401,11 @@ export const chapters: Chapters = {
       },
     ],
   },
-  '2': {
+  '/clinic': {
     chapterTitle: 'The Clinic',
     chapterDescription: 'Jade Visits The Clinic',
-    previousChapter: '1',
-    nextChapter: null,
+    previousChapter: '/cafe',
+    nextChapter: '/ending',
     sections: [
       {
         backgroundImage: 'assets/images/PatientRoom.png',

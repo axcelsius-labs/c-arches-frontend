@@ -47,7 +47,6 @@ export class ChapterService {
 
   getNextSection(nextSectionIndex?: number): ChapterSectionRouteConfig {
     const currentSection = this.getCurrentSection();
-
     if (
       this.chapterSectionRouteConfig.value.sectionIndex ===
       this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
@@ -86,7 +85,7 @@ export class ChapterService {
       this.router.navigate(['']);
     } else {
       if (nextSection.sectionIndex === 0) {
-        this.router.navigate(['chapter', nextSection.chapterKey]);
+        this.router.navigate([nextSection.chapterKey]);
       } else {
         this.updateChapterSectionAndDialog(nextSection);
       }
@@ -101,34 +100,13 @@ export class ChapterService {
   }
 
   goToPreviousSection(): void {
-    //end of section reached
     const currentSection = this.getCurrentSection();
-
-    if (this.chapterSectionRouteConfig.value.sectionIndex === 0) {
-      const previousChapter =
-        this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-          .previousChapter;
-      if (!previousChapter) {
-        this.router.navigate(['']);
-      } else {
-        const lastSectionIndex =
-          this.allChapters[previousChapter].sections.length - 1;
-        const lastdialogueIndex =
-          this.allChapters[previousChapter].sections[lastSectionIndex]
-            .dialogueLines?.length! - 1;
-        this.router.navigate(['chapter', previousChapter], {
-          queryParams: {
-            sectionIndex: lastSectionIndex,
-            dialogueIndex: lastdialogueIndex,
-          },
-        });
-      }
-    } else {
+    if (this.chapterSectionRouteConfig.value.sectionIndex > 0) {
       if (currentSection.previousSectionIndex) {
         const lastdialogueIndex =
-          this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-            .sections[currentSection.previousSectionIndex].dialogueLines
-            ?.length! - 1;
+            this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+                .sections[currentSection.previousSectionIndex].dialogueLines
+                ?.length! - 1;
         this.updateChapterSectionAndDialog({
           chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
           sectionIndex: currentSection.previousSectionIndex,
@@ -136,34 +114,47 @@ export class ChapterService {
         });
       } else {
         const previousSection =
-          (this.chapterSectionRouteConfig.value.sectionIndex -= 1);
+            (this.chapterSectionRouteConfig.value.sectionIndex -= 1);
         const lastdialogueIndex =
-          this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-            .sections[previousSection].dialogueLines?.length! - 1;
+            this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+                .sections[previousSection].dialogueLines?.length! - 1;
         this.updateChapterSectionAndDialog({
           chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
           sectionIndex: previousSection,
           dialogueIndex: lastdialogueIndex,
         });
       }
+    } else this.goToPreviousChapter();
+  }
+  
+  goToPreviousChapter(): void {
+    let currentChapterKey = this.chapterSectionRouteConfig.value.chapterKey!;
+    const previousChapterKey = this.allChapters[currentChapterKey].previousChapter;
+
+    if (!previousChapterKey) {
+      this.router.navigate(['']);
+      return;
     }
+
+    const previousChapter = this.allChapters[previousChapterKey];
+    const lastSectionIndex = previousChapter.sections.length - 1;
+    const lastDialogueIndex = previousChapter.sections[lastSectionIndex].dialogueLines?.length! - 1;
+
+    this.router.navigate([previousChapterKey], {
+      queryParams: {
+        sectionIndex: lastSectionIndex,
+        dialogueIndex: lastDialogueIndex,
+      },
+    });
   }
 
   disablePreviousButton(): boolean {
-    if (
-      !this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-        .previousChapter &&
-      this.dialogueService.isAtSectionStart()
-    ) {
-      return true;
-    }
-    return false;
+    let noPreviousChapter = !this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!].previousChapter
+    return this.dialogueService.isAtSectionStart() && noPreviousChapter;
   }
 
   isValidChapter(chapterId: string): boolean {
-    // Implement your logic to check if chapterId exists or is valid
-    // For simplicity, assuming chapter/1, chapter/2, chapter/3 exist
-    return ['0', '1', '2', '3'].includes(chapterId);
+    return ['/intro', '/cafe', '/clinic'].includes(chapterId);
   }
 
   getGridOptions(sectionIndexes: number[]): Section[] {
