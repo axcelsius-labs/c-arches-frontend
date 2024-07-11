@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './ending.component.scss'
 })
 export class EndingComponent {
-
+  character: string = 'assets/images/Doctor-Idle.png';
 }

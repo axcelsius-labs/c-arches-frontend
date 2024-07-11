@@ -1,22 +1,29 @@
 <div class="content-container">
     <app-header chapterTitle="Congratulations!"></app-header>
+    <div class="welcome-container">
+        <div class="title-container">
+            <h1>You finished C-Arches!</h1>
+        </div>
+        <div class="character-wrapper">
+            <img class="character-container no-interaction" [src]="character"/>
+            <div class="additional-content">
 
-    <h1>You finished C-Arches.</h1>
-    
-    For additional info, check our list of resources. Many organizations specialize in helping people stay safe and healthy in their relationships.<br>
-
-    We hope learning about these issues will help you support healthier relationships in your community.<br>
-
-    Be kind, stand up for yourself, and look out your friends. We're all in this together!<br>
-
-    <button class="" routerLink="">
-        Home
-    </button>
-
-    <button class="" routerLink="/resources">
-        Resources
-    </button>
-    
+                For additional info, check our list of resources. Many organizations specialize in helping people stay safe and healthy in their relationships.<br>
+                <br>
+                We hope learning about these issues will help you support healthier relationships in your community.<br>
+                <br>
+                Be kind, stand up for yourself, and look out your friends. We're all in this together!<br>
+                <br>
+                <button class="begin-button" routerLink="">
+                    Home
+                </button>
+                <br>
+                <button class="begin-button" routerLink="/resources">
+                    Resources
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <app-copyright></app-copyright>
