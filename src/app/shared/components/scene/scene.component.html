@@ -2,9 +2,9 @@
   <div class="dialog-charactor-container">
     <dialogue class="dialogue-container"></dialogue>
     <div class="character-container">
-      <img class="character" [src]="section.leftCharacterImage" />
+      <img class="character no-interaction" [src]="section.leftCharacterImage" />
       <ng-container *ngIf="section.rightCharacterImage">
-        <img class="character" [src]="section.rightCharacterImage" />
+        <img class="character no-interaction" [src]="section.rightCharacterImage" />
       </ng-container>
       <ng-container *ngIf="additionalContent">
         <div class="additional-content" *ngIf="additionalContent.length > 0">
