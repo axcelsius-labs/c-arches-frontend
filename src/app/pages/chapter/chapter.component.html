@@ -1,10 +1,6 @@
 <app-main-container
   [backgroundImage]="sectionContent.backgroundImage!"
-  [blackOut]="
-    sectionContent.sectionType === 'monologue' ||
-    sectionContent.sectionType === 'monologue.grid' ||
-    sectionContent.sectionType === 'monologue.content'
-  "
+  [blackOut]="sectionContent.overlay || false"
   [chapterTitle]="chapterContent.chapterTitle"
   [showNextButton]="sectionContent.sectionType !== 'monologue.grid'"
   [showFooter]="true"

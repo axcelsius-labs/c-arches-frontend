@@ -9,6 +9,7 @@ export const chapters: Chapters = {
     sections: [
       {
         backgroundImage: 'assets/images/Park.png',
+        overlay: true,
         leftCharacterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           { speaker: 0, message: "Hey! I'm Sam!", params: [] },
@@ -243,7 +244,8 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/Cafe.png',
-        leftCharacterImage: 'assets/images/Alex.png',
+        overlay: true,
+        leftCharacterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -368,7 +370,8 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/Cafe.png',
-        leftCharacterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Alex-Torso.png',
+        overlay: true,
         dialogueLines: [
           {
             speaker: 0,
@@ -465,6 +468,7 @@ export const chapters: Chapters = {
       {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        overlay: true,
         sectionType: 'monologue.grid',
         gridOptionIndexes: [2, 3, 4],
         dialogueLines: [
@@ -478,6 +482,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
+        overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'IUD',
         preview: 'assets/images/IUD.png',
@@ -504,6 +509,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
+        overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Ella',
         description:
@@ -528,6 +534,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
+        overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Plan B One Step (or generic)',
         description:
@@ -597,6 +604,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
+        overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         gridOptionIndexes: [7, 8, 9, 10],
         dialogueLines: [
@@ -611,6 +619,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
+        overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'The Shot',
         preview: 'assets/images/Injection.png',
@@ -637,6 +646,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
+        overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'IUD',
         preview: 'assets/images/IUD.png',
@@ -663,6 +673,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
+        overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'The Implant (Nexplanon)',
         preview: 'assets/images/Implant.png',
@@ -687,6 +698,7 @@ export const chapters: Chapters = {
       },
       {
         backgroundImage: 'assets/images/PatientRoom.png',
+        overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'Sterilization (Tubal Ligation)',
         preview: 'assets/images/Sterilization.png',
