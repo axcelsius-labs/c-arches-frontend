@@ -493,7 +493,7 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              'Your partner might be able to feel the strings, but we can trim them to ensure they are undetectable and cannot be removed by your partner.',
+              'We can trim the strings so they cannot be felt or removed by your partner.',
             params: [],
           },
         ],
@@ -505,6 +505,7 @@ export const chapters: Chapters = {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         name: 'Ella',
+        preview: 'assets/images/Ella.png',
         description:
           'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
         price: '$0-$50',
@@ -529,6 +530,7 @@ export const chapters: Chapters = {
         backgroundImage: 'assets/images/PatientRoom.png',
         characterImage: 'assets/images/Doctor-Idle.png',
         name: 'Plan B One Step (or generic)',
+        preview: 'assets/images/Plan B.png',
         description:
           'A single pill taken as soon as possible after unprotected sex, ideally within 3 days.',
         price: '$0-50',
@@ -626,7 +628,7 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              'If your partner monitors your schedule, they may prevent you from attending shot appointments every three months.',
+              'If your partner monitors your schedule, they may prevent you from attending appointments every three months.',
             params: [],
           },
         ],
@@ -652,7 +654,7 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              'Your partner might be able to feel the strings, but we can trim them to ensure they are undetectable and cannot be removed by your partner.',
+              'We can trim the strings so they cannot be felt or removed by your partner.',
             params: [],
           },
         ],
@@ -676,7 +678,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: 'Some people may have initial bruising with the implant.',
+            message: 'Some people have initial bruising, but the implant is mostly invisible once your skin heals.',
             params: [],
           },
         ],
@@ -693,14 +695,14 @@ export const chapters: Chapters = {
         price: '???',
         effectiveness: '???',
         duration_short: 'Permanent',
-        duration_long: 'Permanent. Recovery times vary and may require follow-up appointments.',
+        duration_long: 'Permanent.',
         periods: '???',
         privacy: 'Private after recovery. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
         dialogueLines: [
           {
             speaker: 0,
             message:
-              "Sterilization is a permanent form of birth control. While highly effective, it's meant to be a permanent decision.",
+              "Sterilization is a private option after the recovery period. Recovery times vary and may require follow-up appointments.",
             params: [],
           },
         ],
