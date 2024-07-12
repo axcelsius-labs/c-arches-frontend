@@ -152,12 +152,6 @@ export class ChapterService {
     else this.router.navigate([previousChapterKey]);
   }
 
-  disablePreviousButton(): boolean {
-    let currentChapterKey = this.chapterSectionRouteConfig.value.chapterKey!;
-    let previousChapter = this.allChapters[currentChapterKey].previousChapter;
-    return this.dialogueService.isAtSectionStart() && !previousChapter;
-  }
-
   isValidChapter(chapterId: string): boolean {
     return ['/intro', '/cafe', '/clinic'].includes(chapterId);
   }

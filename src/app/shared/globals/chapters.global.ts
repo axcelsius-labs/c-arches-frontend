@@ -1,4 +1,4 @@
-import { Chapters } from '../../shared/models/chapter.interface';
+import { Chapters } from '../models/chapter.interface';
 
 export const chapters: Chapters = {
   '/intro': {
@@ -34,18 +34,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: "Okay! Let's begin.",
+            message: "Okay! Let's begin. Healthy relationships thrive on mutual respect, trust, and open communication.",
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'Healthy relationships thrive on mutual respect, trust, and open communication.',
-            params: [],
-          },
-          {
-            speaker: 0,
-            message: 'Do any of these sound like your relationships?',
+            message: 'Do any of these couples sound like your relationships?...',
             params: [],
           },
         ],
@@ -403,12 +397,7 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              'My friend recommended I come see you. We were talking about reproductive coercion...',
-            params: [],
-          },
-          {
-            speaker: 0,
-            message: "...some of sounded like what I'm experiencing.",
+              "My friend was telling me about reproductive coercion, and some of it sounded like what I'm experiencing.",
             params: [],
           },
           {
@@ -418,8 +407,7 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message:
-              'And I need to switch my birth control to something that I can hide.',
+            message: '...and I want to switch my birth control to something that I can hide.',
             params: [],
           },
           {
@@ -434,15 +422,13 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message:
-              "Yeah...I'm noticing some things in my relationship. I want to take control of my health.",
+            message: "Yeah...I'm noticing some things in my relationship. I want to take control of my health.",
             params: [],
           },
           { speaker: 0, message: "I'm not ready to be pregnant.", params: [] },
           {
             speaker: 1,
-            message:
-              "Absolutely, Jade. It's great that you're taking charge of your health. I'm here for you!",
+            message: "Absolutely, Jade. It's great that you're taking charge of your health. I'm here for you!",
             params: [],
           },
         ],
@@ -675,8 +661,8 @@ export const chapters: Chapters = {
         preview: 'assets/images/Sterilization.png',
         description:
           'Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.',
-        price: '???',
-        effectiveness: '???',
+        price: '$0-6000',
+        effectiveness: '99% Effective',
         duration_short: 'Permanent',
         duration_long: 'Permanent.',
         periods: 'No changes',
@@ -764,65 +750,4 @@ export const chapters: Chapters = {
       },
     ],
   },
-  // '3': {
-  //   chapterTitle: 'Chapter 3',
-  //   chapterDescription: null,
-  //   previousChapter: '2',
-  //   nextChapter: null,
-  //       backgroundImage: 'assets/images/Park.png',
-  //   sections: [
-  //     {
-  //       data: [
-  //         {
-  //           preview: 'Tips for:',
-  //           title: 'Talking to your healthcare provider',
-  //           intro: '',
-  //           bullets: [
-  //             '✅ Be open and honest about your concerns',
-  //             '✅ If your partner monitors your phone, ask your provider to use their phone to call the resource hotlines.',
-  //             '✅ Discuss safety planning and emergency contraception options',
-  //             '✅ If you have an STD and are afraid your partner will hurt you if they find out, request anonymous partner notification from the Health Department.',
-  //           ],
-  //           footer: [
-  //             'Remember, you have the right to feel safe and make decisions about your body.',
-  //             'Reach out for help. Your health care provider is there to support you. You can also contact resources below for confidential support.',
-  //           ],
-  //         },
-  //         {
-  //           preview: 'Thinking about:',
-  //           title: 'Who calls the shots?',
-  //           intro:
-  //             'Think about who makes the big decisions in your relationships. Ask yourself:',
-  //           bullets: [
-  //             '🔹 Who decides when to have sex and what sexual activities to engage in?',
-  //             "🔹 Who decides when or if I'm ready for a baby?",
-  //             '🔹 Who chooses how to prevent pregnancy?',
-  //             '🔹 Who has the final say on pregnancy decisions?',
-  //           ],
-  //           footer: [
-  //             'Your voice matters in these decisions. You deserve to feel empowered and informed about your sexual and reproductive health.\n',
-  //             '#YouDecide',
-  //             "Talk to your healthcare provider. They're here to support you in making choices that keep you healthy and happy.\n",
-  //           ],
-  //         },
-  //         {
-  //           preview: 'Final thoughts...',
-  //           title: 'Growing Together',
-  //           intro:
-  //             'In any relationship, mutual respect and open communication are key! Here are some important aspects that make our partnership strong and supportive:\n',
-  //           bullets: [
-  //             '💖 Supportive attitude: My partner supports my decisions regarding pregnancy and birth control.',
-  //             '💬 Open communication: We make it easy to talk about sex and any concerns we may have about pregnancy and birth control.',
-  //             "🚫 Respect for boundaries: I feel comfortable saying no to sex when I'm not ready or willing.",
-  //             "✅ Mutual Agreement: When it comes to major decisions like when/if to get pregnant, and how to handle pregnancy decisions, we're on the same page.",
-  //           ],
-  //           footer: [
-  //             "Healthy relationships thrive on respect, trust, and open dialogue. Let's continue building a supportive and loving partnership together! 💕",
-  //           ],
-  //         },
-  //       ],
-  //       sectionType: 'chapter3.0',
-  //     },
-  //   ],
-  // },
 };
