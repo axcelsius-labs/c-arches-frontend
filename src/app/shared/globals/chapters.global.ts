@@ -411,7 +411,7 @@ export const chapters: Chapters = {
           },
           { 
             speaker: 0,
-            message: "I'm nervous, and not ready to be pregnant", 
+            message: "I'm nervous, and not ready to be pregnant.", 
             params: []
           },
           {
