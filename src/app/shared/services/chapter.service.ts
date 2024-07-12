@@ -149,8 +149,9 @@ export class ChapterService {
   }
 
   disablePreviousButton(): boolean {
-    let noPreviousChapter = !this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!].previousChapter
-    return this.dialogueService.isAtSectionStart() && noPreviousChapter;
+    let currentChapterKey = this.chapterSectionRouteConfig.value.chapterKey!;
+    let previousChapter = this.allChapters[currentChapterKey].previousChapter;
+    return this.dialogueService.isAtSectionStart() && !previousChapter;
   }
 
   isValidChapter(chapterId: string): boolean {

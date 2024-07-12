@@ -4,7 +4,7 @@ export const chapters: Chapters = {
   '/intro': {
     chapterTitle: 'Intro',
     chapterDescription: null,
-    previousChapter: null,
+    previousChapter: '/welcome',
     nextChapter: '/cafe',
     backgroundImage: 'assets/images/Park.png',
     sections: [
@@ -62,7 +62,7 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Couple 1.png',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'We make it easy to talk about pregnancy and birth control.',
             params: [],
@@ -71,11 +71,11 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        leftCharacterImage: 'assets/images/Couple 2.png',
-        rightCharacterImage: '',
+        leftCharacterImage: 'assets/images/Alex.png',
+        rightCharacterImage: 'assets/images/Couple 2.png',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "We're on the same page about getting pregnant and how to handle pregnancy decisions.",
             params: [],
@@ -84,11 +84,11 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        leftCharacterImage: 'assets/images/Couple 3.png',
-        rightCharacterImage: '',
+        leftCharacterImage: 'assets/images/Alex.png',
+        rightCharacterImage: 'assets/images/Couple 3.png',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'My partner supports my decisions about sex, pregnancy and birth control.',
             params: [],
@@ -97,11 +97,11 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        leftCharacterImage: 'assets/images/Couple 4.png',
-        rightCharacterImage: '',
+        leftCharacterImage: 'assets/images/Alex.png',
+        rightCharacterImage: 'assets/images/Couple 4.png',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'I feel comfortable expressing my sexual desires AND saying no to sex.',
             params: [],
