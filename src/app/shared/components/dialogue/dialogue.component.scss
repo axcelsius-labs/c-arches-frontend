@@ -1,62 +1,65 @@
 .dialogue-container {
-    position: relative;
-    word-spacing: 0.2em;
-    background: #fff;
-    border-radius: .5em;
-    margin: 10px 20px 30px 20px;
-    padding: 15px;
-    max-width: 65vh;
-    line-height: 1.2em;
-    font-size: 18px;
-    font-family: "Comic Sans MS", sans-serif;
-    filter: drop-shadow(0 0 40px #00000077);
+  position: relative;
+  word-spacing: 0.2em;
+  background: #fff;
+  border-radius: 0.5em;
+  padding: 15px;
+  max-width: 65vh;
+  line-height: 1.2em;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 18px;
+  font-family: 'Comic Sans MS', sans-serif;
+  filter: drop-shadow(0 0 40px #00000077);
 }
 
 @media (max-width: 990px) {
-    .dialogue-container {
-        font-size: 15px;
-    }
+  .dialogue-container {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 580px) {
-    .dialogue-container {
-        font-size: 12px;
-    }
+  .dialogue-container {
+    font-size: 12px;
+  }
 }
 
 .visible {
-    color: #000000FF;
+  color: #000000ff;
 }
 
 .invisible {
-    color: #00000044;
+  color: #00000044;
 }
 
 .left {
-    outline: 5px solid red;
+  outline: 5px solid red;
 }
 
 .right {
-    outline: 5px solid green;
+  outline: 5px solid green;
 }
 
 .triangle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    z-index: 99;
-    bottom: 0;
-    border-bottom: 50px solid transparent;
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 99;
+  bottom: 0;
+  border-bottom: 50px solid transparent;
 }
 
 .triangle-left {
-    transform: translate(0%, 100%);
-    left: 5vw;
-    border-left: 100px solid red;
+  transform: translate(0%, 100%);
+  left: 5vw;
+  border-left: 100px solid red;
 }
 
 .triangle-right {
-    transform: translate(0%, 100%);
-    right: 5vw;
-    border-right: 100px solid green;
+  transform: translate(0%, 100%);
+  right: 5vw;
+  border-right: 100px solid green;
 }

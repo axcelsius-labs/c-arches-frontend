@@ -1,20 +1,26 @@
 <div class="scene-container" (click)="handleClickOrSpace()">
-  <div class="dialog-charactor-container">
+  <div class="dialog-character-container">
     <dialogue class="dialogue-container"></dialogue>
     <div class="character-container">
-      <img class="character no-interaction" [src]="section.leftCharacterImage" />
+      <img
+        class="character no-interaction"
+        [src]="section.leftCharacterImage"
+      />
       <ng-container *ngIf="section.rightCharacterImage">
-        <img class="character no-interaction" [src]="section.rightCharacterImage" />
-      </ng-container>
-      <ng-container *ngIf="additionalContent">
-        <div class="additional-content" *ngIf="additionalContent.length > 0">
-          <div *ngFor="let content of additionalContent">
-            {{ content }}
-          </div>
-        </div>
-        <!-- Hidden div box when chapter.data.length is 0 -->
-        <div class="hidden-box" *ngIf="additionalContent.length === 0"></div>
+        <img
+          class="character no-interaction"
+          [src]="section.rightCharacterImage"
+        />
       </ng-container>
     </div>
   </div>
+  <ng-container *ngIf="additionalContent">
+    <div class="additional-content" *ngIf="additionalContent.length > 0">
+      <div *ngFor="let content of additionalContent">
+        {{ content }}
+      </div>
+    </div>
+    <!-- Hidden div box when chapter.data.length is 0 -->
+    <div class="hidden-box" *ngIf="additionalContent.length === 0"></div>
+  </ng-container>
 </div>
