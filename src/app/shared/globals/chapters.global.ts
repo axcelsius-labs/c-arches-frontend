@@ -16,19 +16,13 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              'For your safety, the exit button in the top right will take you immediately to the Weather Channel homepage.',
+              'For your safety, the exit button in the top right will open the Weather Channel homepage. Click it to quickly leave this site, and use the link in your email to return.',
             params: [],
           },
           {
             speaker: 0,
             message:
-              'Click it if you ever need to quickly leave this site. Use the link in your email to return.',
-            params: [],
-          },
-          {
-            speaker: 0,
-            message:
-              'Also, if you think someone may be monitoring your device, consider clearing this site from your browser history.',
+              "Also, if someone is monitoring your device, consider clearing this from your browser's history.",
             params: [],
           },
         ],
@@ -140,7 +134,7 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              "Jade's waiting for us at a cafe down the block. Are you ready to meet her?",
+              "Jade's waiting for us at a cafe down the block. Let's go meet her!",
             params: [],
           },
         ],
@@ -183,15 +177,13 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message:
-              'Not great. PJ keeps bringing it up, and yells when I say no.',
+            message: 'Not great. PJ keeps bringing it up, and yells when I say no.',
             params: [],
           },
           { speaker: 1, message: 'That sounds frustrating...', params: [] },
           {
             speaker: 0,
-            message:
-              'Yeah! I think they were poking holes in the condoms before...',
+            message: 'Yeah! I think they were poking holes in the condoms before...',
             params: [],
           },
           {
@@ -475,20 +467,17 @@ export const chapters: Chapters = {
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'IUD',
         preview: 'assets/images/IUD.png',
-        description:
-          'Tiny device put in your uterus, low-maintenance once inserted.',
+        description: 'Tiny device put in your uterus, low-maintenance once inserted.',
         price: '$0-$1300',
         effectiveness: '99% Effective',
         duration_short: '3-12 years',
         duration_long: 'Lasts 3-12 years',
-        periods:
-          'Hormonal: Irregular bleeding for first few months, but likely to have shorter, lighter periods over time. Non-hormonal/copper: Period may be longer and heavier.',
+        periods: 'Common',
         privacy: 'Easy to keep private, strings can be cut short.',
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'We can trim the strings so they cannot be felt or removed by your partner.',
+            message: 'We can trim the strings so they cannot be felt or removed by your partner.',
             params: [],
           },
         ],
@@ -508,7 +497,7 @@ export const chapters: Chapters = {
         duration_short: 'Take immediately',
         duration_long: 'Take immediately, works once.',
         periods: '???.',
-        privacy: '???',
+        privacy: 'Can get an extra pack and store it in a plain container for future emergencies',
         dialogueLines: [
           {
             speaker: 0,
@@ -533,7 +522,7 @@ export const chapters: Chapters = {
         duration_short: 'Take immediately',
         duration_long: 'Take immediately, works once.',
         periods: '???',
-        privacy: '???',
+        privacy: 'Can get an extra pack and store it in a plain container for future emergencies',
         dialogueLines: [
           {
             speaker: 0,
@@ -615,9 +604,8 @@ export const chapters: Chapters = {
         duration_short: '3 months',
         duration_long: 'Get every 3 months',
         periods:
-          'Changes in your period are common, e.g. bleeding more days, spotting, or not getting period at all.',
-        privacy:
-          'No at home supplies, so easy to keep private but requires regular access to clinic.',
+          'Common',
+        privacy: 'No at home supplies, but requires regular access to the clinic.',
         dialogueLines: [
           {
             speaker: 0,
@@ -641,9 +629,8 @@ export const chapters: Chapters = {
         effectiveness: '99% Effective',
         duration_short: '3-12 years',
         duration_long: 'Lasts 3-12 years',
-        periods:
-          'Hormonal: Irregular bleeding for first few months, but likely to have shorter, lighter periods over time. Non-hormonal/copper: Period may be longer and heavier.',
-        privacy: 'Easy to keep private, strings can be cut short.',
+        periods: 'Common',
+        privacy: 'Strings can be cut short so your partner cannot feel them.',
         dialogueLines: [
           {
             speaker: 0,
@@ -666,7 +653,7 @@ export const chapters: Chapters = {
         effectiveness: '99% Effective',
         duration_short: '5 years',
         duration_long: 'Lasts up to 5 years',
-        periods: '???',
+        periods: 'Common',
         privacy:
           'Mostly invisible once your skin heals. Can sometimes be seen or felt if someone touches your arm. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
         dialogueLines: [
@@ -692,9 +679,8 @@ export const chapters: Chapters = {
         effectiveness: '???',
         duration_short: 'Permanent',
         duration_long: 'Permanent.',
-        periods: '???',
-        privacy:
-          'Private after recovery. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
+        periods: 'No changes',
+        privacy: 'Consider how to manage the recovery period and hide signs from the procedure (i.e. a small surgical scar) if someone is monitoring your health or activities',
         dialogueLines: [
           {
             speaker: 0,
@@ -746,6 +732,7 @@ export const chapters: Chapters = {
         previousSectionIndex: 6,
       },
       {
+        overlay: true,
         leftCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
           {

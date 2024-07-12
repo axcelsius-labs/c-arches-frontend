@@ -1,2 +1,6 @@
-<img [src]="backgroundImage" alt="Background Image" class="background-image" />
+
+<div class="parallax-container" (mousemove)="onMouseMove($event)">
+    <img [src]="backgroundImage" alt="Background Image" class="background-image no-interaction" [style.transform]="backgroundTransform"/>
+</div>
+
 <div class="background-overlay" *ngIf="blackOut"></div>

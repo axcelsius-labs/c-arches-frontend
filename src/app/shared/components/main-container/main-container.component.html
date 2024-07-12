@@ -4,12 +4,12 @@
     *ngIf="showHeader"
     [chapterTitle]="chapterTitle"
   ></app-header>
-  <app-background
-    *ngIf="backgroundImage"
-    [backgroundImage]="backgroundImage"
-    [blackOut]="blackOut"
-  ></app-background>
   <div class="content">
+    <app-background
+            *ngIf="backgroundImage"
+            [backgroundImage]="backgroundImage"
+            [blackOut]="blackOut"
+    ></app-background>
     <ng-content></ng-content>
   </div>
   <app-footer
