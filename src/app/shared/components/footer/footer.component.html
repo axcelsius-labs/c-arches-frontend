@@ -2,10 +2,11 @@
 <div class="footer-container">
   <button class="back-button" [ngClass]="{ disabled: disablePreviousButton() }" (click)="previousDialogLine()">
     <mat-icon class="icon">chevron_left</mat-icon>
-    <span class="icon-label">Back</span>
+    Back
   </button>
+  <div class="chapter-title">{{ chapterTitle }}</div>
   <button *ngIf="showNextButton" class="next-button" (click)="nextDialogLine()">
-    <span class="icon-label">Next</span>
+    Next
     <mat-icon class="icon">chevron_right</mat-icon>
   </button>
 </div>

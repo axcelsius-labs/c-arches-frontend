@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   @Input() title: string = "C-ARCHES";
-  @Input() chapterTitle: string = ""
   
   constructor(private router: Router) { }
 

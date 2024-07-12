@@ -7,7 +7,13 @@
   justify-content: space-between;
   width: 100vw;
   height: 8vh;
-
+  font-size: calc(1vw + 0.8rem);
+  .chapter-title {
+    flex: 1;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
   .back-button,
   .next-button {
     display: flex;
@@ -20,13 +26,10 @@
     background-color: #00000000;
     border: 3px solid #00000000;
     border-radius: 4px;
+    font-size: calc(1vw + 0.8rem);
 
     .icon {
       transform: scale(1.5);
-    }
-
-    .icon-label {
-      font-size: calc(1.5vw + 0.5rem);
     }
   }
 

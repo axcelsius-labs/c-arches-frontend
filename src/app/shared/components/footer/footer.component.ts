@@ -7,9 +7,11 @@ import { DialogueService } from '../../services/dialogue.service';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit {
+  @Input() chapterTitle: string = ""
   @Input() showNextButton: Boolean = true;
   @Output() showNextDialogLine = new EventEmitter();
   @Output() showPreviousDialogLine = new EventEmitter();
+  
   constructor(
     private chapterService: ChapterService,
     private dialogueService: DialogueService,
