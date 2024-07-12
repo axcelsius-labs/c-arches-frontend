@@ -137,15 +137,19 @@ export class ChapterService {
     }
 
     const previousChapter = this.allChapters[previousChapterKey];
-    const lastSectionIndex = previousChapter.sections.length - 1;
-    const lastDialogueIndex = previousChapter.sections[lastSectionIndex].dialogueLines?.length! - 1;
 
-    this.router.navigate([previousChapterKey], {
-      queryParams: {
-        sectionIndex: lastSectionIndex,
-        dialogueIndex: lastDialogueIndex,
-      },
-    });
+    if (previousChapter) {
+      const lastSectionIndex = previousChapter.sections.length - 1;
+      const lastDialogueIndex = previousChapter.sections[lastSectionIndex].dialogueLines?.length! - 1;
+
+      this.router.navigate([previousChapterKey], {
+        queryParams: {
+          sectionIndex: lastSectionIndex,
+          dialogueIndex: lastDialogueIndex,
+        },
+      });
+    }
+    else this.router.navigate([previousChapterKey]);
   }
 
   disablePreviousButton(): boolean {

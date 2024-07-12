@@ -25,8 +25,24 @@
   filter: drop-shadow(0 0 30px black);
 }
 
+hr {
+  width: 75%;
+}
+
 .chapter-description {
   font-size: 2em;
-  margin-top: 0.5em;
+  margin: 0.5em auto;
+  width: 70%;
   filter: drop-shadow(0 0 30px black);
 }
+
+@media (max-width: 500px) {
+  .chapter-title {
+    font-size: 3.5em;
+  }
+  .chapter-description {
+    font-size: 1.5em;
+  }
+}
+
+
