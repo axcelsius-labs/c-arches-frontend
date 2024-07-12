@@ -296,7 +296,7 @@ export const chapters: Chapters = {
           },
           {
             speaker: 1,
-            message: "Have you considered getting on something that your partner can't mess with?",
+            message: "Have you considered getting on something you can keep private?",
             params: [],
           },
           { speaker: 0, message: 'What do you mean?', params: [] },
