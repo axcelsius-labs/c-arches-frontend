@@ -381,12 +381,12 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              "My friend was telling me about reproductive coercion, and some of it sounded like what I'm experiencing.",
+              "My friend was telling me about reproductive coercion, and some of it sounded like my relationship.",
             params: [],
           },
           {
             speaker: 0,
-            message: 'I heard that some people keep their birth control secret to stay in control when others are pressuring them to get pregnant...',
+            message: 'I need emergency contraception, and I want to switch my birth control to something that I can hide.',
             params: [],
           },
           {
@@ -401,10 +401,19 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message: "I think I need emergency contraception, just in case. And I need to switch my birth control to something that I can hide...",
+            message: "I heard that some people keep their birth control secret to stay in control when others are pressuring them to get pregnant...",
             params: [],
           },
-          { speaker: 0, message: "I'm not ready to be pregnant.", params: [] },
+          {
+            speaker: 0,
+            message: "My partner takes off condoms during sex and messes with birth control pills...",
+            params: [],
+          },
+          { 
+            speaker: 0,
+            message: "I'm nervous, and not ready to be pregnant", 
+            params: []
+          },
           {
             speaker: 1,
             message: "Absolutely, Jade. It's great that you're taking charge of your health. I'm here for you!",
