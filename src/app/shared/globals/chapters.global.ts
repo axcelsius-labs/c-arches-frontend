@@ -406,12 +406,12 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message: "My partner takes off condoms during sex and messes with birth control pills...",
+            message: "My partner takes off condoms during sex and messes with my birth control pills...",
             params: [],
           },
           { 
             speaker: 0,
-            message: "I'm nervous, and not ready to be pregnant.", 
+            message: "I'm nervous and not ready to get pregnant", 
             params: []
           },
           {
