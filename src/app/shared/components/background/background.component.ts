@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-background',
@@ -8,22 +8,21 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BackgroundComponent implements OnInit {
   @Input() backgroundImage!: string;
   @Input() blackOut: boolean = false;
+  
   backgroundTransform = '';
 
   constructor() {}
 
   ngOnInit() {}
 
+  lerp(x: number, y: number, t: number){
+    return x * (1 - t) + y * t;
+  }
+  
+  @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
-    const container = event.currentTarget as HTMLElement;
-    const containerRect = container.getBoundingClientRect();
-    const offsetX = event.clientX - containerRect.left;
-
-    const percentX = offsetX / containerRect.width * 100 - 50;
-
-    // Clamp the movement to the horizontal axis
-    const translateX = percentX / -3; // Adjust the divisor to control the intensity
-
-    this.backgroundTransform = `translate(${translateX}px, 0)`;
+    let percentAcross = event.clientX / window.innerWidth;
+    let x = this.lerp(1.5, -1.5, percentAcross);
+    this.backgroundTransform = `translate(${x}vw, 0)`;
   }
 }
