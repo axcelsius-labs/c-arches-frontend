@@ -149,13 +149,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            message: 'Hey, Jade! You look stressed...you okay?',
+            message: 'Hey, Jade! You look kinda stressed...you okay?',
             params: [],
           },
-          { speaker: 0, message: 'Hi, Sam.', params: [] },
-          {
+          { 
             speaker: 0,
-            message: "I don't know...my partner and I are fighting again.",
+            message: "Hi, Sam. I don't know...my partner and I are fighting again.",
             params: [],
           },
           { speaker: 1, message: 'Wanna talk about it?', params: [] },
@@ -171,52 +170,39 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message: 'Not great. PJ keeps bringing it up, and yells when I say no.',
+            message: 'Not great. We keep having the same argument.',
             params: [],
           },
           { speaker: 1, message: 'That sounds frustrating...', params: [] },
           {
             speaker: 0,
-            message: 'Yeah! I think they were poking holes in the condoms before...',
+            message: "It is! I've been feeling nervous, so I got on the pill.",
             params: [],
           },
           {
             speaker: 0,
-            message: "...and now says we shouldn't use one.",
+            message: "But my pills haven been missing and I think PJ took them",
             params: [],
           },
           { speaker: 1, message: 'Dude, what?', params: [] },
           {
             speaker: 0,
-            message: 'It made me really uncomfortable, so I got on the pill.',
+            message: 'I think PJ poked a hole in the condom last night...',
             params: [],
           },
-          {
-            speaker: 0,
-            message: 'But now my pills are missing...',
-            params: [],
-          },
-          {
-            speaker: 0,
-            message: "I know PJ took them..but they'll never admit it.",
-            params: [],
-          },
-          { speaker: 1, message: "This isn't okay, Jade.", params: [] },
-          {
-            speaker: 0,
-            message: "I really don't want to worry about getting pregnant!",
-            params: [],
+          { 
+            speaker: 1, 
+            message: "This isn't okay, Jade.",
+            params: [] 
           },
           {
             speaker: 1,
-            message:
-              'Your partner has no right to force you into something you’re not ready for.',
+            message: 'Your partner has no right to force you into something you’re not ready for.',
             params: [],
           },
           {
             speaker: 0,
-            message:
-              "Right! I'm pretty sure PJ threw away my prescription refill, too.",
+            message: "Right! I'm pretty sure PJ threw away my prescription refill, too.",
             params: [],
           },
         ],
@@ -235,7 +221,7 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              "It's common, and affects people of all gender, race, sexual orientation, and socioeconomic status.",
+              "It's a common issue that affects people of all genders, races, sexual orientations, and socioeconomic statuses.",
             params: [],
           },
           {
@@ -243,10 +229,10 @@ export const chapters: Chapters = {
             message: 'Here are some examples:',
             params: [
               '🚩 Hiding, damaging or tampering with birth control',
-              '🚩 Pressuring someone to become pregnant',
-              '🚩 Pressuring someone to have or not have an abortion',
+              '🚩 Forcing or pressuring someone to get pregnant or have an abortion',
+              '🚩 Keeping someone from getting an abortion when they want one',
               '🚩 Poking holes in or breaking condoms',
-              '🚩 Not withdrawing (i.e., "pulling out") after agreeing to',
+              '🚩 Not withdrawing ("pulling out") after agreeing to',
               '🚩 Attempting to cause a miscarriage',
             ],
           },
@@ -310,8 +296,7 @@ export const chapters: Chapters = {
           },
           {
             speaker: 1,
-            message:
-              "Have you considered getting on something that your partner can't mess with?",
+            message: "Have you considered getting on something that your partner can't mess with?",
             params: [],
           },
           { speaker: 0, message: 'What do you mean?', params: [] },
@@ -364,8 +349,7 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message:
-              "Don't know where to start? Try sharing some of the resources you learn from C-ARCHES.",
+            message: "Don't know where to start? Try sharing some of the resources you learn today.",
             params: [],
           },
           {
@@ -402,12 +386,7 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message: 'I think I need emergency contraception, just in case.',
-            params: [],
-          },
-          {
-            speaker: 0,
-            message: '...and I want to switch my birth control to something that I can hide.',
+            message: 'I heard that some people keep their birth control secret to stay in control when others are pressuring them to get pregnant...',
             params: [],
           },
           {
@@ -422,7 +401,7 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message: "Yeah...I'm noticing some things in my relationship. I want to take control of my health.",
+            message: "I think I need emergency contraception, just in case. And I need to switch my birth control to something that I can hide...",
             params: [],
           },
           { speaker: 0, message: "I'm not ready to be pregnant.", params: [] },
@@ -482,7 +461,7 @@ export const chapters: Chapters = {
         effectiveness: '85-98% Effective',
         duration_short: 'Take immediately',
         duration_long: 'Take immediately, works once.',
-        periods: '???.',
+        periods: 'Common',
         privacy: 'Can get an extra pack and store it in a plain container for future emergencies',
         dialogueLines: [
           {
@@ -507,7 +486,7 @@ export const chapters: Chapters = {
         effectiveness: '75–89% Effective',
         duration_short: 'Take immediately',
         duration_long: 'Take immediately, works once.',
-        periods: '???',
+        periods: 'Common',
         privacy: 'Can get an extra pack and store it in a plain container for future emergencies',
         dialogueLines: [
           {
@@ -528,25 +507,13 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              'Okay! The morning after pill looks good and I want an extra pill for future emergencies.',
-            params: [],
-          },
-          {
-            speaker: 0,
-            message: "...but I don't want my partner to know about it...",
+              'Okay! The morning after pill looks good, and I want an extra pill for future emergencies.',
             params: [],
           },
           {
             speaker: 1,
             message:
-              'Some patients trash the packaging and keep the pill in a plain container, like an empty pill bottle.',
-            params: [],
-          },
-          { speaker: 0, message: 'Oh. I can do that!', params: [] },
-          {
-            speaker: 1,
-            message:
-              "Great! Now let's discuss a long term solution for your birth control.",
+              "We can do that! Now let's discuss a long term solution for your birth control",
             params: [],
           },
           {
@@ -686,7 +653,7 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              'That all sounds good. I think the shot sounds like a good fit for me. When can we get started?',
+              'That all sounds good. I think the shot sounds like a good fit for me. When can I get started?',
             params: [],
           },
           {
@@ -697,10 +664,14 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              "Perfect, let's do it. Thank you for helping me find the right option!",
+              "Perfect, let's do it. Thank you for listening and helping me find the right option!",
             params: [],
           },
-          { speaker: 1, message: "You're welcome, Jade.", params: [] },
+          { 
+            speaker: 1, 
+            message: "You're welcome, Jade. It was brave of you to bring this up.", 
+            params: []
+          },
           {
             speaker: 1,
             message:
