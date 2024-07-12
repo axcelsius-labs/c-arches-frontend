@@ -36,7 +36,6 @@ export class ChapterComponent implements OnInit {
     this.subscription.add(
       this.route.paramMap.subscribe((params) => {
           this.chapterId = this.router.url.split('?')[0] ;
-          console.log("HERE: " + this.chapterId);
           if (!this.chapterService.isValidChapter(this.chapterId)) {
             this.router.navigate(['welcome']);
           } else {
