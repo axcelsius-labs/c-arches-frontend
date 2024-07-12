@@ -6,14 +6,16 @@
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  height: 8vh;
+  height: 7vh;
   font-size: calc(1vw + 0.8rem);
+  
   .chapter-title {
     flex: 1;
     color: white;
     font-weight: bold;
     text-align: center;
   }
+  
   .back-button,
   .next-button {
     display: flex;
