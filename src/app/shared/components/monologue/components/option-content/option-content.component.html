@@ -15,10 +15,13 @@
       <div class="option-box-section">
         {{ contraception.price }}
       </div>
-      <div class="option-box-section">
-        {{ contraception.effectiveness }}
+      <div class="option-box-section" *ngIf="contraception.use_within_long !== undefined">
+        {{ contraception.use_within_long }}
       </div>
-      <div class="option-box-section">
+      <div class="option-box-section" *ngIf="contraception.effectiveness_long !== undefined">
+        {{ contraception.effectiveness_long }}
+      </div>
+      <div class="option-box-section" *ngIf="contraception.duration_long !== undefined">
         {{ contraception.duration_long }}
       </div>
     </div>

@@ -31,7 +31,7 @@ export class MonologueComponent implements OnInit {
 
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.code === 'Space') {
+    if (event.code === 'Space' && this.section.gridOptionIndexes === undefined) {
       this.handleClickOrSpace();
       event.stopPropagation();
     }

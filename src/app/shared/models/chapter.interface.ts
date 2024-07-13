@@ -29,7 +29,10 @@ export interface Contraception {
   preview?: string;
   description?: string;
   price?: string;
-  effectiveness?: string;
+  use_within_short?: string;
+  use_within_long?: string;
+  effectiveness_short?: string;
+  effectiveness_long?: string;
   duration_short?: string;
   duration_long?: string;
   periods?: string;
