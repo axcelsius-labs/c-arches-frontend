@@ -119,7 +119,7 @@ export const chapters: Chapters = {
           {
             speaker: 1,
             message:
-              "I have a friend, Jade, who's going through a tough relationship right now.",
+              "I have a friend, Jade, who could use our help right now.",
             params: [],
           },
           {
