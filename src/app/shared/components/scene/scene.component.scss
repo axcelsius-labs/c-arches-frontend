@@ -17,7 +17,6 @@
     .character-container {
       display: flex;
       justify-content: space-between;
-      overflow: hidden; /* Prevent overflow */
 
       .character {
         max-width: 100%;
