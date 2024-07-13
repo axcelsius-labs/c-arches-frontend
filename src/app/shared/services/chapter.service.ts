@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Chapter, Chapters, Section } from '../models/chapter.interface';
+import {Chapter, Chapters, Contraception, Section} from '../models/chapter.interface';
 import { chapters } from '../globals/chapters.global';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -156,11 +156,11 @@ export class ChapterService {
     return ['/intro', '/cafe', '/clinic'].includes(chapterId);
   }
 
-  getGridOptions(sectionIndexes: number[]): Section[] {
+  getGridOptions(sectionIndexes: number[]): Contraception[] {
     return sectionIndexes.map(
       (index) =>
         this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-          .sections[index],
-    ) as Section[];
+          .sections[index].contraception,
+    ) as Contraception[];
   }
 }

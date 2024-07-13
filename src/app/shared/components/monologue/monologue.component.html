@@ -1,18 +1,16 @@
 <div class="monologue-container" (click)="handleClickOrSpace()">
   <ng-container *ngIf="screenWidth$ | async as screenWidth">
-    <ng-container *ngIf="screenWidth > 768"
+    <ng-container *ngIf="screenWidth > 768 || section.layout !== 'content'"
       ><app-large-screen
         class="fill-height-width"
         [section]="section"
-        [additionalContent]="additionalContent"
         (clickedOption)="emitOptionClickEvent($event)"
       ></app-large-screen
     ></ng-container>
-    <ng-container *ngIf="screenWidth <= 768">
+    <ng-container *ngIf="screenWidth <= 768 && section.layout === 'content'">
       <app-small-screen
         class="fill-height-width"
         [section]="section"
-        [additionalContent]="additionalContent"
         (clickedOption)="emitOptionClickEvent($event)"
       ></app-small-screen>
     </ng-container>

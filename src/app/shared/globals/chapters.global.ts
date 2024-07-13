@@ -140,7 +140,7 @@ export const chapters: Chapters = {
   },
   '/cafe': {
     chapterTitle: 'The Cafe',
-    chapterDescription: 'Sam and Jade Discuss Reproductive Coersion',
+    chapterDescription: 'Sam and Jade Discuss Reproductive Coercion',
     previousChapter: '/intro',
     nextChapter: '/clinic',
     backgroundImage: 'assets/images/Cafe.png',
@@ -214,6 +214,7 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
@@ -228,43 +229,66 @@ export const chapters: Chapters = {
             message:
               "It's a common issue that affects people of all genders, races, sexual orientations, and socioeconomic statuses.",
             params: [],
-          },
+          }
+        ],
+      },
+      {
+        sectionType: 'monologue',
+        overlay: true,
+        characterImage: 'assets/images/Alex-Torso.png',
+        dialogueLines: [
           {
             speaker: 0,
             message: 'Here are some examples:',
-            params: [
-              '🚩 Hiding, damaging or tampering with birth control',
-              '🚩 Forcing or pressuring someone to get pregnant or have an abortion',
-              '🚩 Keeping someone from getting an abortion when they want one',
-              '🚩 Poking holes in or breaking condoms',
-              '🚩 Not withdrawing ("pulling out") after agreeing to',
-              '🚩 Attempting to cause a miscarriage',
-            ],
-          },
+            params: [],
+          }
+        ],
+        layout: 'content',
+        bullets: [
+          '🚩 Hiding, damaging or tampering with birth control',
+          '🚩 Forcing or pressuring someone to get pregnant or have an abortion',
+          '🚩 Keeping someone from getting an abortion when they want one',
+          '🚩 Poking holes in or breaking condoms',
+          '🚩 Not withdrawing ("pulling out") after agreeing to',
+          '🚩 Attempting to cause a miscarriage',
+        ]
+      },
+      {
+        sectionType: 'monologue',
+        overlay: true,
+        characterImage: 'assets/images/Alex-Torso.png',
+        dialogueLines: [
           {
             speaker: 0,
             message: 'It is never okay for someone to...',
-            params: [
-              '🚩 Control your reproductive decisions',
-              '🚩 Control your access to reproductive health care providers',
-              '🚩 Force you to have unprotected sex',
-            ],
-          },
-          {
-            speaker: 0,
-            message:
-              'Reproductive coercion is bad for your mental health and increases your risk of STIs/HIV, unintended pregnancies, and unsafe abortions.',
-            params: [],
-          },
-          {
-            speaker: 0,
-            message:
-              'Knowing these risks can help you take care of yourself and make informed decisions.',
             params: [],
           },
         ],
+        layout: 'content',
+        bullets: [
+          '🚩 Control your reproductive decisions',
+          '🚩 Control your access to reproductive health care providers',
+          '🚩 Force you to have unprotected sex',
+        ]
+      },
+      {
         sectionType: 'monologue',
-        additionalContent: 'flags',
+        overlay: true,
+        characterImage: 'assets/images/Alex-Torso.png',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message:
+                'Reproductive coercion is bad for your mental health and increases your risk of STIs/HIV, unintended pregnancies, and unsafe abortions.',
+            params: [],
+          },
+          {
+            speaker: 0,
+            message:
+                'Knowing these risks can help you take care of yourself and make informed decisions.',
+            params: [],
+          },
+        ],
       },
       {
         leftCharacterImage: 'assets/images/Jade-Idle.png',
@@ -438,7 +462,7 @@ export const chapters: Chapters = {
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         overlay: true,
         sectionType: 'monologue',
-        additionalContent: 'option-box',
+        layout: 'content',
         gridOptionIndexes: [2, 3, 4],
         dialogueLines: [
           {
@@ -452,16 +476,6 @@ export const chapters: Chapters = {
       {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
-        name: 'IUD',
-        preview: 'assets/images/IUD.png',
-        description:
-          'Tiny device put in your uterus, low-maintenance once inserted.',
-        price: '$0-$1300',
-        effectiveness: '99% Effective',
-        duration_short: '3-12 years',
-        duration_long: 'Lasts 3-12 years',
-        periods: 'Common',
-        privacy: 'Easy to keep private, strings can be cut short.',
         dialogueLines: [
           {
             speaker: 0,
@@ -471,24 +485,24 @@ export const chapters: Chapters = {
           },
         ],
         sectionType: 'monologue',
-        additionalContent: 'option-content',
         previousSectionIndex: 1,
         nextSectionIndex: 5,
+        layout: 'content',
+        contraception: {
+          name: 'IUD',
+          preview: 'assets/images/IUD.png',
+          description: 'Tiny device put in your uterus, low-maintenance once inserted.',
+          price: '$0-$1300',
+          effectiveness: '99% Effective',
+          duration_short: '3-12 years',
+          duration_long: 'Lasts 3-12 years',
+          periods: 'Common',
+          privacy: 'Easy to keep private, strings can be cut short.',
+        }
       },
       {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
-        name: 'Ella',
-        preview: 'assets/images/Ella.png',
-        description:
-          'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
-        price: '$0-$50',
-        effectiveness: '85-98% Effective',
-        duration_short: 'Take immediately',
-        duration_long: 'Take immediately, works once.',
-        periods: 'Common',
-        privacy:
-          'Can get an extra pack and store it in a plain container for future emergencies',
         dialogueLines: [
           {
             speaker: 0,
@@ -498,24 +512,24 @@ export const chapters: Chapters = {
           },
         ],
         sectionType: 'monologue',
-        additionalContent: 'option-content',
         previousSectionIndex: 1,
         nextSectionIndex: 5,
+        layout: 'content',
+        contraception: {
+          name: 'Ella',
+          preview: 'assets/images/Ella.png',
+          description: 'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
+          price: '$0-$50',
+          effectiveness: '85-98% Effective',
+          duration_short: 'Take immediately',
+          duration_long: 'Take immediately, works once.',
+          periods: 'Common',
+          privacy: 'Can get an extra pack and store it in a plain container for future emergencies',
+        }
       },
       {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
-        name: 'Plan B One Step (or generic)',
-        preview: 'assets/images/Plan B.png',
-        description:
-          'A single pill taken as soon as possible after unprotected sex, ideally within 3 days.',
-        price: '$0-50',
-        effectiveness: '75–89% Effective',
-        duration_short: 'Take immediately',
-        duration_long: 'Take immediately, works once.',
-        periods: 'Common',
-        privacy:
-          'Can get an extra pack and store it in a plain container for future emergencies',
         dialogueLines: [
           {
             speaker: 0,
@@ -525,9 +539,20 @@ export const chapters: Chapters = {
           },
         ],
         sectionType: 'monologue',
-        additionalContent: 'option-content',
         previousSectionIndex: 1,
         nextSectionIndex: 5,
+        layout: 'content',
+        contraception: {
+          name: 'Plan B One Step (or generic)',
+          preview: 'assets/images/Plan B.png',
+          description: 'A single pill taken as soon as possible after unprotected sex, ideally within 3 days.',
+          price: '$0-50',
+          effectiveness: '75–89% Effective',
+          duration_short: 'Take immediately',
+          duration_long: 'Take immediately, works once.',
+          periods: 'Common',
+          privacy: 'Can get an extra pack and store it in a plain container for future emergencies',
+        }
       },
       {
         leftCharacterImage: 'assets/images/Jade-Idle.png',
@@ -565,7 +590,7 @@ export const chapters: Chapters = {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         gridOptionIndexes: [7, 8, 9, 10],
-        additionalContent: 'option-box',
+        layout: 'content',
         dialogueLines: [
           {
             speaker: 0,
@@ -579,16 +604,6 @@ export const chapters: Chapters = {
       {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
-        name: 'The Shot',
-        preview: 'assets/images/Injection.png',
-        description: 'Injection in your arm or buttocks every 3 months',
-        price: '$0-$150',
-        effectiveness: '96% Effective',
-        duration_short: '3 months',
-        duration_long: 'Get every 3 months',
-        periods: 'Common',
-        privacy:
-          'No at home supplies, but requires regular access to the clinic.',
         dialogueLines: [
           {
             speaker: 0,
@@ -598,23 +613,24 @@ export const chapters: Chapters = {
           },
         ],
         sectionType: 'monologue',
-        additionalContent: 'option-content',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
+        layout: 'content',
+        contraception: {
+          name: 'The Shot',
+          preview: 'assets/images/Injection.png',
+          description: 'Injection in your arm or buttocks every 3 months',
+          price: '$0-$150',
+          effectiveness: '96% Effective',
+          duration_short: '3 months',
+          duration_long: 'Get every 3 months',
+          periods: 'Common',
+          privacy: 'No at home supplies, but requires regular access to the clinic.',
+        }
       },
       {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
-        name: 'IUD',
-        preview: 'assets/images/IUD.png',
-        description:
-          'Tiny device put in your uterus, low-maintenance once inserted.',
-        price: '$0-$1300',
-        effectiveness: '99% Effective',
-        duration_short: '3-12 years',
-        duration_long: 'Lasts 3-12 years',
-        periods: 'Common',
-        privacy: 'Strings can be cut short so your partner cannot feel them.',
         dialogueLines: [
           {
             speaker: 0,
@@ -624,23 +640,24 @@ export const chapters: Chapters = {
           },
         ],
         sectionType: 'monologue',
-        additionalContent: 'option-content',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
+        layout: 'content',
+        contraception: {
+          name: 'IUD',
+          preview: 'assets/images/IUD.png',
+          description: 'Tiny device put in your uterus, low-maintenance once inserted.',
+          price: '$0-$1300',
+          effectiveness: '99% Effective',
+          duration_short: '3-12 years',
+          duration_long: 'Lasts 3-12 years',
+          periods: 'Common',
+          privacy: 'Strings can be cut short so your partner cannot feel them.',
+        }
       },
       {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
-        name: 'The Implant (Nexplanon)',
-        preview: 'assets/images/Implant.png',
-        description: 'Small & discreet device inserted under the skin.',
-        price: '$0-$2200',
-        effectiveness: '99% Effective',
-        duration_short: '5 years',
-        duration_long: 'Lasts up to 5 years',
-        periods: 'Common',
-        privacy:
-          'Mostly invisible once your skin heals. Can sometimes be seen or felt if someone touches your arm. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
         dialogueLines: [
           {
             speaker: 0,
@@ -650,24 +667,24 @@ export const chapters: Chapters = {
           },
         ],
         sectionType: 'monologue',
-        additionalContent: 'option-content',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
+        layout: 'content',
+        contraception: {
+          name: 'The Implant (Nexplanon)',
+          preview: 'assets/images/Implant.png',
+          description: 'Small & discreet device inserted under the skin.',
+          price: '$0-$2200',
+          effectiveness: '99% Effective',
+          duration_short: '5 years',
+          duration_long: 'Lasts up to 5 years',
+          periods: 'Common',
+          privacy: 'Mostly invisible once your skin heals. Can sometimes be seen or felt if someone touches your arm. Consider how to manage the recovery period and signs from the procedure from a partner who might be monitoring your health or activities.',
+        }
       },
       {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
-        name: 'Sterilization (Tubal Ligation)',
-        preview: 'assets/images/Sterilization.png',
-        description:
-          'Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.',
-        price: '$0-6000',
-        effectiveness: '99% Effective',
-        duration_short: 'Permanent',
-        duration_long: 'Permanent.',
-        periods: 'No changes',
-        privacy:
-          'Consider how to manage the recovery period and hide signs from the procedure (i.e. a small surgical scar) if someone is monitoring your health or activities',
         dialogueLines: [
           {
             speaker: 0,
@@ -677,9 +694,20 @@ export const chapters: Chapters = {
           },
         ],
         sectionType: 'monologue',
-        additionalContent: 'option-content',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
+        layout: 'content',
+        contraception: {
+          name: 'Sterilization (Tubal Ligation)',
+          preview: 'assets/images/Sterilization.png',
+          description: 'Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.',
+          price: '$0-6000',
+          effectiveness: '99% Effective',
+          duration_short: 'Permanent',
+          duration_long: 'Permanent.',
+          periods: 'No changes',
+          privacy: 'Consider how to manage the recovery period and hide signs from the procedure (i.e. a small surgical scar) if someone is monitoring your health or activities',
+        }
       },
       {
         leftCharacterImage: 'assets/images/Jade-Idle.png',
@@ -725,8 +753,9 @@ export const chapters: Chapters = {
         previousSectionIndex: 6,
       },
       {
+        sectionType: 'monologue',
         overlay: true,
-        leftCharacterImage: 'assets/images/Doctor-Idle.png',
+        characterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -739,21 +768,29 @@ export const chapters: Chapters = {
             message:
               'Talk to your provider about how to stay safe and healthy now and in the future.',
             params: [],
-          },
+          }
+        ]
+      },
+      {
+        sectionType: 'monologue',
+        overlay: true,
+        characterImage: 'assets/images/Doctor-Idle.png',
+        dialogueLines: [
           {
             speaker: 0,
             message: 'Here are some things you can ask about:',
-            params: [
-              '⚫️  Emergency contraception and birth control you can keep private.',
-              '⚫️  Notifying your partner anonymously if you have an STI and are afraid of them finding out.',
-              "⚫️ Your options if you're pregnant and don't want to be.",
-              "⚫️ Your options if a partner won't use a condom.",
-              '⚫️ How to talk to your partner about birth control',
-              '⚫️ Using the clinic phone to call hotlines or other resources if your partner monitors your phone',
-            ],
-          },
+            params: [],
+          }
         ],
-        sectionType: 'scene',
+        layout: 'content',
+        bullets: [
+          '⚫️ Emergency contraception and birth control you can keep private.',
+          '⚫️ Notifying your partner anonymously if you have an STI and are afraid of them finding out.',
+          "⚫️ Your options if you're pregnant and don't want to be.",
+          "⚫️ Your options if a partner won't use a condom.",
+          '⚫️ How to talk to your partner about birth control',
+          '⚫️ Using the clinic phone to call hotlines or other resources if your partner monitors your phone',
+        ]
       },
     ],
   },

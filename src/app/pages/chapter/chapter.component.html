@@ -2,7 +2,7 @@
   [backgroundImage]="chapterContent.backgroundImage!"
   [blackOut]="sectionContent.overlay || false"
   [chapterTitle]="chapterContent.chapterTitle"
-  [showNextButton]="sectionContent.additionalContent !== 'option-box'"
+  [showNextButton]="sectionContent.gridOptionIndexes === undefined"
   [showFooter]="true"
 >
   <ng-container *ngIf="sectionContent.sectionType as type">

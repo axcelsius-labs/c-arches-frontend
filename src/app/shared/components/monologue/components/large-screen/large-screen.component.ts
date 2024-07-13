@@ -8,8 +8,8 @@ import { Section } from '../../../../models/chapter.interface';
 })
 export class LargeScreenComponent implements OnInit {
   @Input() section!: Section;
-  @Input() additionalContent!: string[] | undefined;
   @Output() clickedOption = new EventEmitter<number>();
+  
   constructor() {}
 
   ngOnInit() {}
@@ -19,8 +19,8 @@ export class LargeScreenComponent implements OnInit {
   }
 
   handleClick(event: Event): void {
-    if (this.section.additionalContent === 'option-box') {
-      event.stopPropagation(); // Prevent click event propagation
+    if (this.section.gridOptionIndexes) {
+      event.stopPropagation();
     }
   }
 }

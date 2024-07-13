@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Section } from '../../../../models/chapter.interface';
+import { Section, Contraception } from '../../../../models/chapter.interface';
 import { ChapterService } from '../../../../services/chapter.service';
 
 @Component({
@@ -10,10 +10,10 @@ import { ChapterService } from '../../../../services/chapter.service';
 export class GridOptionsComponent implements OnInit {
   @Input() section!: Section;
   @Output() clickedOption = new EventEmitter<number>();
-  constructor(private chapterService: ChapterService) {}
-  gridOptions!: Section[];
-  currentBoxIndex = -1;
+  gridOptions!: Contraception[];
   showDialog = true;
+
+  constructor(private chapterService: ChapterService) {}
 
   ngOnInit() {
     this.gridOptions = this.chapterService.getGridOptions(

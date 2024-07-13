@@ -14,10 +14,17 @@ export interface Section {
   rightCharacterImage?: string;
   characterImage?: string;
   dialogueLines?: DialogueLine[];
-  gridOptionIndexes?: number[];
   sectionType?: string;
   previousSectionIndex?: number;
   nextSectionIndex?: number;
+  overlay?: boolean;
+  layout?: string;
+  gridOptionIndexes?: number[];
+  contraception?: Contraception;
+  bullets?: string[];
+}
+
+export interface Contraception {
   name?: string;
   preview?: string;
   description?: string;
@@ -27,8 +34,6 @@ export interface Section {
   duration_long?: string;
   periods?: string;
   privacy?: string;
-  overlay?: boolean;
-  additionalContent?: string;
 }
 
 export interface Chapters {

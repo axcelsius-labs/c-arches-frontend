@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 import { Section } from '../../models/chapter.interface';
 import { BehaviorSubject } from 'rxjs';
-import { DialogueService } from '../../services/dialogue.service';
 
 @Component({
   selector: 'app-monologue',
@@ -17,22 +16,14 @@ import { DialogueService } from '../../services/dialogue.service';
 })
 export class MonologueComponent implements OnInit {
   @Input() section!: Section;
-  @Input() additionalContent!: string[] | undefined;
   @Output() onClickOrSpace = new EventEmitter();
   @Output() clickedOption = new EventEmitter<number>();
 
-  constructor(private dialogueService: DialogueService) {
+  constructor() {
     this.onResize();
   }
-  ngOnInit() {
-    this.dialogueService.currentLine$.subscribe((value) => {
-      if (value.params.length > 0) {
-        this.additionalContent = value.params;
-      } else {
-        this.additionalContent = undefined;
-      }
-    });
-  }
+  
+  ngOnInit() { }
 
   handleClickOrSpace(event?: Event): void {
     this.onClickOrSpace.emit();

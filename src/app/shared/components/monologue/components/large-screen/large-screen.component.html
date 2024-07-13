@@ -7,17 +7,17 @@
       alt="Description of the image"
     />
     <app-grid-options
-      *ngIf="section.additionalContent === 'option-box'"
+      *ngIf="section.gridOptionIndexes !== undefined"
       [section]="section"
       (clickedOption)="emitOptionClickEvent($event)"
     ></app-grid-options>
     <app-option-content
-      *ngIf="section.additionalContent === 'option-content'"
-      [section]="section"
+      *ngIf="section.contraception !== undefined"
+      [contraception]="section.contraception!"
     ></app-option-content>
     <app-additional-content
-      [additionalContent]="additionalContent!"
-      *ngIf="additionalContent && section.additionalContent === 'flags'"
+      *ngIf="section.bullets !== undefined"
+      [additionalContent]="section.bullets!"
     ></app-additional-content>
   </div>
 </div>
