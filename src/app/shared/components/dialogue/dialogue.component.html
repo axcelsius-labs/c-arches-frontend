@@ -1,13 +1,8 @@
-<div
-  class="dialogue-container"
-  [ngClass]="speakerIsOnLeft === true ? 'left' : 'right'"
->
+<div class="dialogue-container" [ngClass]="speaker !== 2 ? 'left' : 'right'">
   <span class="visible">{{ visibleLetters }}</span>
   <span class="invisible">{{ invisibleLetters }}</span>
-  <div *ngIf="showLeftTriangle" class="triangle-left-container"></div>
-  <div
-    *ngIf="!showLeftTriangle"
-    class="triangle-bottom-container"
-    [ngClass]="speakerIsOnLeft === true ? 'triangle-left' : 'triangle-right'"
-  ></div>
+  <div *ngIf="showLeftTriangle" class="triangle side-triangle-left"></div>
+  <div *ngIf="!showLeftTriangle && speaker === 0" class="triangle bottom-triangle-left"></div>
+  <div *ngIf="!showLeftTriangle && speaker === 1" class="triangle bottom-triangle-middle"></div>
+  <div *ngIf="!showLeftTriangle && speaker === 2" class="triangle bottom-triangle-right"></div>
 </div>

@@ -13,15 +13,15 @@ export const chapters: Chapters = {
         overlay: true,
         characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
-          { speaker: 0, message: "Hey! I'm Sam!", params: [] },
+          { speaker: 1, message: "Hey! I'm Sam!", params: [] },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'For your safety, the exit button in the top right will open the Weather Channel homepage. Click it to quickly leave this site, and use the link in your email to return.',
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "Also, if someone is monitoring your device, consider clearing this from your browser's history.",
             params: [],
@@ -34,13 +34,13 @@ export const chapters: Chapters = {
         rightCharacterImage: '',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "Okay! Let's begin. Healthy relationships thrive on mutual respect, trust, and open communication.",
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'Do any of these couples sound like your relationships?...',
             params: [],
@@ -53,7 +53,7 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Couple 1.png',
         dialogueLines: [
           {
-            speaker: 1,
+            speaker: 2,
             message:
               'We make it easy to talk about pregnancy and birth control.',
             params: [],
@@ -66,7 +66,7 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Couple 2.png',
         dialogueLines: [
           {
-            speaker: 1,
+            speaker: 2,
             message:
               "We're on the same page about getting pregnant and how to handle pregnancy decisions.",
             params: [],
@@ -79,7 +79,7 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Couple 3.png',
         dialogueLines: [
           {
-            speaker: 1,
+            speaker: 2,
             message:
               'My partner supports my decisions about sex, pregnancy and birth control.',
             params: [],
@@ -92,7 +92,7 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Couple 4.png',
         dialogueLines: [
           {
-            speaker: 1,
+            speaker: 2,
             message:
               'I feel comfortable expressing my sexual desires AND saying no to sex.',
             params: [],
@@ -105,31 +105,31 @@ export const chapters: Chapters = {
         rightCharacterImage: '',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'If these couples remind you of your relationships, great!',
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "If not, you're not the only one. Everyone needs support sometimes.",
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "I have a friend, Jade, who's going through a tough relationship right now.",
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "In this program, we'll support her as she takes back control of her body and health.",
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "Jade's waiting for us at a cafe down the block. Let's go meet her!",
             params: [],
@@ -151,7 +151,7 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
           {
-            speaker: 1,
+            speaker: 2,
             message: 'Hey, Jade! You look kinda stressed...you okay?',
             params: [],
           },
@@ -161,14 +161,14 @@ export const chapters: Chapters = {
               "Hi, Sam. I don't know...my partner and I are fighting again.",
             params: [],
           },
-          { speaker: 1, message: 'Wanna talk about it?', params: [] },
+          { speaker: 2, message: 'Wanna talk about it?', params: [] },
           {
             speaker: 0,
             message: "PJ really wants kids, but I just don't think I'm ready.",
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message: 'Oh, that sounds tough... How have your talks been going?',
             params: [],
           },
@@ -177,7 +177,7 @@ export const chapters: Chapters = {
             message: 'Not great. We keep having the same argument.',
             params: [],
           },
-          { speaker: 1, message: 'That sounds frustrating...', params: [] },
+          { speaker: 2, message: 'That sounds frustrating...', params: [] },
           {
             speaker: 0,
             message: "It is! I've been feeling nervous, so I got on the pill.",
@@ -188,19 +188,19 @@ export const chapters: Chapters = {
             message: 'But my pills haven been missing and I think PJ took them',
             params: [],
           },
-          { speaker: 1, message: 'Dude, what?', params: [] },
+          { speaker: 2, message: 'Dude, what?', params: [] },
           {
             speaker: 0,
             message: 'I think PJ poked a hole in the condom last night...',
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message: "This isn't okay, Jade.",
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               'Your partner has no right to force you into something you’re not ready for.',
             params: [],
@@ -219,13 +219,13 @@ export const chapters: Chapters = {
         characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "This is called reproductive coercion. It's a serious form of abuse where someone controls or pressures another person's decisions about birth control or pregnancy.",
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "It's a common issue that affects people of all genders, races, sexual orientations, and socioeconomic statuses.",
             params: [],
@@ -277,13 +277,13 @@ export const chapters: Chapters = {
         characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
                 'Reproductive coercion is bad for your mental health and increases your risk of STIs/HIV, unintended pregnancies, and unsafe abortions.',
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
                 'Knowing these risks can help you take care of yourself and make informed decisions.',
             params: [],
@@ -300,9 +300,9 @@ export const chapters: Chapters = {
             message: 'Whatever it is, I just know I feel anxious and trapped.',
             params: [],
           },
-          { speaker: 1, message: "Jade, I'm here for you.", params: [] },
+          { speaker: 2, message: "Jade, I'm here for you.", params: [] },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               'You deserve to feel safe and in control of your own body and decisions.',
             params: [],
@@ -312,8 +312,8 @@ export const chapters: Chapters = {
             message: "Yes!! But I don't know what to do...",
             params: [],
           },
-          { speaker: 1, message: "I understand. I've been there.", params: [] },
-          { speaker: 1, message: 'Who else knows about this?', params: [] },
+          { speaker: 2, message: "I understand. I've been there.", params: [] },
+          { speaker: 2, message: 'Who else knows about this?', params: [] },
           {
             speaker: 0,
             message: "I haven't really talked to anyone...",
@@ -321,19 +321,19 @@ export const chapters: Chapters = {
           },
           { speaker: 0, message: "...I'm kinda embarassed.", params: [] },
           {
-            speaker: 1,
+            speaker: 2,
             message: "Okay, well you don't have to go through this alone.",
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               'Have you considered getting on something you can keep private?',
             params: [],
           },
           { speaker: 0, message: 'What do you mean?', params: [] },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               'Well, you could get the birth control shot, implant, or IUD.',
             params: [],
@@ -346,20 +346,20 @@ export const chapters: Chapters = {
           },
           { speaker: 0, message: 'What would you do?', params: [] },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               "I got the implant last year...I barely feel it and no one even knows it's there!",
             params: [],
           },
           { speaker: 0, message: 'That sounds nice...', params: [] },
           {
-            speaker: 1,
+            speaker: 2,
             message: "If you want, I'll show you the clinic that helped me?",
             params: [],
           },
           { speaker: 0, message: 'Okay!', params: [] },
           { speaker: 0, message: 'Thanks, Sam.', params: [] },
-          { speaker: 1, message: 'Anytime, Jade.', params: [] },
+          { speaker: 2, message: 'Anytime, Jade.', params: [] },
         ],
       },
       {
@@ -368,25 +368,25 @@ export const chapters: Chapters = {
         characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'Relationships are tough, especially ones that are unhealthy or unsafe. Sometimes we can feel alone.',
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'You can make a difference. Check in with your friends and family who may be having a tough time in their relationships.',
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "Don't know where to start? Try sharing some of the resources you learn today.",
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message: 'Helping others is good for you, too!',
             params: [],
           },
@@ -407,7 +407,7 @@ export const chapters: Chapters = {
         rightCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
           {
-            speaker: 1,
+            speaker: 2,
             message: "Hi Jade, I'm Dr. Green! What brings you in today?",
             params: [],
           },
@@ -424,12 +424,12 @@ export const chapters: Chapters = {
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message: "Absolutely! I'm really glad you brought this up, Jade.",
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message: 'This is something that a lot of people go through.',
             params: [],
           },
@@ -451,7 +451,7 @@ export const chapters: Chapters = {
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               "Absolutely, Jade. It's great that you're taking charge of your health. I'm here for you!",
             params: [],
@@ -567,7 +567,7 @@ export const chapters: Chapters = {
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               "We can do that! Now let's discuss a long term solution for your birth control",
             params: [],
@@ -722,7 +722,7 @@ export const chapters: Chapters = {
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message: "We can schedule an appointment whenever you're ready.",
             params: [],
           },
@@ -733,19 +733,19 @@ export const chapters: Chapters = {
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               "You're welcome, Jade. It was brave of you to bring this up.",
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message:
               'Also, if you ever feel pressured or controlled in your relationship, there are resources and support available.',
             params: [],
           },
           {
-            speaker: 1,
+            speaker: 2,
             message: 'Check them out if you need additional support!',
             params: [],
           },
@@ -758,13 +758,13 @@ export const chapters: Chapters = {
         characterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
           {
-            speaker: 0,
+            speaker: 1,
             message:
               "We're almost done! You can be brave like Jade. Take charge of your reproductive health today.",
             params: [],
           },
           {
-            speaker: 0,
+            speaker: 1,
             message:
               'Talk to your provider about how to stay safe and healthy now and in the future.',
             params: [],

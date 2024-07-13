@@ -8,15 +8,16 @@ import { DialogueService } from '../../services/dialogue.service';
 })
 export class DialogueComponent implements OnInit {
   @Input() showLeftTriangle = false;
-  speakerIsOnLeft = false;
+  
+  speaker = 0;
   visibleLetters = '';
   invisibleLetters = '';
 
   constructor(private dialogueService: DialogueService) {}
 
   ngOnInit(): void {
-    this.dialogueService.speakerIsOnLeft$.subscribe((value) => {
-      this.speakerIsOnLeft = value;
+    this.dialogueService.speaker$.subscribe((value) => {
+      this.speaker = value;
     });
     this.dialogueService.visibleLetters$.subscribe((value) => {
       this.visibleLetters = value;

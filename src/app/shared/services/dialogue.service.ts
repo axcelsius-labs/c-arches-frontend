@@ -12,9 +12,7 @@ export class DialogueService {
   currentLine$: BehaviorSubject<DialogueLine> =
     new BehaviorSubject<DialogueLine>({} as DialogueLine);
   isAnimating$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  speakerIsOnLeft$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false,
-  );
+  speaker$: BehaviorSubject<number> = new BehaviorSubject<number>(0,);
   visibleLetters$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   invisibleLetters$: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
@@ -55,7 +53,7 @@ export class DialogueService {
     if (index < 0 || this.lines$.value.length <= index) return;
     this.currentIndex = index;
     this.currentLine$.next(this.lines$.value[index]);
-    this.speakerIsOnLeft$.next(this.currentLine$.value.speaker === 0);
+    this.speaker$.next(this.currentLine$.value.speaker);
     this.animateText(this.currentLine$.value.message);
   }
 
