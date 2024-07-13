@@ -1,0 +1,36 @@
+.small-screen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Pushes characters to the bottom */
+  align-items: center;
+  width: 100%; /* Ensure it fills the available width */
+  height: 100%;
+
+  .dialog-character-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    max-width: 65vh;
+  }
+}
+
+.circle-container {
+  max-width: 150px; /* Adjust based on your desired width */
+  max-height: 150px; /* Adjust based on your desired height */
+  border: 5px solid #333; /* Dark border with 5px width */
+  border-radius: 50%; /* Ensure it's a circle */
+  overflow: hidden; /* Ensure image stays within circle */
+  background-color: #4caf50; /* Green background color */
+}
+
+/* Styles for the image */
+.circle-container img {
+  max-width: 100%; /* Ensure the image fills the circle container */
+  max-height: 100%; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below image */
+}
+.dialogue-container {
+  flex-grow: 1; /* Allow dialogue container to grow in height */
+  padding: 10px; /* Adjust padding as needed */
+}

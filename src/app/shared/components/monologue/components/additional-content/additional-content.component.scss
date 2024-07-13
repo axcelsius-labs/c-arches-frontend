@@ -1,0 +1,15 @@
+.additional-content {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  background: rgba(0, 0, 0, 0.5333333333);
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 2vw;
+  color: rgba(255, 255, 255, 0.9333333333);
+  z-index: 1;
+  max-width: 65vh;
+}
+.hidden-box {
+  width: 65vh;
+}

@@ -28,6 +28,7 @@ export interface Section {
   periods?: string;
   privacy?: string;
   overlay?: boolean;
+  additionalContent?: string;
 }
 
 export interface Chapters {

@@ -1,11 +1,19 @@
 <app-progress-bar></app-progress-bar>
 <div class="footer-container">
-  <button class="back-button" [ngClass]="{ disabled: disablePreviousButton() }" (click)="previousDialogLine()">
+  <button
+    class="back-button"
+    [ngClass]="{ disabled: disablePreviousButton() }"
+    (click)="previousDialogLine()"
+  >
     <mat-icon class="icon">chevron_left</mat-icon>
     Back
   </button>
   <div class="chapter-title">{{ chapterTitle }}</div>
-  <button *ngIf="showNextButton" class="next-button" (click)="nextDialogLine()">
+  <button
+    [style.visibility]="!showNextButton ? 'hidden' : 'visible'"
+    class="next-button"
+    (click)="nextDialogLine()"
+  >
     Next
     <mat-icon class="icon">chevron_right</mat-icon>
   </button>

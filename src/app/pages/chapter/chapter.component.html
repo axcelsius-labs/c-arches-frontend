@@ -2,7 +2,7 @@
   [backgroundImage]="chapterContent.backgroundImage!"
   [blackOut]="sectionContent.overlay || false"
   [chapterTitle]="chapterContent.chapterTitle"
-  [showNextButton]="sectionContent.sectionType !== 'monologue.grid'"
+  [showNextButton]="sectionContent.additionalContent !== 'option-box'"
   [showFooter]="true"
 >
   <ng-container *ngIf="sectionContent.sectionType as type">
@@ -12,15 +12,12 @@
       [additionalContent]="additionalContent"
       (onClickOrSpace)="goToNextDialogLine()"
     ></app-scene>
-    <app-monologue-grid
-      *ngIf="type === 'monologue.grid'"
+    <app-monologue
+      *ngIf="type === 'monologue'"
       [section]="sectionContent"
+      (onClickOrSpace)="goToNextDialogLine()"
       (clickedOption)="finishedSection($event)"
-    ></app-monologue-grid>
-    <app-monologue-content
-      *ngIf="type === 'monologue.content'"
-      [section]="sectionContent"
-      (onClickOrSpace)="finishedSection()"
-    ></app-monologue-content>
+    >
+    </app-monologue>
   </ng-container>
 </app-main-container>

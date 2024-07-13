@@ -1,0 +1,29 @@
+.large-screen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Pushes characters to the bottom */
+  align-items: center;
+  width: 100%; /* Ensure it fills the available width */
+  height: 100%;
+
+  .character-extra-content-container {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden; /* Prevent overflow */
+
+    .character {
+      max-width: 100%;
+      max-height: 60vh;
+      width: auto;
+      height: auto;
+      object-fit: contain; /* Maintain aspect ratio */
+      align-self: flex-end; /* Align characters to the bottom */
+      filter: drop-shadow(0 0 35px #00000055);
+    }
+  }
+  .dialogue-container {
+    max-width: 65vh;
+    width: 100%;
+    flex-shrink: 0; /* Prevent the dialogue container from shrinking */
+  }
+}

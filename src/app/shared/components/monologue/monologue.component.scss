@@ -4,80 +4,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden; /* Prevent overflow */
 
-  .dialog-charactor-container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    max-width: 65vh;
-    width: 100%;
+  .fill-height-width {
     height: 100%;
-
-    .character-container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-
-      .character {
-        object-fit: contain;
-        object-position: 100% 100%;
-        max-height: 60vh;
-        filter: drop-shadow(0 0 40px #00000077);
-      }
-      .additional-content {
-        display: flex;
-        flex-direction: column;
-        height: fit-content;
-        background: rgba(0, 0, 0, 0.5333333333);
-        border: 5px solid rgba(255, 255, 255, 0.2);
-        border-radius: 8px;
-        padding: 2vw;
-        color: rgba(255, 255, 255, 0.9333333333);
-        z-index: 1;
-        max-width: 65vh;
-      }
-      .hidden-box {
-        width: 65vh;
-      }
-    }
-    .dialogue-container {
-      margin-top: 20px;
-      width: 100%;
-    }
+    width: 100%;
   }
 }
-
-// .dialogue-container {
-//   width: 100%;
-//   max-width: 65vh;
-// }
-// .image-container {
-//   width: 100%; /* Adjust this value based on your design */
-//   height: auto; /* Maintain aspect ratio of the container */
-//   max-height: 100vh; /* Adjust to the height of the viewport if needed */
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .image-container img {
-//   max-width: 100%;
-//   max-height: 100%;
-//   object-fit: contain; /* Ensures the image scales down while maintaining its aspect ratio */
-// }
-// .character-wrapper {
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-
-//   .character-container {
-//     flex-shrink: 0;
-//     max-width: 40vw;
-//     max-height: 120vh;
-//     object-fit: contain;
-//     min-width: 20vh;
-//     object-position: 100% 100%;
-//     filter: drop-shadow(0 0 30px #000000bb);
-//   }
-
-// }

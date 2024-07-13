@@ -1,19 +1,20 @@
 <div class="monologue-container" (click)="handleClickOrSpace()">
-  <div class="dialog-charactor-container">
-    <dialogue class="dialogue-container"></dialogue>
-    <div class="character-container">
-      <img
-        class="character"
-        [src]="section.characterImage"
-        alt="Description of the image"
-      />
-      <div class="additional-content" *ngIf="additionalContent.length > 0">
-        <div *ngFor="let content of additionalContent">
-          {{ content }}
-        </div>
-      </div>
-      <!-- Hidden div box when chapter.data.length is 0 -->
-      <div class="hidden-box" *ngIf="additionalContent.length === 0"></div>
-    </div>
-  </div>
+  <ng-container *ngIf="screenWidth$ | async as screenWidth">
+    <ng-container *ngIf="screenWidth > 768"
+      ><app-large-screen
+        class="fill-height-width"
+        [section]="section"
+        [additionalContent]="additionalContent"
+        (clickedOption)="emitOptionClickEvent($event)"
+      ></app-large-screen
+    ></ng-container>
+    <ng-container *ngIf="screenWidth <= 768">
+      <app-small-screen
+        class="fill-height-width"
+        [section]="section"
+        [additionalContent]="additionalContent"
+        (clickedOption)="emitOptionClickEvent($event)"
+      ></app-small-screen>
+    </ng-container>
+  </ng-container>
 </div>

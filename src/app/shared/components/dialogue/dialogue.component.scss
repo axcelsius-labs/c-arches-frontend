@@ -43,13 +43,25 @@
   outline: 5px solid green;
 }
 
-.triangle {
+.triangle-bottom-container {
   position: absolute;
   width: 0;
   height: 0;
   z-index: 99;
   bottom: 0;
   border-bottom: 50px solid transparent;
+}
+
+.triangle-left-container {
+  position: absolute;
+  top: 50%;
+  left: -20px; /* Adjust the position of the triangle */
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent; /* Adjust size of triangle */
+  border-bottom: 20px solid transparent; /* Adjust size of triangle */
+  border-right: 20px solid red; /* Adjust size and color of triangle */
 }
 
 .triangle-left {

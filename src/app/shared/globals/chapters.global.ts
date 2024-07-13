@@ -10,7 +10,7 @@ export const chapters: Chapters = {
     sections: [
       {
         overlay: true,
-        leftCharacterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           { speaker: 0, message: "Hey! I'm Sam!", params: [] },
           {
@@ -26,7 +26,7 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
+        sectionType: 'monologue',
       },
       {
         leftCharacterImage: 'assets/images/Alex.png',
@@ -177,13 +177,15 @@ export const chapters: Chapters = {
           },
           {
             speaker: 0,
-            message: 'Not great. PJ keeps bringing it up, and yells when I say no.',
+            message:
+              'Not great. PJ keeps bringing it up, and yells when I say no.',
             params: [],
           },
           { speaker: 1, message: 'That sounds frustrating...', params: [] },
           {
             speaker: 0,
-            message: 'Yeah! I think they were poking holes in the condoms before...',
+            message:
+              'Yeah! I think they were poking holes in the condoms before...',
             params: [],
           },
           {
@@ -230,7 +232,7 @@ export const chapters: Chapters = {
       },
       {
         overlay: true,
-        leftCharacterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -278,7 +280,8 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
+        sectionType: 'monologue',
+        additionalContent: 'flags',
       },
       {
         leftCharacterImage: 'assets/images/Jade-Idle.png',
@@ -353,7 +356,7 @@ export const chapters: Chapters = {
         sectionType: 'scene',
       },
       {
-        leftCharacterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Alex-Torso.png',
         overlay: true,
         dialogueLines: [
           {
@@ -380,7 +383,7 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
+        sectionType: 'monologue',
       },
     ],
   },
@@ -451,7 +454,8 @@ export const chapters: Chapters = {
       {
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         overlay: true,
-        sectionType: 'monologue.grid',
+        sectionType: 'monologue',
+        additionalContent: 'option-box',
         gridOptionIndexes: [2, 3, 4],
         dialogueLines: [
           {
@@ -467,7 +471,8 @@ export const chapters: Chapters = {
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         name: 'IUD',
         preview: 'assets/images/IUD.png',
-        description: 'Tiny device put in your uterus, low-maintenance once inserted.',
+        description:
+          'Tiny device put in your uterus, low-maintenance once inserted.',
         price: '$0-$1300',
         effectiveness: '99% Effective',
         duration_short: '3-12 years',
@@ -477,11 +482,13 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: 'We can trim the strings so they cannot be felt or removed by your partner.',
+            message:
+              'We can trim the strings so they cannot be felt or removed by your partner.',
             params: [],
           },
         ],
-        sectionType: 'monologue.content',
+        sectionType: 'monologue',
+        additionalContent: 'option-content',
         previousSectionIndex: 1,
         nextSectionIndex: 5,
       },
@@ -497,7 +504,8 @@ export const chapters: Chapters = {
         duration_short: 'Take immediately',
         duration_long: 'Take immediately, works once.',
         periods: '???.',
-        privacy: 'Can get an extra pack and store it in a plain container for future emergencies',
+        privacy:
+          'Can get an extra pack and store it in a plain container for future emergencies',
         dialogueLines: [
           {
             speaker: 0,
@@ -506,7 +514,8 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue.content',
+        sectionType: 'monologue',
+        additionalContent: 'option-content',
         previousSectionIndex: 1,
         nextSectionIndex: 5,
       },
@@ -522,7 +531,8 @@ export const chapters: Chapters = {
         duration_short: 'Take immediately',
         duration_long: 'Take immediately, works once.',
         periods: '???',
-        privacy: 'Can get an extra pack and store it in a plain container for future emergencies',
+        privacy:
+          'Can get an extra pack and store it in a plain container for future emergencies',
         dialogueLines: [
           {
             speaker: 0,
@@ -531,7 +541,8 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue.content',
+        sectionType: 'monologue',
+        additionalContent: 'option-content',
         previousSectionIndex: 1,
         nextSectionIndex: 5,
       },
@@ -583,6 +594,7 @@ export const chapters: Chapters = {
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         gridOptionIndexes: [7, 8, 9, 10],
+        additionalContent: 'option-box',
         dialogueLines: [
           {
             speaker: 0,
@@ -591,7 +603,7 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue.grid',
+        sectionType: 'monologue',
       },
       {
         overlay: true,
@@ -603,9 +615,9 @@ export const chapters: Chapters = {
         effectiveness: '96% Effective',
         duration_short: '3 months',
         duration_long: 'Get every 3 months',
-        periods:
-          'Common',
-        privacy: 'No at home supplies, but requires regular access to the clinic.',
+        periods: 'Common',
+        privacy:
+          'No at home supplies, but requires regular access to the clinic.',
         dialogueLines: [
           {
             speaker: 0,
@@ -614,7 +626,8 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue.content',
+        sectionType: 'monologue',
+        additionalContent: 'option-content',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
       },
@@ -639,7 +652,8 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue.content',
+        sectionType: 'monologue',
+        additionalContent: 'option-content',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
       },
@@ -664,7 +678,8 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue.content',
+        sectionType: 'monologue',
+        additionalContent: 'option-content',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
       },
@@ -680,7 +695,8 @@ export const chapters: Chapters = {
         duration_short: 'Permanent',
         duration_long: 'Permanent.',
         periods: 'No changes',
-        privacy: 'Consider how to manage the recovery period and hide signs from the procedure (i.e. a small surgical scar) if someone is monitoring your health or activities',
+        privacy:
+          'Consider how to manage the recovery period and hide signs from the procedure (i.e. a small surgical scar) if someone is monitoring your health or activities',
         dialogueLines: [
           {
             speaker: 0,
@@ -689,7 +705,8 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue.content',
+        sectionType: 'monologue',
+        additionalContent: 'option-content',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
       },

@@ -1,0 +1,26 @@
+<div class="small-screen-container" (click)="handleClick($event)">
+  <div class="dialog-character-container">
+    <div class="circle-container">
+      <img
+        class="character"
+        [src]="section.characterImage"
+        alt="Description of the image"
+      />
+    </div>
+    <dialogue [showLeftTriangle]="true" class="dialogue-container"></dialogue>
+  </div>
+
+  <app-grid-options
+    *ngIf="section.additionalContent === 'option-box'"
+    [section]="section"
+    (clickedOption)="emitOptionClickEvent($event)"
+  ></app-grid-options>
+  <app-option-content
+    *ngIf="section.additionalContent === 'option-content'"
+    [section]="section"
+  ></app-option-content>
+  <app-additional-content
+    [additionalContent]="additionalContent!"
+    *ngIf="section.additionalContent === 'flags' && additionalContent"
+  ></app-additional-content>
+</div>

@@ -1,0 +1,46 @@
+// .grid-container {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+//   gap: 12px;
+//   padding-left: 20px;
+//   box-sizing: border-box;
+
+// }
+
+/* Styles for the option grid container */
+.grid-container {
+  display: grid;
+  grid-gap: 10px; /* Adjust the gap between grid items */
+  box-sizing: border-box;
+  height: fit-content;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Styles for 3 options in a single column */
+.three-options {
+  grid-template-columns: 1fr; /* Single column layout */
+}
+
+/* Styles for 4 options in a 2x2 grid */
+.four-options {
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+}
+
+.grid-item {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  .content {
+    font-weight: bold;
+    padding: 8px;
+    font-size: 0.75em;
+  }
+  .title {
+    font-size: 1em;
+  }
+}

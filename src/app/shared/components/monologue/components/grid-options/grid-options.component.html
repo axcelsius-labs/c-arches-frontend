@@ -1,0 +1,18 @@
+<div
+  class="grid-container"
+  [ngClass]="{
+    'three-options': gridOptions.length === 3,
+    'four-options': gridOptions.length === 4,
+  }"
+>
+  <button
+    class="grid-item"
+    *ngFor="let item of gridOptions; let i = index"
+    (click)="select(i); $event.stopPropagation()"
+  >
+    <div class="content title">{{ item.name }}</div>
+    <div class="content">{{ item.price }}</div>
+    <div class="content">{{ item.effectiveness }}</div>
+    <div class="content">{{ item.duration_short }}</div>
+  </button>
+</div>

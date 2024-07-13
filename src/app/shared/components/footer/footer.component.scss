@@ -8,14 +8,15 @@
   width: 100vw;
   height: 7vh;
   font-size: calc(1vw + 0.8rem);
-  
+
   .chapter-title {
     flex: 1;
     color: white;
     font-weight: bold;
     text-align: center;
+    flex-grow: 1; /* Allow title to take up remaining space */
   }
-  
+
   .back-button,
   .next-button {
     display: flex;
@@ -36,22 +37,26 @@
   }
 
   .back-button {
-    margin-right: auto; /* Ensure it stays on the left when the next button is hidden */
+    margin-right: auto; /* Push back button to the left */
+  }
+
+  .next-button {
+    margin-left: auto; /* Push next button to the right */
   }
 
   .back-button:hover,
   .next-button:hover {
-    border: 3px solid #FFFFFF55;
+    border: 3px solid #ffffff55;
   }
-  
+
   .back-button:focus,
   .next-button:focus {
-    border: 3px solid #FFFFFFBB;
+    border: 3px solid #ffffffbb;
   }
 
   .back-button:active,
   .next-button:active {
-    border: 3px solid #FFFFFFFF;
+    border: 3px solid #ffffffff;
   }
 
   .disabled {
