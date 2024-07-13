@@ -34,8 +34,4 @@ export class FooterComponent implements OnInit {
       this.dialogueService.playPreviousDialogueLine();
     }
   }
-
-  disablePreviousButton(): boolean {
-    return this.chapterService.disablePreviousButton();
-  }
 }
