@@ -9,6 +9,7 @@ export const chapters: Chapters = {
     backgroundImage: 'assets/images/Park.png',
     sections: [
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
@@ -26,9 +27,9 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
       },
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: '',
         dialogueLines: [
@@ -45,9 +46,9 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
       },
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: 'assets/images/Couple 1.png',
         dialogueLines: [
@@ -58,9 +59,9 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
       },
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: 'assets/images/Couple 2.png',
         dialogueLines: [
@@ -71,9 +72,9 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
       },
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: 'assets/images/Couple 3.png',
         dialogueLines: [
@@ -84,9 +85,9 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
       },
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: 'assets/images/Couple 4.png',
         dialogueLines: [
@@ -97,9 +98,9 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
       },
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Alex.png',
         rightCharacterImage: '',
         dialogueLines: [
@@ -134,7 +135,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
       },
     ],
   },
@@ -146,6 +146,7 @@ export const chapters: Chapters = {
     backgroundImage: 'assets/images/Cafe.png',
     sections: [
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
@@ -211,7 +212,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
       },
       {
         sectionType: 'monologue',
@@ -291,6 +291,7 @@ export const chapters: Chapters = {
         ],
       },
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Alex.png',
         dialogueLines: [
@@ -360,11 +361,11 @@ export const chapters: Chapters = {
           { speaker: 0, message: 'Thanks, Sam.', params: [] },
           { speaker: 1, message: 'Anytime, Jade.', params: [] },
         ],
-        sectionType: 'scene',
       },
       {
-        characterImage: 'assets/images/Alex-Torso.png',
+        sectionType: 'monologue',
         overlay: true,
+        characterImage: 'assets/images/Alex-Torso.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -390,7 +391,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
       },
     ],
   },
@@ -402,6 +402,7 @@ export const chapters: Chapters = {
     backgroundImage: 'assets/images/PatientRoom.png',
     sections: [
       {
+        sectionType: 'scene',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
@@ -456,12 +457,11 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
       },
       {
-        characterImage: 'assets/images/Doctor-Idle-Torso.png',
-        overlay: true,
         sectionType: 'monologue',
+        overlay: true,
+        characterImage: 'assets/images/Doctor-Idle-Torso.png',
         layout: 'content',
         gridOptionIndexes: [2, 3, 4],
         dialogueLines: [
@@ -474,7 +474,10 @@ export const chapters: Chapters = {
         ],
       },
       {
+        sectionType: 'monologue',
         overlay: true,
+        previousSectionIndex: 1,
+        nextSectionIndex: 5,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         dialogueLines: [
           {
@@ -484,9 +487,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
-        previousSectionIndex: 1,
-        nextSectionIndex: 5,
         layout: 'content',
         contraception: {
           name: 'IUD',
@@ -501,6 +501,7 @@ export const chapters: Chapters = {
         }
       },
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         dialogueLines: [
@@ -511,7 +512,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
         previousSectionIndex: 1,
         nextSectionIndex: 5,
         layout: 'content',
@@ -528,6 +528,7 @@ export const chapters: Chapters = {
         }
       },
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         dialogueLines: [
@@ -538,7 +539,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
         previousSectionIndex: 1,
         nextSectionIndex: 5,
         layout: 'content',
@@ -555,6 +555,8 @@ export const chapters: Chapters = {
         }
       },
       {
+        sectionType: 'scene',
+        previousSectionIndex: 1,
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
@@ -583,10 +585,9 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'scene',
-        previousSectionIndex: 1,
       },
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         gridOptionIndexes: [7, 8, 9, 10],
@@ -599,11 +600,13 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
       },
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        previousSectionIndex: 6,
+        nextSectionIndex: 11,
         dialogueLines: [
           {
             speaker: 0,
@@ -612,9 +615,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
-        previousSectionIndex: 6,
-        nextSectionIndex: 11,
         layout: 'content',
         contraception: {
           name: 'The Shot',
@@ -629,6 +629,7 @@ export const chapters: Chapters = {
         }
       },
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         dialogueLines: [
@@ -639,7 +640,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
         layout: 'content',
@@ -656,6 +656,7 @@ export const chapters: Chapters = {
         }
       },
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         dialogueLines: [
@@ -666,7 +667,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
         layout: 'content',
@@ -683,6 +683,7 @@ export const chapters: Chapters = {
         }
       },
       {
+        sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
         dialogueLines: [
@@ -693,7 +694,6 @@ export const chapters: Chapters = {
             params: [],
           },
         ],
-        sectionType: 'monologue',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
         layout: 'content',
@@ -710,6 +710,8 @@ export const chapters: Chapters = {
         }
       },
       {
+        sectionType: 'scene',
+        previousSectionIndex: 6,
         leftCharacterImage: 'assets/images/Jade-Idle.png',
         rightCharacterImage: 'assets/images/Doctor-Idle.png',
         dialogueLines: [
@@ -749,8 +751,6 @@ export const chapters: Chapters = {
           },
           { speaker: 0, message: 'Got it! Thanks!', params: [] },
         ],
-        sectionType: 'scene',
-        previousSectionIndex: 6,
       },
       {
         sectionType: 'monologue',
