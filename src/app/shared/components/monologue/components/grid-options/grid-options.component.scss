@@ -1,11 +1,3 @@
-// .grid-container {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-//   gap: 12px;
-//   padding-left: 20px;
-//   box-sizing: border-box;
-
-// }
 
 /* Styles for the option grid container */
 .grid-container {
@@ -15,6 +7,7 @@
   height: fit-content;
   padding-left: 10px;
   padding-right: 10px;
+  margin-bottom: 25px;
 }
 
 /* Styles for 3 options in a single column */
@@ -29,18 +22,48 @@
 }
 
 .grid-item {
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
+  position: relative;
+  padding: 0 0 6px 0;
+  background: #fae3ff;
+  border: 5px solid #d681e9;
   text-align: center;
+  border-radius: 8px;
   cursor: pointer;
-  .content {
-    font-weight: bold;
-    padding: 8px;
-    font-size: 0.75em;
+  height: fit-content;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+  .grid-item-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25em;
+    margin: 0 0;
+    padding: 8px 4px;
+    background: #d681e9;
+    border: 0 solid #00000000;
+    color: white;
+    text-align: left;
   }
   .title {
+    width: 60%;
+    font-weight: bold;
+  }
+  .preview {
+    height: 25px;
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6px 10px 0 10px;
     font-size: 1em;
+    color: #5a2466;
+  }
+  .content-key {
+
+  }
+  .content-value {
+    background: #fcb4fe;
+    padding: 4px 8px;
+    border-radius: 4px;
   }
 }

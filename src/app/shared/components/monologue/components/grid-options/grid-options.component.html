@@ -10,9 +10,21 @@
     *ngFor="let item of gridOptions; let i = index"
     (click)="select(i); $event.stopPropagation()"
   >
-    <div class="content title">{{ item.name }}</div>
-    <div class="content">{{ item.price }}</div>
-    <div class="content">{{ item.effectiveness }}</div>
-    <div class="content">{{ item.duration_short }}</div>
+    <div class="grid-item-header">
+      <div class="title">{{ item.name }}</div>
+      <img class="preview" [src]="item.preview" />
+    </div>
+    <div class="content">
+      <div class="content-key"><i>Cost:</i></div>
+      <div class="content-value">{{ item.price }}</div>
+    </div>
+    <div class="content">
+      <div class="content-key"><i>Effectiveness:</i></div>
+      <div class="content-value">{{ item.effectiveness }}</div>
+    </div>
+    <div class="content">
+      <div class="content-key"><i>Duration:</i></div>
+      <div class="content-value">{{ item.duration_short }}</div>
+    </div>
   </button>
 </div>
