@@ -9,7 +9,6 @@
     <app-scene
       *ngIf="type === 'scene'"
       [section]="sectionContent"
-      [additionalContent]="additionalContent"
       (onClickOrSpace)="goToNextDialogLine()"
     ></app-scene>
     <app-monologue

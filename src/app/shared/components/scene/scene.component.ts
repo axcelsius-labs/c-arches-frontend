@@ -7,7 +7,6 @@ import {
   OnInit,
 } from '@angular/core';
 import { Section } from '../../models/chapter.interface';
-import { DialogueService } from '../../services/dialogue.service';
 
 @Component({
   selector: 'app-scene',
@@ -16,20 +15,11 @@ import { DialogueService } from '../../services/dialogue.service';
 })
 export class SceneComponent implements OnInit {
   @Input() section!: Section;
-  @Input() additionalContent!: string[] | undefined;
   @Output() onClickOrSpace = new EventEmitter();
 
-  constructor(private dialogueService: DialogueService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.dialogueService.currentLine$.subscribe((value) => {
-      if (value.params.length > 0) {
-        this.additionalContent = value.params;
-      } else {
-        this.additionalContent = undefined;
-      }
-    });
-  }
+  ngOnInit(): void {}
 
   handleClickOrSpace(event?: Event): void {
     this.onClickOrSpace.emit();

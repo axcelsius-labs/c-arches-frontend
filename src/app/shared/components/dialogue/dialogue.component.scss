@@ -1,26 +1,33 @@
 .dialogue-container {
   position: relative;
+  z-index: 100;
   word-spacing: 0.2em;
-  background: #fff;
   border-radius: 0.5em;
   padding: 15px;
   max-width: 65vh;
   line-height: 1.2em;
   margin: 20px 10px 30px;
-  font-size: 18px;
+  font-size: 22px;
   font-family: 'Comic Sans MS', sans-serif;
-  filter: drop-shadow(0 0 40px #00000077);
+  outline: 5px solid black;
+  filter: drop-shadow(0 0 15px #FFFFFF44);
 }
 
-@media (max-width: 990px) {
+@media (max-width: 1000px) {
   .dialogue-container {
-    font-size: 15px;
+    font-size: 20px;
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 750px) {
   .dialogue-container {
-    font-size: 12px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .dialogue-container {
+    font-size: 16px;
   }
 }
 
@@ -33,11 +40,13 @@
 }
 
 .left {
-  outline: 5px solid red;
+  background: #D1F2FFFF;
+  box-shadow: 0 0 25px inset #0000FF55;
 }
 
 .right {
-  outline: 5px solid green;
+  background: #E5FFE0FF;
+  box-shadow: 0 0 25px inset #00FF0055;
 }
 
 .triangle {
@@ -45,21 +54,30 @@
   width: 0;
   height: 0;
   z-index: 99;
+  filter: drop-shadow(0 0 20px #FFFFFF55);
 }
 
 .bottom-triangle-left {
   transform: translate(0%, 100%);
-  left: 10%;
+  left: 30%;
   bottom: 0;
   border-bottom: 5vh solid transparent;
-  border-left: 7vh solid red;
+  border-left: 7vh solid black;
+}
+
+.bottom-triangle-left-inlay {
+  transform: translate(0%, 100%);
+  left: calc(30% + .75vh);
+  bottom: 0;
+  border-bottom: 3.5vh solid transparent;
+  border-left: 5vh solid #bcd9ff;
 }
 
 .bottom-triangle-middle {
   transform: translate(-50%, 100%);
   left: 50%;
   bottom: 0;
-  border-top: 5vh solid red;
+  border-top: 5vh solid black;
   border-right: 5vh solid transparent;
   border-bottom: 5vh solid transparent;
   border-left: 5vh solid transparent;
@@ -67,10 +85,18 @@
 
 .bottom-triangle-right {
   transform: translate(0%, 100%);
-  right: 10%;
+  right: 30%;
   bottom: 0;
   border-bottom: 5vh solid transparent;
-  border-right: 7vh solid green;
+  border-right: 7vh solid black;
+}
+
+.bottom-triangle-right-inlay {
+  transform: translate(0%, 100%);
+  right: calc(30% + .75vh);
+  bottom: 0;
+  border-bottom: 3.5vh solid transparent;
+  border-right: 5vh solid #d5ffcf;
 }
 
 .side-triangle-left {
