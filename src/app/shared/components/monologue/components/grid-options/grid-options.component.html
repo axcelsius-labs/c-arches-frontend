@@ -1,10 +1,9 @@
 <div
-  class="grid-container"
-  [ngClass]="{
+  class="grid-container four-options">
+  <!--[ngClass]="{
     'three-options': gridOptions.length === 3,
     'four-options': gridOptions.length === 4,
-  }"
->
+  }"-->
   <button
     class="grid-item"
     *ngFor="let item of gridOptions; let i = index"
