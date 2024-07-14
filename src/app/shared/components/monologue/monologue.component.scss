@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Prevent overflow */
+  overflow: scroll; /* Prevent overflow */
 
   .fill-height-width {
     height: 100%;
