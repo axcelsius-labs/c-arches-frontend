@@ -10,8 +10,8 @@ export class DialogueComponent implements OnInit {
   @Input() showLeftTriangle = false;
   
   speaker = 0;
-  visibleLetters = '';
-  invisibleLetters = '';
+  text : string[] = [];
+  animationCursor : number = -1;
 
   constructor(private dialogueService: DialogueService) {}
 
@@ -19,11 +19,11 @@ export class DialogueComponent implements OnInit {
     this.dialogueService.speaker$.subscribe((value) => {
       this.speaker = value;
     });
-    this.dialogueService.visibleLetters$.subscribe((value) => {
-      this.visibleLetters = value;
+    this.dialogueService.animationCursor$.subscribe((value) => {
+      this.animationCursor = value;
     });
-    this.dialogueService.invisibleLetters$.subscribe((value) => {
-      this.invisibleLetters = value;
+    this.dialogueService.text$.subscribe((value) => {
+      this.text = value.split('');
     });
   }
 }

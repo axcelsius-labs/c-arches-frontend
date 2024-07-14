@@ -11,10 +11,10 @@ export class DialogueService {
   );
   currentLine$: BehaviorSubject<DialogueLine> =
     new BehaviorSubject<DialogueLine>({} as DialogueLine);
-  isAnimating$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   speaker$: BehaviorSubject<number> = new BehaviorSubject<number>(0,);
-  visibleLetters$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  invisibleLetters$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  text$: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  isAnimating$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  animationCursor$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
   currentIndex: number = -1;
   animationTimer: any;
@@ -60,18 +60,14 @@ export class DialogueService {
   animateText(text: string): void {
     this.clearAnimationTimer();
     this.isAnimating$.next(true);
-    this.visibleLetters$.next('');
-    this.invisibleLetters$.next(text);
+    this.animationCursor$.next(0);
+    this.text$.next(text);
     this.animationTimer = setInterval(() => {
-      if (this.isAnimating$.value && this.invisibleLetters$.value.length > 0) {
-        this.visibleLetters$.next(
-          this.visibleLetters$.value + this.invisibleLetters$.value[0],
-        );
-        this.invisibleLetters$.next(this.invisibleLetters$.value.substring(1));
+      if (this.isAnimating$.value && this.text$.value.length > 0) {
+        this.animationCursor$.next(this.animationCursor$.value + 1);
       } else {
         this.isAnimating$.next(false);
-        this.visibleLetters$.next(text);
-        this.invisibleLetters$.next('');
+        this.animationCursor$.next(text.length);
         this.clearAnimationTimer();
       }
     }, 25);

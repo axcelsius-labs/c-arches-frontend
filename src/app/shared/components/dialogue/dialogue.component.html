@@ -1,6 +1,6 @@
 <div class="dialogue-container" [ngClass]="speaker !== 2 ? 'left' : 'right'">
-  <span class="visible">{{ visibleLetters }}</span>
-  <span class="invisible">{{ invisibleLetters }}</span>
+  <span *ngFor="let char of text; let i = index"
+        [ngClass]="{ 'visible': animationCursor >= i, 'invisible': animationCursor < i }">{{ char }}</span>
   <div *ngIf="showLeftTriangle" class="triangle side-triangle-left"></div>
   <div *ngIf="!showLeftTriangle && speaker === 0" class="triangle bottom-triangle-left"></div>
   <div *ngIf="!showLeftTriangle && speaker === 0" class="triangle bottom-triangle-left-inlay"></div>
