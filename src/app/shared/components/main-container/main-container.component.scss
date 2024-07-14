@@ -11,11 +11,17 @@
 .content {
   position: fixed;
   top: 6vh;
-  bottom: 8.5vh;
   left: 0;
   right: 0;
-  flex: 1 1 auto; /* Content takes the remaining space */
-  overflow: auto; /* Ensure content is scrollable if it overflows */
+  overflow: auto;
+}
+
+.content-short {
+  bottom: 8.5vh;
+}
+
+.content-full {
+  bottom: 0vh;
 }
 
 .footer {

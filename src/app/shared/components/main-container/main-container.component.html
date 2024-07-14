@@ -6,7 +6,9 @@
   >
   </app-header>
   
-  <div class="content">
+  <div class="content content-long"
+       [class.content-short] = "showFooter === true"
+       [class.content-full] = "showFooter === false">
     <app-background
             *ngIf="backgroundImage"
             [backgroundImage]="backgroundImage"
