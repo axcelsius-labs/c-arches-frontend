@@ -15,6 +15,7 @@ import { ChapterTitleOverlayComponent } from './components/chapter-title-overlay
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { MonologueModule } from './components/monologue/monologue.module';
 import { DialogueModule } from './components/dialogue/dialogue.module';
+import {ResourceListComponent} from "./components/resource-list/resource-list.component";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DialogueModule } from './components/dialogue/dialogue.module';
     FooterComponent,
     CopyrightComponent,
     CardComponent,
+    ResourceListComponent,
     BackgroundComponent,
     SceneComponent,
     MainContainerComponent,
@@ -42,6 +44,7 @@ import { DialogueModule } from './components/dialogue/dialogue.module';
     CopyrightComponent,
     MainContainerComponent,
     CardComponent,
+    ResourceListComponent
   ],
 })
 export class SharedModule {}

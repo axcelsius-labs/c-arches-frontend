@@ -1,0 +1,40 @@
+.resource-container {
+  width: 100%;
+  display: flex;
+  overflow-y: auto;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  width: 100vh;
+  margin: auto;
+}
+
+h1 {
+  font-size: calc(2vw + 2vh + 10px);
+}
+
+h3 {
+  font-size: calc(1.5vw + 1.5vh + 8px);
+}
+
+p {
+  font-size: calc(1vw + 1vh + 6px);
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: calc(3vw + 3vh + 10px);
+  }
+
+  h3 {
+    font-size: calc(2.5vw + 2.5vh + 8px);
+  }
+
+  p {
+    font-size: calc(2vw + 2vh + 6px);
+  }
+}

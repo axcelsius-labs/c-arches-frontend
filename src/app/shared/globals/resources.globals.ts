@@ -1,4 +1,4 @@
-import { Resource } from "../../shared/models/resource.interface";
+import { Resource } from "../models/resource.interface";
 
 export const resources: Resource[] = [
     {

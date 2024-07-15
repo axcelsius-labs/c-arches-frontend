@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { resources } from './resources.constants'
 
 @Component({
   selector: 'app-resources',
@@ -7,8 +6,6 @@ import { resources } from './resources.constants'
   styleUrls: ['./resources.component.scss']
 })
 export class ResourcesComponent implements OnInit {
-
-  resources = resources;
   
   constructor() { }
 
