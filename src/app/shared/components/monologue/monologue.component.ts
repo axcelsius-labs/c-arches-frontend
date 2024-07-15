@@ -19,6 +19,8 @@ export class MonologueComponent implements OnInit {
   @Output() onClickOrSpace = new EventEmitter();
   @Output() clickedOption = new EventEmitter<number>();
 
+  screenWidth$ = new BehaviorSubject<number>(window.innerWidth);
+
   constructor() {
     this.onResize();
   }
@@ -36,8 +38,6 @@ export class MonologueComponent implements OnInit {
       event.stopPropagation();
     }
   }
-
-  screenWidth$ = new BehaviorSubject<number>(window.innerWidth);
 
   @HostListener('window:resize', ['$event'])
   onResize(event?: Event): void {
