@@ -17,16 +17,26 @@ export const chapters: Chapters = {
           {
             speaker: 1,
             message:
-              'For your safety, the exit button in the top right will open the Weather Channel homepage. Click it to quickly leave this site, and use the link in your email to return.',
+              'For your safety, note that you can close this application with the quick exit button in the top right.',
             params: [],
-          },
-          {
-            speaker: 1,
-            message:
-              "Also, if someone is monitoring your device, consider clearing this from your browser's history.",
-            params: [],
-          },
+          }
         ],
+      },
+      {
+        sectionType: 'monologue',
+        overlay: true,
+        characterImage: 'assets/images/Alex-Torso.png',
+        dialogueLines: [
+          {
+            speaker: 0,
+            message: "Also, if someone is monitoring your device, consider clearing this from your browser's history.",
+            params: [],
+          }
+        ],
+        layout: 'content',
+        bullets: [
+          'For more information about tech safety, visit ceta.tech.cornell.edu/resources or call the National Domestic Violence Hotline at 1-800-799-7233 or TTY 1-800-787-3224.',
+        ]
       },
       {
         sectionType: 'scene',
