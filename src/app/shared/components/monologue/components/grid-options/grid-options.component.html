@@ -14,21 +14,24 @@
       <div class="title">{{ item.name }}</div>
       <img class="preview" [src]="item.preview" />
     </div>
-    <div class="content">
-      <div class="content-key"><i>Cost:</i></div>
-      <div class="content-value">{{ item.price }}</div>
-    </div>
-    <div class="content" *ngIf="item.use_within_short !== undefined">
-      <div class="content-key"><i>Use within:</i></div>
-      <div class="content-value">{{ item.use_within_short }}</div>
-    </div>
-    <div class="content" *ngIf="item.effectiveness_short !== undefined">
-      <div class="content-key"><i>Effectiveness:</i></div>
-      <div class="content-value">{{ item.effectiveness_short }}</div>
-    </div>
-    <div class="content" *ngIf="item.duration_short !== undefined">
-      <div class="content-key"><i>Duration:</i></div>
-      <div class="content-value">{{ item.duration_short }}</div>
+    <div class="body">
+      <div class="content">
+        <div class="content-key"><i>Cost:</i></div>
+        <div class="content-value">{{ item.price }}</div>
+      </div>
+      <div class="content" *ngIf="item.use_within_short !== undefined">
+        <div class="content-key"><i>Use within:</i></div>
+        <div class="content-value">{{ item.use_within_short }}</div>
+      </div>
+      <div class="content" *ngIf="item.effectiveness_short !== undefined">
+        <div class="content-key"><i>Effectiveness:</i></div>
+        <div class="content-value">{{ item.effectiveness_short }}</div>
+      </div>
+      <div class="content" *ngIf="item.duration_short !== undefined">
+        <div class="content-key"><i>Duration:</i></div>
+        <div class="content-value">{{ item.duration_short }}</div>
+      </div>
+      <div class="learn-more">Learn More ></div>
     </div>
   </button>
 </div>

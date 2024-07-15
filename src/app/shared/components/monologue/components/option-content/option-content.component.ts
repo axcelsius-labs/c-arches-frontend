@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {Contraception} from '../../../../models/chapter.interface';
+import { Contraception } from '../../../../models/chapter.interface';
 
 @Component({
   selector: 'app-option-content',

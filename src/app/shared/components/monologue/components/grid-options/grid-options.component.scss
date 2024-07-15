@@ -54,19 +54,27 @@
     height: 25px;
     margin-right: 4px;
   }
-  .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 6px 10px 0 10px;
-    font-size: 1em;
+  .body {
+    width: 100%;
     color: #5a2466;
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 6px 10px 0 10px;
+      font-size: 1em;
+    }
+    .content-value {
+      background: #fcb4fe;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    .learn-more {
+      text-align: center;
+      text-decoration: underline;
+      padding: 6px 10px 0 10px;
+      font-size: 1em;
+    }
   }
-  .content-key {
-  }
-  .content-value {
-    background: #fcb4fe;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
+  
 }

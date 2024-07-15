@@ -14,7 +14,10 @@ export const chapters: Chapters = {
         characterImage: 'assets/images/Sam-Torso.png',
         characterImageCircle: 'assets/images/Sam-Head.png',
         dialogueLines: [
-          { speaker: 1, message: "Hey! I'm Sam!", params: [] },
+          { 
+            speaker: 1,
+            message: "Hey! I'm Sam!",
+            params: [ 'showTutorial' ] },
           {
             speaker: 1,
             message:

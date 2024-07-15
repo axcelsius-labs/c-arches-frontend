@@ -17,12 +17,13 @@
 .character-wrapper {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
 
   .character-container {
     flex-shrink: 0;
     max-width: 35vw;
-    max-height: 40vh;
+    max-height: 35vh;
     object-fit: contain;
     min-width: 20vh;
     object-position: 100% 100%;
@@ -37,26 +38,4 @@
     z-index: 1;
     max-width: 65vh;
   }
-}
-
-.begin-button {
-  padding: 10px;
-  border-radius: 4px;
-  background-color: #92aa79;
-  border: 5px solid #71845d;
-  color: white;
-}
-
-.begin-button.focus {
-  border: 5px solid #cce7b0;
-}
-
-.begin-button:hover {
-  border: 5px solid #cce7b0;
-}
-.begin-button:focus {
-  border: 5px solid #cce7b0;
-}
-.begin-button:active {
-  border: 5px solid #f3ffe7;
 }
