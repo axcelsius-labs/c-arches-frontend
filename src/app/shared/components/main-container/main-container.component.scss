@@ -1,7 +1,7 @@
 .main-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .header {
@@ -9,19 +9,13 @@
 }
 
 .content {
-  position: fixed;
-  top: 6vh;
-  left: 0;
-  right: 0;
+  flex: 1;
+  position: relative;
+  // position: fixed;
+  // top: 6vh;
+  // left: 0;
+  // right: 0;
   overflow: auto;
-}
-
-.content-short {
-  bottom: 8.5vh;
-}
-
-.content-full {
-  bottom: 0;
 }
 
 .footer {

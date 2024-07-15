@@ -1,8 +1,6 @@
 .header-container {
-  position: fixed;
   display: flex;
-  z-index : 999;
-  top: 0;
+  z-index: 999;
   align-items: center;
   justify-content: space-between;
   width: 100vw;
@@ -22,7 +20,7 @@
       font-size: 3vh;
       font-weight: bold;
       margin-left: 20px;
-      color: #FFFFFFCC;
+      color: #ffffffcc;
     }
     .icon-label-container {
       display: flex;
