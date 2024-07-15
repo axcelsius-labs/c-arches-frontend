@@ -500,8 +500,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'We can trim the strings so they cannot be felt or removed by your partner.',
+            message: "Tell the clinic it\'s for emergency contraception so you are scheduled quickly.",
             params: [],
           },
         ],
