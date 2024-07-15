@@ -10,9 +10,10 @@ export interface Chapter {
 }
 
 export interface Section {
+  characterImage?: string;
+  characterImageCircle?: string;
   leftCharacterImage?: string;
   rightCharacterImage?: string;
-  characterImage?: string;
   dialogueLines?: DialogueLine[];
   sectionType?: string;
   previousSectionIndex?: number;

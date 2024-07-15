@@ -11,7 +11,8 @@ export const chapters: Chapters = {
       {
         sectionType: 'monologue',
         overlay: true,
-        characterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Sam-Torso.png',
+        characterImageCircle: 'assets/images/Sam-Head.png',
         dialogueLines: [
           { speaker: 1, message: "Hey! I'm Sam!", params: [] },
           {
@@ -25,7 +26,8 @@ export const chapters: Chapters = {
       {
         sectionType: 'monologue',
         overlay: true,
-        characterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Sam-Torso.png',
+        characterImageCircle: 'assets/images/Sam-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -40,7 +42,7 @@ export const chapters: Chapters = {
       },
       {
         sectionType: 'scene',
-        leftCharacterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Sam.png',
         rightCharacterImage: '',
         dialogueLines: [
           {
@@ -59,7 +61,7 @@ export const chapters: Chapters = {
       },
       {
         sectionType: 'scene',
-        leftCharacterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Sam.png',
         rightCharacterImage: 'assets/images/Couple 1.png',
         dialogueLines: [
           {
@@ -72,7 +74,7 @@ export const chapters: Chapters = {
       },
       {
         sectionType: 'scene',
-        leftCharacterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Sam.png',
         rightCharacterImage: 'assets/images/Couple 2.png',
         dialogueLines: [
           {
@@ -85,7 +87,7 @@ export const chapters: Chapters = {
       },
       {
         sectionType: 'scene',
-        leftCharacterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Sam.png',
         rightCharacterImage: 'assets/images/Couple 3.png',
         dialogueLines: [
           {
@@ -98,7 +100,7 @@ export const chapters: Chapters = {
       },
       {
         sectionType: 'scene',
-        leftCharacterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Sam.png',
         rightCharacterImage: 'assets/images/Couple 4.png',
         dialogueLines: [
           {
@@ -111,7 +113,7 @@ export const chapters: Chapters = {
       },
       {
         sectionType: 'scene',
-        leftCharacterImage: 'assets/images/Alex.png',
+        leftCharacterImage: 'assets/images/Sam.png',
         rightCharacterImage: '',
         dialogueLines: [
           {
@@ -158,7 +160,7 @@ export const chapters: Chapters = {
       {
         sectionType: 'scene',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
-        rightCharacterImage: 'assets/images/Alex.png',
+        rightCharacterImage: 'assets/images/Sam.png',
         dialogueLines: [
           {
             speaker: 2,
@@ -226,7 +228,8 @@ export const chapters: Chapters = {
       {
         sectionType: 'monologue',
         overlay: true,
-        characterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Sam-Torso.png',
+        characterImageCircle: 'assets/images/Sam-Head.png',
         dialogueLines: [
           {
             speaker: 1,
@@ -245,7 +248,8 @@ export const chapters: Chapters = {
       {
         sectionType: 'monologue',
         overlay: true,
-        characterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Sam-Torso.png',
+        characterImageCircle: 'assets/images/Sam-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -266,7 +270,8 @@ export const chapters: Chapters = {
       {
         sectionType: 'monologue',
         overlay: true,
-        characterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Sam-Torso.png',
+        characterImageCircle: 'assets/images/Sam-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -284,7 +289,7 @@ export const chapters: Chapters = {
       {
         sectionType: 'monologue',
         overlay: true,
-        characterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Sam-Torso.png',
         dialogueLines: [
           {
             speaker: 1,
@@ -303,7 +308,7 @@ export const chapters: Chapters = {
       {
         sectionType: 'scene',
         leftCharacterImage: 'assets/images/Jade-Idle.png',
-        rightCharacterImage: 'assets/images/Alex.png',
+        rightCharacterImage: 'assets/images/Sam.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -375,7 +380,8 @@ export const chapters: Chapters = {
       {
         sectionType: 'monologue',
         overlay: true,
-        characterImage: 'assets/images/Alex-Torso.png',
+        characterImage: 'assets/images/Sam-Torso.png',
+        characterImageCircle: 'assets/images/Sam-Head.png',
         dialogueLines: [
           {
             speaker: 1,
@@ -472,6 +478,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         layout: 'content',
         gridOptionIndexes: [2, 3, 4],
         dialogueLines: [
@@ -489,6 +496,7 @@ export const chapters: Chapters = {
         previousSectionIndex: 1,
         nextSectionIndex: 5,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -515,6 +523,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -542,6 +551,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -602,6 +612,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         gridOptionIndexes: [7, 8, 9, 10],
         layout: 'content',
         dialogueLines: [
@@ -617,6 +628,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         previousSectionIndex: 6,
         nextSectionIndex: 11,
         dialogueLines: [
@@ -645,6 +657,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -673,6 +686,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -701,6 +715,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle-Torso.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         dialogueLines: [
           {
             speaker: 0,
@@ -791,6 +806,7 @@ export const chapters: Chapters = {
         sectionType: 'monologue',
         overlay: true,
         characterImage: 'assets/images/Doctor-Idle.png',
+        characterImageCircle: 'assets/images/Doctor-Head.png',
         dialogueLines: [
           {
             speaker: 0,
