@@ -42,13 +42,11 @@
 }
 
 .left {
-  background: #D1F2FFFF;
-  box-shadow: 0 0 25px inset #0000FF55;
+  background: #b6d3ff;
 }
 
 .right {
-  background: #E5FFE0FF;
-  box-shadow: 0 0 25px inset #00FF0055;
+  background: #d0d47b;
 }
 
 .triangle {
@@ -71,7 +69,7 @@
   left: calc(30% + .75vh);
   bottom: 0;
   border-bottom: 3.5vh solid transparent;
-  border-left: 5vh solid #bcd9ff;
+  border-left: 5vh solid #b6d3ff;
 }
 
 .bottom-triangle-middle {
@@ -88,7 +86,7 @@
   transform: translate(-50%, 100%);
   left: 50%;
   bottom: 0;
-  border-top: 4vh solid #bcd9ff;
+  border-top: 4vh solid #b6d3ff;
   border-right: 4vh solid transparent;
   border-bottom: 4vh solid transparent;
   border-left: 4vh solid transparent;
@@ -107,7 +105,7 @@
   right: calc(30% + .75vh);
   bottom: 0;
   border-bottom: 3.5vh solid transparent;
-  border-right: 5vh solid #d5ffcf;
+  border-right: 5vh solid #d0d47b;
 }
 
 .side-triangle-left {
@@ -125,5 +123,5 @@
   transform: translateY(-50%);
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-  border-right: 15px solid #bcd9ff;
+  border-right: 15px solid #b6d3ff;
 }

@@ -17,17 +17,13 @@
 .circle-container {
   max-width: 150px; /* Adjust based on your desired width */
   max-height: 150px; /* Adjust based on your desired height */
-  border: 5px solid #333; /* Dark border with 5px width */
-  border-radius: 50%; /* Ensure it's a circle */
-  overflow: hidden; /* Ensure image stays within circle */
-  background-color: #4caf50; /* Green background color */
 }
 
 /* Styles for the image */
 .circle-container img {
-  max-width: 100%; /* Ensure the image fills the circle container */
-  max-height: 100%; /* Maintain aspect ratio */
-  display: block; /* Remove extra space below image */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 .dialogue-container {
   flex-grow: 1; /* Allow dialogue container to grow in height */

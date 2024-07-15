@@ -41,6 +41,14 @@
       .icon-label {
         font-size: 15px; /* Adjust the label size as needed */
       }
+      .circle {
+        position: absolute;
+        height: 14vw;
+        width: 14vw;
+        background: transparent;
+        outline: 4vw solid #d83131AA;
+        border-radius: 7vw;
+      }
     }
     .exit {
       background-color: #ff6868;
