@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   }
   
   exit() {
+    localStorage.clear();
     window.location.href = 'https://weather.com/';
   }
 }
