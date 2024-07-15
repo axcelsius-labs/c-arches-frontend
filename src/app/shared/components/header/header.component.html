@@ -7,6 +7,7 @@
       </button>
       <div class="header-logo-text" (click)="goToHomeScreen()">{{ title }}</div>
       <button class="icon-label-container exit" (click)="exit()">
+          <div class="circle no-interaction" *ngIf="highlightExit"></div>
           <span class="icon-label">Exit</span>
           <mat-icon class="icon">logout</mat-icon>
       </button>

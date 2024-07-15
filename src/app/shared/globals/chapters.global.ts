@@ -19,7 +19,7 @@ export const chapters: Chapters = {
             speaker: 1,
             message:
               'For your safety, note that you can close this application with the quick exit button in the top right.',
-            params: [],
+            params: [ 'highlightExit' ],
           }
         ],
       },
