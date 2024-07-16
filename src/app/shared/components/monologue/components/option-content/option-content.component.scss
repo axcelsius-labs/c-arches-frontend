@@ -6,6 +6,7 @@
   cursor: pointer;
   max-width: 65vh;
   height: fit-content;
+  pointer-events: none;
 
   .option-box-title {
     display: flex;
@@ -19,6 +20,10 @@
     text-align: left;
     font-size: 18px;
     font-weight: bold;
+
+    .close-icon {
+      pointer-events: auto;
+    }
   }
 
   .option-box-body {
