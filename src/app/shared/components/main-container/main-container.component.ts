@@ -9,7 +9,7 @@ export class MainContainerComponent implements OnInit {
   @Input() backgroundImage!: string;
   @Input() blackOut: boolean = false;
   @Input() chapterTitle: string = '';
-  @Input() showNextButton: boolean = true;
+  @Input() dontShowNextButton: boolean = true;
   @Input() showFooter: boolean = false;
   @Input() showHeader: boolean = true;
 

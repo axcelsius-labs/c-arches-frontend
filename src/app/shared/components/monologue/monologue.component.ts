@@ -28,7 +28,9 @@ export class MonologueComponent implements OnInit {
   ngOnInit() {}
 
   handleClickOrSpace(event?: Event): void {
-    this.onClickOrSpace.emit();
+    if (!this.section.contraception) {
+      this.onClickOrSpace.emit();
+    }
   }
 
   @HostListener('document:keypress', ['$event'])

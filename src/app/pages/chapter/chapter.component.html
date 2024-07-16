@@ -2,7 +2,10 @@
   [backgroundImage]="chapterContent.backgroundImage!"
   [blackOut]="sectionContent.overlay || false"
   [chapterTitle]="chapterContent.chapterTitle"
-  [showNextButton]="sectionContent.gridOptionIndexes === undefined"
+  [dontShowNextButton]="
+    sectionContent.gridOptionIndexes !== undefined ||
+    sectionContent.contraception !== undefined
+  "
   [showFooter]="true"
 >
   <ng-container *ngIf="sectionContent.sectionType as type">

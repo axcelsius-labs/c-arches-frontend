@@ -8,6 +8,9 @@
   height: fit-content;
 
   .option-box-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0;
     padding: 10px;
     background: #d681e9;
