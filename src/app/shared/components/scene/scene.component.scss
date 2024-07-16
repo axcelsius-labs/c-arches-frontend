@@ -19,6 +19,7 @@
       bottom: 1.5vh;
       display: flex;
       justify-content: space-evenly;
+      gap: 8vw;
 
       .character {
         max-width: 100%;
@@ -28,9 +29,6 @@
         object-fit: contain; /* Maintain aspect ratio */
         //align-self: flex-end; /* Align characters to the bottom */
         filter: drop-shadow(0 0 35px #00000055);
-      }
-      .right {
-        margin-left: 8vw;
       }
     }
     .dialogue-container {
