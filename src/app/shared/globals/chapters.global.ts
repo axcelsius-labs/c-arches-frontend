@@ -111,7 +111,7 @@ export const chapters: Chapters = {
           {
             speaker: 2,
             message:
-              'I feel comfortable expressing my sexual desires AND saying no to sex.',
+              'I feel comfortable expressing my sexual desires AND saying "no" to sex.',
             params: [],
           },
         ],
@@ -513,9 +513,11 @@ export const chapters: Chapters = {
         contraception: {
           name: 'Copper IUD',
           preview: 'assets/images/IUD.png',
-          description: 'Tiny device put in your uterus.',
+          description: 'Tiny non-hormonal device put in your uterus.',
           use_within_short: '5 days',
           use_within_long: 'Use within 5 days of unprotected sex',
+          duration_short: '12 years',
+          duration_long: 'Lasts up to 12 years',
           effectiveness_short: '99%',
           effectiveness_long: '99% Effective',
           periods: 'Common',
@@ -539,10 +541,9 @@ export const chapters: Chapters = {
         nextSectionIndex: 5,
         layout: 'content',
         contraception: {
-          name: 'Ella',
+          name: 'ELLA®',
           preview: 'assets/images/Ella.png',
-          description:
-            'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
+          description: 'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
           use_within_short: '5 days',
           use_within_long: 'Use within 5 days of unprotected sex',
           effectiveness_short: '85-98%',
@@ -569,7 +570,7 @@ export const chapters: Chapters = {
         nextSectionIndex: 5,
         layout: 'content',
         contraception: {
-          name: 'Plan B One Step (or generic)',
+          name: 'Plan B One Step® (or generic)',
           preview: 'assets/images/Plan B.png',
           description:
             'A single pill taken as soon as possible after unprotected sex, ideally within 3 days.',
@@ -597,7 +598,7 @@ export const chapters: Chapters = {
           {
             speaker: 2,
             message:
-              "We can do that! Now let's discuss a long term solution for your birth control",
+              "We can do that! Now let's discuss a long term solution for your birth control.",
             params: [],
           },
           {
@@ -678,14 +679,13 @@ export const chapters: Chapters = {
         contraception: {
           name: 'IUD',
           preview: 'assets/images/IUD.png',
-          description:
-            'Tiny device put in your uterus, low-maintenance once inserted.',
+          description: 'Tiny (hormonal or non-hormonal) device put in your uterus.',
           effectiveness_short: '99%',
           effectiveness_long: '99% Effective',
           duration_short: '3-12 years',
           duration_long: 'Lasts 3-12 years',
           periods: 'Common',
-          privacy: 'Strings can be cut short so your partner cannot feel them.',
+          privacy: 'Strings can be cut short so your partner cannot feel them or remove your IUD.',
         },
       },
       {
