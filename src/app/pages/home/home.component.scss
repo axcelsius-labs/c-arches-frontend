@@ -1,6 +1,5 @@
 .home-container {
   display: flex;
-  width: 100vw;
   height: 100%;
   align-items: center;
   justify-content: center;
@@ -9,7 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  width: 100%;
   max-width: 600px; /* Optional max-width for better design */
   padding: 20px;
   box-sizing: border-box;
@@ -32,6 +30,7 @@
   cursor: pointer;
   outline: none;
   border: 5px solid #ffffff66;
+  min-width: 30vw;
 }
 
 @media (max-width: 480px) {
