@@ -20,7 +20,6 @@ export class ChapterComponent implements OnInit {
   chapterId!: string;
   startingDialogLineIndex!: number;
   allowOverflow: boolean = false;
-  additionalContent: string[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -92,20 +91,9 @@ export class ChapterComponent implements OnInit {
   }
 
   goToNextDialogLine(): void {
-    if (this.dialogueService.isAnimating$.value) {
-      this.dialogueService.isAnimating$.next(false);
-    } else if (!this.dialogueService.isAtSectionEnd()) {
-      this.dialogueService.playNextDialogueLine();
-      if (
-        this.sectionContent.dialogueLines![this.dialogueService.currentIndex]
-          .params.length > 0
-      ) {
-        this.additionalContent =
-          this.sectionContent.dialogueLines![
-            this.dialogueService.currentIndex
-          ].params;
-      }
-    } else this.finishedSection();
+    if (!this.dialogueService.finishCurrentOrPlayNextDialogueLine() && this.dialogueService.isAtSectionEnd()) {
+      this.finishedSection();
+    }
   }
 
   finishedSection(nextSectionIndex?: number): void {

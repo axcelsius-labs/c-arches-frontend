@@ -13,7 +13,6 @@ export class DialogueService {
     new BehaviorSubject<DialogueLine>({} as DialogueLine);
   speaker$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   text$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  isAnimating$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   animationCursor$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
   currentIndex: number = -1;
@@ -23,13 +22,13 @@ export class DialogueService {
 
   playPreviousDialogueLine(): void {
     this.playDialogue(this.currentIndex - 1);
-    this.isAnimating$.next(false);
   }
 
-  playNextDialogueLine(): void {
-    if (this.isAnimating$.value) {
-      this.isAnimating$.next(false);
-    } else this.playDialogue(this.currentIndex + 1);
+  finishCurrentOrPlayNextDialogueLine(): boolean {
+    if (this.animationCursor$.value < this.text$.value.length) {
+      this.animationCursor$.next(this.text$.value.length);
+      return true;
+    } else return this.playDialogue(this.currentIndex + 1);
   }
 
   updateDialogLines(lines: DialogueLine[], index: number): void {
@@ -49,27 +48,23 @@ export class DialogueService {
     return this.currentIndex === this.lines$.value.length - 1;
   }
 
-  playDialogue(index: number) {
-    if (index < 0 || this.lines$.value.length <= index) return;
+  playDialogue(index: number) : boolean {
+    if (index < 0 || this.lines$.value.length <= index) return false;
     this.currentIndex = index;
     this.currentLine$.next(this.lines$.value[index]);
     this.speaker$.next(this.currentLine$.value.speaker);
     this.animateText(this.currentLine$.value.message);
+    return true;
   }
 
   animateText(text: string): void {
     this.clearAnimationTimer();
-    this.isAnimating$.next(true);
     this.animationCursor$.next(0);
     this.text$.next(text);
     this.animationTimer = setInterval(() => {
-      if (this.isAnimating$.value && this.text$.value.length > 0) {
+      if (this.animationCursor$.value < this.text$.value.length) {
         this.animationCursor$.next(this.animationCursor$.value + 1);
-      } else {
-        this.isAnimating$.next(false);
-        this.animationCursor$.next(text.length);
-        this.clearAnimationTimer();
-      }
+      } else this.clearAnimationTimer();
     }, 25);
   }
 

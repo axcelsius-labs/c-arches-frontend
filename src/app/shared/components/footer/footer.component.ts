@@ -23,7 +23,7 @@ export class FooterComponent implements OnInit {
     if (this.dialogueService.isAtSectionEnd()) {
       this.chapterService.handleFinishedSection();
     } else {
-      this.dialogueService.playNextDialogueLine();
+      this.dialogueService.finishCurrentOrPlayNextDialogueLine();
     }
   }
 
