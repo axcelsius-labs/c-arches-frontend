@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 import { DialogueModule } from '../dialogue/dialogue.module';
 import { AdditionalContentComponent } from './components/additional-content/additional-content.component';
 import { GridOptionsComponent } from './components/grid-options/grid-options.component';
@@ -17,7 +18,7 @@ import { MonologueComponent } from './monologue.component';
     OptionContentComponent,
     MonologueComponent,
   ],
-  imports: [CommonModule, DialogueModule],
+  imports: [CommonModule, DialogueModule, MatIconModule],
   exports: [MonologueComponent],
 })
 export class MonologueModule {}

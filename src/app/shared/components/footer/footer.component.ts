@@ -8,7 +8,7 @@ import { DialogueService } from '../../services/dialogue.service';
 })
 export class FooterComponent implements OnInit {
   @Input() chapterTitle: string = '';
-  @Input() showNextButton: Boolean = true;
+  @Input() dontShowNextButton: Boolean = false;
   @Output() showNextDialogLine = new EventEmitter();
   @Output() showPreviousDialogLine = new EventEmitter();
 

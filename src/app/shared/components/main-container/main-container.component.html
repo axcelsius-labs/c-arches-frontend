@@ -1,10 +1,7 @@
 <div class="main-container">
   <app-header class="header" *ngIf="showHeader"> </app-header>
 
-  <div
-    class="content"
-    [ngClass]="showFooter === true ? 'content-short' : 'content-full'"
-  >
+  <div class="content">
     <app-background
       *ngIf="backgroundImage"
       [backgroundImage]="backgroundImage"
@@ -17,7 +14,7 @@
     class="footer"
     *ngIf="showFooter"
     [chapterTitle]="chapterTitle"
-    [showNextButton]="showNextButton"
+    [dontShowNextButton]="dontShowNextButton"
   >
   </app-footer>
 </div>

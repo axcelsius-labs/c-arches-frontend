@@ -8,7 +8,7 @@
   <div class="chapter-title">{{ chapterTitle }}</div>
 
   <button
-    [style.visibility]="!showNextButton ? 'hidden' : 'visible'"
+    [style.visibility]="dontShowNextButton ? 'hidden' : 'visible'"
     class="next-button"
     (click)="nextDialogLine()"
   >
