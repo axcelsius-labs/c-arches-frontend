@@ -16,13 +16,15 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            message: "Hey! I'm Sam!",
+            segments: [
+                { message: "Hey! I'm ", params: [] },
+                { message: "Sammy!", params: ["red"] },
+            ],
             params: ['showTutorial'],
           },
           {
             speaker: 1,
-            message:
-              'For your safety, note that you can close this application with the quick exit button in the top right.',
+            segments: [{ message: 'For your safety, note that you can close this application with the quick exit button in the top right.', params: [] }],
             params: ['highlightExit'],
           },
         ],
@@ -35,8 +37,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              "Also, if someone is monitoring your device, consider clearing this from your browser's history.",
+            segments: [{ message: "Also, if someone is monitoring your device, consider clearing this from your browser's history.", params: [] }],
             params: [],
           },
         ],
@@ -52,14 +53,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            message:
-              "Okay! Let's begin. Healthy relationships thrive on mutual respect, trust, and open communication.",
+            segments: [{ message: "Okay! Let's begin. Healthy relationships thrive on mutual respect, trust, and open communication.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              'Do any of these couples sound like your relationships?...',
+            segments: [{ message: "Do any of these couples sound like your relationships?...", params: [] }],
             params: [],
           },
         ],
@@ -71,8 +70,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            message:
-              'We make it easy to talk about pregnancy and birth control.',
+            segments: [{ message: "We make it easy to talk about pregnancy and birth control.", params: [] }],
             params: [],
           },
         ],
@@ -84,8 +82,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            message:
-              "We're on the same page about getting pregnant and how to handle pregnancy decisions.",
+            segments: [{ message: "We're on the same page about getting pregnant and how to handle pregnancy decisions.", params: [] }],
             params: [],
           },
         ],
@@ -97,8 +94,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            message:
-              'My partner supports my decisions about sex, pregnancy and birth control.',
+            segments: [{ message: "My partner supports my decisions about sex, pregnancy and birth control.", params: [] }],
             params: [],
           },
         ],
@@ -110,8 +106,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            message:
-              'I feel comfortable expressing my sexual desires AND saying "no" to sex.',
+            segments: [{ message: 'I feel comfortable expressing my sexual desires AND saying "no" to sex.', params: [] }],
             params: [],
           },
         ],
@@ -123,31 +118,27 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            message:
-              'If these couples remind you of your relationships, great!',
+            segments: [{ message: 'If these couples remind you of your relationships, great!', params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              "If not, you're not the only one. Everyone needs support sometimes.",
+            segments: [{ message: "If not, you're not the only one. Everyone needs support sometimes.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message: 'I have a friend, Jade, who could use our help right now.',
+            segments: [{ message: "I have a friend, Jade, who could use our help right now.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              "In this program, we'll offer support as Jade takes back control.",
+            segments: [{ message: "In this program, we'll offer support as Jade takes back control.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              "Jade's waiting for us at a cafe down the block. Let's go meet her!",
+            segments: [{ message: "Jade's waiting for us at a cafe down the block. Let's go meet her!", params: [] }],
             params: [],
           },
         ],
@@ -168,63 +159,72 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            message: 'Hey, Jade! You look kinda stressed...you okay?',
+            segments: [{ message: "Hey, Jade! You look kinda stressed...you okay?", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              "Hi, Sam. I don't know...my partner and I are fighting again.",
+            segments: [{ message: "Hi, Sam. I don't know...my partner and I are fighting again.", params: [] }],
             params: [],
           },
-          { speaker: 2, message: 'Wanna talk about it?', params: [] },
+          { 
+            speaker: 2, 
+            segments: [{ message: "Wanna talk about it?", params: [] }],
+            params: [] 
+          },
           {
             speaker: 0,
-            message: "PJ really wants kids, but I just don't think I'm ready.",
+            segments: [{ message: "PJ really wants kids, but I just don't think I'm ready.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message: 'Oh, that sounds tough... How have your talks been going?',
+            segments: [{ message: "Oh, that sounds tough... How have your talks been going?", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message: 'Not great. We keep having the same argument.',
+            segments: [{ message: "Not great. We keep having the same argument.", params: [] }],
             params: [],
           },
-          { speaker: 2, message: 'That sounds frustrating...', params: [] },
+          { 
+            speaker: 2, 
+            segments: [{ message: "That sounds frustrating...", params: [] }],
+            params: [] 
+          },
           {
             speaker: 0,
-            message: "It is! I've been feeling nervous, so I got on the pill.",
+            segments: [{ message: "It is! I've been feeling nervous, so I got on the pill.", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message: 'But my pills haven been missing and I think PJ took them',
+            segments: [{ message: "But my pills haven been missing and I think PJ took them.", params: [] }],
             params: [],
           },
-          { speaker: 2, message: 'Dude, what?', params: [] },
+          { 
+            speaker: 2, 
+            segments: [{ message: "Dude, what?", params: [] }],
+            params: []
+          },
           {
             speaker: 0,
-            message: 'I think PJ poked a hole in the condom last night...',
+            segments: [{ message: "I think PJ poked a hole in the condom last night...", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message: "This isn't okay, Jade.",
+            segments: [{ message: "This isn't okay, Jade.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message:
-              'Your partner has no right to force you into something you’re not ready for.',
+            segments: [{ message: "Your partner has no right to force you into something you’re not ready for.", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              "Right! I'm pretty sure PJ threw away my prescription refill, too.",
+            segments: [{ message: "Right! I'm pretty sure PJ threw away my prescription refill, too.", params: [] }],
             params: [],
           },
         ],
@@ -237,14 +237,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            message:
-              "This is called reproductive coercion. It's a serious form of abuse where someone controls or pressures another person's decisions about birth control or pregnancy.",
+            segments: [{ message: "This is called reproductive coercion. It's a serious form of abuse where someone controls or pressures another person's decisions about birth control or pregnancy.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              "It's a common issue that affects people of all genders, races, sexual orientations, and socioeconomic statuses.",
+            segments: [{ message: "It's a common issue that affects people of all genders, races, sexual orientations, and socioeconomic statuses.", params: [] }],
             params: [],
           },
         ],
@@ -257,7 +255,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: 'Here are some examples:',
+            segments: [{ message: "Here are some examples:", params: [] }],
             params: [],
           },
         ],
@@ -279,7 +277,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: 'It is never okay for someone to...',
+            segments: [{ message: "It is never okay for someone to...", params: [] }],
             params: [],
           },
         ],
@@ -297,14 +295,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            message:
-              'Reproductive coercion is bad for your mental health and increases your risk of STIs/HIV, unintended pregnancies, and unsafe abortions.',
+            segments: [{ message: "Reproductive coercion is bad for your mental health and increases your risk of STIs/HIV, unintended pregnancies, and unsafe abortions.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              'Knowing these risks can help you take care of yourself and make informed decisions.',
+            segments: [{ message: "Knowing these risks can help you take care of yourself and make informed decisions.", params: [] }],
             params: [],
           },
         ],
@@ -316,69 +312,104 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: 'Whatever it is, I just know I feel anxious and trapped.',
+            segments: [{ message: "Whatever it is, I just know I feel anxious and trapped.", params: [] }],
             params: [],
           },
-          { speaker: 2, message: "Jade, I'm here for you.", params: [] },
+          { 
+            speaker: 2, 
+            segments: [{ message: "Jade, I'm here for you.", params: [] }],
+            params: []
+          },
           {
             speaker: 2,
-            message:
-              'You deserve to feel safe and in control of your own body and decisions.',
+            segments: [{ message: "You deserve to feel safe and in control of your own body and decisions.", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message: "Yes!! But I don't know what to do...",
+            segments: [{ message: "Yes!! But I don't know what to do...", params: [] }],
             params: [],
           },
-          { speaker: 2, message: "I understand. I've been there.", params: [] },
-          { speaker: 2, message: 'Who else knows about this?', params: [] },
-          {
-            speaker: 0,
-            message: "I haven't really talked to anyone...",
-            params: [],
+          { 
+            speaker: 2, 
+            segments: [{ message: "I understand. I've been there.", params: [] }],
+            params: []
           },
-          { speaker: 0, message: "...I'm kinda embarassed.", params: [] },
-          {
-            speaker: 2,
-            message: "Okay, well you don't have to go through this alone.",
-            params: [],
-          },
-          {
-            speaker: 2,
-            message:
-              'Have you considered getting on something you can keep private?',
-            params: [],
-          },
-          { speaker: 0, message: 'What do you mean?', params: [] },
-          {
-            speaker: 2,
-            message:
-              'Well, you could get the birth control shot, implant, or IUD.',
-            params: [],
+          { 
+            speaker: 2, 
+            segments: [{ message: "Who else knows about this?", params: [] }],
+            params: [] 
           },
           {
             speaker: 0,
-            message:
-              "Oh...maybe?  I don't want to worry about getting pregnant!",
+            segments: [{ message: "I haven't really talked to anyone...", params: [] }],
             params: [],
           },
-          { speaker: 0, message: 'What would you do?', params: [] },
+          { 
+            speaker: 0, 
+            segments: [{ message: "...I'm kinda embarassed.", params: [] }],
+            params: []
+          },
           {
             speaker: 2,
-            message:
-              "I got the implant last year...I barely feel it and no one even knows it's there!",
+            segments: [{ message: "Okay, well you don't have to go through this alone.", params: [] }],
             params: [],
           },
-          { speaker: 0, message: 'That sounds nice...', params: [] },
           {
             speaker: 2,
-            message: "If you want, I'll show you the clinic that helped me?",
+            segments: [{ message: "Have you considered getting on something you can keep private?", params: [] }],
             params: [],
           },
-          { speaker: 0, message: 'Okay!', params: [] },
-          { speaker: 0, message: 'Thanks, Sam.', params: [] },
-          { speaker: 2, message: 'Anytime, Jade.', params: [] },
+          { 
+            speaker: 0, 
+            segments: [{ message: "What do you mean?", params: [] }],
+            params: []
+          },
+          {
+            speaker: 2,
+            segments: [{ message: "Well, you could get the birth control shot, implant, or IUD.", params: [] }],
+            params: [],
+          },
+          {
+            speaker: 0,
+            segments: [{ message: "Oh...maybe?  I don't want to worry about getting pregnant!", params: [] }],
+            params: [],
+          },
+          { 
+            speaker: 0, 
+            segments: [{ message: "What would you do?", params: [] }],
+            params: [] 
+          },
+          {
+            speaker: 2,
+            segments: [{ message: "I got the implant last year...I barely feel it and no one even knows it's there!", params: [] }],
+            params: [],
+          },
+          { 
+            speaker: 0, 
+            segments: [{ message: "That sounds nice...", params: [] }],
+            params: [] 
+          },
+          {
+            speaker: 2,
+            segments: [{ message: "If you want, I'll show you the clinic that helped me?", params: [] }],
+            params: [],
+          },
+          { 
+            speaker: 0,
+            segments: [{ message: "Okay!", params: [] }],
+            params: [] 
+          },
+          { 
+            speaker: 0,
+            segments: [{ message: "Thanks, Sam.", params: [] }],
+            params: [] 
+          },
+          { 
+            speaker: 2,
+            segments: [{ message: "Anytime, Jade.", params: [] }],
+            params: []
+          },
         ],
       },
       {
@@ -389,25 +420,22 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            message:
-              'Relationships can be tough, especially ones that are unhealthy or unsafe. Sometimes we can feel alone.',
+            segments: [{ message: "Relationships can be tough, especially ones that are unhealthy or unsafe. Sometimes we can feel alone.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              'You can make a difference. Check in with your friends and family who may be having a tough time in their relationships.',
+            segments: [{ message: "You can make a difference. Check in with your friends and family who may be having a tough time in their relationships.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              "Don't know where to start? Try sharing some of the things you learn today.",
+            segments: [{ message: "Don't know where to start? Try sharing some of the things you learn today.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message: 'Helping others is good for you, too!',
+            segments: [{ message: "Helping others is good for you, too!", params: [] }],
             params: [],
           },
         ],
@@ -428,52 +456,47 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            message: "Hi Jade, I'm Dr. Green! What brings you in today?",
+            segments: [{ message: "Hi Jade, I'm Dr. Green! What brings you in today?", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'My friend was telling me about reproductive coercion, and some of it sounded like my relationship.',
+            segments: [{ message: "My friend was telling me about reproductive coercion, and some of it sounded like my relationship.", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'I need emergency contraception, and I want to switch my birth control to something that I can hide.',
+            segments: [{ message: "I need emergency contraception, and I want to switch my birth control to something that I can hide.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message: "Absolutely! I'm really glad you brought this up, Jade.",
+            segments: [{ message: "Absolutely! I'm really glad you brought this up, Jade.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message: 'This is something that a lot of people go through.',
+            segments: [{ message: "This is something that a lot of people go through.", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'I heard that some people keep their birth control secret to stay in control when others are pressuring them to get pregnant...',
+            segments: [{ message: "I heard that some people keep their birth control secret to stay in control when others are pressuring them to get pregnant...", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'My partner takes off condoms during sex and messes with my birth control pills...',
+            segments: [{ message: "My partner takes off condoms during sex and messes with my birth control pills...", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message: "I'm nervous and not ready to get pregnant",
+            segments: [{ message: "I'm nervous and not ready to get pregnant.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message:
-              "Absolutely, Jade. It's great that you're taking charge of your health. I'm here for you!",
+            segments: [{ message: "Absolutely, Jade. It's great that you're taking charge of your health. I'm here for you!", params: [] }],
             params: [],
           },
         ],
@@ -488,8 +511,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'Here are some options for emergency contraception. Select one to continue.',
+            segments: [{ message: "Here are some options for emergency contraception. Select one to continue.", params: [] }],
             params: [],
           },
         ],
@@ -504,8 +526,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              "Tell the clinic it's for emergency contraception so you are scheduled quickly.",
+            segments: [{ message: "Tell the clinic it's for emergency contraception so you are scheduled quickly.", params: [] }],
             params: [],
           },
         ],
@@ -532,8 +553,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'Some patients trash the packaging and keep the pill in a plain container, like an empty pill bottle.',
+            segments: [{ message: "Some patients trash the packaging and keep the pill in a plain container, like an empty pill bottle.", params: [] }],
             params: [],
           },
         ],
@@ -561,8 +581,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'Some patients trash the packaging and keep the pill in a plain container, like an empty pill bottle.',
+            segments: [{ message: "Some patients trash the packaging and keep the pill in a plain container, like an empty pill bottle.", params: [] }],
             params: [],
           },
         ],
@@ -591,26 +610,22 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'Okay! The morning after pill looks good, and I want an extra pill for future emergencies.',
+            segments: [{ message: "Okay! The morning after pill looks good, and I want an extra pill for future emergencies.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message:
-              "We can do that! Now let's discuss a long term solution for your birth control.",
+            segments: [{ message: "We can do that! Now let's discuss a long term solution for your birth control.", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'The shot, implant, and IUD can all provide reliable protection, and are very discreet.',
+            segments: [{ message: "The shot, implant, and IUD can all provide reliable protection, and are very discreet.", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              'When selecting a private method, consider how it might be discovered, such as through monitoring your period.',
+            segments: [{ message: "When selecting a private method, consider how it might be discovered, such as through monitoring your period.", params: [] }],
             params: [],
           },
         ],
@@ -625,8 +640,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'Here are some options that are more private and difficult for your partner to control. Select one to continue.',
+            segments: [{ message: "Here are some options that are more private and difficult for your partner to control. Select one to continue.", params: [] }],
             params: [],
           },
         ],
@@ -641,8 +655,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'If your partner monitors your schedule, they may prevent you from attending appointments every three months.',
+            segments: [{ message: "If your partner monitors your schedule, they may prevent you from attending appointments every three months.", params: [] }],
             params: [],
           },
         ],
@@ -668,8 +681,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'We can trim the strings so they cannot be felt or removed by your partner.',
+            segments: [{ message: "We can trim the strings so they cannot be felt or removed by your partner.", params: [] }],
             params: [],
           },
         ],
@@ -696,8 +708,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'Some people have initial bruising, but the implant is mostly invisible once your skin heals.',
+            segments: [{ message: "Some people have initial bruising, but the implant is mostly invisible once your skin heals.", params: [] }],
             params: [],
           },
         ],
@@ -725,8 +736,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'Sterilization is a private option after the recovery period. Recovery times vary and may require follow-up appointments.',
+            segments: [{ message: "Sterilization is a private option after the recovery period. Recovery times vary and may require follow-up appointments.", params: [] }],
             params: [],
           },
         ],
@@ -755,46 +765,42 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message:
-              'That all sounds good. I think the shot sounds like a good fit for me. When can I get started?',
+            segments: [{ message: "That all sounds good. I think the shot sounds like a good fit for me. When can I get started?", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message: "We can give you your first injection today, if you'd like.",
+            segments: [{ message: "We can give you your first injection today, if you'd like.", params: [] }],
             params: [],
           },
           {
             speaker: 0,
-            message:
-              "Perfect, let's do it. Thank you for listening and helping me find the right option!",
+            segments: [{ message: "Perfect, let's do it. Thank you for listening and helping me find the right option!", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message:
-              "You're welcome, Jade. It was brave of you to bring this up.",
+            segments: [{ message: "You're welcome, Jade. It was brave of you to bring this up.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message:
-              'Also, if you ever feel pressured or controlled in your relationship, there are resources and support available.',
+            segments: [{ message: "Also, if you ever feel pressured or controlled in your relationship, there are resources and support available.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message: 'And remember...if you\'re thinking about leaving an abusive or controlling relationship, talking to experts can help you find safer ways to do it.',
+            segments: [{ message: "And remember...if you\'re thinking about leaving an abusive or controlling relationship, talking to experts can help you find safer ways to do it.", params: [] }],
             params: [],
           },
           {
             speaker: 2,
-            message: 'Check them out if you need additional support!',
+            segments: [{ message: "Check them out if you need additional support!", params: [] }],
             params: [],
           },
           { 
             speaker: 0, 
-            message: 'Got it! Thanks!', 
+            segments: [{ message: "Got it! Thanks!", params: [] }],
             params: [] 
           },
         ],
@@ -806,14 +812,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            message:
-              "We're almost done! You can be brave like Jade. Take charge of your reproductive health today.",
+            segments: [{ message: "We're almost done! You can be brave like Jade. Take charge of your reproductive health today.", params: [] }],
             params: [],
           },
           {
             speaker: 1,
-            message:
-              'Talk to your provider about how to stay safe and healthy now and in the future.',
+            segments: [{ message: "Talk to your provider about how to stay safe and healthy now and in the future.", params: [] }],
             params: [],
           },
         ],
@@ -826,7 +830,7 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            message: 'Here are some things you can ask about:',
+            segments: [{ message: "Here are some things you can ask about:", params: [] }],
             params: [],
           },
         ],

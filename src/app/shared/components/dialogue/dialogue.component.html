@@ -1,12 +1,14 @@
 <div class="dialogue-container" [ngClass]="speaker !== 2 ? 'left' : 'right'">
-  <span
-    *ngFor="let char of text; let i = index"
+  <ng-container
+    *ngFor="let segment of currentLine.segments; let s = index">
+    <span
+    *ngFor="let char of segment.characters; let i = index"
     [ngClass]="{
-      visible: animationCursor >= i,
-      invisible: animationCursor < i,
-    }"
-    >{{ char }}</span
-  >
+      visible: animationCursorSegment >= s && animationCursorLetter >= i,
+      invisible: animationCursorSegment < s || (animationCursorSegment == s && animationCursorLetter < i),
+      red: segment.params.indexOf('red') > -1
+    }">{{ char }}</span>
+  </ng-container>
   <div *ngIf="showLeftTriangle" class="triangle side-triangle-left"></div>
   <div *ngIf="showLeftTriangle" class="triangle side-triangle-left-inlay"></div>
   <div

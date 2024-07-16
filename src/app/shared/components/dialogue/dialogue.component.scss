@@ -6,6 +6,7 @@
   max-width: 65vh;
   line-height: 1.2em;
   margin: 20px 10px 30px;
+  color: #000000FF;
   font-size: 22px;
   font-weight: 600;
   font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
@@ -34,11 +35,15 @@
 }
 
 .visible {
-  color: #000000ff;
+  opacity: 1;
 }
 
 .invisible {
-  color: #00000044;
+  opacity: .33;
+}
+
+.red {
+  color: #FF0000FF !important;
 }
 
 .left {

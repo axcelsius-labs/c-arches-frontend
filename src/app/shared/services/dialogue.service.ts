@@ -1,34 +1,34 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { DialogueLine } from '../models/dialogue.interface';
+import {DialogueLine, DialogueLineSegment} from '../models/dialogue.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DialogueService {
-  lines$: BehaviorSubject<DialogueLine[]> = new BehaviorSubject<DialogueLine[]>(
-    [],
-  );
-  currentLine$: BehaviorSubject<DialogueLine> =
-    new BehaviorSubject<DialogueLine>({} as DialogueLine);
   speaker$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
-  text$: BehaviorSubject<string> = new BehaviorSubject<string>('');
-  animationCursor$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
+  lines$: BehaviorSubject<DialogueLine[]> = new BehaviorSubject<DialogueLine[]>([]);
+  currentLine$: BehaviorSubject<DialogueLine> = new BehaviorSubject<DialogueLine>({} as DialogueLine);
+  currentSegment$: BehaviorSubject<DialogueLineSegment> = new BehaviorSubject<DialogueLineSegment>({} as DialogueLineSegment);
+  animationCursorSegment$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
+  animationCursorLetter$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
 
-  currentIndex: number = -1;
+  currentLineIndex: number = -1;
   animationTimer: any;
 
   constructor() {}
 
   playPreviousDialogueLine(): void {
-    this.playDialogue(this.currentIndex - 1);
+    this.playDialogue(this.currentLineIndex - 1);
   }
 
   finishCurrentOrPlayNextDialogueLine(): boolean {
-    if (this.animationCursor$.value < this.text$.value.length) {
-      this.animationCursor$.next(this.text$.value.length);
+    if (this.animationCursorSegment$.value < this.currentLine$.value.segments.length
+      || this.animationCursorLetter$.value < this.currentSegment$.value.message.length) {
+      this.animationCursorSegment$.next(this.currentLine$.value.segments.length);
+      this.animationCursorLetter$.next(this.currentSegment$.value.message.length);
       return true;
-    } else return this.playDialogue(this.currentIndex + 1);
+    } else return this.playDialogue(this.currentLineIndex + 1);
   }
 
   updateDialogLines(lines: DialogueLine[], index: number): void {
@@ -41,29 +41,36 @@ export class DialogueService {
   }
 
   isAtSectionStart(): boolean {
-    return this.currentIndex === 0;
+    return this.currentLineIndex === 0;
   }
 
   isAtSectionEnd(): boolean {
-    return this.currentIndex === this.lines$.value.length - 1;
+    return this.currentLineIndex === this.lines$.value.length - 1;
   }
 
-  playDialogue(index: number) : boolean {
-    if (index < 0 || this.lines$.value.length <= index) return false;
-    this.currentIndex = index;
-    this.currentLine$.next(this.lines$.value[index]);
+  playDialogue(lineIndex: number) : boolean {
+    if (lineIndex < 0 || this.lines$.value.length <= lineIndex) return false;
+    this.currentLineIndex = lineIndex;
+    this.currentLine$.next(this.lines$.value[lineIndex]);
+    for (let i = 0; i < this.currentLine$.value.segments.length; i++){
+      this.currentLine$.value.segments[i].characters = this.currentLine$.value.segments[i].message.split('');
+    }
+    this.currentSegment$.next(this.currentLine$.value.segments[0]);
     this.speaker$.next(this.currentLine$.value.speaker);
-    this.animateText(this.currentLine$.value.message);
+    this.animateText();
     return true;
   }
 
-  animateText(text: string): void {
+  animateText(): void {
     this.clearAnimationTimer();
-    this.animationCursor$.next(0);
-    this.text$.next(text);
+    this.animationCursorSegment$.next(0);
+    this.animationCursorLetter$.next(0);
     this.animationTimer = setInterval(() => {
-      if (this.animationCursor$.value < this.text$.value.length) {
-        this.animationCursor$.next(this.animationCursor$.value + 1);
+      if (this.animationCursorLetter$.value < this.currentSegment$.value.message.length) {
+        this.animationCursorLetter$.next(this.animationCursorLetter$.value + 1);
+      } else if (this.animationCursorSegment$.value < this.currentLine$.value.segments.length) {
+        this.animationCursorSegment$.next(this.animationCursorSegment$.value + 1);
+        this.animationCursorLetter$.next(0);
       } else this.clearAnimationTimer();
     }, 25);
   }

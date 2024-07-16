@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DialogueService } from '../../services/dialogue.service';
+import {DialogueLine} from "../../models/dialogue.interface";
 
 @Component({
   selector: 'dialogue',
@@ -10,8 +11,9 @@ export class DialogueComponent implements OnInit {
   @Input() showLeftTriangle = false;
 
   speaker = 0;
-  text: string[] = [];
-  animationCursor: number = -1;
+  currentLine: DialogueLine = {} as DialogueLine;
+  animationCursorSegment: number = -1;
+  animationCursorLetter: number = -1;
 
   constructor(private dialogueService: DialogueService) {}
 
@@ -19,11 +21,14 @@ export class DialogueComponent implements OnInit {
     this.dialogueService.speaker$.subscribe((value) => {
       this.speaker = value;
     });
-    this.dialogueService.animationCursor$.subscribe((value) => {
-      this.animationCursor = value;
+    this.dialogueService.animationCursorSegment$.subscribe((value) => {
+      this.animationCursorSegment = value;
     });
-    this.dialogueService.text$.subscribe((value) => {
-      this.text = value.split('');
+    this.dialogueService.animationCursorLetter$.subscribe((value) => {
+      this.animationCursorLetter = value;
+    });
+    this.dialogueService.currentLine$.subscribe((value) => {
+      this.currentLine = value;
     });
   }
 }

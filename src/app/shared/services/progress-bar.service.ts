@@ -23,7 +23,7 @@ export class ProgressBarService {
       this.updateProgressBar(
         chapterKey!,
         sectionIndex,
-        this.dialogueService.currentIndex,
+        this.dialogueService.currentLineIndex,
       );
     });
   }
