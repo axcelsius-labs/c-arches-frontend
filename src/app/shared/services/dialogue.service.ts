@@ -11,7 +11,7 @@ export class DialogueService {
   );
   currentLine$: BehaviorSubject<DialogueLine> =
     new BehaviorSubject<DialogueLine>({} as DialogueLine);
-  speaker$: BehaviorSubject<number> = new BehaviorSubject<number>(0,);
+  speaker$: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   text$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   isAnimating$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   animationCursor$: BehaviorSubject<number> = new BehaviorSubject<number>(-1);

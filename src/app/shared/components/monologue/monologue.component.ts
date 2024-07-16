@@ -6,8 +6,8 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Section } from '../../models/chapter.interface';
 import { BehaviorSubject } from 'rxjs';
+import { Section } from '../../models/chapter.interface';
 
 @Component({
   selector: 'app-monologue',
@@ -24,8 +24,8 @@ export class MonologueComponent implements OnInit {
   constructor() {
     this.onResize();
   }
-  
-  ngOnInit() { }
+
+  ngOnInit() {}
 
   handleClickOrSpace(event?: Event): void {
     this.onClickOrSpace.emit();
@@ -33,7 +33,10 @@ export class MonologueComponent implements OnInit {
 
   @HostListener('document:keypress', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    if (event.code === 'Space' && this.section.gridOptionIndexes === undefined) {
+    if (
+      event.code === 'Space' &&
+      this.section.gridOptionIndexes === undefined
+    ) {
       this.handleClickOrSpace();
       event.stopPropagation();
     }

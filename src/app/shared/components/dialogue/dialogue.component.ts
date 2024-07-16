@@ -8,10 +8,10 @@ import { DialogueService } from '../../services/dialogue.service';
 })
 export class DialogueComponent implements OnInit {
   @Input() showLeftTriangle = false;
-  
+
   speaker = 0;
-  text : string[] = [];
-  animationCursor : number = -1;
+  text: string[] = [];
+  animationCursor: number = -1;
 
   constructor(private dialogueService: DialogueService) {}
 

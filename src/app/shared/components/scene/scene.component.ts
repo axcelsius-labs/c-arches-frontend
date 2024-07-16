@@ -1,10 +1,10 @@
 import {
   Component,
-  HostListener,
   EventEmitter,
+  HostListener,
   Input,
-  Output,
   OnInit,
+  Output,
 } from '@angular/core';
 import { Section } from '../../models/chapter.interface';
 
@@ -21,7 +21,7 @@ export class SceneComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  handleClickOrSpace(event?: Event): void {
+  handleClickOrSpace(): void {
     this.onClickOrSpace.emit();
   }
 

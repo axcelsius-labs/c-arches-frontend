@@ -11,10 +11,10 @@ import { routes } from './app.routes'; // Import your routes
   imports: [
     BrowserModule,
     RouterModule,
-    RouterModule.forRoot(routes, { useHash: true })
+    RouterModule.forRoot(routes, { useHash: true }),
   ],
   providers: [],
   bootstrap: [],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
-import {Chapter, Chapters, Contraception, Section} from '../models/chapter.interface';
-import { chapters } from '../globals/chapters.global';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
-import { DialogueService } from './dialogue.service';
+import { chapters } from '../globals/chapters.global';
 import { ChapterSectionRouteConfig } from '../models/chapter-section-route-config';
+import {
+  Chapter,
+  Chapters,
+  Contraception,
+  Section,
+} from '../models/chapter.interface';
 import { ChapterProgressService } from './chapter-progress.service';
 
 @Injectable({
@@ -13,7 +17,6 @@ import { ChapterProgressService } from './chapter-progress.service';
 export class ChapterService {
   constructor(
     private router: Router,
-    private dialogueService: DialogueService,
     private chapterProgressService: ChapterProgressService,
   ) {}
 
@@ -104,9 +107,9 @@ export class ChapterService {
     if (this.chapterSectionRouteConfig.value.sectionIndex > 0) {
       if (currentSection.previousSectionIndex) {
         const lastdialogueIndex =
-            this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-                .sections[currentSection.previousSectionIndex].dialogueLines
-                ?.length! - 1;
+          this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+            .sections[currentSection.previousSectionIndex].dialogueLines
+            ?.length! - 1;
         this.updateChapterSectionAndDialog({
           chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
           sectionIndex: currentSection.previousSectionIndex,
@@ -114,10 +117,10 @@ export class ChapterService {
         });
       } else {
         const previousSection =
-            (this.chapterSectionRouteConfig.value.sectionIndex -= 1);
+          (this.chapterSectionRouteConfig.value.sectionIndex -= 1);
         const lastdialogueIndex =
-            this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
-                .sections[previousSection].dialogueLines?.length! - 1;
+          this.allChapters[this.chapterSectionRouteConfig.value.chapterKey!]
+            .sections[previousSection].dialogueLines?.length! - 1;
         this.updateChapterSectionAndDialog({
           chapterKey: this.chapterSectionRouteConfig.value.chapterKey!,
           sectionIndex: previousSection,
@@ -126,10 +129,11 @@ export class ChapterService {
       }
     } else this.goToPreviousChapter();
   }
-  
+
   goToPreviousChapter(): void {
     let currentChapterKey = this.chapterSectionRouteConfig.value.chapterKey!;
-    const previousChapterKey = this.allChapters[currentChapterKey].previousChapter;
+    const previousChapterKey =
+      this.allChapters[currentChapterKey].previousChapter;
 
     if (!previousChapterKey) {
       this.router.navigate(['']);
@@ -140,7 +144,8 @@ export class ChapterService {
 
     if (previousChapter) {
       const lastSectionIndex = previousChapter.sections.length - 1;
-      const lastDialogueIndex = previousChapter.sections[lastSectionIndex].dialogueLines?.length! - 1;
+      const lastDialogueIndex =
+        previousChapter.sections[lastSectionIndex].dialogueLines?.length! - 1;
 
       this.router.navigate([previousChapterKey], {
         queryParams: {
@@ -148,8 +153,7 @@ export class ChapterService {
           dialogueIndex: lastDialogueIndex,
         },
       });
-    }
-    else this.router.navigate([previousChapterKey]);
+    } else this.router.navigate([previousChapterKey]);
   }
 
   isValidChapter(chapterId: string): boolean {

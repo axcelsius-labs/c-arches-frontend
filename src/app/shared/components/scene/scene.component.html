@@ -1,24 +1,21 @@
 <div class="scene-container" (click)="handleClickOrSpace()">
   <div class="dialog-character-container">
-    
     <dialogue class="dialogue-container"></dialogue>
-    
-    <div class="character-container">
 
+    <div class="character-container">
       <ng-container *ngIf="section.leftCharacterImage">
         <img
           class="character no-interaction"
           [src]="section.leftCharacterImage"
         />
       </ng-container>
-      
+
       <ng-container *ngIf="section.rightCharacterImage">
         <img
           class="character right no-interaction"
           [src]="section.rightCharacterImage"
         />
       </ng-container>
-      
     </div>
   </div>
 </div>

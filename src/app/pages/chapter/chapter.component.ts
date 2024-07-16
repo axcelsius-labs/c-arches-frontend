@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription, distinctUntilChanged } from 'rxjs';
+import { ChapterTitleOverlayComponent } from '../../shared/components/chapter-title-overlay/chapter-title-overlay.component';
 import { Chapter, Section } from '../../shared/models/chapter.interface';
 import { ChapterService } from '../../shared/services/chapter.service';
 import { DialogueService } from '../../shared/services/dialogue.service';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { ChapterTitleOverlayComponent } from '../../shared/components/chapter-title-overlay/chapter-title-overlay.component';
-import { Router } from '@angular/router';
-import { Subscription, distinctUntilChanged, filter } from 'rxjs';
 
 @Component({
   selector: 'app-chapter',
@@ -14,7 +13,6 @@ import { Subscription, distinctUntilChanged, filter } from 'rxjs';
   styleUrl: './chapter.component.scss',
 })
 export class ChapterComponent implements OnInit {
-  
   private subscription: Subscription = new Subscription();
   dialogRef: MatDialogRef<any> | null = null;
   sectionContent!: Section;
@@ -23,7 +21,7 @@ export class ChapterComponent implements OnInit {
   startingDialogLineIndex!: number;
   allowOverflow: boolean = false;
   additionalContent: string[] = [];
-  
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -35,27 +33,27 @@ export class ChapterComponent implements OnInit {
   ngOnInit(): void {
     this.subscription.add(
       this.route.paramMap.subscribe((params) => {
-          this.chapterId = this.router.url.split('?')[0] ;
-          if (!this.chapterService.isValidChapter(this.chapterId)) {
-            this.router.navigate(['welcome']);
-          } else {
-            const sectionIndex = this.route.snapshot.queryParamMap.get(
-              'sectionIndex',
-            )
-              ? +this.route.snapshot.queryParamMap.get('sectionIndex')!
-              : 0;
-            const dialogueIndex = this.route.snapshot.queryParamMap.get(
-              'dialogueIndex',
-            )
-              ? +this.route.snapshot.queryParamMap.get('dialogueIndex')!
-              : 0;
-            this.chapterService.updateChapterSectionAndDialog({
-              chapterKey: this.chapterId!,
-              sectionIndex: sectionIndex,
-              dialogueIndex: dialogueIndex,
-            });
-          }
-        }),
+        this.chapterId = this.router.url.split('?')[0];
+        if (!this.chapterService.isValidChapter(this.chapterId)) {
+          this.router.navigate(['welcome']);
+        } else {
+          const sectionIndex = this.route.snapshot.queryParamMap.get(
+            'sectionIndex',
+          )
+            ? +this.route.snapshot.queryParamMap.get('sectionIndex')!
+            : 0;
+          const dialogueIndex = this.route.snapshot.queryParamMap.get(
+            'dialogueIndex',
+          )
+            ? +this.route.snapshot.queryParamMap.get('dialogueIndex')!
+            : 0;
+          this.chapterService.updateChapterSectionAndDialog({
+            chapterKey: this.chapterId!,
+            sectionIndex: sectionIndex,
+            dialogueIndex: dialogueIndex,
+          });
+        }
+      }),
     );
     //subscribing to changes to the chapter key or section
     this.subscription.add(
@@ -77,7 +75,6 @@ export class ChapterComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    // Unsubscribe from all subscriptions
     this.subscription.unsubscribe();
   }
 
@@ -130,7 +127,6 @@ export class ChapterComponent implements OnInit {
 
     this.dialogRef.afterClosed().subscribe(() => {
       this.dialogRef = null;
-      // Perform any actions after closing the dialog, if necessary
     });
   }
 }

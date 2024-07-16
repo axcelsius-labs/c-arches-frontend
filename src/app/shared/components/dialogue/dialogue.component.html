@@ -1,12 +1,36 @@
 <div class="dialogue-container" [ngClass]="speaker !== 2 ? 'left' : 'right'">
-  <span *ngFor="let char of text; let i = index"
-        [ngClass]="{ 'visible': animationCursor >= i, 'invisible': animationCursor < i }">{{ char }}</span>
+  <span
+    *ngFor="let char of text; let i = index"
+    [ngClass]="{
+      visible: animationCursor >= i,
+      invisible: animationCursor < i,
+    }"
+    >{{ char }}</span
+  >
   <div *ngIf="showLeftTriangle" class="triangle side-triangle-left"></div>
   <div *ngIf="showLeftTriangle" class="triangle side-triangle-left-inlay"></div>
-  <div *ngIf="!showLeftTriangle && speaker === 0" class="triangle bottom-triangle-left"></div>
-  <div *ngIf="!showLeftTriangle && speaker === 0" class="triangle bottom-triangle-left-inlay"></div>
-  <div *ngIf="!showLeftTriangle && speaker === 1" class="triangle bottom-triangle-middle"></div>
-  <div *ngIf="!showLeftTriangle && speaker === 1" class="triangle bottom-triangle-middle-inlay"></div>
-  <div *ngIf="!showLeftTriangle && speaker === 2" class="triangle bottom-triangle-right"></div>
-  <div *ngIf="!showLeftTriangle && speaker === 2" class="triangle bottom-triangle-right-inlay"></div>
+  <div
+    *ngIf="!showLeftTriangle && speaker === 0"
+    class="triangle bottom-triangle-left"
+  ></div>
+  <div
+    *ngIf="!showLeftTriangle && speaker === 0"
+    class="triangle bottom-triangle-left-inlay"
+  ></div>
+  <div
+    *ngIf="!showLeftTriangle && speaker === 1"
+    class="triangle bottom-triangle-middle"
+  ></div>
+  <div
+    *ngIf="!showLeftTriangle && speaker === 1"
+    class="triangle bottom-triangle-middle-inlay"
+  ></div>
+  <div
+    *ngIf="!showLeftTriangle && speaker === 2"
+    class="triangle bottom-triangle-right"
+  ></div>
+  <div
+    *ngIf="!showLeftTriangle && speaker === 2"
+    class="triangle bottom-triangle-right-inlay"
+  ></div>
 </div>

@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DialogueComponent } from './dialogue.component';
 
@@ -11,9 +9,8 @@ describe('DialogueComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DialogueComponent ]
-    })
-    .compileComponents();
+      declarations: [DialogueComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

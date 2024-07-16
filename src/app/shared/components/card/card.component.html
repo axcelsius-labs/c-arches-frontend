@@ -1,8 +1,10 @@
 <div class="card">
-    <h1><a href="{{ resource.url }}">{{ resource.name }}</a></h1>
-    <h3>{{ resource.description }}</h3>
-    <div *ngFor="let contact of resource.contacts">
-        <b>{{ contact.key }}:</b> {{ contact.value }}
-    </div>
-    <p>{{ resource.hours }}</p>
+  <h1>
+    <a href="{{ resource.url }}">{{ resource.name }}</a>
+  </h1>
+  <h3>{{ resource.description }}</h3>
+  <div *ngFor="let contact of resource.contacts">
+    <b>{{ contact.key }}:</b> {{ contact.value }}
+  </div>
+  <p>{{ resource.hours }}</p>
 </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ChapterService } from './chapter.service';
 import { BehaviorSubject } from 'rxjs';
+import { ChapterService } from './chapter.service';
 import { DialogueService } from './dialogue.service';
 
 @Injectable({
