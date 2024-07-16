@@ -1,6 +1,5 @@
 .header-container {
   display: flex;
-  z-index: 999;
   align-items: center;
   justify-content: space-between;
   width: 100vw;
@@ -9,62 +8,53 @@
   border-bottom: 2px solid #b6d3ff;
   box-shadow: 0px 0px 40px #00000066;
   position: relative;
-  overflow: hidden;
-  .header-actions {
+
+  .header-logo-text {
+    text-align: center;
+    cursor: pointer;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #ffffffcc;
+  }
+  .icon-label-container {
     display: flex;
-    flex: 1;
-    margin: 7px 8px;
     align-items: center;
-    .header-logo-text {
-      flex: 1;
-      text-align: center;
-      cursor: pointer;
-      font-size: 3vh;
-      font-weight: bold;
-      margin-left: 20px;
-      color: #ffffffcc;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 120px;
+
+    .icon {
+      font-size: 24px; /* Adjust the size as needed */
     }
-    .icon-label-container {
-      display: flex;
-      min-width: 8vw;
-      width: fit-content;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: none;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 5px;
-      font-weight: bold;
-      gap: 4px;
-      .icon {
-        font-size: 24px; /* Adjust the size as needed */
-      }
-      .icon-label {
-        font-size: 15px; /* Adjust the label size as needed */
-      }
-      .circle {
-        position: fixed;
-        height: 14vw;
-        width: 14vw;
-        background: transparent;
-        outline: 4vw solid #d83131aa;
-        border-radius: 7vw;
-      }
+    .circle {
+      position: fixed;
+      height: 14vw;
+      width: 14vw;
+      background: transparent;
+      outline: 4vw solid #d83131aa;
+      border-radius: 7vw;
     }
-    .exit {
-      background-color: #ff6868;
-      border: 3px solid #d83131;
-    }
-    .exit:focus {
-      border: 3px solid white;
-    }
-    .resources {
-      background-color: #7190c8;
-      border: 3px solid #5476af;
-    }
-    .resources:focus {
-      border: 3px solid white;
-    }
+  }
+  .exit {
+    background-color: #ff6868;
+    border: 3px solid #d83131;
+    gap: 4px;
+    margin-right: 8px;
+  }
+  .exit:focus {
+    border: 3px solid white;
+  }
+  .resources {
+    background-color: #7190c8;
+    border: 3px solid #5476af;
+    margin-left: 8px;
+  }
+  .resources:focus {
+    border: 3px solid white;
   }
 }
