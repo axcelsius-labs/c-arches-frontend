@@ -14,11 +14,12 @@
   text-align: center;
 }
 
-.character-wrapper {
+.content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-size: 1.2rem;
 
   .character-container {
     flex-shrink: 0;
@@ -30,7 +31,7 @@
     filter: drop-shadow(0 0 30px #00000066);
   }
 
-  .additional-content {
+  .main-content {
     display: flex;
     flex-direction: column;
     height: fit-content;

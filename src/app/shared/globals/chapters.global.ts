@@ -80,7 +80,7 @@ export const chapters: Chapters = {
       {
         sectionType: 'scene',
         leftCharacterImage: 'assets/images/Sam.png',
-        rightCharacterImage: 'assets/images/Couple 2.png',
+        rightCharacterImage: 'assets/images/Couple 3.png',
         dialogueLines: [
           {
             speaker: 2,
@@ -93,7 +93,7 @@ export const chapters: Chapters = {
       {
         sectionType: 'scene',
         leftCharacterImage: 'assets/images/Sam.png',
-        rightCharacterImage: 'assets/images/Couple 3.png',
+        rightCharacterImage: 'assets/images/Couple 2.png',
         dialogueLines: [
           {
             speaker: 2,
@@ -141,7 +141,7 @@ export const chapters: Chapters = {
           {
             speaker: 1,
             message:
-              "In this program, we'll support her as she takes back control of her body and health.",
+              "In this program, we'll offer support as Jade takes back control.",
             params: [],
           },
           {
@@ -286,7 +286,7 @@ export const chapters: Chapters = {
         layout: 'content',
         bullets: [
           '🚩 Control your reproductive decisions',
-          '🚩 Control your access to reproductive health care providers',
+          '🚩 Control your access to reproductive health care',
           '🚩 Force you to have unprotected sex',
         ],
       },
@@ -390,7 +390,7 @@ export const chapters: Chapters = {
           {
             speaker: 1,
             message:
-              'Relationships are tough, especially ones that are unhealthy or unsafe. Sometimes we can feel alone.',
+              'Relationships can be tough, especially ones that are unhealthy or unsafe. Sometimes we can feel alone.',
             params: [],
           },
           {
@@ -402,7 +402,7 @@ export const chapters: Chapters = {
           {
             speaker: 1,
             message:
-              "Don't know where to start? Try sharing some of the resources you learn today.",
+              "Don't know where to start? Try sharing some of the things you learn today.",
             params: [],
           },
           {
@@ -628,7 +628,7 @@ export const chapters: Chapters = {
           {
             speaker: 0,
             message:
-              'Here are some options for private contraception. Select one to continue.',
+              'Here are some options that are more private and difficult for your partner to control. Select one to continue.',
             params: [],
           },
         ],
@@ -768,7 +768,7 @@ export const chapters: Chapters = {
           },
           {
             speaker: 2,
-            message: "We can schedule an appointment whenever you're ready.",
+            message: "We can give you your first injection today, if you'd like.",
             params: [],
           },
           {
@@ -791,10 +791,19 @@ export const chapters: Chapters = {
           },
           {
             speaker: 2,
+            message: 'And remember...if you\'re thinking about leaving an abusive or controlling relationship, talking to experts can help you find safer ways to do it.',
+            params: [],
+          },
+          {
+            speaker: 2,
             message: 'Check them out if you need additional support!',
             params: [],
           },
-          { speaker: 0, message: 'Got it! Thanks!', params: [] },
+          { 
+            speaker: 0, 
+            message: 'Got it! Thanks!', 
+            params: [] 
+          },
         ],
       },
       {
