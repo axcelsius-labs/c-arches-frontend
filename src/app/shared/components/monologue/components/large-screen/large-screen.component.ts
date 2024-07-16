@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Section } from '../../../../models/chapter.interface';
-import {Router} from "@angular/router";
-import {DialogueService} from "../../../../services/dialogue.service";
+import { DialogueService } from '../../../../services/dialogue.service';
 
 @Component({
   selector: 'app-large-screen',
@@ -13,20 +12,19 @@ export class LargeScreenComponent implements OnInit {
   @Output() clickedOption = new EventEmitter<number>();
 
   showTutorial: boolean = false;
-  tutorial: string = "";
+  tutorial: string = '';
 
-  constructor(private router: Router,
-              private dialogueService: DialogueService) { }
+  constructor(private dialogueService: DialogueService) {}
 
   ngOnInit() {
     this.dialogueService.currentLine$.subscribe((value) => {
-      this.showTutorial = value.params.includes("showTutorial");
+      this.showTutorial = value.params.includes('showTutorial');
     });
     this.tutorial = this.isMobile()
-        ? "Tap to continue..."
-        : "Click or press space to continue...";
+      ? 'Tap to continue...'
+      : 'Click or press space to continue...';
   }
-  
+
   emitOptionClickEvent(gridOption: number) {
     this.clickedOption.emit(gridOption);
   }
@@ -39,6 +37,8 @@ export class LargeScreenComponent implements OnInit {
 
   private isMobile(): boolean {
     const userAgent = navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod|android|blackberry|opera mini|iemobile|mobile|tablet/i.test(userAgent);
+    return /iphone|ipad|ipod|android|blackberry|opera mini|iemobile|mobile|tablet/i.test(
+      userAgent,
+    );
   }
 }

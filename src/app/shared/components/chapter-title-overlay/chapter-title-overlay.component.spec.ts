@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ChapterTitleOverlayComponent } from './chapter-title-overlay.component';
 
@@ -9,11 +7,10 @@ describe('ChapterTitleOverlayComponent', () => {
   let component: ChapterTitleOverlayComponent;
   let fixture: ComponentFixture<ChapterTitleOverlayComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChapterTitleOverlayComponent ]
-    })
-    .compileComponents();
+      declarations: [ChapterTitleOverlayComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

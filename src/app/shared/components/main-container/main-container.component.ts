@@ -6,14 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./main-container.component.scss'],
 })
 export class MainContainerComponent implements OnInit {
-  
   @Input() backgroundImage!: string;
   @Input() blackOut: boolean = false;
   @Input() chapterTitle: string = '';
   @Input() showNextButton: boolean = true;
   @Input() showFooter: boolean = false;
   @Input() showHeader: boolean = true;
-  
+
   constructor() {}
 
   ngOnInit() {}

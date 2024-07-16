@@ -1,21 +1,21 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { CopyrightComponent } from './components/copyright/copyright.component';
-import { CardComponent } from './components/card/card.component';
-import { BackgroundComponent } from './components/background/background.component';
-import { SceneComponent } from './components/scene/scene.component';
-import { MonologueComponent } from './components/monologue/monologue.component';
+import { NgModule } from '@angular/core';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MainContainerComponent } from './components/main-container/main-container.component';
+import { BackgroundComponent } from './components/background/background.component';
+import { CardComponent } from './components/card/card.component';
 import { ChapterTitleOverlayComponent } from './components/chapter-title-overlay/chapter-title-overlay.component';
-import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
-import { MonologueModule } from './components/monologue/monologue.module';
+import { CopyrightComponent } from './components/copyright/copyright.component';
 import { DialogueModule } from './components/dialogue/dialogue.module';
-import {ResourceListComponent} from "./components/resource-list/resource-list.component";
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MainContainerComponent } from './components/main-container/main-container.component';
+import { MonologueComponent } from './components/monologue/monologue.component';
+import { MonologueModule } from './components/monologue/monologue.module';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { ResourceListComponent } from './components/resource-list/resource-list.component';
+import { SceneComponent } from './components/scene/scene.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import {ResourceListComponent} from "./components/resource-list/resource-list.co
     CopyrightComponent,
     MainContainerComponent,
     CardComponent,
-    ResourceListComponent
+    ResourceListComponent,
   ],
 })
 export class SharedModule {}

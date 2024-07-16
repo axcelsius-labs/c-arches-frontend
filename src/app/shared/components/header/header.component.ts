@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { DialogueService } from '../../services/dialogue.service';
 import { Subscription, filter } from 'rxjs';
+import { DialogueService } from '../../services/dialogue.service';
 
 @Component({
   selector: 'app-header',

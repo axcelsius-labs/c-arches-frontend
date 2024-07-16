@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Section, Contraception } from '../../../../models/chapter.interface';
+import { Contraception, Section } from '../../../../models/chapter.interface';
 import { ChapterService } from '../../../../services/chapter.service';
 
 @Component({

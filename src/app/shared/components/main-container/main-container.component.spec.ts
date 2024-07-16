@@ -1,7 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MainContainerComponent } from './main-container.component';
 
@@ -9,11 +7,10 @@ describe('MainContainerComponent', () => {
   let component: MainContainerComponent;
   let fixture: ComponentFixture<MainContainerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainContainerComponent ]
-    })
-    .compileComponents();
+      declarations: [MainContainerComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

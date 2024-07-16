@@ -6,7 +6,7 @@ import { ChapterService } from './chapter.service';
 describe('Service: Chapter', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ChapterService]
+      providers: [ChapterService],
     });
   });
 

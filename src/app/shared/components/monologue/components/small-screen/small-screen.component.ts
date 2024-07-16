@@ -9,7 +9,7 @@ import { Section } from '../../../../models/chapter.interface';
 export class SmallScreenComponent implements OnInit {
   @Input() section!: Section;
   @Output() clickedOption = new EventEmitter<number>();
-  
+
   constructor() {}
 
   ngOnInit() {}

@@ -1,5 +1,5 @@
 /* tslint:disable:no-unused-variable */
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { SceneComponent } from './scene.component';
 
@@ -9,9 +9,8 @@ describe('SceneComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SceneComponent ]
-    })
-    .compileComponents();
+      declarations: [SceneComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
