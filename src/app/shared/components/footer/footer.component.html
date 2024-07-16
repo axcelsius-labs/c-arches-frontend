@@ -1,6 +1,6 @@
 <app-progress-bar></app-progress-bar>
 <div class="footer-container">
-  <button class="back-button" (click)="previousDialogLine()">
+  <button class="back-button" (click)="handleBack()">
     <mat-icon class="icon">chevron_left</mat-icon>
     Back
   </button>
@@ -10,7 +10,7 @@
   <button
     [style.visibility]="dontShowNextButton ? 'hidden' : 'visible'"
     class="next-button"
-    (click)="nextDialogLine()"
+    (click)="handleNext()"
   >
     Next
     <mat-icon class="icon">chevron_right</mat-icon>

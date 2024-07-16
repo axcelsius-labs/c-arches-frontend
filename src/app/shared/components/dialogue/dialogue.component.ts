@@ -12,8 +12,8 @@ export class DialogueComponent implements OnInit {
 
   speaker = 0;
   currentLine: DialogueLine = {} as DialogueLine;
-  animationCursorSegment: number = -1;
-  animationCursorLetter: number = -1;
+  currentSegment: number = -1;
+  currentLetter: number = -1;
 
   constructor(private dialogueService: DialogueService) {}
 
@@ -21,11 +21,11 @@ export class DialogueComponent implements OnInit {
     this.dialogueService.speaker$.subscribe((value) => {
       this.speaker = value;
     });
-    this.dialogueService.animationCursorSegment$.subscribe((value) => {
-      this.animationCursorSegment = value;
+    this.dialogueService.currentSegment$.subscribe((value) => {
+      this.currentSegment = value;
     });
-    this.dialogueService.animationCursorLetter$.subscribe((value) => {
-      this.animationCursorLetter = value;
+    this.dialogueService.currentLetter$.subscribe((value) => {
+      this.currentLetter = value;
     });
     this.dialogueService.currentLine$.subscribe((value) => {
       this.currentLine = value;

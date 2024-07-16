@@ -18,7 +18,7 @@ export const chapters: Chapters = {
             speaker: 1,
             segments: [
                 { message: "Hey! I'm ", params: [] },
-                { message: "Sam!", params: ["red"] },
+                { message: "Sam!", params: ["bold"] },
             ],
             params: ['showTutorial'],
           },
@@ -70,7 +70,11 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            segments: [{ message: "We make it easy to talk about pregnancy and birth control.", params: [] }],
+            segments: [
+                { message: "We make it ", params: [] },
+                { message: "easy to talk about ", params: ['bold'] },
+                { message: "pregnancy and birth control.", params: [] },
+            ],
             params: [],
           },
         ],
@@ -82,7 +86,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            segments: [{ message: "We're on the same page about getting pregnant and how to handle pregnancy decisions.", params: [] }],
+            segments: [
+                { message: "We're on the same page about ", params: [] },
+                { message: "getting pregnant ", params: ['bold'] },
+                { message: "and how to handle ", params: [] },
+                { message: "pregnancy decisions.", params: ['bold'] },
+            ],
             params: [],
           },
         ],
@@ -94,7 +103,10 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            segments: [{ message: "My partner supports my decisions about sex, pregnancy and birth control.", params: [] }],
+            segments: [
+                { message: "My partner supports my decisions about ", params: [] },
+                { message: "sex, pregnancy and birth control.", params: ['bold'] },
+            ],
             params: [],
           },
         ],
@@ -106,7 +118,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 2,
-            segments: [{ message: 'I feel comfortable expressing my sexual desires AND saying "no" to sex.', params: [] }],
+            segments: [
+                { message: 'I feel comfortable expressing my ', params: [] },
+                { message: 'sexual desires ', params: ['bold'] },
+                { message: 'AND ', params: [] },
+                { message: 'saying "no" to sex.', params: ['bold'] },
+            ],
             params: [],
           },
         ],
@@ -237,7 +254,11 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            segments: [{ message: "This is called reproductive coercion. It's a serious form of abuse where someone controls or pressures another person's decisions about birth control or pregnancy.", params: [] }],
+            segments: [
+                { message: "This is called ", params: [] },
+                { message: "reproductive coercion", params: ['bold'] },
+                { message: ". It's a serious form of abuse where someone controls or pressures another person's decisions about birth control or pregnancy.", params: [] }
+            ],
             params: [],
           },
           {
@@ -277,7 +298,11 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 0,
-            segments: [{ message: "It is never okay for someone to...", params: [] }],
+            segments: [
+                { message: "It is ", params: [] },
+                { message: "never ", params: ['bold'] },
+                { message: "okay for someone to...", params: [] },
+            ],
             params: [],
           },
         ],
@@ -295,7 +320,12 @@ export const chapters: Chapters = {
         dialogueLines: [
           {
             speaker: 1,
-            segments: [{ message: "Reproductive coercion is bad for your mental health and increases your risk of STIs/HIV, unintended pregnancies, and unsafe abortions.", params: [] }],
+            segments: [
+                { message: "Reproductive coercion is bad for your mental health and increases your risk of ", params: [] },
+                { message: "STIs/HIV, unintended pregnancies, ", params: ['bold'] },
+                { message: "and ", params: [] },
+                { message: "unsafe abortions.", params: ['bold'] },
+            ],
             params: [],
           },
           {

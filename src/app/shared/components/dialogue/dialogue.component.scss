@@ -8,7 +8,7 @@
   margin: 20px 10px 30px;
   color: #000000FF;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: 'Comic Neue', 'Comic Sans MS', sans-serif;
   letter-spacing: 0.02em;
   word-spacing: 0.05em;
@@ -44,6 +44,10 @@
 
 .red {
   color: #FF0000FF !important;
+}
+
+.bold {
+  font-weight: 700 !important;
 }
 
 .left {

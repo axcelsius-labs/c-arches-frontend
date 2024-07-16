@@ -4,9 +4,10 @@
     <span
     *ngFor="let char of segment.characters; let i = index"
     [ngClass]="{
-      visible: animationCursorSegment >= s && animationCursorLetter >= i,
-      invisible: animationCursorSegment < s || (animationCursorSegment == s && animationCursorLetter < i),
-      red: segment.params.indexOf('red') > -1
+      visible: currentSegment >= s && currentLetter >= i,
+      invisible: currentSegment < s || (currentSegment == s && currentLetter < i),
+      red: segment.params.indexOf('red') > -1,
+      bold: segment.params.indexOf('bold') > -1
     }">{{ char }}</span>
   </ng-container>
   <div *ngIf="showLeftTriangle" class="triangle side-triangle-left"></div>

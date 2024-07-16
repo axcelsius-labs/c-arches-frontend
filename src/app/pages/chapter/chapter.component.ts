@@ -19,7 +19,6 @@ export class ChapterComponent implements OnInit {
   chapterContent!: Chapter;
   chapterId!: string;
   startingDialogLineIndex!: number;
-  allowOverflow: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -83,7 +82,6 @@ export class ChapterComponent implements OnInit {
       this.chapterContent.sections[
         this.chapterService.chapterSectionRouteConfig.value.sectionIndex
       ];
-    this.allowOverflow = this.sectionContent.sectionType === 'chapter3.0';
     this.dialogueService.updateDialogLines(
       this.sectionContent.dialogueLines!,
       this.chapterService.chapterSectionRouteConfig.value.dialogueIndex,

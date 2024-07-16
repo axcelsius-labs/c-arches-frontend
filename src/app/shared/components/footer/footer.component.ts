@@ -19,7 +19,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  nextDialogLine(): void {
+  handleNext(): void {
     if (this.dialogueService.isAtSectionEnd()) {
       this.chapterService.handleFinishedSection();
     } else {
@@ -27,7 +27,7 @@ export class FooterComponent implements OnInit {
     }
   }
 
-  previousDialogLine(): void {
+  handleBack(): void {
     if (this.dialogueService.isAtSectionStart()) {
       this.chapterService.goToPreviousSection();
     } else {
