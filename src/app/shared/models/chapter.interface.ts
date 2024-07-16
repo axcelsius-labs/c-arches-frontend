@@ -29,7 +29,6 @@ export interface Contraception {
   name?: string;
   preview?: string;
   description?: string;
-  price?: string;
   use_within_short?: string;
   use_within_long?: string;
   effectiveness_short?: string;

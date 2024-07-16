@@ -15,10 +15,6 @@
       <img class="preview" [src]="item.preview" />
     </div>
     <div class="body">
-      <div class="content">
-        <div class="content-key"><i>Cost:</i></div>
-        <div class="content-value">{{ item.price }}</div>
-      </div>
       <div class="content" *ngIf="item.use_within_short !== undefined">
         <div class="content-key"><i>Use within:</i></div>
         <div class="content-value">{{ item.use_within_short }}</div>

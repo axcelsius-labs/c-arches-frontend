@@ -514,7 +514,6 @@ export const chapters: Chapters = {
           name: 'Copper IUD',
           preview: 'assets/images/IUD.png',
           description: 'Tiny device put in your uterus.',
-          price: '$0-$1300',
           use_within_short: '5 days',
           use_within_long: 'Use within 5 days of unprotected sex',
           effectiveness_short: '99%',
@@ -544,7 +543,6 @@ export const chapters: Chapters = {
           preview: 'assets/images/Ella.png',
           description:
             'A single pill taken as soon as possible after unprotected sex, ideally within 5 days.',
-          price: '$0-$50',
           use_within_short: '5 days',
           use_within_long: 'Use within 5 days of unprotected sex',
           effectiveness_short: '85-98%',
@@ -575,7 +573,6 @@ export const chapters: Chapters = {
           preview: 'assets/images/Plan B.png',
           description:
             'A single pill taken as soon as possible after unprotected sex, ideally within 3 days.',
-          price: '$0-50',
           use_within_short: '3 days',
           use_within_long: 'Use within 3 days of unprotected sex',
           effectiveness_short: '75–89%',
@@ -653,7 +650,6 @@ export const chapters: Chapters = {
           name: 'The Shot',
           preview: 'assets/images/Injection.png',
           description: 'Injection in your arm or buttocks every 3 months',
-          price: '$0-$150',
           effectiveness_short: '96%',
           effectiveness_long: '96% Effective',
           duration_short: '3 months',
@@ -684,7 +680,6 @@ export const chapters: Chapters = {
           preview: 'assets/images/IUD.png',
           description:
             'Tiny device put in your uterus, low-maintenance once inserted.',
-          price: '$0-$1300',
           effectiveness_short: '99%',
           effectiveness_long: '99% Effective',
           duration_short: '3-12 years',
@@ -713,7 +708,6 @@ export const chapters: Chapters = {
           name: 'The Implant (Nexplanon)',
           preview: 'assets/images/Implant.png',
           description: 'Small & discreet device inserted under the skin.',
-          price: '$0-$2200',
           effectiveness_short: '99%',
           effectiveness_long: '99% Effective',
           duration_short: '5 years',
@@ -744,7 +738,6 @@ export const chapters: Chapters = {
           preview: 'assets/images/Sterilization.png',
           description:
             'Permanent surgical procedure where your provider cuts or blocks your fallopian tubes.',
-          price: '$0-6000',
           effectiveness_short: '99%',
           effectiveness_long: '99% Effective',
           duration_short: 'Permanent',
