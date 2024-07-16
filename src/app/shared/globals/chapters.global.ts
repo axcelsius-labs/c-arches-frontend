@@ -18,7 +18,7 @@ export const chapters: Chapters = {
             speaker: 1,
             segments: [
                 { message: "Hey! I'm ", params: [] },
-                { message: "Sammy!", params: ["red"] },
+                { message: "Sam!", params: ["red"] },
             ],
             params: ['showTutorial'],
           },
